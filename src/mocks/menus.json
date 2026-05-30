@@ -1,0 +1,62 @@
+[
+  {
+    "id": "menu-001",
+    "title": "Sinfonia del Bosque Seco",
+    "restaurant": "El Portal",
+    "chef": "Mateo Ribera",
+    "summary": "Menu de temporada con ingredientes nativos y tecnicas de autor.",
+    "category": "Gastronomia de Autor",
+    "coverImage": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
+    "featured": true,
+    "tags": ["Almendra Chiquitana", "Miel Melipona", "Sujo"],
+    "updatedAt": "2026-05-29T16:20:00.000Z"
+  },
+  {
+    "id": "menu-002",
+    "title": "Esencia Amazonica",
+    "restaurant": "Raices",
+    "chef": "Lucia Flores",
+    "summary": "Recorrido de sabores del sotobosque con foco en recoleccion sostenible.",
+    "category": "Saberes Ancestrales",
+    "coverImage": "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=1200&q=80",
+    "featured": false,
+    "tags": ["Asai", "Copoazu"],
+    "updatedAt": "2026-05-30T09:15:00.000Z"
+  },
+  {
+    "id": "menu-003",
+    "title": "Territorio Moderno",
+    "restaurant": "Bistro del Chaco",
+    "chef": "Dario Veizaga",
+    "summary": "Cocina contemporanea con productos del bosque chiquitano.",
+    "category": "Concepto Bistro",
+    "coverImage": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80",
+    "featured": false,
+    "tags": ["Yuca", "Paja Cedron"],
+    "updatedAt": "2026-05-28T13:40:00.000Z"
+  },
+  {
+    "id": "menu-004",
+    "title": "Tesoros del Palmar",
+    "restaurant": "Chef Carla Ortiz",
+    "chef": "Carla Ortiz",
+    "summary": "Uso integral del palmito silvestre en diferentes estados de maduracion.",
+    "category": "Gastronomia de Autor",
+    "coverImage": "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?auto=format&fit=crop&w=1200&q=80",
+    "featured": false,
+    "tags": ["Palmito", "Achiote"],
+    "updatedAt": "2026-05-27T18:05:00.000Z"
+  },
+  {
+    "id": "menu-005",
+    "title": "Fuego y Territorio",
+    "restaurant": "Casona San Ignacio",
+    "chef": "Mariana Roca",
+    "summary": "Preparaciones a la brasa y notas ahumadas inspiradas en el monte.",
+    "category": "Gastronomia de Autor",
+    "coverImage": "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1400&q=80",
+    "featured": false,
+    "tags": ["Frutos Silvestres", "Sal de Roca"],
+    "updatedAt": "2026-05-27T10:15:00.000Z"
+  }
+]

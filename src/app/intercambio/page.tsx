@@ -1,5 +1,5 @@
-import IntercambioPage from "@/screens/Intercambio/IntercambioPage";
+import { redirect } from "next/navigation";
 
 export default function IntercambioRoute() {
-  return <IntercambioPage />;
+  redirect("/conexiones");
 }

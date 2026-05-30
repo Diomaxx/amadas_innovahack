@@ -17,14 +17,12 @@ export function AppFooter() {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(255,255,255,0.08),transparent_35%),radial-gradient(circle_at_80%_90%,rgba(255,255,255,0.07),transparent_30%)]" />
       <div className="relative mx-auto grid w-full max-w-6xl gap-6 px-4 py-8 sm:px-6 lg:grid-cols-[1.1fr_0.8fr_0.9fr] lg:items-start lg:px-8">
         <div className="space-y-4">
-          <div className="rounded-xl border border-cv-green-500/70 bg-cv-green-800/30 p-4">
-            <Image
-              src={fanLogo}
-              alt="Fundacion Amigos de la Naturaleza"
-              className="h-auto w-full max-w-[280px]"
-              priority
-            />
-          </div>
+          <Image
+            src={fanLogo}
+            alt="Fundacion Amigos de la Naturaleza"
+            className="h-auto w-full max-w-[224px]"
+            priority
+          />
 
           <p className="max-w-sm text-sm leading-relaxed text-cv-green-100">
             Fundacion Amigos de la Naturaleza impulsa conservacion, restauracion y desarrollo
@@ -50,7 +48,7 @@ export function AppFooter() {
           </nav>
         </div>
 
-        <div className="rounded-xl border border-cv-green-500/70 bg-cv-green-800/25 p-4">
+        <div>
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-cv-green-100">
             Contacto institucional
           </p>

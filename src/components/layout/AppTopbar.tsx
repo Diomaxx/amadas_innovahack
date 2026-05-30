@@ -9,11 +9,12 @@ import { useAuth } from "@/context/AuthContext";
 import { logout } from "@/lib/firebase/auth";
 
 const topbarLinks = [
-  { href: "/", label: "Inicio" },
+  { href: "/", label: "Inicio", activePaths: ["/", "/productores", "/restaurantes"] },
+  { href: "/recetas", label: "Recetas" },
   { href: "/catalogo", label: "Catalogo" },
   { href: "/abastecimiento", label: "Abastecimiento" },
   { href: "/menus", label: "Menus" },
-  { href: "/intercambio", label: "Intercambio" },
+  { href: "/conexiones", label: "Conexiones" },
 ];
 
 export function AppTopbar() {
@@ -60,24 +61,30 @@ export function AppTopbar() {
 
         <nav className="ml-4 hidden items-center gap-2 text-sm md:flex">
           {topbarLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={cn(
-                "group relative rounded-md px-3 py-2 font-medium transition-colors duration-300",
-                pathname === link.href
-                  ? "text-cv-green-800"
-                  : "text-cv-gray-600 hover:text-cv-green-700"
-              )}
-            >
-              {link.label}
-              <span
-                className={cn(
-                  "absolute bottom-0 left-3 right-3 h-0.5 origin-left rounded-full bg-cv-green-700 transition-transform duration-300",
-                  pathname === link.href ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
-                )}
-              />
-            </Link>
+            (() => {
+              const isActive = link.activePaths
+                ? link.activePaths.includes(pathname)
+                : pathname === link.href;
+
+              return (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={cn(
+                    "group relative rounded-md px-3 py-2 font-medium transition-colors duration-300",
+                    isActive ? "text-cv-green-800" : "text-cv-gray-600 hover:text-cv-green-700"
+                  )}
+                >
+                  {link.label}
+                  <span
+                    className={cn(
+                      "absolute bottom-0 left-3 right-3 h-0.5 origin-left rounded-full bg-cv-green-700 transition-transform duration-300",
+                      isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                    )}
+                  />
+                </Link>
+              );
+            })()
           ))}
         </nav>
 
