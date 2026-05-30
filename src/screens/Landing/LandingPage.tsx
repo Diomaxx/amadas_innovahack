@@ -21,7 +21,7 @@ export default function LandingPage() {
       <div className="flex w-full flex-col p-0">
         <LandingAnimatedHero backgroundImage={heroImage} />
 
-        <div className="mx-auto w-full max-w-6xl px-4 pb-20 pt-16 md:px-6">
+        <div className="mx-auto w-full max-w-7xl px-4 pb-20 pt-16 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
