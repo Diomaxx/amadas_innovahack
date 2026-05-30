@@ -1,0 +1,211 @@
+{
+  "especies": [
+    {
+      "id": "1",
+      "nombre": "Almendra Chiquitana",
+      "nombreCientifico": "Dipteryx alata",
+      "categoria": "Nuez / Semilla",
+      "temporada": "En temporada",
+      "descripcion": "La almendra chiquitana es un fruto silvestre recolectado de forma sostenible por comunidades locales del bosque seco chiquitano. Es valorada por su alto contenido nutricional y su versatilidad en la gastronomía.",
+      "esencia": "La Almendra Chiquitana (*Dipteryx alata*) es el tesoro dorado de la Chiquitanía. Conocida por su perfil nutricional excepcional y su sabor tostado profundo, es el pilar de la economía sostenible local.",
+      "propiedades": [
+        "Alta en Proteína (26%)",
+        "Energía Sostenible",
+        "100% Recolección Silvestre"
+      ],
+      "usoGastronomico": "Perfecta para repostería fina, aceites prensados en frío y snacks saludables tostados con sal del Salar.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Julio a Septiembre",
+        "meses": [
+          { "mes": "MAY", "estado": "no-disponible" },
+          { "mes": "JUN", "estado": "comienza" },
+          { "mes": "JUL", "estado": "en-temporada" },
+          { "mes": "AGO", "estado": "en-temporada" },
+          { "mes": "SEP", "estado": "en-temporada" },
+          { "mes": "OCT", "estado": "ultimos-dias" }
+        ],
+        "mensaje": "Estamos en el mejor momento para disfrutar su sabor y apoyar a las comunidades del bosque."
+      },
+      "disponibilidad": [
+        {
+          "productor": "Asociación Lomerío",
+          "estado": "1 LOTE DE 200 KG DISPONIBLE",
+          "accion": "Contactar",
+          "icon": "store"
+        },
+        {
+          "productor": "Cooperativa San Ignacio",
+          "estado": "3 LOTES DE 50 KG DISPONIBLES",
+          "accion": "Contactar",
+          "icon": "store"
+        },
+        {
+          "productor": "Recolectores de Roboré",
+          "estado": "EN PROCESO DE SECADO (PRONTO)",
+          "accion": "Reservar",
+          "icon": "hourglass"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "nombre": "Asaí",
+      "nombreCientifico": "Euterpe precatoria",
+      "categoria": "Fruta",
+      "temporada": "Próximamente",
+      "descripcion": "El Asaí es un superalimento originario de la región amazónica y chiquitana, conocido por sus potentes propiedades antioxidantes.",
+      "esencia": "El Asaí chiquitano crece en las riberas de los ríos, brindando un intenso color morado y una explosión de antioxidantes. Es un símbolo de vitalidad para las comunidades recolectoras.",
+      "propiedades": [
+        "Alto en Antioxidantes",
+        "Fuente de Hierro",
+        "Energía Natural"
+      ],
+      "usoGastronomico": "Ideal para bowls energéticos, jugos, helados artesanales y postres saludables.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Marzo a Mayo",
+        "meses": [
+          { "mes": "FEB", "estado": "comienza" },
+          { "mes": "MAR", "estado": "en-temporada" },
+          { "mes": "ABR", "estado": "en-temporada" },
+          { "mes": "MAY", "estado": "en-temporada" },
+          { "mes": "JUN", "estado": "ultimos-dias" },
+          { "mes": "JUL", "estado": "no-disponible" }
+        ],
+        "mensaje": "La cosecha de Asaí está por comenzar. Prepárate para disfrutar de su frescura."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "3",
+      "nombre": "Miel de Abeja Nativa",
+      "nombreCientifico": "Meliponini",
+      "categoria": "Miel",
+      "temporada": "En temporada",
+      "descripcion": "Miel producida por abejas nativas sin aguijón, recolectada en armonía con el entorno del bosque chiquitano, con un perfil de sabor único.",
+      "esencia": "Oro líquido de la Chiquitanía. Las abejas señoritas (meliponas) producen esta miel medicinal y gastronómica, sin aguijón y en total armonía con la floración del bosque seco.",
+      "propiedades": [
+        "Propiedades Medicinales",
+        "Sabor Floral Único",
+        "Producción Sostenible"
+      ],
+      "usoGastronomico": "Perfecta para endulzar infusiones, glasear carnes, aliños de ensaladas y consumo directo medicinal.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Agosto a Noviembre",
+        "meses": [
+          { "mes": "JUL", "estado": "comienza" },
+          { "mes": "AGO", "estado": "en-temporada" },
+          { "mes": "SEP", "estado": "en-temporada" },
+          { "mes": "OCT", "estado": "en-temporada" },
+          { "mes": "NOV", "estado": "ultimos-dias" },
+          { "mes": "DIC", "estado": "no-disponible" }
+        ],
+        "mensaje": "La floración del bosque nos regala esta miel excepcional en su punto óptimo."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "4",
+      "nombre": "Paja cedrón",
+      "nombreCientifico": "Cymbopogon citratus",
+      "categoria": "Infusión",
+      "temporada": "Finalizando",
+      "descripcion": "Hierba aromática de amplio uso tradicional para infusiones relajantes y digestivas, cultivada localmente.",
+      "esencia": "Con su inconfundible aroma a limón, la paja cedrón es el alma de las tardes chiquitanas. Un digestivo natural que reconforta el cuerpo y el espíritu.",
+      "propiedades": [
+        "Digestivo Natural",
+        "Aroma Cítrico Intenso",
+        "Cultivo Familiar"
+      ],
+      "usoGastronomico": "Excelente en infusiones calientes, refrescos fríos, y para aromatizar postres o caldos ligeros.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Todo el año",
+        "meses": [
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "en-temporada" },
+          { "mes": "MAR", "estado": "en-temporada" },
+          { "mes": "ABR", "estado": "en-temporada" },
+          { "mes": "MAY", "estado": "en-temporada" },
+          { "mes": "JUN", "estado": "en-temporada" }
+        ],
+        "mensaje": "Disponible gran parte del año gracias al cuidado constante de las familias productoras."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "5",
+      "nombre": "Yuca",
+      "nombreCientifico": "Manihot esculenta",
+      "categoria": "Raíz",
+      "temporada": "En temporada",
+      "descripcion": "Base fundamental de la alimentación en la región, la yuca cultivada en la Chiquitanía destaca por su textura y sabor.",
+      "esencia": "La raíz que sostiene a la cultura chiquitana. Versátil, noble y de textura inigualable, es el pan de cada día que conecta la tierra con la mesa familiar.",
+      "propiedades": [
+        "Carbohidrato Libre de Gluten",
+        "Alta Versatilidad",
+        "Base Alimentaria Local"
+      ],
+      "usoGastronomico": "Desde horneados tradicionales (cuñapé, pan de arroz) hasta frita, hervida o como base de chicha.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Todo el año",
+        "meses": [
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "en-temporada" },
+          { "mes": "MAR", "estado": "en-temporada" },
+          { "mes": "ABR", "estado": "en-temporada" },
+          { "mes": "MAY", "estado": "en-temporada" },
+          { "mes": "JUN", "estado": "en-temporada" }
+        ],
+        "mensaje": "Cosechada fresca a lo largo de todo el año, asegurando calidad y textura."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "6",
+      "nombre": "Motacú",
+      "nombreCientifico": "Attalea phalerata",
+      "categoria": "Aceite / Fruta",
+      "temporada": "Próximamente",
+      "descripcion": "Palmera emblemática de cuyos frutos se extrae un aceite tradicional muy valorado por sus propiedades nutritivas y cosméticas.",
+      "esencia": "La palmera de la vida. Del motacú se aprovecha todo; sus frutos dorados y aceitosos son una fuente tradicional de nutrición profunda e hidratación.",
+      "propiedades": [
+        "Alto en Ácidos Grasos",
+        "Uso Cosmético y Culinario",
+        "Ícono del Bosque"
+      ],
+      "usoGastronomico": "Su aceite se usa tradicionalmente en cocina, y el fruto directo es apreciado localmente o en derivados.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Noviembre a Marzo",
+        "meses": [
+          { "mes": "OCT", "estado": "comienza" },
+          { "mes": "NOV", "estado": "en-temporada" },
+          { "mes": "DIC", "estado": "en-temporada" },
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "en-temporada" },
+          { "mes": "MAR", "estado": "ultimos-dias" }
+        ],
+        "mensaje": "Los frutos empiezan a madurar con las primeras lluvias, preparándose para la cosecha."
+      },
+      "disponibilidad": []
+    }
+  ],
+  "otrosRecursos": [
+    {
+      "id": "7",
+      "nombre": "Castaña",
+      "nombreCientifico": "Bertholletia excelsa",
+      "temporada": "En temporada"
+    },
+    {
+      "id": "8",
+      "nombre": "Albahaca silvestre",
+      "nombreCientifico": "Ocimum micranthum",
+      "temporada": "Próximamente"
+    },
+    {
+      "id": "9",
+      "nombre": "Flor de colonia",
+      "nombreCientifico": "Alpinia zerumbet",
+      "temporada": "Finalizando"
+    }
+  ]
+}
