@@ -1,54 +1,194 @@
 @import "tailwindcss";
 
+/* ============================================================
+   CALENDARIO VIVO — Design Tokens (Color Palette)
+   ============================================================
+   Extracted from the brand design system.
+   Uses CSS custom properties so every component (shadcn/ui,
+   custom, or Tailwind utilities) references the same source
+   of truth.
+   
+   Naming convention:
+     --cv-*          → brand-specific semantic tokens
+     --<shadcn-key>  → shadcn/ui compatibility tokens
+   ============================================================ */
+
 :root {
-  --background: oklch(0.99 0.005 106.4);
-  --foreground: oklch(0.19 0.01 248.0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.19 0.01 248.0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.19 0.01 248.0);
-  --primary: oklch(0.52 0.18 259.0);
-  --primary-foreground: oklch(0.98 0.01 250.0);
-  --secondary: oklch(0.96 0.01 252.0);
-  --secondary-foreground: oklch(0.24 0.02 251.0);
-  --muted: oklch(0.96 0.01 252.0);
-  --muted-foreground: oklch(0.55 0.02 250.0);
-  --accent: oklch(0.96 0.01 252.0);
-  --accent-foreground: oklch(0.24 0.02 251.0);
-  --destructive: oklch(0.63 0.22 29.0);
-  --destructive-foreground: oklch(0.98 0.01 250.0);
-  --border: oklch(0.90 0.01 252.0);
-  --input: oklch(0.90 0.01 252.0);
-  --ring: oklch(0.52 0.18 259.0);
-  --radius: 0.625rem;
+  /* ── Brand Core ─────────────────────────────────────────── */
+  --cv-green-900: #14291F;   /* Darkest — nav bg, footers           */
+  --cv-green-800: #1B3A2D;   /* Primary dark — header, hero overlay */
+  --cv-green-700: #24503C;   /* Buttons primary, active states      */
+  --cv-green-600: #2D5741;   /* Hover states                        */
+  --cv-green-500: #3A7D5C;   /* Tags, badges, active pills          */
+  --cv-green-400: #5A9E7B;   /* Secondary actions, links             */
+  --cv-green-300: #8DC3A4;   /* Borders, subtle accents              */
+  --cv-green-200: #BFE0CC;   /* Light backgrounds, tints             */
+  --cv-green-100: #E3F2E9;   /* Very light wash                      */
+  --cv-green-50:  #F0F8F3;   /* Lightest tint                        */
+
+  /* ── Warm Neutrals (Cream / Beige) ────────────────────── */
+  --cv-cream-50:  #FDFCFA;   /* Page background (lightest)           */
+  --cv-cream-100: #FAF7F2;   /* Card backgrounds, sections           */
+  --cv-cream-200: #F5F0E8;   /* Alternate section bg                 */
+  --cv-cream-300: #EDE5D8;   /* Subtle dividers, borders             */
+  --cv-cream-400: #D9CDB9;   /* Muted text on dark                   */
+
+  /* ── Gold / Amber Accents ─────────────────────────────── */
+  --cv-gold-500:  #C8A96E;   /* Accent — prices, highlights          */
+  --cv-gold-400:  #D4BC8A;   /* Hover accent                         */
+  --cv-gold-300:  #E4D4AE;   /* Light accent bg                      */
+  --cv-gold-600:  #A88B4A;   /* Darker accent for contrast           */
+
+  /* ── Neutrals (Text & UI) ─────────────────────────────── */
+  --cv-gray-900:  #1A1A1A;   /* Primary text                         */
+  --cv-gray-800:  #2D2D2D;   /* Secondary text                       */
+  --cv-gray-700:  #4A4A4A;   /* Body text                            */
+  --cv-gray-600:  #636363;   /* Muted text                           */
+  --cv-gray-500:  #8A8A8A;   /* Placeholder text                     */
+  --cv-gray-400:  #B0B0B0;   /* Disabled text                        */
+  --cv-gray-300:  #D4D4D4;   /* Borders                              */
+  --cv-gray-200:  #E8E8E8;   /* Dividers                             */
+  --cv-gray-100:  #F5F5F5;   /* Subtle backgrounds                   */
+
+  /* ── Semantic / Feedback ──────────────────────────────── */
+  --cv-success:   #2D7A4F;   /* Success messages                     */
+  --cv-warning:   #D4A017;   /* Warning messages                     */
+  --cv-error:     #C0392B;   /* Error / destructive                  */
+  --cv-info:      #2980B9;   /* Info messages                        */
+
+  /* ── White ────────────────────────────────────────────── */
+  --cv-white:     #FFFFFF;
+
+  /* ============================================================
+     shadcn/ui Compatibility Tokens
+     Map brand tokens → shadcn variables so all UI components
+     automatically pick up the Calendario Vivo palette.
+     ============================================================ */
+
+  /* Layout */
+  --background:           var(--cv-cream-50);
+  --foreground:           var(--cv-gray-900);
+
+  /* Cards */
+  --card:                 var(--cv-white);
+  --card-foreground:      var(--cv-gray-900);
+
+  /* Popovers / Dropdowns */
+  --popover:              var(--cv-white);
+  --popover-foreground:   var(--cv-gray-900);
+
+  /* Primary (Forest Green) */
+  --primary:              var(--cv-green-700);
+  --primary-foreground:   var(--cv-white);
+
+  /* Secondary (Cream) */
+  --secondary:            var(--cv-cream-200);
+  --secondary-foreground: var(--cv-green-800);
+
+  /* Muted */
+  --muted:                var(--cv-cream-100);
+  --muted-foreground:     var(--cv-gray-600);
+
+  /* Accent (Gold) */
+  --accent:               var(--cv-gold-500);
+  --accent-foreground:    var(--cv-green-900);
+
+  /* Destructive */
+  --destructive:          var(--cv-error);
+  --destructive-foreground: var(--cv-white);
+
+  /* Borders & Inputs */
+  --border:               var(--cv-cream-300);
+  --input:                var(--cv-cream-300);
+  --ring:                 var(--cv-green-500);
+
+  /* Radius */
+  --radius: 0.5rem;
 }
 
+/* ============================================================
+   Tailwind CSS v4 — @theme inline
+   Exposes all tokens as Tailwind utility classes.
+   Usage examples:
+     bg-primary, text-foreground, border-border,
+     bg-cv-green-700, text-cv-gold-500, etc.
+   ============================================================ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-popover: var(--popover);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
+  /* ── shadcn/ui mapped colors ───────────────────────────── */
+  --color-background:           var(--background);
+  --color-foreground:           var(--foreground);
+  --color-card:                 var(--card);
+  --color-card-foreground:      var(--card-foreground);
+  --color-popover:              var(--popover);
+  --color-popover-foreground:   var(--popover-foreground);
+  --color-primary:              var(--primary);
+  --color-primary-foreground:   var(--primary-foreground);
+  --color-secondary:            var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
+  --color-muted:                var(--muted);
+  --color-muted-foreground:     var(--muted-foreground);
+  --color-accent:               var(--accent);
+  --color-accent-foreground:    var(--accent-foreground);
+  --color-destructive:          var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
-  --color-input: var(--input);
-  --color-ring: var(--ring);
+  --color-border:               var(--border);
+  --color-input:                var(--input);
+  --color-ring:                 var(--ring);
+
+  /* ── Brand palette (direct access) ────────────────────── */
+  /* Greens */
+  --color-cv-green-50:   var(--cv-green-50);
+  --color-cv-green-100:  var(--cv-green-100);
+  --color-cv-green-200:  var(--cv-green-200);
+  --color-cv-green-300:  var(--cv-green-300);
+  --color-cv-green-400:  var(--cv-green-400);
+  --color-cv-green-500:  var(--cv-green-500);
+  --color-cv-green-600:  var(--cv-green-600);
+  --color-cv-green-700:  var(--cv-green-700);
+  --color-cv-green-800:  var(--cv-green-800);
+  --color-cv-green-900:  var(--cv-green-900);
+
+  /* Creams */
+  --color-cv-cream-50:   var(--cv-cream-50);
+  --color-cv-cream-100:  var(--cv-cream-100);
+  --color-cv-cream-200:  var(--cv-cream-200);
+  --color-cv-cream-300:  var(--cv-cream-300);
+  --color-cv-cream-400:  var(--cv-cream-400);
+
+  /* Golds */
+  --color-cv-gold-300:   var(--cv-gold-300);
+  --color-cv-gold-400:   var(--cv-gold-400);
+  --color-cv-gold-500:   var(--cv-gold-500);
+  --color-cv-gold-600:   var(--cv-gold-600);
+
+  /* Grays */
+  --color-cv-gray-100:   var(--cv-gray-100);
+  --color-cv-gray-200:   var(--cv-gray-200);
+  --color-cv-gray-300:   var(--cv-gray-300);
+  --color-cv-gray-400:   var(--cv-gray-400);
+  --color-cv-gray-500:   var(--cv-gray-500);
+  --color-cv-gray-600:   var(--cv-gray-600);
+  --color-cv-gray-700:   var(--cv-gray-700);
+  --color-cv-gray-800:   var(--cv-gray-800);
+  --color-cv-gray-900:   var(--cv-gray-900);
+
+  /* Semantic */
+  --color-cv-success:    var(--cv-success);
+  --color-cv-warning:    var(--cv-warning);
+  --color-cv-error:      var(--cv-error);
+  --color-cv-info:       var(--cv-info);
+  --color-cv-white:      var(--cv-white);
+
+  /* ── Radius ────────────────────────────────────────────── */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 }
 
+/* ============================================================
+   Base Resets
+   ============================================================ */
 * {
   border-color: var(--border);
 }
@@ -56,7 +196,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), sans-serif;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
 }
