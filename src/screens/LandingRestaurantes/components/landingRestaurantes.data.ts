@@ -1,21 +1,21 @@
 export const heroData = {
-  badge: "Gastronomia con Alma",
-  title: "Del Bosque a tu Mesa: Sabores con Proposito",
+  badge: "Gastronomía con Alma",
+  title: "Del Bosque a tu Mesa: Sabores con Propósito",
   description:
-    "Abastece tu cocina con los tesoros de la Chiquitania. Conecta directamente con recolectores locales y eleva tu propuesta gastronomica con productos unicos y sostenibles.",
+    "Abastece tu cocina con los tesoros de la Chiquitanía. Conecta directamente con recolectores locales y eleva tu propuesta gastronómica con productos únicos y sostenibles.",
   backgroundImage:
     "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1920&q=80",
 };
 
 export const valueCards = [
   {
-    title: "Catalogo Vivo",
+    title: "Catálogo Vivo",
     description: "Acceso a productos exclusivos silvestres en su punto optimo de maduracion y cosecha.",
     image:
       "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=80",
   },
   {
-    title: "Precio Etico",
+    title: "Precio Ético",
     description: "Transparencia en la estructura de costos para promover comercio justo.",
     image:
       "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1000&q=80",
@@ -30,30 +30,30 @@ export const valueCards = [
 
 export const standards = [
   {
-    title: "Diferenciacion Gastronomica",
-    description: "Ingredientes exclusivos para crear sabores unicos fuera de mercados industriales.",
+    title: "Diferenciación Gastronómica",
+    description: "Ingredientes exclusivos para crear sabores únicos fuera de mercados industriales.",
   },
   {
     title: "Sello de Sostenibilidad",
     description: "Fortalece tu marca aliada de la conservacion del Bosque Chiquitano.",
   },
   {
-    title: "Eficiencia Logistica",
-    description: "Conexion directa via WhatsApp con centros regionales, sin intermediarios innecesarios.",
+    title: "Eficiencia Logística",
+    description: "Conexión directa vía WhatsApp con centros regionales, sin intermediarios innecesarios.",
   },
 ];
 
 export const steps = [
   {
     title: "Explora la temporada",
-    description: "Revisa nuestro catalogo dinamico que cambia segun el pulso de la naturaleza.",
+    description: "Revisa nuestro catálogo dinámico que cambia según el pulso de la naturaleza.",
   },
   {
     title: "Contacta Productores",
-    description: "Habla directamente con asociaciones para coordinar volumenes y logistica.",
+    description: "Habla directamente con asociaciones para coordinar volumenes y logística.",
   },
   {
-    title: "Crea Menus Unicos",
+    title: "Crea Menús Únicos",
     description: "Recibe los tesoros en tu cocina y transforma biodiversidad en experiencias memorables.",
   },
 ];
@@ -62,7 +62,7 @@ export const partnerRestaurants = ["El Aljibe", "Raices", "Gustu", "Ancestral", 
 
 export const testimonial = {
   quote:
-    "Calendario Vivo ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneracion de la Chiquitania a traves del plato.",
+    "Calendario Vivo ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneración de la Chiquitania a través del plato.",
   author: "Chef Ejecutivo",
   role: "Restaurante Galardonado",
   avatar:
