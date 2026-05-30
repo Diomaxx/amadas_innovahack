@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { CSSProperties, FormEvent } from "react";
 import type { User } from "firebase/auth";
+import { useRouter } from "next/navigation";
 import { loginWithEmail, logout, registerWithEmail } from "@/lib/firebase/auth";
 import {
   createUserProfile,
@@ -77,6 +78,7 @@ const textStyle: CSSProperties = {
 };
 
 export function LoginCard({ user }: LoginCardProps) {
+  const router = useRouter();
   const [mode, setMode] = useState<"login" | "register">("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -99,6 +101,7 @@ export function LoginCard({ user }: LoginCardProps) {
         const credential = await registerWithEmail(email.trim(), password);
         await createUserProfile(credential.user.uid, credential.user.email ?? email);
         setMessage("Cuenta creada y perfil guardado en Firestore.");
+        router.push("/");
       } else {
         const credential = await loginWithEmail(email.trim(), password);
         const userProfile = await getUserProfile(credential.user.uid);
@@ -108,6 +111,7 @@ export function LoginCard({ user }: LoginCardProps) {
             ? "Sesion iniciada. Perfil cargado desde Firestore."
             : "Sesion iniciada. No existe perfil todavia en Firestore."
         );
+        router.push("/");
       }
     } catch (error) {
       const nextError = error as Error;
