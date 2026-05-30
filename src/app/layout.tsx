@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Fraunces } from "next/font/google";
 import { AuthProvider } from "@/context/AuthContext";
 import { AppFooter } from "@/components/layout/AppFooter";
 import { AppTopbar } from "@/components/layout/AppTopbar";
@@ -15,6 +15,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  display: "swap",
+  axes: ["opsz", "SOFT", "WONK"],
+});
+
 export const metadata: Metadata = {
   title: "AMADAS",
   description: "Dashboard con Firebase Authentication y Firestore",
@@ -26,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="es" className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable}`}>
       <body
         suppressHydrationWarning
         className="min-h-screen bg-background text-foreground antialiased"

@@ -10,7 +10,7 @@ export const heroData = {
 export const valueCards = [
   {
     title: "Catálogo Vivo",
-    description: "Acceso a productos exclusivos silvestres en su punto optimo de maduracion y cosecha.",
+    description: "Acceso a productos exclusivos silvestres en su punto óptimo de maduración y cosecha.",
     image:
       "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=80",
   },
@@ -35,7 +35,7 @@ export const standards = [
   },
   {
     title: "Sello de Sostenibilidad",
-    description: "Fortalece tu marca aliada de la conservacion del Bosque Chiquitano.",
+    description: "Fortalece tu marca como aliada de la conservación del Bosque Chiquitano.",
   },
   {
     title: "Eficiencia Logística",
@@ -49,20 +49,20 @@ export const steps = [
     description: "Revisa nuestro catálogo dinámico que cambia según el pulso de la naturaleza.",
   },
   {
-    title: "Contacta Productores",
-    description: "Habla directamente con asociaciones para coordinar volumenes y logística.",
+    title: "Contacta a los productores",
+    description: "Habla directamente con las asociaciones para coordinar volúmenes y logística.",
   },
   {
     title: "Crea Menús Únicos",
-    description: "Recibe los tesoros en tu cocina y transforma biodiversidad en experiencias memorables.",
+    description: "Recibe los tesoros en tu cocina y transforma la biodiversidad en experiencias memorables.",
   },
 ];
 
-export const partnerRestaurants = ["El Aljibe", "Raices", "Gustu", "Ancestral", "Manqa"];
+export const partnerRestaurants = ["El Aljibe", "Raíces", "Gustu", "Ancestral", "Manqa"];
 
 export const testimonial = {
   quote:
-    "Calendario Vivo ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneración de la Chiquitania a través del plato.",
+    "Calendario Vivo ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneración de la Chiquitanía a través del plato.",
   author: "Chef Ejecutivo",
   role: "Restaurante Galardonado",
   avatar:
