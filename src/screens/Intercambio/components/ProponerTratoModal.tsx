@@ -160,7 +160,7 @@ export function ProponerTratoModal({
         </DialogTrigger>
       )}
 
-      <DialogContent className="proponer-trato-modal max-h-[90vh] w-[calc(100%-2rem)] mx-auto overflow-y-auto border-cv-cream-300 bg-white rounded-2xl sm:max-w-lg px-4 py-5 sm:px-6 sm:py-6">
+      <DialogContent className="proponer-trato-modal scrollbar-thin max-h-[90vh] w-[calc(100%-2rem)] mx-auto overflow-y-auto border-cv-cream-300 bg-white rounded-2xl sm:max-w-lg px-4 py-5 sm:px-6 sm:py-6">
         <DialogHeader className="border-b border-cv-cream-200 pb-3 sm:pb-4">
           <DialogTitle className="text-lg sm:text-2xl font-bold text-cv-green-900">
             {titulo}

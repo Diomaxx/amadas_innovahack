@@ -92,7 +92,7 @@ export function ProductSearch({ mode = "desktop" }: ProductSearchProps) {
       <motion.div
         layout
         transition={{ type: "spring", stiffness: 380, damping: 34 }}
-        style={{ width: open ? undefined : isMobile ? undefined : 320 }}
+        style={{ width: open ? undefined : isMobile ? undefined : "100%" }}
         onLayoutAnimationStart={() => setAnimating(true)}
         onLayoutAnimationComplete={() => setAnimating(false)}
         className={cn(

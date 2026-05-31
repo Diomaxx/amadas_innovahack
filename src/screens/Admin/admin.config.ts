@@ -1,7 +1,6 @@
 import {
   Activity,
   BookOpen,
-  ChartColumn,
   ChefHat,
   LayoutDashboard,
   Settings,
@@ -19,31 +18,30 @@ export type AdminNavItem = {
 };
 
 /**
- * Fuente única de verdad para el panel administrativo (`/admin`).
- * El sidebar la usa para la navegación y cada page para su encabezado.
+ * Fuente unica de verdad para el panel administrativo (`/admin`).
+ * El sidebar la usa para la navegacion y cada page para su encabezado.
  */
 export const ADMIN_NAV: AdminNavItem[] = [
   {
-    label: "Panel de Métricas",
+    label: "Administración",
     href: "/admin",
     Icon: LayoutDashboard,
-    title: "Panel de Métricas",
-    subtitle: "Gestión sostenible de la biodiversidad chiquitana.",
+    title: "Administración",
+    subtitle: "Gestion sostenible de la biodiversidad chiquitana.",
   },
   {
-    label: "Gestión Flora",
+    label: "Gestion Flora",
     href: "/admin/flora",
     Icon: Sprout,
-    title: "Gestión de Flora",
-    subtitle: "Administra el catálogo de especies y productos del bosque.",
+    title: "Gestion de Flora",
+    subtitle: "Administra el catalogo de especies y productos del bosque.",
   },
   {
     label: "Publicaciones",
     href: "/admin/publicaciones",
     Icon: BookOpen,
-    title: "Gestión de Publicaciones",
-    subtitle:
-      "Revisa, edita y aprueba las publicaciones antes de que sean visibles al público.",
+    title: "Gestion de Publicaciones",
+    subtitle: "Revisa, edita y aprueba las publicaciones antes de que sean visibles al publico.",
   },
   {
     label: "Contactos",
@@ -67,17 +65,10 @@ export const ADMIN_NAV: AdminNavItem[] = [
     subtitle: "Registro de acciones recientes en la plataforma.",
   },
   {
-    label: "Reportes",
-    href: "/admin/reportes",
-    Icon: ChartColumn,
-    title: "Reportes",
-    subtitle: "Indicadores y exportación de datos.",
-  },
-  {
-    label: "Configuración",
+    label: "Configuracion",
     href: "/admin/configuracion",
     Icon: Settings,
-    title: "Configuración",
+    title: "Configuracion",
     subtitle: "Preferencias generales del panel.",
   },
 ];

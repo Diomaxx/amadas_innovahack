@@ -61,7 +61,7 @@ export default function LandingAnimatedHero({
           className="inline-flex items-center gap-2 rounded-full border border-cv-gold-400/40 bg-white/5 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-cv-gold-300 backdrop-blur"
         >
           <Sparkle className="h-3.5 w-3.5" />
-          RESPIRALARA
+          mati
         </motion.p>
 
         <h1 className="font-display mt-6 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight text-white md:text-8xl [@media(max-height:760px)]:mt-3 [@media(max-height:760px)]:text-4xl [@media(max-height:760px)]:md:text-6xl">

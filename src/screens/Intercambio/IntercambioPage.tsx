@@ -8,7 +8,6 @@ import { Handshake, Plus } from "lucide-react";
 import { IntercambioFiltros, type FiltrosIntercambioState, type Categoria, type Ubicacion } from "./components/IntercambioFiltros";
 import { IntercambioCard } from "./components/IntercambioCard";
 import { MarketStabilityCard } from "./components/MarketStabilityCard";
-import { ProtectionCard } from "./components/ProtectionCard";
 import { IntercambioSkeleton } from "./components/IntercambioSkeleton";
 import { ProponerTratoModal } from "./components/ProponerTratoModal";
 import { pageTransition, staggerContainer, staggerItem } from "./components/intercambioAnimations";
@@ -27,6 +26,7 @@ interface Intercambio {
   ubicacion: string;
   categoria: Categoria;
   accion: "Proponer Trato" | "Enviar Consulta";
+  imagen?: string;
 }
 
 const INTERCAMBIOS = intercambioData.intercambios as Intercambio[];
@@ -166,10 +166,6 @@ export default function IntercambioPage() {
                     </motion.div>
                   ))}
                 </div>
-
-                <motion.div variants={staggerItem} className="mt-12">
-                  <ProtectionCard />
-                </motion.div>
               </>
             ) : (
               <motion.div

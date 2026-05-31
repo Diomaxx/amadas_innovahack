@@ -65,7 +65,7 @@ export function LoginCard() {
             <Leaf className="h-5 w-5" />
           </span>
           <span className="font-display text-xl font-semibold">
-            RESPIRALARA
+            mati
           </span>
         </div>
 

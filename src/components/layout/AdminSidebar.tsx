@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";
-import { ArrowLeft, Leaf, LogOut, Plus } from "lucide-react";
+import { LogOut, Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { logout } from "@/lib/firebase/auth";
 import { ADMIN_NAV } from "@/screens/Admin/admin.config";
@@ -32,15 +33,23 @@ export function AdminSidebar() {
     <aside className="sticky top-0 flex h-screen w-64 shrink-0 flex-col border-r border-cv-cream-300 bg-cv-cream-50">
       {/* Marca */}
       <div className="px-6 pb-6 pt-7">
-        <Link href="/admin" className="group flex items-center gap-2.5">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cv-green-800 text-cv-cream-50 ring-1 ring-cv-gold-400/40 transition-transform duration-300 group-hover:-rotate-6">
-            <Leaf className="h-5 w-5" />
+        <Link href="/" className="group flex items-center gap-2.5">
+          <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl shadow-[0_10px_20px_-12px_rgba(20,41,31,0.35)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:shadow-[0_14px_28px_-12px_rgba(20,41,31,0.5)]">
+            <Image
+              src="/logo.png"
+              alt="MATI"
+              fill
+              sizes="44px"
+              className="object-cover"
+              priority
+            />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-70" />
           </span>
           <span className="flex flex-col leading-none">
-            <span className="font-display text-xl font-semibold tracking-tight text-cv-green-900">
-              Backoffice
+            <span className="font-display text-2xl font-semibold tracking-tight text-transparent bg-gradient-to-r from-cv-green-900 via-cv-green-700 to-cv-gold-600 bg-clip-text transition-all duration-300 group-hover:from-cv-green-800 group-hover:via-cv-green-600 group-hover:to-cv-gold-500">
+              MATI
             </span>
-            <span className="mt-1 text-xs text-cv-gray-500">Fundación FAN</span>
+            <span className="mt-1 text-xs text-cv-gray-500">Backoffice</span>
           </span>
         </Link>
       </div>
@@ -56,7 +65,7 @@ export function AdminSidebar() {
               className={cn(
                 "group flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors duration-200",
                 active
-                  ? "bg-cv-green-100 text-cv-green-900"
+                  ? "bg-cv-green-800 text-cv-cream-50 shadow-[0_10px_20px_-14px_rgba(20,41,31,0.65)]"
                   : "text-cv-gray-600 hover:bg-cv-cream-100 hover:text-cv-green-800",
               )}
             >
@@ -64,7 +73,7 @@ export function AdminSidebar() {
                 className={cn(
                   "h-5 w-5 shrink-0 transition-colors",
                   active
-                    ? "text-cv-green-700"
+                    ? "text-cv-gold-400"
                     : "text-cv-gray-400 group-hover:text-cv-green-600",
                 )}
               />
@@ -76,14 +85,6 @@ export function AdminSidebar() {
 
       {/* Acciones inferiores */}
       <div className="space-y-3 border-t border-cv-cream-300 px-4 py-5">
-        <Link
-          href="/"
-          className="flex w-full items-center gap-2 rounded-lg px-3 py-2.5 text-left text-sm font-medium text-cv-gray-600 transition-colors duration-200 hover:bg-cv-cream-100 hover:text-cv-green-800"
-        >
-          <ArrowLeft className="h-4 w-4" />
-          Volver a la app
-        </Link>
-
         <Link
           href="/admin/flora"
           className="flex w-full items-center justify-center gap-2 rounded-lg bg-cv-green-800 px-4 py-2.5 text-sm font-medium text-cv-cream-50 transition-colors duration-200 hover:bg-cv-green-700"

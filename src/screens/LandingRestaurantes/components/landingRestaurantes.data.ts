@@ -62,7 +62,7 @@ export const partnerRestaurants = ["El Aljibe", "Raíces", "Gustu", "Ancestral",
 
 export const testimonial = {
   quote:
-    "RESPIRALARA ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneración de la Chiquitanía a través del plato.",
+    "mati ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneración de la Chiquitanía a través del plato.",
   author: "Chef Ejecutivo",
   role: "Restaurante Galardonado",
   avatar:

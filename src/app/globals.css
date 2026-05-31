@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   RESPIRALARA — Design Tokens (Color Palette)
+   mati — Design Tokens (Color Palette)
    ============================================================
    Extracted from the brand design system.
    Uses CSS custom properties so every component (shadcn/ui,
@@ -62,7 +62,7 @@
   /* ============================================================
      shadcn/ui Compatibility Tokens
      Map brand tokens → shadcn variables so all UI components
-     automatically pick up the RESPIRALARA palette.
+     automatically pick up the mati palette.
      ============================================================ */
 
   /* Layout */
@@ -358,4 +358,57 @@ body {
   html {
     @apply font-sans;
   }
+}
+
+/* ============================================================
+   Scrollbar — delgado y verde (identidad de marca)
+   Global para toda la página + clase `.scrollbar-thin` para
+   colocarlo en contenedores internos (modales, paneles, etc.).
+   ============================================================ */
+
+/* Firefox — scrollbar global de la página */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cv-green-900) transparent;
+}
+
+/* WebKit (Chrome, Edge, Safari) — global */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--cv-green-900);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cv-green-700);
+}
+
+/* Clase utilitaria: úsala en cualquier contenedor con scroll
+   (ej. <div className="... overflow-y-auto scrollbar-thin">). */
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--cv-green-900) transparent;
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: var(--cv-green-900);
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  background-clip: padding-box;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: var(--cv-green-700);
 }

@@ -57,10 +57,10 @@ export function AppTopbar() {
     <header className="sticky top-0 z-30 border-b border-cv-cream-300/70 bg-cv-cream-50/85 shadow-[0_8px_18px_-16px_rgba(20,41,31,0.45)] backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-cv-green-800/95 ring-1 ring-cv-gold-400/40 shadow-[0_10px_20px_-12px_rgba(20,41,31,0.55)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:shadow-[0_14px_28px_-12px_rgba(20,41,31,0.65)]">
+          <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl shadow-[0_10px_20px_-12px_rgba(20,41,31,0.35)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:shadow-[0_14px_28px_-12px_rgba(20,41,31,0.5)]">
             <Image
               src="/logo.png"
-              alt="RespiraLAra Vivo"
+              alt="mati Vivo"
               fill
               sizes="44px"
               className="object-cover"
@@ -68,15 +68,15 @@ export function AppTopbar() {
             />
             <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-70" />
           </span>
-          <span className="font-display text-2xl font-semibold leading-none tracking-tight text-cv-green-900">
-            RespiraLAra <span className="text-cv-gold-600">Vivo</span>
+          <span className="font-display text-3xl font-semibold leading-none tracking-tight text-transparent bg-gradient-to-r from-cv-green-900 via-cv-green-700 to-cv-gold-600 bg-clip-text drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 group-hover:from-cv-green-800 group-hover:via-cv-green-600 group-hover:to-cv-gold-500">
+            MATI
           </span>
         </Link>
 
         {/* Nav + buscador comparten un contenedor relativo: al abrirse, el
             buscador se superpone (capa absoluta) sobre los tabs sin empujarlos. */}
-        <div className="relative ml-4 flex min-w-0 flex-1 items-center">
-          <nav className="hidden items-center gap-2 text-sm md:flex">
+        <div className="relative ml-4 hidden min-w-0 flex-1 items-center md:flex">
+          <nav className="hidden items-center gap-[0.6rem] text-sm md:flex md:shrink-0">
             {topbarLinks.map((link) => (
               (() => {
                 const isActive = link.activePaths
@@ -105,12 +105,13 @@ export function AppTopbar() {
             ))}
           </nav>
 
-          <div className="md:hidden">
-            <ProductSearch mode="mobile" />
-          </div>
-          <div className="hidden md:block">
+          <div className="hidden md:block md:min-w-[260px] md:flex-1">
             <ProductSearch />
           </div>
+        </div>
+
+        <div className="ml-auto md:hidden">
+          <ProductSearch mode="mobile" />
         </div>
 
         <div ref={menuRef} className="relative">

@@ -47,7 +47,7 @@ function normalizar(texto: string): string {
 }
 
 /** Deriva los insumos clave presentes en los ingredientes de una receta. */
-function derivarInsumos(textoIngredientes: string): string[] {
+export function derivarInsumos(textoIngredientes: string): string[] {
   const base = normalizar(textoIngredientes);
   return INSUMOS_CLAVE.filter((insumo) =>
     base.includes(normalizar(insumo)),
