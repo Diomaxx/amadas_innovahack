@@ -13,7 +13,11 @@
         "Energía Sostenible",
         "100% Recolección Silvestre"
       ],
-      "usoGastronomico": "Perfecta para repostería fina, aceites prensados en frío y snacks saludables tostados con sal del Salar.",
+      "usosGastronomicos": [
+        "Repostería fina",
+        "Aceite prensado en frío",
+        "Snacks tostados"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Julio a Septiembre",
         "meses": [
@@ -54,7 +58,12 @@
         "Fuente de Hierro",
         "Energía Natural"
       ],
-      "usoGastronomico": "Ideal para bowls energéticos, jugos, helados artesanales y postres saludables.",
+      "usosGastronomicos": [
+        "Bowls energéticos",
+        "Jugos",
+        "Helados artesanales",
+        "Postres saludables"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Enero a Octubre",
         "meses": [
@@ -95,7 +104,12 @@
         "Aceite de uso culinario y cosmético",
         "Palma de aprovechamiento integral"
       ],
-      "usoGastronomico": "El aceite de motacú es ideal para frituras y aderezos; la pulpa se consume fresca o en refrescos tradicionales.",
+      "usosGastronomicos": [
+        "Frituras",
+        "Aderezos",
+        "Pulpa fresca",
+        "Refrescos tradicionales"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Todo el año",
         "meses": [
@@ -130,7 +144,12 @@
         "Fuente de aceite vegetal",
         "Aprovechamiento integral del fruto"
       ],
-      "usoGastronomico": "Se usa en refrescos y dulces tradicionales, harinas y extracción de aceite para cocina.",
+      "usosGastronomicos": [
+        "Refrescos",
+        "Dulces tradicionales",
+        "Harinas",
+        "Aceite de cocina"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Mayo a Enero",
         "meses": [
@@ -165,7 +184,12 @@
         "Alta Versatilidad",
         "Base Alimentaria Local"
       ],
-      "usoGastronomico": "Desde horneados tradicionales (cuñapé, pan de arroz) hasta frita, hervida o como base de chicha.",
+      "usosGastronomicos": [
+        "Horneados (cuñapé, pan de arroz)",
+        "Frita",
+        "Hervida",
+        "Base de chicha"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Todo el año",
         "meses": [
@@ -200,7 +224,12 @@
         "Aroma Cítrico Intenso",
         "Cultivo Familiar"
       ],
-      "usoGastronomico": "Excelente en infusiones calientes, refrescos fríos y para aromatizar postres o caldos ligeros.",
+      "usosGastronomicos": [
+        "Infusiones calientes",
+        "Refrescos fríos",
+        "Aromatizar postres",
+        "Caldos ligeros"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Todo el año",
         "meses": [
@@ -235,7 +264,12 @@
         "Aporte Energético",
         "Producción Apícola Local"
       ],
-      "usoGastronomico": "Perfecta como endulzante natural, en infusiones, aderezos gourmet, repostería o consumida directamente.",
+      "usosGastronomicos": [
+        "Endulzante natural",
+        "Infusiones",
+        "Aderezos gourmet",
+        "Repostería"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Octubre-Noviembre y Febrero-Marzo",
         "meses": [
@@ -276,7 +310,12 @@
         "Fuente de Grasas Saludables",
         "Recolección Silvestre Sostenible"
       ],
-      "usoGastronomico": "Excelente como snack, en repostería, leche vegetal y extracción de aceite fino.",
+      "usosGastronomicos": [
+        "Snack",
+        "Repostería",
+        "Leche vegetal",
+        "Aceite fino"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Diciembre a Febrero",
         "meses": [
@@ -311,7 +350,12 @@
         "Bebida Tradicional 'Leche de Majo'",
         "Aceite de Alta Calidad"
       ],
-      "usoGastronomico": "Se consume como bebida (leche de majo), en helados y postres, y su aceite se usa en cocina fina.",
+      "usosGastronomicos": [
+        "Leche de majo",
+        "Helados",
+        "Postres",
+        "Aceite de cocina fina"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Septiembre a Marzo",
         "meses": [
@@ -339,7 +383,12 @@
         "Fuente de Vitamina C",
         "Fruto Silvestre de Verano"
       ],
-      "usoGastronomico": "Se disfruta principalmente fresco; también en jugos, mermeladas y cócteles.",
+      "usosGastronomicos": [
+        "Consumo fresco",
+        "Jugos",
+        "Mermeladas",
+        "Cócteles"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Diciembre a Mayo",
         "meses": [
@@ -374,7 +423,11 @@
         "Aceite Medicinal Tradicional",
         "Uso Etnobotánico Ancestral"
       ],
-      "usoGastronomico": "De uso principalmente medicinal: aceites y macerados tradicionales más que culinario.",
+      "usosGastronomicos": [
+        "Uso medicinal",
+        "Aceites tradicionales",
+        "Macerados"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Junio a Octubre",
         "meses": [
@@ -409,7 +462,11 @@
         "Rico en Grasas y Proteínas",
         "Sabor a Maní y Cacao"
       ],
-      "usoGastronomico": "Se consume tostado como snack y se emplea como sustituto del cacao en preparaciones de repostería.",
+      "usosGastronomicos": [
+        "Snack tostado",
+        "Sustituto del cacao",
+        "Repostería"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Julio a Octubre",
         "meses": [
@@ -437,7 +494,12 @@
         "Corteza Aromática",
         "Uso en Infusiones y Repostería"
       ],
-      "usoGastronomico": "Como especia para aromatizar postres, mazamorras e infusiones calientes.",
+      "usosGastronomicos": [
+        "Especia aromática",
+        "Postres",
+        "Mazamorras",
+        "Infusiones calientes"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Septiembre a Febrero",
         "meses": [
@@ -465,7 +527,11 @@
         "Aroma Floral Intenso",
         "Uso Medicinal Tradicional"
       ],
-      "usoGastronomico": "En infusiones, para aromatizar postres y como elemento decorativo comestible.",
+      "usosGastronomicos": [
+        "Infusiones",
+        "Aromatizar postres",
+        "Decoración comestible"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Septiembre a Abril",
         "meses": [
@@ -493,7 +559,12 @@
         "Propiedades Digestivas",
         "Cultivo Agroecológico Familiar"
       ],
-      "usoGastronomico": "Ideal en salsas, ensaladas, marinados e infusiones aromáticas.",
+      "usosGastronomicos": [
+        "Salsas",
+        "Ensaladas",
+        "Marinados",
+        "Infusiones aromáticas"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Octubre a Febrero",
         "meses": [
@@ -528,7 +599,12 @@
         "Acidez Aromática Intensa",
         "Cítrico Criollo Tradicional"
       ],
-      "usoGastronomico": "Imprescindible en jugos, ceviches, cócteles y aderezos frescos.",
+      "usosGastronomicos": [
+        "Jugos",
+        "Ceviches",
+        "Cócteles",
+        "Aderezos frescos"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Noviembre a Febrero",
         "meses": [
@@ -556,7 +632,11 @@
         "Sabor Agridulce Característico",
         "Recolección Tradicional"
       ],
-      "usoGastronomico": "Se consume fresco y se aprovecha en mermeladas y salsas caseras.",
+      "usosGastronomicos": [
+        "Consumo fresco",
+        "Mermeladas",
+        "Salsas caseras"
+      ],
       "calendarioCosecha": {
         "temporadaPrincipal": "Noviembre-Diciembre y Febrero-Marzo",
         "meses": [

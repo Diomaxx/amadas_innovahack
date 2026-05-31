@@ -200,7 +200,7 @@ export function productoToForm(producto: ProductoTemporada): ProductoFormValues 
     ciclos: ciclos.length > 0 ? ciclos : [{ inicio: 0, fin: 0 }],
     descripcion: producto.descripcion,
     propiedadesTexto: producto.propiedades.join(", "),
-    usoGastronomico: producto.usoGastronomico,
+    usosGastronomicosTexto: producto.usosGastronomicos.join(", "),
     imageSrc: producto.imageSrc,
   };
 }
@@ -214,7 +214,7 @@ export function formValuesVacios(): ProductoFormValues {
     ciclos: [{ inicio: 0, fin: 0 }],
     descripcion: "",
     propiedadesTexto: "",
-    usoGastronomico: "",
+    usosGastronomicosTexto: "",
     imageSrc: undefined,
   };
 }
@@ -233,6 +233,10 @@ export function formToProducto(
     .split(",")
     .map((p) => p.trim())
     .filter(Boolean);
+  const usosGastronomicos = values.usosGastronomicosTexto
+    .split(",")
+    .map((u) => u.trim())
+    .filter(Boolean);
   const temporadaMeses = ciclosToMeses(values.ciclos);
 
   return {
@@ -244,7 +248,7 @@ export function formToProducto(
     descripcion: values.descripcion.trim(),
     esencia: base?.esencia ?? values.descripcion.trim(),
     propiedades,
-    usoGastronomico: values.usoGastronomico.trim(),
+    usosGastronomicos,
     calendarioCosecha: buildCalendario(values.ciclos),
     disponibilidad: base?.disponibilidad ?? [],
     temporadaMeses,

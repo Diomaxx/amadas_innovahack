@@ -46,7 +46,7 @@ const schema = z.object({
   ciclos: z.array(cicloSchema).min(1, "Agrega al menos un ciclo"),
   descripcion: z.string().min(3, "Agrega una descripción"),
   propiedadesTexto: z.string().min(1, "Indica al menos una propiedad (separadas por coma)"),
-  usoGastronomico: z.string().min(3, "Describe el uso gastronómico"),
+  usosGastronomicosTexto: z.string().min(1, "Indica al menos un uso gastronómico (separados por coma)"),
   imageSrc: z.string().optional(),
 });
 
@@ -346,17 +346,19 @@ export function ProductoModal({ open, onOpenChange, producto, onSubmit }: Props)
               )}
             />
 
-            {/* Uso gastronómico (frase) */}
+            {/* Usos gastronómicos (tags separados por coma) */}
             <FormField
               control={form.control}
-              name="usoGastronomico"
+              name="usosGastronomicosTexto"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className={labelClass}>Uso gastronómico</FormLabel>
+                  <FormLabel className={labelClass}>
+                    Usos gastronómicos (separados por coma)
+                  </FormLabel>
                   <FormControl>
-                    <Textarea
-                      placeholder="Ej. Perfecta para repostería fina, aceites prensados en frío y snacks tostados."
-                      className={`min-h-20 resize-none ${inputClass}`}
+                    <Input
+                      placeholder="Ej. Repostería fina, Aceite prensado en frío, Snacks tostados"
+                      className={inputClass}
                       {...field}
                     />
                   </FormControl>

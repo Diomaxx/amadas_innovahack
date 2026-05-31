@@ -36,7 +36,7 @@ export interface ProductoTemporada {
   descripcion: string;
   esencia: string;
   propiedades: string[];
-  usoGastronomico: string;
+  usosGastronomicos: string[];
   calendarioCosecha: CalendarioCosecha;
   disponibilidad: DisponibilidadItem[];
   /** Meses de cosecha (minúsculas, ej. "julio"), tomados de temporadas.json. */
@@ -60,7 +60,7 @@ export interface ProductoFormValues {
   descripcion: string;
   /** Propiedades separadas por coma (ej. "Alta en Proteína, Energía"). */
   propiedadesTexto: string;
-  /** Frase descriptiva del uso gastronómico. */
-  usoGastronomico: string;
+  /** Usos gastronómicos separados por coma (ej. "Repostería, Snacks"). */
+  usosGastronomicosTexto: string;
   imageSrc?: string;
 }

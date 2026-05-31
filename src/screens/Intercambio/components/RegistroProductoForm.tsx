@@ -18,6 +18,11 @@ import { ImageSelector } from "@/components/UI/ImageSelector";
 import { RegistroFormSection } from "./RegistroFormSection";
 import { staggerContainer, staggerItem } from "./intercambioAnimations";
 import registroData from "@/mocks/registroConexionesData.json";
+import temporadasData from "@/mocks/temporadas.json";
+
+const normalizeString = (str: string) => {
+  return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+};
 
 const MESES = [
   "Enero",
@@ -68,6 +73,7 @@ interface RegistroProductoFormProps {
 export function RegistroProductoForm({ onSubmit }: RegistroProductoFormProps) {
   const [nombreComercial, setNombreComercial] = useState("");
   const [nombreCientifico, setNombreCientifico] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
   const [estadoTransformacion, setEstadoTransformacion] =
     useState<EstadoTransformacion>("materia-prima");
   const [meses, setMeses] = useState<string[]>([]);
@@ -88,6 +94,10 @@ export function RegistroProductoForm({ onSubmit }: RegistroProductoFormProps) {
       prev.includes(receta) ? prev.filter((r) => r !== receta) : [...prev, receta]
     );
   };
+
+  const filteredProducts = temporadasData.documents.filter((doc) =>
+    normalizeString(doc.nombreComun).includes(normalizeString(nombreComercial))
+  );
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
@@ -118,23 +128,46 @@ export function RegistroProductoForm({ onSubmit }: RegistroProductoFormProps) {
         icon={Leaf}
       >
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="space-y-2">
+          <div className="space-y-2 relative">
             <Label htmlFor="nombre-comercial">Nombre Comercial</Label>
             <Input
               id="nombre-comercial"
-              placeholder="Almendra Chiquitana"
+              placeholder="Ej. Almendra Chiquitana"
               value={nombreComercial}
-              onChange={(e) => setNombreComercial(e.target.value)}
+              onChange={(e) => {
+                setNombreComercial(e.target.value);
+                setShowDropdown(true);
+              }}
+              onFocus={() => setShowDropdown(true)}
+              onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
             />
+            {showDropdown && nombreComercial && filteredProducts.length > 0 && (
+              <ul className="absolute z-10 w-full mt-1 max-h-60 overflow-auto rounded-md border border-cv-cream-300 bg-white shadow-lg">
+                {filteredProducts.map((prod) => (
+                  <li
+                    key={prod.id}
+                    className="cursor-pointer px-4 py-2 text-sm text-cv-gray-700 hover:bg-cv-green-50 hover:text-cv-green-900"
+                    onMouseDown={() => {
+                      setNombreComercial(prod.nombreComun);
+                      setNombreCientifico(prod.nombreCientifico);
+                      setShowDropdown(false);
+                    }}
+                  >
+                    {prod.nombreComun}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
           <div className="space-y-2">
             <Label htmlFor="nombre-cientifico">Nombre Científico</Label>
             <Input
               id="nombre-cientifico"
-              placeholder="Dipteryx alata"
-              className="italic"
+              placeholder="Autocompletado..."
+              className="italic bg-cv-cream-50 text-cv-gray-500 cursor-not-allowed"
               value={nombreCientifico}
-              onChange={(e) => setNombreCientifico(e.target.value)}
+              disabled
+              readOnly
             />
           </div>
           <div className="space-y-2">

@@ -59,14 +59,6 @@ export function TemporadaCard({ producto, onEditar, onEliminar }: Props) {
           </div>
         )}
 
-        {/* Uso gastronómico */}
-        {producto.usoGastronomico && (
-          <p className="mt-3 line-clamp-2 text-xs leading-relaxed text-cv-gray-500">
-            <span className="font-medium text-cv-gray-700">Uso gastronómico:</span>{" "}
-            {producto.usoGastronomico}
-          </p>
-        )}
-
         {/* Propiedades */}
         {producto.propiedades.length > 0 && (
           <div className="mt-4">
@@ -80,6 +72,25 @@ export function TemporadaCard({ producto, onEditar, onEliminar }: Props) {
                   className="rounded-md bg-cv-green-100 px-2 py-0.5 text-[10px] font-medium text-cv-green-800"
                 >
                   {p}
+                </span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Usos gastronómicos */}
+        {producto.usosGastronomicos.length > 0 && (
+          <div className="mt-3">
+            <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-cv-gray-500">
+              Usos gastronómicos:
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {producto.usosGastronomicos.map((u) => (
+                <span
+                  key={u}
+                  className="rounded-md bg-cv-gold-300/50 px-2 py-0.5 text-[10px] font-medium text-cv-gold-600"
+                >
+                  {u}
                 </span>
               ))}
             </div>

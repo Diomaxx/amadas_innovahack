@@ -73,7 +73,7 @@ export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
       <ProductInfoCards
         esencia={especie.esencia}
         propiedades={especie.propiedades}
-        usoGastronomico={especie.usoGastronomico}
+        usosGastronomicos={especie.usosGastronomicos}
       />
 
       {/* Availability Section */}

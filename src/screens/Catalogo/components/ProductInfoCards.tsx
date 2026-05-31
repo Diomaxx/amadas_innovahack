@@ -5,15 +5,15 @@ import { BookOpen, Zap, Shield, Sparkles } from "lucide-react";
 interface ProductInfoCardsProps {
   esencia?: string;
   propiedades?: string[];
-  usoGastronomico?: string;
+  usosGastronomicos?: string[];
 }
 
 export function ProductInfoCards({
   esencia,
   propiedades,
-  usoGastronomico,
+  usosGastronomicos,
 }: ProductInfoCardsProps) {
-  if (!esencia && !propiedades && !usoGastronomico) return null;
+  if (!esencia && !propiedades && !usosGastronomicos?.length) return null;
 
   return (
     <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -53,15 +53,22 @@ export function ProductInfoCards({
       )}
 
       {/* Card 3: Uso Gastronómico */}
-      {usoGastronomico && (
+      {usosGastronomicos && usosGastronomicos.length > 0 && (
         <div className="flex flex-col rounded-3xl bg-white p-8 shadow-sm border border-[#E8E8E8]">
-          <div className="mb-4 flex items-center gap-3 text-[#14291F]">
+          <div className="mb-6 flex items-center gap-3 text-[#14291F]">
             <BookOpen className="h-6 w-6" />
             <h2 className="text-2xl font-bold">Uso Gastronómico</h2>
           </div>
-          <p className="mb-8 flex-1 text-[15px] leading-relaxed text-[#4A4A4A]">
-            {usoGastronomico}
-          </p>
+          <ul className="mb-8 flex flex-1 flex-wrap content-start gap-2.5">
+            {usosGastronomicos.map((uso, idx) => (
+              <li
+                key={idx}
+                className="rounded-full bg-[#14291F]/5 px-4 py-2 text-[13px] font-medium text-[#14291F]"
+              >
+                {uso}
+              </li>
+            ))}
+          </ul>
           <button
             type="button"
             className="flex items-center justify-between rounded-xl bg-[#14291F] px-5 py-4 text-[13px] font-bold tracking-widest text-white transition-colors hover:bg-[#1B3A2D] uppercase"
