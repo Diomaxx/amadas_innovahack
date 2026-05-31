@@ -26,8 +26,8 @@ export const ADMIN_NAV: AdminNavItem[] = [
     label: "Administración",
     href: "/admin",
     Icon: LayoutDashboard,
-    title: "Administración",
-    subtitle: "Gestión sostenible de la biodiversidad nacional.",
+    title: "Panel de Administración",
+    subtitle: "Gestión sostenible de la biodiversidad.",
   },
   {
     label: "Gestión de Temporada",
