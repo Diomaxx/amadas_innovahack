@@ -64,11 +64,5 @@ export const ADMIN_NAV: AdminNavItem[] = [
     title: "Actividad",
     subtitle: "Registro de acciones recientes en la plataforma.",
   },
-  {
-    label: "Configuracion",
-    href: "/admin/configuracion",
-    Icon: Settings,
-    title: "Configuracion",
-    subtitle: "Preferencias generales del panel.",
-  },
+  
 ];
