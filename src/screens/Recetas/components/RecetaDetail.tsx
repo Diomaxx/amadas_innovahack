@@ -40,16 +40,31 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
+      className="print:bg-white print:p-8"
     >
+      {/* Cabecera exclusiva para impresión */}
+      <div className="hidden print:flex items-center gap-3 mb-8 border-b-2 border-cv-green-800 pb-4">
+        <Image
+          src="/logo.png"
+          alt="MATI Logo"
+          width={40}
+          height={40}
+          className="object-contain"
+        />
+        <span className="font-display text-2xl font-bold text-cv-green-900 tracking-tight">
+          MATI
+        </span>
+      </div>
+
       <Link
         href="/recetas"
-        className="mb-6 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-[#2d4a3e]/70 transition-colors hover:text-[#2d4a3e]"
+        className="mb-6 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-[#2d4a3e]/70 transition-colors hover:text-[#2d4a3e] print:hidden"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver a recetas
       </Link>
 
-      <div className="relative flex aspect-[16/7] items-center justify-center overflow-hidden rounded-3xl">
+      <div className="relative flex aspect-[16/7] items-center justify-center overflow-hidden rounded-3xl print:hidden">
         {receta.imagen ? (
           <>
             <Image
@@ -81,24 +96,24 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
         </span>
       </div>
 
-      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
-        <div className="max-w-2xl">
+      <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between print:mt-0 print:block">
+        <div className="max-w-2xl print:max-w-full">
           <span
-            className="mb-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide"
+            className="mb-3 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide print:border print:border-[#2d4a3e]/20 print:text-[#2d4a3e] print:!bg-transparent"
             style={{ color: visual.color, backgroundColor: visual.bg }}
           >
-            <Icon weight="fill" className="h-3.5 w-3.5" />
+            <Icon weight="fill" className="h-3.5 w-3.5 print:text-[#2d4a3e]" />
             {visual.label}
           </span>
-          <h1 className="text-3xl font-bold uppercase leading-tight text-[#2d4a3e] sm:text-4xl">
+          <h1 className="text-3xl font-bold uppercase leading-tight text-[#2d4a3e] sm:text-4xl print:text-[#2d4a3e]">
             {receta.nombre}
           </h1>
-          <p className="mt-4 text-sm italic leading-relaxed text-[#2d4a3e]/65">
+          <p className="mt-4 text-sm italic leading-relaxed text-[#2d4a3e]/65 print:text-[#2d4a3e]/80">
             Receta elaborada por: {receta.autores}. {receta.contexto}.
           </p>
         </div>
 
-        <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:w-56 lg:flex-col">
+        <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:w-56 lg:flex-col print:hidden">
           <button
             type="button"
             onClick={handleCompartir}
@@ -118,9 +133,9 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
         </div>
       </div>
 
-      <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2">
+      <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-[minmax(0,4fr)_minmax(0,6fr)] print:mt-10 print:grid-cols-2 print:gap-12">
         <section>
-          <h2 className="mb-5 flex items-center gap-2 text-xl font-bold text-[#2d4a3e]">
+          <h2 className="mb-5 flex items-center gap-2 text-xl font-bold text-[#2d4a3e] print:text-[#2d4a3e] print:border-b print:border-[#2d4a3e]/10 print:pb-2">
             <BookOpen weight="duotone" className="h-5 w-5 text-[#7a9b76]" />
             Ingredientes
           </h2>
@@ -136,9 +151,9 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
                   {seccion.items.map((item, j) => (
                     <li
                       key={j}
-                      className="flex gap-2 text-sm leading-relaxed text-[#2d4a3e]/75"
+                      className="flex gap-2 text-sm leading-relaxed text-[#2d4a3e]/75 print:text-[#2d4a3e]/90"
                     >
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-[#c9a86a]" />
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#c9a86a] print:bg-[#c9a86a]" />
                       {item}
                     </li>
                   ))}
@@ -149,25 +164,25 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
         </section>
 
         <section>
-          <h2 className="mb-5 flex items-center gap-2 text-xl font-bold text-[#2d4a3e]">
-            <CookingPot weight="duotone" className="h-5 w-5 text-[#7a9b76]" />
+          <h2 className="mb-6 flex items-center gap-2.5 text-2xl font-bold text-[#2d4a3e] print:text-[#2d4a3e] print:border-b print:border-[#2d4a3e]/10 print:pb-2">
+            <CookingPot weight="duotone" className="h-6 w-6 text-[#7a9b76]" />
             Preparación
           </h2>
-          <div className="space-y-6">
+          <div className="space-y-8">
             {receta.preparacion.map((seccion, i) => (
               <div key={i}>
                 {seccion.seccion && (
-                  <h3 className="mb-3 text-sm font-semibold text-[#2d4a3e]/80">
+                  <h3 className="mb-4 text-base font-semibold text-[#2d4a3e]/80">
                     {seccion.seccion}:
                   </h3>
                 )}
-                <ol className="space-y-3">
+                <ol className="space-y-5">
                   {seccion.pasos.map((paso, j) => (
-                    <li key={j} className="flex gap-3">
-                      <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#2d4a3e] text-xs font-semibold text-[#f5f1e8]">
+                    <li key={j} className="flex gap-4 print:break-inside-avoid">
+                      <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#2d4a3e] text-sm font-semibold text-[#f5f1e8] print:bg-[#2d4a3e]/10 print:text-[#2d4a3e]">
                         {j + 1}
                       </span>
-                      <p className="text-sm leading-relaxed text-[#2d4a3e]/75">
+                      <p className="self-center text-base leading-relaxed text-[#2d4a3e]/80 print:text-[#2d4a3e]/90">
                         {paso}
                       </p>
                     </li>

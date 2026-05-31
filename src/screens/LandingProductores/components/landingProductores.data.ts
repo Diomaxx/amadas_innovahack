@@ -9,7 +9,7 @@ export const heroData = {
 
 export const stats = [
   "120+ restaurantes buscando productos",
-  "5000kg almendra solicitada este mes",
+  "5000kg de productos solicitados este mes",
   "Pagos directos sin intermediarios",
 ];
 

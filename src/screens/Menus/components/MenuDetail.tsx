@@ -27,37 +27,39 @@ export function MenuDetail({ menu }: { menu: Menu }) {
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4 }}
-      className="space-y-14 pb-10"
+      className="pb-10"
     >
       <Link
         href="/menus"
-        className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-cv-green-700/80 transition-colors hover:text-cv-green-800"
+        className="mb-6 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wide text-cv-green-700/80 transition-colors hover:text-cv-green-800"
       >
         <ArrowLeft className="h-4 w-4" />
         Volver a menús
       </Link>
 
-      {/* 1 — Hero */}
-      <MenuHero menu={menu} />
+      <div className="space-y-14">
+        {/* 1 — Hero */}
+        <MenuHero menu={menu} />
 
-      {/* 2 — Conceptos + Narrativa */}
-      {(menu.concepts?.length || menu.narrative) && (
-        <NarrativeBlock concepts={menu.concepts} narrative={menu.narrative} />
-      )}
+        {/* 2 — Conceptos + Narrativa */}
+        {(menu.concepts?.length || menu.narrative) && (
+          <NarrativeBlock concepts={menu.concepts} narrative={menu.narrative} />
+        )}
 
-      {/* 3 — Creaciones de Autor */}
-      {menu.signatureCreations?.length ? (
-        <SignatureCreations creations={menu.signatureCreations} />
-      ) : null}
+        {/* 3 — Creaciones de Autor */}
+        {menu.signatureCreations?.length ? (
+          <SignatureCreations creations={menu.signatureCreations} />
+        ) : null}
 
-      {/* 4 — Menú de Temporada + Trazabilidad */}
-      {menu.seasonalMenu ? (
-        <SeasonalMenu
-          restaurant={menu.restaurant}
-          traceability={menu.traceability}
-          seasonal={menu.seasonalMenu}
-        />
-      ) : null}
+        {/* 4 — Menú de Temporada + Trazabilidad */}
+        {menu.seasonalMenu ? (
+          <SeasonalMenu
+            restaurant={menu.restaurant}
+            traceability={menu.traceability}
+            seasonal={menu.seasonalMenu}
+          />
+        ) : null}
+      </div>
     </motion.article>
   );
 }
@@ -259,7 +261,7 @@ function TraceabilitySidebar({
     <aside className="lg:sticky lg:top-6 lg:self-start">
       <p className={`${SERIF} text-xl font-semibold text-cv-green-900`}>{restaurant}</p>
       <p className="mt-0.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-cv-gold-600">
-        Gastronomy
+        Gastronomía
       </p>
 
       <div className="mt-6 space-y-5 border-t border-cv-cream-300 pt-6">
@@ -269,7 +271,7 @@ function TraceabilitySidebar({
           </p>
           <p className="mt-2 flex items-center gap-2 text-sm font-medium text-cv-green-800">
             <SealCheck weight="fill" className="h-4 w-4 text-cv-green-500" />
-            {traceability.farmToTablePct}% Farm-to-Table
+            {traceability.farmToTablePct}% Del campo a la mesa
           </p>
           <p className="mt-1 text-xs leading-relaxed text-cv-gray-600">
             {traceability.note}

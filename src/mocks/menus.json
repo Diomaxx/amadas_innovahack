@@ -15,21 +15,21 @@
     "narrative": "En El Portal, cada estacion dicta nuestro movimiento. Inspirados por la vasta biodiversidad del bosque Chiquitano y las tecnicas de recoleccion ancestrales, creamos una fusion de sabores bolivianos tradicionales con tecnicas modernas de vanguardia. El elemento central de nuestra identidad culinaria es la Almendra Chiquitana, nuestro ingrediente forestal mas caracteristico, tejido en el tejido sensorial de cada plato.",
     "signatureCreations": [
       {
-        "name": "Forest Nectar Bloom",
+        "name": "Floracion de Nectar del Bosque",
         "price": "Bs. 165",
         "description": "Miel silvestre infusionada de las tierras altas de San Ignacio, servida sobre un crumble de almendras secadas al sol.",
         "origin": "Bajo Paragua",
         "image": "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=800&q=80"
       },
       {
-        "name": "River & Canopy",
+        "name": "Rio y Dosel del Bosque",
         "price": "Bs. 210",
         "description": "Trucha de rio sellada a fuego lento, encostrada con aceite de palma 'Cusi' ahumado y aromaticas nativas del bosque.",
         "origin": "Guarayos Bajo",
         "image": "https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=800&q=80"
       },
       {
-        "name": "Tuber Roots Medley",
+        "name": "Sinfonia de Tuberculos y Raices",
         "price": "Bs. 95",
         "description": "Una degustacion vertical de tuberculos silvestres cosechados durante las primeras lluvias, terminada con una reduccion de madera carbonizada.",
         "origin": "Lomerio Alto",

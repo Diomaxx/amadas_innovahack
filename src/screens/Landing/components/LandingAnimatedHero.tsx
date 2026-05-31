@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Sparkle, Leaf, MapPin, Sprout } from "lucide-react";
+import { Leaf, MapPin, Sprout } from "lucide-react";
 import { landingMotion } from "./landingMotion";
 
 type LandingAnimatedHeroProps = {
@@ -54,16 +54,6 @@ export default function LandingAnimatedHero({
       />
 
       <div className="relative z-10 flex h-full flex-col items-center justify-center overflow-y-auto px-6 py-6 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 14 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.4, ease: EASE }}
-          className="inline-flex items-center gap-2 rounded-full border border-cv-gold-400/40 bg-white/5 px-4 py-1.5 text-[0.7rem] font-semibold uppercase tracking-[0.24em] text-cv-gold-300 backdrop-blur"
-        >
-          <Sparkle className="h-3.5 w-3.5" />
-          mati
-        </motion.p>
-
         <h1 className="font-display mt-6 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight text-white md:text-8xl [@media(max-height:760px)]:mt-3 [@media(max-height:760px)]:text-4xl [@media(max-height:760px)]:md:text-6xl">
           <motion.span
             initial="hidden"

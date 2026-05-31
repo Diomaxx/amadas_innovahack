@@ -1,6 +1,6 @@
 "use client";
 
-import { Pencil, Trash2, CalendarDays, Sprout } from "lucide-react";
+import { Pencil, Trash2, CalendarDays } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { ProductoTemporada } from "../temporada.types";
 import { ESTADO_VISUAL, formatCiclo, mesesToCiclos } from "../temporada.data";
@@ -17,18 +17,6 @@ export function TemporadaCard({ producto, onEditar, onEliminar }: Props) {
 
   return (
     <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-cv-cream-300 bg-white shadow-sm transition-shadow hover:shadow-md">
-      {/* Imagen / placeholder */}
-      <div className="relative h-28 overflow-hidden bg-cv-cream-100">
-        {producto.imageSrc ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={producto.imageSrc} alt={producto.nombre} className="h-full w-full object-cover" />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center">
-            <Sprout className="h-9 w-9 text-cv-green-300" />
-          </div>
-        )}
-      </div>
-
       <div className="flex flex-1 flex-col p-5">
         {/* Nombre + estado */}
         <div className="flex items-start justify-between gap-2">

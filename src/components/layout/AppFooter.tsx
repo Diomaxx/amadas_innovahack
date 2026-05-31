@@ -11,11 +11,27 @@ import {
 } from "@/components/UI/BrandIcons";
 
 const footerLinks = [
-  { href: "#", label: "Facebook", Icon: FacebookIcon },
-  { href: "#", label: "X", Icon: XIcon },
-  { href: "#", label: "Instagram", Icon: InstagramIcon },
-  { href: "#", label: "LinkedIn", Icon: LinkedinIcon },
-  { href: "#", label: "YouTube", Icon: YoutubeIcon },
+  {
+    href: "https://www.facebook.com/FundacionAmigosdelaNaturaleza/",
+    label: "Facebook",
+    Icon: FacebookIcon,
+  },
+  { href: "https://twitter.com/FAN_Bolivia/", label: "X", Icon: XIcon },
+  {
+    href: "https://www.instagram.com/fanbolivia/",
+    label: "Instagram",
+    Icon: InstagramIcon,
+  },
+  {
+    href: "https://www.linkedin.com/company/fundaci-n-amigos-de-la-naturaleza/",
+    label: "LinkedIn",
+    Icon: LinkedinIcon,
+  },
+  {
+    href: "https://www.youtube.com/@FANBOLIVIA",
+    label: "YouTube",
+    Icon: YoutubeIcon,
+  },
 ];
 
 export function AppFooter() {
@@ -47,6 +63,8 @@ export function AppFooter() {
               <Link
                 key={label}
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={label}
                 className="grid h-10 w-10 place-items-center rounded-full border border-cv-green-400/60 bg-cv-green-500/30 transition duration-300 hover:-translate-y-0.5 hover:border-cv-gold-400 hover:bg-cv-gold-400 hover:text-cv-green-900"
               >
