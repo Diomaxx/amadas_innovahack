@@ -3,13 +3,13 @@
 import { BarChart3, Leaf } from "lucide-react";
 
 interface Props {
-  precioPromedio: string;
+  intercambiosMes: string;
   demandaProcesamiento: string;
   indiceRegional: string;
 }
 
 export function MarketStabilityCard({
-  precioPromedio,
+  intercambiosMes,
   demandaProcesamiento,
   indiceRegional,
 }: Props) {
@@ -31,8 +31,8 @@ export function MarketStabilityCard({
 
       <div className="mt-4 grid grid-cols-1 gap-4 sm:mt-6 sm:grid-cols-3 sm:gap-8">
         <div>
-          <p className="text-[10px] text-cv-gray-500 sm:text-xs">Precio Promedio Almendra Chiquitana</p>
-          <p className="mt-1 text-base font-bold text-cv-gold-600 sm:text-xl">{precioPromedio}</p>
+          <p className="text-[10px] text-cv-gray-500 sm:text-xs">Intercambios este Mes</p>
+          <p className="mt-1 text-base font-bold text-cv-green-900 sm:text-xl">{intercambiosMes}</p>
         </div>
         <div>
           <p className="text-[10px] text-cv-gray-500 sm:text-xs">Demanda de Procesamiento</p>

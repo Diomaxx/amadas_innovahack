@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CalendarDays, ShieldCheck, UtensilsCrossed } from "lucide-react";
 
 const FEATURES = [
-  { Icon: CalendarDays, label: "mati de temporadas" },
+  { Icon: CalendarDays, label: "Calendario de temporadas" },
   { Icon: UtensilsCrossed, label: "Productos y recetas del bosque" },
   { Icon: ShieldCheck, label: "Información revisada por FAN" },
 ];

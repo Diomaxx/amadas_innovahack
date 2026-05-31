@@ -99,7 +99,7 @@ export default function IntercambioPage() {
         {/* Market Stability Card */}
         <motion.div variants={staggerItem} className="mb-4 sm:mb-6">
           <MarketStabilityCard
-            precioPromedio={intercambioData.marketplace.precioPromedio}
+            intercambiosMes={intercambioData.marketplace.intercambiosMes}
             demandaProcesamiento={intercambioData.marketplace.demandaProcesamiento}
             indiceRegional={intercambioData.marketplace.indiceRegional}
           />

@@ -171,14 +171,9 @@ function CreationCard({ creation }: { creation: MenuCreation }) {
         />
       </div>
       <div className="space-y-3 p-5">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className={`${SERIF} text-lg font-semibold text-cv-green-900`}>
-            {creation.name}
-          </h3>
-          <span className="shrink-0 rounded-full bg-cv-gold-300/40 px-2.5 py-1 text-xs font-semibold text-cv-gold-600">
-            {creation.price}
-          </span>
-        </div>
+        <h3 className={`${SERIF} text-lg font-semibold text-cv-green-900`}>
+          {creation.name}
+        </h3>
         <p className="text-sm leading-relaxed text-cv-gray-600">
           {creation.description}
         </p>
