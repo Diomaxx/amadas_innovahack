@@ -21,3 +21,14 @@ export async function getMenus(): Promise<Menu[]> {
   await simulateFirestoreConnection();
   return sortMenusByBusinessRules(menusMock as Menu[]);
 }
+
+/** Busca un menú por su id (string desde la URL). null si no existe. */
+export async function getMenuById(id: string): Promise<Menu | null> {
+  await simulateFirestoreConnection();
+  return (menusMock as Menu[]).find((menu) => menu.id === id) ?? null;
+}
+
+/** Ids disponibles para `generateStaticParams` (sin simular red). */
+export function getMenuIds(): string[] {
+  return (menusMock as Menu[]).map((menu) => menu.id);
+}

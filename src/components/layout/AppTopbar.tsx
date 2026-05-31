@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, CircleUserRound, LayoutDashboard, Leaf, LogOut, User } from "lucide-react";
+import { ChevronDown, CircleUserRound, LayoutDashboard, LogOut, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 import { logout } from "@/lib/firebase/auth";
@@ -56,8 +57,16 @@ export function AppTopbar() {
     <header className="sticky top-0 z-30 border-b border-cv-cream-300/70 bg-cv-cream-50/85 shadow-[0_8px_18px_-16px_rgba(20,41,31,0.45)] backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-2.5">
-          <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cv-green-800 text-cv-cream-50 ring-1 ring-cv-gold-400/40 transition-transform duration-300 group-hover:-rotate-6">
-            <Leaf className="h-5 w-5" />
+          <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-cv-green-800/95 ring-1 ring-cv-gold-400/40 shadow-[0_10px_20px_-12px_rgba(20,41,31,0.55)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:shadow-[0_14px_28px_-12px_rgba(20,41,31,0.65)]">
+            <Image
+              src="/logo.png"
+              alt="RespiraLAra Vivo"
+              fill
+              sizes="44px"
+              className="object-cover"
+              priority
+            />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-70" />
           </span>
           <span className="font-display text-2xl font-semibold leading-none tracking-tight text-cv-green-900">
             RespiraLAra <span className="text-cv-gold-600">Vivo</span>
@@ -96,7 +105,12 @@ export function AppTopbar() {
             ))}
           </nav>
 
-          <ProductSearch />
+          <div className="md:hidden">
+            <ProductSearch mode="mobile" />
+          </div>
+          <div className="hidden md:block">
+            <ProductSearch />
+          </div>
         </div>
 
         <div ref={menuRef} className="relative">

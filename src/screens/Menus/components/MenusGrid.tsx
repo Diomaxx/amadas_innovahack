@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import type { Menu } from "../menus.types";
 
@@ -22,7 +23,10 @@ function MenuTags({ tags }: { tags: string[] }) {
 
 function MenuCard({ menu }: { menu: Menu }) {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-cv-cream-300 bg-card transition hover:-translate-y-1 hover:shadow-lg hover:shadow-cv-green-900/10">
+    <Link
+      href={`/menus/${menu.id}`}
+      className="group block overflow-hidden rounded-2xl border border-cv-cream-300 bg-card transition hover:-translate-y-1 hover:shadow-lg hover:shadow-cv-green-900/10"
+    >
       <div className="h-48 overflow-hidden">
         <img
           src={menu.coverImage}
@@ -42,15 +46,12 @@ function MenuCard({ menu }: { menu: Menu }) {
 
         <MenuTags tags={menu.tags} />
 
-        <a
-          href="#"
-          className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-cv-green-700 underline-offset-4 hover:underline"
-        >
+        <span className="inline-flex items-center gap-1.5 text-sm font-medium text-cv-green-700 underline-offset-4 group-hover:underline">
           Explorar menú
-          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
-        </a>
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+        </span>
       </div>
-    </article>
+    </Link>
   );
 }
 

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Menu } from "../menus.types";
 
 type MenusHeroProps = {
@@ -42,7 +43,10 @@ type FeaturedMenuCardProps = {
 
 export function FeaturedMenuCard({ menu }: FeaturedMenuCardProps) {
   return (
-    <article className="group overflow-hidden rounded-3xl border border-cv-green-200 bg-card shadow-lg shadow-cv-green-900/10 transition duration-300 hover:-translate-y-1 hover:border-cv-green-300 hover:shadow-xl hover:shadow-cv-green-900/15">
+    <Link
+      href={`/menus/${menu.id}`}
+      className="group block overflow-hidden rounded-3xl border border-cv-green-200 bg-card shadow-lg shadow-cv-green-900/10 transition duration-300 hover:-translate-y-1 hover:border-cv-green-300 hover:shadow-xl hover:shadow-cv-green-900/15"
+    >
       <div className="relative h-72 overflow-hidden">
         <img
           src={menu.coverImage}
@@ -68,7 +72,7 @@ export function FeaturedMenuCard({ menu }: FeaturedMenuCardProps) {
           <TagsRow tags={menu.tags} />
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
 
@@ -78,7 +82,10 @@ type SideMenuCardProps = {
 
 export function SideMenuCard({ menu }: SideMenuCardProps) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cv-cream-300 bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cv-green-300 hover:shadow-lg hover:shadow-cv-green-900/10">
+    <Link
+      href={`/menus/${menu.id}`}
+      className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cv-cream-300 bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cv-green-300 hover:shadow-lg hover:shadow-cv-green-900/10"
+    >
       <div className="h-64 overflow-hidden">
         <img
           src={menu.coverImage}
@@ -96,6 +103,6 @@ export function SideMenuCard({ menu }: SideMenuCardProps) {
           <TagsRow tags={menu.tags} />
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

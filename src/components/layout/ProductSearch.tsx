@@ -16,7 +16,11 @@ import { buscarCatalogo } from "@/screens/Catalogo/catalogo.data";
  * "Buscar productos..."; al hacer clic se estira sobre los tabs y abre el
  * panel de resultados. Sigue el patrón ARIA 1.2 combobox.
  */
-export function ProductSearch() {
+type ProductSearchProps = {
+  mode?: "desktop" | "mobile";
+};
+
+export function ProductSearch({ mode = "desktop" }: ProductSearchProps) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
@@ -28,11 +32,6 @@ export function ProductSearch() {
   const listboxId = useId();
 
   const results = useMemo(() => buscarCatalogo(query), [query]);
-
-  // Reinicia el resaltado cuando cambian los resultados.
-  useEffect(() => {
-    setActiveIndex(results.length > 0 ? 0 : -1);
-  }, [results]);
 
   // Enfoca el input al abrir.
   useEffect(() => {
@@ -70,8 +69,8 @@ export function ProductSearch() {
       event.preventDefault();
       setActiveIndex((i) => Math.max(i - 1, 0));
     } else if (event.key === "Enter") {
-      if (activeIndex > -1 && results[activeIndex]) {
-        goTo(results[activeIndex].id);
+      if (normalizedActiveIndex > -1 && results[normalizedActiveIndex]) {
+        goTo(results[normalizedActiveIndex].id);
       }
     } else if (event.key === "Escape") {
       event.preventDefault();
@@ -80,93 +79,111 @@ export function ProductSearch() {
   }
 
   const showPanel = open && query.trim().length > 0;
+  const isMobile = mode === "mobile";
+  const showMobileSheet = isMobile && open;
+  const normalizedActiveIndex =
+    results.length === 0 ? -1 : activeIndex < 0 ? 0 : Math.min(activeIndex, results.length - 1);
 
   return (
-    <>
+    <div ref={wrapperRef}>
       {/* Píldora única: en reposo va en el flujo (a la derecha, sin tapar los
           tabs); al abrir pasa a capa absoluta que se extiende hasta "Inicio".
           `layout` (FLIP) anima el cambio de ancho/posición suavemente. */}
       <motion.div
-        ref={wrapperRef}
         layout
         transition={{ type: "spring", stiffness: 380, damping: 34 }}
-        style={{ width: open ? undefined : 210 }}
+        style={{ width: open ? undefined : isMobile ? undefined : 320 }}
         onLayoutAnimationStart={() => setAnimating(true)}
         onLayoutAnimationComplete={() => setAnimating(false)}
         className={cn(
           "max-w-full",
-          open
-            ? "absolute inset-y-0 left-0 right-0 z-40 my-auto h-fit"
-            : "relative ml-auto",
+          isMobile
+            ? "relative ml-auto"
+            : open
+              ? "absolute inset-y-0 left-0 right-0 z-40 my-auto h-fit"
+              : "relative ml-auto",
         )}
       >
-        <div
-          onClick={() => !open && setOpen(true)}
-          className={cn(
-            "relative flex items-center gap-2 overflow-hidden rounded-full border bg-white px-3 py-2 transition-colors",
-            open
-              ? "border-cv-green-300 shadow-sm ring-2 ring-cv-green-100"
-              : "cursor-pointer border-cv-cream-300 text-cv-gray-500 hover:border-cv-green-300 hover:text-cv-green-700",
-          )}
-        >
-          <Search
+        {isMobile ? (
+          <button
+            type="button"
+            aria-label="Abrir buscador"
+            onClick={() => setOpen((prev) => !prev)}
             className={cn(
-              "h-4 w-4 shrink-0",
-              open ? "text-cv-green-600" : "text-current",
+              "grid h-10 w-10 place-items-center rounded-full border bg-white transition-colors",
+              open
+                ? "border-cv-green-300 text-cv-green-700 shadow-sm ring-2 ring-cv-green-100"
+                : "border-cv-cream-300 text-cv-gray-500 hover:border-cv-green-300 hover:text-cv-green-700",
             )}
-          />
-          <input
-            ref={inputRef}
-            type="text"
-            role="combobox"
-            aria-expanded={showPanel}
-            aria-controls={listboxId}
-            aria-autocomplete="list"
-            aria-activedescendant={
-              showPanel && activeIndex > -1
-                ? `${listboxId}-opt-${activeIndex}`
-                : undefined
-            }
-            aria-label="Buscar productos del catálogo"
-            value={query}
-            readOnly={!open}
-            onFocus={() => setOpen(true)}
-            onChange={(e) => setQuery(e.target.value)}
-            onKeyDown={handleKeyDown}
+          >
+            {open ? <X className="h-4 w-4" /> : <Search className="h-4 w-4" />}
+          </button>
+        ) : (
+          <div
+            onClick={() => !open && setOpen(true)}
             className={cn(
-              "peer w-full min-w-0 truncate bg-transparent text-sm outline-none",
-              open ? "cursor-text text-cv-gray-900" : "cursor-pointer",
+              "relative flex items-center gap-2 overflow-hidden rounded-full border bg-white px-3 py-2 transition-colors",
+              open
+                ? "border-cv-green-300 shadow-sm ring-2 ring-cv-green-100"
+                : "cursor-pointer border-cv-cream-300 text-cv-gray-500 hover:border-cv-green-300 hover:text-cv-green-700",
             )}
-          />
-          {/* Placeholder propio: desaparece al instante cuando arranca la
-              animación de ancho (el placeholder nativo se deforma con el scale
-              del `layout`) y reaparece con fade-in al terminar. */}
-          {!animating && !query && (
-            <motion.span
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.25, ease: "easeOut" }}
-              aria-hidden
-              className="pointer-events-none absolute left-10 truncate text-sm text-cv-gray-400"
-            >
-              Buscar productos...
-            </motion.span>
-          )}
-          {open && (
-            <button
-              type="button"
-              aria-label="Cerrar buscador"
-              onClick={close}
-              className="shrink-0 rounded-full p-1 text-cv-gray-400 transition-colors hover:bg-cv-cream-100 hover:text-cv-gray-600"
-            >
-              <X className="h-4 w-4" />
-            </button>
-          )}
-        </div>
+          >
+            <Search
+              className={cn(
+                "h-4 w-4 shrink-0",
+                open ? "text-cv-green-600" : "text-current",
+              )}
+            />
+            <input
+              ref={inputRef}
+              type="text"
+              role="combobox"
+              aria-expanded={showPanel}
+              aria-controls={listboxId}
+              aria-autocomplete="list"
+              aria-activedescendant={
+                showPanel && normalizedActiveIndex > -1
+                  ? `${listboxId}-opt-${normalizedActiveIndex}`
+                  : undefined
+              }
+              aria-label="Buscar productos del catálogo"
+              value={query}
+              readOnly={!open}
+              onFocus={() => setOpen(true)}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={handleKeyDown}
+              className={cn(
+                "peer w-full min-w-0 truncate bg-transparent text-sm outline-none",
+                open ? "cursor-text text-cv-gray-900" : "cursor-pointer",
+              )}
+            />
+            {!animating && !query && (
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.25, ease: "easeOut" }}
+                aria-hidden
+                className="pointer-events-none absolute left-10 truncate text-sm text-cv-gray-400"
+              >
+                Buscar productos...
+              </motion.span>
+            )}
+            {open && (
+              <button
+                type="button"
+                aria-label="Cerrar buscador"
+                onClick={close}
+                className="shrink-0 rounded-full p-1 text-cv-gray-400 transition-colors hover:bg-cv-cream-100 hover:text-cv-gray-600"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+        )}
 
         {/* Panel de resultados */}
         <AnimatePresence>
-          {showPanel && (
+          {!isMobile && showPanel && (
             <motion.div
               initial={{ opacity: 0, y: -6 }}
               animate={{ opacity: 1, y: 0 }}
@@ -181,7 +198,7 @@ export function ProductSearch() {
                   className="max-h-96 overflow-y-auto p-2"
                 >
                   {results.map((item, index) => {
-                    const active = index === activeIndex;
+                    const active = index === normalizedActiveIndex;
                     return (
                       <li
                         key={item.id}
@@ -236,7 +253,7 @@ export function ProductSearch() {
                   <p className="text-sm text-cv-gray-500">
                     No se encontraron productos para{" "}
                     <span className="font-medium text-cv-gray-700">
-                      “{query}”
+                      &ldquo;{query}&rdquo;
                     </span>
                   </p>
                 </div>
@@ -245,6 +262,126 @@ export function ProductSearch() {
           )}
         </AnimatePresence>
       </motion.div>
-    </>
+
+      <AnimatePresence>
+        {showMobileSheet && (
+          <motion.div
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            transition={{ duration: 0.16 }}
+            className="pointer-events-none fixed inset-x-0 top-20 z-50 px-4 pt-3 md:hidden"
+          >
+            <div className="pointer-events-auto mx-auto w-full max-w-6xl sm:px-2">
+              <div className="relative flex items-center gap-2 overflow-hidden rounded-full border border-cv-green-300 bg-white px-3 py-2 shadow-[0_14px_26px_-18px_rgba(20,41,31,0.45)] ring-2 ring-cv-green-100">
+                <Search className="h-4 w-4 shrink-0 text-cv-green-600" />
+                <input
+                  ref={inputRef}
+                  type="text"
+                  role="combobox"
+                  aria-expanded={showPanel}
+                  aria-controls={listboxId}
+                  aria-autocomplete="list"
+                  aria-activedescendant={
+                    showPanel && normalizedActiveIndex > -1
+                      ? `${listboxId}-opt-${normalizedActiveIndex}`
+                      : undefined
+                  }
+                  aria-label="Buscar productos del catálogo"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  onKeyDown={handleKeyDown}
+                  className="w-full min-w-0 bg-transparent text-sm text-cv-gray-900 outline-none"
+                />
+                <button
+                  type="button"
+                  aria-label="Cerrar buscador"
+                  onClick={close}
+                  className="shrink-0 rounded-full p-1 text-cv-gray-400 transition-colors hover:bg-cv-cream-100 hover:text-cv-gray-600"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              </div>
+
+              <AnimatePresence>
+                {showPanel && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -6 }}
+                    transition={{ duration: 0.18 }}
+                    className="mt-2 overflow-hidden rounded-2xl border border-cv-cream-300 bg-white shadow-xl shadow-cv-green-900/10"
+                  >
+                    {results.length > 0 ? (
+                      <ul
+                        role="listbox"
+                        id={listboxId}
+                        className="max-h-96 overflow-y-auto p-2"
+                      >
+                        {results.map((item, index) => {
+                          const active = index === normalizedActiveIndex;
+                          return (
+                            <li
+                              key={item.id}
+                              id={`${listboxId}-opt-${index}`}
+                              role="option"
+                              aria-selected={active}
+                              onMouseEnter={() => setActiveIndex(index)}
+                              onClick={() => goTo(item.id)}
+                              className={cn(
+                                "flex cursor-pointer items-center gap-3 rounded-xl p-2 transition-colors",
+                                active ? "bg-cv-green-50" : "hover:bg-cv-cream-100",
+                              )}
+                            >
+                              <div className="relative flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-cv-cream-100">
+                                {item.imageSrc ? (
+                                  <Image
+                                    src={item.imageSrc}
+                                    alt={item.nombre}
+                                    fill
+                                    className="object-cover"
+                                    sizes="44px"
+                                  />
+                                ) : (
+                                  <Leaf className="h-5 w-5 text-cv-green-400" />
+                                )}
+                              </div>
+
+                              <div className="min-w-0 flex-1">
+                                <p className="truncate text-sm font-semibold text-cv-gray-900">
+                                  {item.nombre}
+                                </p>
+                                <p className="truncate text-xs italic text-cv-gray-500">
+                                  {item.nombreCientifico}
+                                </p>
+                              </div>
+
+                              <span className="shrink-0 rounded-full bg-cv-cream-100 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-cv-gray-500">
+                                {item.categoria}
+                              </span>
+
+                              {active && (
+                                <CornerDownLeft className="h-3.5 w-3.5 shrink-0 text-cv-green-500" />
+                              )}
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    ) : (
+                      <div className="px-4 py-8 text-center">
+                        <p className="text-sm text-cv-gray-500">
+                          No se encontraron productos para{" "}
+                          <span className="font-medium text-cv-gray-700">&ldquo;{query}&rdquo;</span>
+                        </p>
+                      </div>
+                    )}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

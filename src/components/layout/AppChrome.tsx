@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { AppFooter } from "./AppFooter";
+import { AppMobileNav } from "./AppMobileNav";
 import { AppTopbar } from "./AppTopbar";
 
 /**
@@ -25,10 +26,13 @@ export function AppChrome({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col">
       <AppTopbar />
-      <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 sm:px-6 lg:px-8">
+      <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-28 pt-6 sm:px-6 md:py-8 lg:px-8">
         {children}
       </main>
-      <AppFooter />
+      <div className="hidden md:block">
+        <AppFooter />
+      </div>
+      <AppMobileNav />
     </div>
   );
 }

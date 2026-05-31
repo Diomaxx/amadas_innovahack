@@ -24,6 +24,11 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   title: "AMADAS",
   description: "Dashboard con Firebase Authentication y Firestore",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
 };
 
 export default function RootLayout({
