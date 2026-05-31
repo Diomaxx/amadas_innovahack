@@ -1,0 +1,87 @@
+{
+  "intercambios": [
+    {
+      "id": "1",
+      "titulo": "Tengo: 50kg Semillas de Motacú",
+      "tipo": "RAW_MATERIAL",
+      "estado": "En Temporada",
+      "busca": "Servicios de prensado para aceite o venta directa para procesamiento cosmético.",
+      "rango": "Bs. 350 - 420 / Lote",
+      "productor": "Asoc. Mujeres Roboré",
+      "rolProductor": "Vendedor verificado",
+      "ubicacion": "San José de Chiquitos",
+      "categoria": "Semillas y Frutos",
+      "accion": "Proponer Trato"
+    },
+    {
+      "id": "2",
+      "titulo": "Tengo: Capacidad de Prensado (100kg/día)",
+      "tipo": "SERVICIOS",
+      "estado": "Disponible",
+      "busca": "Materia prima (Almendra o Cusi) a cambio de un porcentaje del aceite final o pago por servicio.",
+      "rango": "Bs. 12 / kg procesado",
+      "productor": "Cooperativa Forestal Concepción",
+      "rolProductor": "Socio estratégico",
+      "ubicacion": "Concepción",
+      "categoria": "Servicios",
+      "accion": "Enviar Consulta"
+    },
+    {
+      "id": "3",
+      "titulo": "Busco: Miel de Melipona Premium",
+      "tipo": "RAW_MATERIAL",
+      "estado": "En Temporada",
+      "busca": "500kg de miel de abeja nativa para procesamiento industrial. Requiero certificación de pureza.",
+      "rango": "Bs. 180 - 220 / kg",
+      "productor": "Agroindustrial Chiquitana",
+      "rolProductor": "Vendedor verificado",
+      "ubicacion": "Santa Cruz",
+      "categoria": "Mieles",
+      "accion": "Proponer Trato"
+    },
+    {
+      "id": "4",
+      "titulo": "Tengo: 200kg Asaí Fresco",
+      "tipo": "RAW_MATERIAL",
+      "estado": "En Temporada",
+      "busca": "Transporte refrigerado a la ciudad o transformación en pulpa congelada.",
+      "rango": "Bs. 280 - 350 / kg",
+      "productor": "Comunidad Indígena Sirionó",
+      "rolProductor": "Vendedor verificado",
+      "ubicacion": "Beni",
+      "categoria": "Frutas",
+      "accion": "Enviar Consulta"
+    },
+    {
+      "id": "5",
+      "titulo": "Busco: Acopio de Castañas",
+      "tipo": "SERVICIOS",
+      "estado": "Disponible",
+      "busca": "Volumen de 5 toneladas mensuales de castañas clasificadas y secas. Contrato anual.",
+      "rango": "Bs. 45 / kg",
+      "productor": "Exportadora Nutri-Bosque",
+      "rolProductor": "Socio estratégico",
+      "ubicacion": "San Ignacio",
+      "categoria": "Nueces y Semillas",
+      "accion": "Proponer Trato"
+    },
+    {
+      "id": "6",
+      "titulo": "Tengo: Asesoramiento en Certificación Orgánica",
+      "tipo": "SERVICIOS",
+      "estado": "Disponible",
+      "busca": "Acompañamiento integral en procesos de certificación orgánica y comercio justo.",
+      "rango": "Bs. 8000 - 12000 / proyecto",
+      "productor": "Instituto de Sustentabilidad",
+      "rolProductor": "Socio estratégico",
+      "ubicacion": "Santa Cruz",
+      "categoria": "Servicios",
+      "accion": "Enviar Consulta"
+    }
+  ],
+  "marketplace": {
+    "precioPromedio": "Bs. 45.00 / kg",
+    "demandaProcesamiento": "Alta (Aceites)",
+    "indiceRegional": "98%"
+  }
+}
