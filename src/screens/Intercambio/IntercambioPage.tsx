@@ -10,6 +10,7 @@ import { IntercambioCard } from "./components/IntercambioCard";
 import { MarketStabilityCard } from "./components/MarketStabilityCard";
 import { ProtectionCard } from "./components/ProtectionCard";
 import { IntercambioSkeleton } from "./components/IntercambioSkeleton";
+import { ProponerTratoModal } from "./components/ProponerTratoModal";
 import { pageTransition, staggerContainer, staggerItem } from "./components/intercambioAnimations";
 
 import intercambioData from "@/mocks/intercambioData.json";
@@ -37,6 +38,7 @@ export default function IntercambioPage() {
     tipoServicio: [],
   });
   const [isLoading, setIsLoading] = useState(true);
+  const [selectedIntercambio, setSelectedIntercambio] = useState<Intercambio | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -145,7 +147,9 @@ export default function IntercambioPage() {
                       <IntercambioCard
                         {...intercambio}
                         onAccion={() => {
-                          console.log(`${intercambio.accion} para: ${intercambio.titulo}`);
+                          if (intercambio.accion === "Proponer Trato") {
+                            setSelectedIntercambio(intercambio);
+                          }
                         }}
                       />
                     </motion.div>
@@ -179,6 +183,24 @@ export default function IntercambioPage() {
           </motion.div>
         </div>
       </motion.div>
+
+      {/* Modal para proponer trato */}
+      {selectedIntercambio && (
+        <ProponerTratoModal
+          titulo={`Proponer Trato - ${selectedIntercambio.titulo}`}
+          open={!!selectedIntercambio}
+          onOpenChange={(open) => {
+            if (!open) {
+              setSelectedIntercambio(null);
+            }
+          }}
+          onSubmit={async (data) => {
+            console.log("Propuesta enviada para:", selectedIntercambio.titulo, data);
+            // Aquí puedes hacer la llamada a la API
+            setSelectedIntercambio(null);
+          }}
+        />
+      )}
     </motion.div>
   );
 }
