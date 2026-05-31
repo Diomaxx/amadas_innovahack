@@ -27,8 +27,8 @@ const STATS = [
     label: "PENDIENTES DE APROBACIÓN",
     value: pendientesCount,
     sublabel: "Publicaciones por revisar",
-    iconBg: "#fff7ed",
-    iconColor: "#ea580c",
+    iconBg: "#F2E6DA",
+    iconColor: "#B06A3F",
     alert: true,
   },
   {
@@ -38,8 +38,8 @@ const STATS = [
     value: 124,
     trend: "+5 este mes",
     trendUp: true,
-    iconBg: "#dcfce7",
-    iconColor: "#166534",
+    iconBg: "#E3F2E9",
+    iconColor: "#2D6A4A",
   },
   {
     id: "temporada",
@@ -48,8 +48,8 @@ const STATS = [
     value: enTemporadaCount,
     trend: "~2 finalizando pronto",
     trendUp: false,
-    iconBg: "#ccfbf1",
-    iconColor: "#0d9488",
+    iconBg: "#DCEBE6",
+    iconColor: "#3E7C71",
   },
   {
     id: "contactos",
@@ -58,8 +58,8 @@ const STATS = [
     value: contactosCount,
     trend: "+3 este mes",
     trendUp: true,
-    iconBg: "#dbeafe",
-    iconColor: "#1d4ed8",
+    iconBg: "#E3ECF3",
+    iconColor: "#2B6A93",
   },
   {
     id: "recetas",
@@ -68,8 +68,8 @@ const STATS = [
     value: 24,
     trend: "+3 nuevas este mes",
     trendUp: true,
-    iconBg: "#fef3c7",
-    iconColor: "#d97706",
+    iconBg: "#F0E7CF",
+    iconColor: "#9C7C3C",
   },
 ] as const;
 
@@ -83,7 +83,7 @@ export function DashboardStatsBar() {
             key={stat.id}
             className={`rounded-xl border bg-white p-4 ${
               "alert" in stat && stat.alert
-                ? "border-orange-200 bg-orange-50/40"
+                ? "border-[#E6D3C2] bg-white"
                 : "border-cv-cream-300"
             }`}
           >
@@ -113,7 +113,7 @@ export function DashboardStatsBar() {
             ) : "trend" in stat && stat.trend ? (
               <p
                 className={`mt-1.5 flex items-center gap-1 text-[11px] font-medium ${
-                  stat.trendUp ? "text-cv-green-600" : "text-orange-500"
+                  stat.trendUp ? "text-cv-green-600" : "text-[#B06A3F]"
                 }`}
               >
                 {stat.trendUp ? (

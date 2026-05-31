@@ -7,9 +7,9 @@ const STATUS_META: Record<
   StatusKey,
   { label: string; color: string; bg: string }
 > = {
-  "en-temporada": { label: "En Temporada", color: "#166534", bg: "#dcfce7" },
-  finalizando:    { label: "Finalizando",  color: "#991b1b", bg: "#fee2e2" },
-  proximamente:   { label: "Próximamente", color: "#9a3412", bg: "#ffedd5" },
+  "en-temporada": { label: "En Temporada", color: "#2D6A4A", bg: "#E3F2E9" },
+  finalizando:    { label: "Finalizando",  color: "#A6452F", bg: "#F4E4DF" },
+  proximamente:   { label: "Próximamente", color: "#9C7C3C", bg: "#F0E7CF" },
 };
 
 // Derived from temporadas.json for mayo (idx 4):

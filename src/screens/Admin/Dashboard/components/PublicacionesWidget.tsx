@@ -50,14 +50,14 @@ function PubRow({ pub }: { pub: Publicacion }) {
           <button
             type="button"
             aria-label="Aprobar"
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-green-100 text-green-600 transition-colors hover:bg-green-200"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-cv-green-100 text-cv-green-700 transition-colors hover:bg-cv-green-200"
           >
             <Check className="h-3.5 w-3.5" />
           </button>
           <button
             type="button"
             aria-label="Rechazar"
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-red-100 text-red-400 transition-colors hover:bg-red-200"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F4E4DF] text-[#C0392B] transition-colors hover:bg-[#EFD6D0]"
           >
             <X className="h-3.5 w-3.5" />
           </button>
@@ -86,7 +86,7 @@ export function PublicacionesWidget() {
         <h2 className="text-base font-bold text-cv-gray-900">
           Publicaciones Pendientes
         </h2>
-        <span className="rounded-full bg-orange-100 px-2.5 py-0.5 text-xs font-semibold text-orange-600">
+        <span className="rounded-full bg-[#F0E7CF] px-2.5 py-0.5 text-xs font-semibold text-[#9C7C3C]">
           {TOTAL_PENDIENTES} por revisar
         </span>
       </div>

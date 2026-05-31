@@ -13,19 +13,19 @@ export const ACCION_VISUAL: Record<
   TipoAccion,
   { Icon: LucideIcon; color: string; bg: string }
 > = {
-  aprobacion:  { Icon: Check,   color: "#166534", bg: "#dcfce7" },
-  rechazo:     { Icon: X,       color: "#991b1b", bg: "#fee2e2" },
-  edicion:     { Icon: Pencil,  color: "#9a3412", bg: "#ffedd5" },
-  creacion:    { Icon: Package, color: "#166534", bg: "#dcfce7" },
-  eliminacion: { Icon: Trash2,  color: "#991b1b", bg: "#fee2e2" },
-  suscripcion: { Icon: Bell,    color: "#1e3a8a", bg: "#dbeafe" },
+  aprobacion:  { Icon: Check,   color: "#2D6A4A", bg: "#E3F2E9" },
+  rechazo:     { Icon: X,       color: "#A6452F", bg: "#F4E4DF" },
+  edicion:     { Icon: Pencil,  color: "#9C7C3C", bg: "#F0E7CF" },
+  creacion:    { Icon: Package, color: "#2D6A4A", bg: "#E3F2E9" },
+  eliminacion: { Icon: Trash2,  color: "#A6452F", bg: "#F4E4DF" },
+  suscripcion: { Icon: Bell,    color: "#2B6A93", bg: "#E3ECF3" },
 };
 
 export const STATS_VISUAL = {
-  hoy:        { dot: "#22c55e", label: "HOY" },
-  asociacion: { dot: "#3b82f6", label: "ASOCIACIONES" },
-  tienda:     { dot: "#f97316", label: "TIENDAS" },
-  proveedor:  { dot: "#92400e", label: "PROVEEDORES" },
+  hoy:        { dot: "#3A7D5C", label: "HOY" },
+  asociacion: { dot: "#2980B9", label: "ASOCIACIONES" },
+  tienda:     { dot: "#B06A3F", label: "TIENDAS" },
+  proveedor:  { dot: "#8A6A3F", label: "PROVEEDORES" },
 } as const;
 
 export const ACTIVIDADES_MOCK: ActividadEntry[] = [

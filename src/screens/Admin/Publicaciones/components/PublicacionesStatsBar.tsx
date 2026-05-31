@@ -24,26 +24,22 @@ export function PublicacionesStatsBar({
         return (
           <div
             key={estado}
-            className="rounded-xl border border-transparent p-5"
-            style={{ backgroundColor: v.cardBg }}
+            className="rounded-xl border border-cv-cream-300 bg-white p-5"
           >
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2.5">
               <div
-                className="flex h-8 w-8 items-center justify-center rounded-full"
+                className="flex h-9 w-9 items-center justify-center rounded-lg"
                 style={{ backgroundColor: v.badgeBg }}
               >
                 <Icon className="h-4 w-4" style={{ color: v.countColor }} />
               </div>
-              <span
-                className="text-xs font-semibold uppercase tracking-wide"
-                style={{ color: v.countColor }}
-              >
+              <span className="text-[11px] font-semibold uppercase tracking-wider text-cv-gray-500">
                 {v.label}
               </span>
             </div>
 
             <p
-              className="mt-3 text-4xl font-bold"
+              className="mt-3 text-4xl font-bold tabular-nums"
               style={{ color: v.countColor }}
             >
               {counts[estado]}

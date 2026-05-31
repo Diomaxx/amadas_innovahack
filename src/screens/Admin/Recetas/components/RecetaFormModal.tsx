@@ -277,7 +277,7 @@ function SeccionesField({
                 <button
                   type="button"
                   onClick={() => remove(index)}
-                  className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-red-500 transition-colors hover:bg-red-50"
+                  className="inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-[#A6452F] transition-colors hover:bg-[#FBEEEB]"
                 >
                   <Trash2 className="h-3.5 w-3.5" />
                   Quitar

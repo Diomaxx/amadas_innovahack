@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpenText, Home, Users, UtensilsCrossed } from "lucide-react";
+import { BookOpenText, ChefHat, Home, Users, UtensilsCrossed } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const mobileLinks = [
   { href: "/", label: "Inicio", Icon: Home, activePaths: ["/", "/productores", "/restaurantes"] },
+  { href: "/recetas", label: "Recetas", Icon: ChefHat },
   { href: "/catalogo", label: "Catalogo", Icon: BookOpenText },
   { href: "/conexiones", label: "Conexiones", Icon: Users, activePaths: ["/conexiones", "/intercambio"] },
   { href: "/menus", label: "Menus", Icon: UtensilsCrossed },
@@ -21,7 +22,7 @@ export function AppMobileNav() {
         {mobileLinks.map((link) => {
           const isActive = link.activePaths
             ? link.activePaths.includes(pathname)
-            : pathname === link.href;
+            : pathname === link.href || pathname.startsWith(`${link.href}/`);
           const Icon = link.Icon;
 
           return (

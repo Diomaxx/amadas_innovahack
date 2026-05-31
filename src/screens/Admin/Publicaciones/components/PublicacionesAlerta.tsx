@@ -13,14 +13,14 @@ export function PublicacionesAlerta({
   return (
     <div
       className="flex items-start gap-3 rounded-xl border px-5 py-4"
-      style={{ backgroundColor: "#fffbeb", borderColor: "#fde68a" }}
+      style={{ backgroundColor: "#FBF6EA", borderColor: "#E4D4AE" }}
     >
       <AlertCircle
         className="mt-0.5 h-5 w-5 shrink-0"
-        style={{ color: "#d97706" }}
+        style={{ color: "#9C7C3C" }}
       />
       <div>
-        <p className="text-sm font-semibold" style={{ color: "#b45309" }}>
+        <p className="text-sm font-semibold" style={{ color: "#8A6A3F" }}>
           Hay {pendientes} publicacion{pendientes !== 1 ? "es" : ""} esperando
           tu revisión
         </p>

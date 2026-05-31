@@ -34,9 +34,24 @@ export function Counter({ to, className, duration = 1.8 }: CounterProps) {
     if (inView) value.set(to);
   }, [inView, to, value]);
 
+  // Reserve the final width so growing digit counts don't push the rest of
+  // the line around mid-animation. Tabular figures keep each frame stable.
+  const target = to.toLocaleString("es-BO");
+
   return (
-    <motion.span ref={ref} className={className}>
-      {display}
-    </motion.span>
+    <span
+      ref={ref}
+      className={className}
+      style={{
+        display: "inline-grid",
+        justifyItems: "end",
+        fontVariantNumeric: "tabular-nums",
+      }}
+    >
+      <span aria-hidden className="invisible" style={{ gridArea: "1 / 1" }}>
+        {target}
+      </span>
+      <motion.span style={{ gridArea: "1 / 1" }}>{display}</motion.span>
+    </span>
   );
 }

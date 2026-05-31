@@ -169,7 +169,7 @@ export function ContactoModal({ contacto }: { contacto: Contacto }) {
             <div className="px-5 py-4 sm:px-6">
               <div
                 className="rounded-lg p-4"
-                style={{ backgroundColor: "#fef9ec" }}
+                style={{ backgroundColor: "#FBF6EA" }}
               >
                 <p
                   className="flex items-center gap-1.5 text-sm font-semibold"

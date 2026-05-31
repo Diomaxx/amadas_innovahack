@@ -8,7 +8,6 @@ export const ESTADO_VISUAL: Record<
     label: string;
     badgeColor: string;
     badgeBg: string;
-    cardBg: string;
     countColor: string;
     subtexto: string;
   }
@@ -16,28 +15,25 @@ export const ESTADO_VISUAL: Record<
   pendiente: {
     Icon: Clock,
     label: "SOLICITUDES PENDIENTES",
-    badgeColor: "#9a3412",
-    badgeBg: "#ffedd5",
-    cardBg: "#fff7ed",
-    countColor: "#ea580c",
+    badgeColor: "#9C7C3C",
+    badgeBg: "#F0E7CF",
+    countColor: "#9C7C3C",
     subtexto: "publicaciones esperando aprobación",
   },
   aprobado: {
     Icon: Check,
     label: "APROBADOS",
-    badgeColor: "#166534",
-    badgeBg: "#dcfce7",
-    cardBg: "#f0fdf4",
-    countColor: "#16a34a",
+    badgeColor: "#2D6A4A",
+    badgeBg: "#E3F2E9",
+    countColor: "#3A7D5C",
     subtexto: "publicadas en la plataforma",
   },
   rechazado: {
     Icon: X,
     label: "RECHAZADOS",
-    badgeColor: "#991b1b",
-    badgeBg: "#fee2e2",
-    cardBg: "#fef2f2",
-    countColor: "#dc2626",
+    badgeColor: "#A6452F",
+    badgeBg: "#F4E4DF",
+    countColor: "#C0392B",
     subtexto: "no publicadas",
   },
 };
@@ -53,7 +49,8 @@ export const PUBLICACIONES_MOCK: Publicacion[] = [
     producto: "Asaí",
     organizacion: "Asociación de Productores del Bosque",
     estado: "pendiente",
-    imagen: "https://picsum.photos/seed/asai2026/600/320",
+    imagen:
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780226177/asa%C3%AD_fresco_de_palmeras_nativas_cosecha_mayo_2026_cgvth9.jpg",
     autor: "Ana López",
     ubicacion: "San Miguel",
     fecha: "2026-05-27",
@@ -68,7 +65,8 @@ export const PUBLICACIONES_MOCK: Publicacion[] = [
     producto: "Totaí",
     organizacion: "Comunidad Indígena Turubó",
     estado: "pendiente",
-    imagen: "https://picsum.photos/seed/totai2026/600/320",
+    imagen:
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780226155/aceite_tota%C3%AD_u2xbfz.jpg",
     autor: "Jorge Mendoza",
     ubicacion: "San Ignacio de Velasco",
     fecha: "2026-05-26",
@@ -83,7 +81,8 @@ export const PUBLICACIONES_MOCK: Publicacion[] = [
     producto: "Pitón",
     organizacion: "Asociación de Productores del Bosque",
     estado: "pendiente",
-    imagen: "https://picsum.photos/seed/piton2026/600/320",
+    imagen:
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780226246/piton_silvestre_p5rclc.jpg",
     autor: "María Fernández",
     ubicacion: "San Ignacio de Velasco",
     fecha: "2026-05-25",
@@ -98,7 +97,8 @@ export const PUBLICACIONES_MOCK: Publicacion[] = [
     producto: "Motacú",
     organizacion: "Comunidad Agroforestal El Motacú",
     estado: "pendiente",
-    imagen: "https://picsum.photos/seed/motacu2026/600/320",
+    imagen:
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780226205/motac%C3%BAfrutos_frescos_mfdxpj.jpg",
     autor: "Carlos Gutiérrez",
     ubicacion: "Concepción",
     fecha: "2026-05-24",
@@ -113,7 +113,8 @@ export const PUBLICACIONES_MOCK: Publicacion[] = [
     producto: "Paja cedrón",
     organizacion: "Finca Agroecológica Vásquez",
     estado: "pendiente",
-    imagen: "https://picsum.photos/seed/cedron2026/600/320",
+    imagen:
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780226229/Paja_cedr%C3%B3n_seco_cosecha_de_mayo_ciclo_h%C3%BAmedo_xnsad4.jpg",
     autor: "Ana Luz Vásquez",
     ubicacion: "San Javier",
     fecha: "2026-05-23",

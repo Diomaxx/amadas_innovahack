@@ -62,7 +62,7 @@ function CicloManager({
             <button
               type="button"
               onClick={() => eliminar(i)}
-              className="invisible rounded p-0.5 text-cv-gray-300 hover:text-red-400 group-hover:visible"
+              className="invisible rounded p-0.5 text-cv-gray-300 hover:text-[#A6452F] group-hover:visible"
             >
               <Trash2 className="h-3 w-3" />
             </button>
@@ -366,7 +366,7 @@ export function PublicacionDetalleModal({ pub }: { pub: Publicacion }) {
               <DialogPrimitive.Close asChild>
                 <button
                   type="button"
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-red-200 bg-white px-4 py-2 text-sm font-medium text-red-600 transition-colors hover:bg-red-50"
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-[#E4C9C2] bg-white px-4 py-2 text-sm font-medium text-[#A6452F] transition-colors hover:bg-[#FBEEEB]"
                 >
                   <X className="h-4 w-4" />
                   Rechazar

@@ -30,9 +30,9 @@ export function EnlaceNotificacion({ visible, onClose }: EnlaceNotificacionProps
         >
           <div
             className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full"
-            style={{ backgroundColor: "#dcfce7" }}
+            style={{ backgroundColor: "#E3F2E9" }}
           >
-            <CheckCircle className="h-5 w-5" style={{ color: "#22c55e" }} />
+            <CheckCircle className="h-5 w-5" style={{ color: "#3A7D5C" }} />
           </div>
           <div className="min-w-0">
             <p className="font-semibold text-cv-gray-900">¡Enlace copiado!</p>

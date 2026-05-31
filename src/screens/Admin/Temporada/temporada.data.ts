@@ -44,8 +44,8 @@ export const ESTADOS: EstadoTemporada[] = [
 /** Estilos (chip) por estado de temporada. */
 export const ESTADO_VISUAL: Record<string, string> = {
   "En temporada": "bg-cv-green-100 text-cv-green-800",
-  "Próximamente": "bg-amber-100 text-amber-700",
-  "Finalizando": "bg-rose-100 text-rose-700",
+  "Próximamente": "bg-[#F0E7CF] text-[#9C7C3C]",
+  "Finalizando": "bg-[#F4E4DF] text-[#A6452F]",
   "Fuera de temporada": "bg-cv-gray-100 text-cv-gray-600",
 };
 
