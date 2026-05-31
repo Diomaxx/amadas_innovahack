@@ -11,6 +11,8 @@ import {
   CalendarDays,
   ChefHat,
   BellOff,
+  Eye,
+  EyeOff,
   Mail,
   MessageSquareText,
   Search,
@@ -20,6 +22,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { registerWithProfile } from "@/lib/firebase/auth";
+import { StyledSelect } from "@/components/UI/StyledSelect";
 
 type StepId = 1 | 2 | 3 | 4;
 
@@ -93,6 +97,27 @@ function fieldError(value: string, label: string) {
   return value.trim() ? "" : `Completa ${label.toLowerCase()}.`;
 }
 
+/** Traduce los códigos de error de Firebase Auth durante el registro. */
+function mensajeErrorRegistro(err: unknown): string {
+  const code =
+    err && typeof err === "object" && "code" in err
+      ? String((err as { code: unknown }).code)
+      : "";
+
+  switch (code) {
+    case "auth/email-already-in-use":
+      return "Ya existe una cuenta con ese correo. Inicia sesión.";
+    case "auth/invalid-email":
+      return "El correo electrónico no es válido.";
+    case "auth/weak-password":
+      return "La contraseña es muy débil (mínimo 6 caracteres).";
+    case "auth/network-request-failed":
+      return "Sin conexión. Revisa tu internet e intenta de nuevo.";
+    default:
+      return "No se pudo completar el registro. Intenta nuevamente.";
+  }
+}
+
 function stepDelay(index: number) {
   return 0.08 + index * 0.03;
 }
@@ -100,6 +125,9 @@ function stepDelay(index: number) {
 export default function GastronomicoWizard() {
   const [step, setStep] = useState<StepId>(1);
   const [identity, setIdentity] = useState(identityDefaults);
+  const [password, setPassword] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [selectedCuisine, setSelectedCuisine] = useState<string[]>(["Cocina Salada"]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [selectedProducts, setSelectedProducts] = useState<string[]>(["almendra", "miel"]);
@@ -160,7 +188,7 @@ export default function GastronomicoWizard() {
     });
   }
 
-  function goNext() {
+  async function goNext() {
     if (step === 1) {
       const nextErrors = {
         name: fieldError(identity.name, "el nombre completo"),
@@ -168,6 +196,11 @@ export default function GastronomicoWizard() {
         contactName: fieldError(identity.contactName, "la persona de contacto"),
         phone: fieldError(identity.phone, "el teléfono"),
         email: fieldError(identity.email, "el correo electrónico profesional"),
+        password: !password.trim()
+          ? "Crea una contraseña."
+          : password.length < 6
+            ? "La contraseña debe tener al menos 6 caracteres."
+            : "",
       };
 
       const cleanErrors = Object.fromEntries(Object.entries(nextErrors).filter(([, value]) => value));
@@ -192,7 +225,34 @@ export default function GastronomicoWizard() {
       if (communication.length === 0) nextErrors.communication = "Selecciona un canal de comunicación.";
       if (alerts.length === 0) nextErrors.alerts = "Selecciona al menos una alerta.";
       setErrors(nextErrors);
-      if (Object.keys(nextErrors).length === 0) setStep(4);
+      if (Object.keys(nextErrors).length === 0) await submitRegistration();
+    }
+  }
+
+  async function submitRegistration() {
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      await registerWithProfile(identity.email, password, "restaurante", {
+        nombre: identity.name,
+        tipo: "tienda",
+        organizacion: identity.restaurant || undefined,
+        actorType: identity.actorType,
+        contactName: identity.contactName,
+        telefono: identity.phone || undefined,
+        ubicacion: identity.city || undefined,
+        productos: selectedProducts,
+        cocina: selectedCuisine,
+        categorias: selectedCategories,
+        comunicacion: communication,
+        alertas: alerts,
+      });
+      setStep(4);
+    } catch (err) {
+      setSubmitError(mensajeErrorRegistro(err));
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -248,16 +308,28 @@ export default function GastronomicoWizard() {
                         <input value={identity.restaurant} onChange={(event) => setIdentityField("restaurant", event.target.value)} placeholder="Ej. El Huerto Vivo" className={fieldInputClassName(Boolean(errors.restaurant))} />
                       </Field>
                       <Field label="Tipo de perfil *" error={errors.actorType}>
-                        <select value={identity.actorType} onChange={(event) => setIdentityField("actorType", event.target.value)} className={fieldInputClassName(Boolean(errors.actorType))}>
-                          <option value="">Selecciona una opción</option>
-                          {ACTOR_TYPES.map((option) => <option key={option} value={option}>{option}</option>)}
-                        </select>
+                        <StyledSelect value={identity.actorType} onValueChange={(value) => setIdentityField("actorType", value)} options={ACTOR_TYPES} placeholder="Selecciona una opción" error={Boolean(errors.actorType)} />
                       </Field>
                       <Field label="Ciudad *" error={errors.city}>
                         <input value={identity.city} onChange={(event) => setIdentityField("city", event.target.value)} placeholder="Ej. Barcelona" className={fieldInputClassName(Boolean(errors.city))} />
                       </Field>
                       <Field label="Correo electrónico profesional *" error={errors.email} fullWidth>
                         <input value={identity.email} onChange={(event) => setIdentityField("email", event.target.value)} placeholder="ana.garcia@restaurante.com" className={fieldInputClassName(Boolean(errors.email))} />
+                      </Field>
+                      <Field label="Contraseña *" error={errors.password} fullWidth>
+                        <PasswordField
+                          value={password}
+                          error={Boolean(errors.password)}
+                          onChange={(value) => {
+                            setPassword(value);
+                            setErrors((current) => {
+                              if (!current.password) return current;
+                              const next = { ...current };
+                              delete next.password;
+                              return next;
+                            });
+                          }}
+                        />
                       </Field>
                       <Field label="Teléfono (Opcional)" error={errors.phone} fullWidth>
                         <input value={identity.phone} onChange={(event) => setIdentityField("phone", event.target.value)} placeholder="+34 000 000 000" className={fieldInputClassName(Boolean(errors.phone))} />
@@ -452,9 +524,18 @@ export default function GastronomicoWizard() {
                       Las alertas son informativas. No compartiremos tus datos con terceros ni enviaremos publicidad comercial. Puedes cambiar estas preferencias en cualquier momento desde tu perfil.
                     </div>
 
+                    {submitError ? (
+                      <p className="mt-5 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+                        {submitError}
+                      </p>
+                    ) : null}
+
                     <div className="mt-6 flex items-center justify-between border-t border-cv-gray-200 pt-6">
                       <BackButton onClick={() => setStep(2)} />
-                      <WizardButton onClick={goNext}>Siguiente <ArrowRight className="h-4 w-4" /></WizardButton>
+                      <WizardButton onClick={goNext} disabled={isSubmitting}>
+                        {isSubmitting ? "Registrando..." : "Finalizar registro"}
+                        {isSubmitting ? null : <ArrowRight className="h-4 w-4" />}
+                      </WizardButton>
                     </div>
                   </div>
                 </div>
@@ -541,7 +622,44 @@ function ProgressLabel({ label, value, progress }: { label: string; value: strin
 }
 
 function fieldInputClassName(hasError: boolean) {
-  return cn("h-11 w-full border-0 border-b border-cv-gray-300 bg-transparent px-0 text-sm text-cv-gray-800 outline-none transition-colors placeholder:text-cv-gray-500 focus:border-cv-green-700 focus:ring-0", hasError && "border-cv-error focus:border-cv-error");
+  return cn(
+    "h-12 w-full rounded-xl border border-cv-cream-300 bg-cv-cream-50/70 px-4 text-sm text-cv-gray-800 shadow-sm outline-none transition-all duration-200 placeholder:text-cv-gray-400 hover:border-cv-green-300 focus:border-cv-green-500 focus:bg-white focus:ring-4 focus:ring-cv-green-100/70",
+    hasError &&
+      "border-cv-error bg-cv-error/5 hover:border-cv-error focus:border-cv-error focus:ring-cv-error/10",
+  );
+}
+
+/** Input de contraseña con toggle de visibilidad. */
+function PasswordField({
+  value,
+  onChange,
+  error,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  error?: boolean;
+}) {
+  const [visible, setVisible] = useState(false);
+
+  return (
+    <div className="relative">
+      <input
+        type={visible ? "text" : "password"}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        placeholder="Mínimo 6 caracteres"
+        className={cn(fieldInputClassName(Boolean(error)), "pr-11")}
+      />
+      <button
+        type="button"
+        onClick={() => setVisible((v) => !v)}
+        aria-label={visible ? "Ocultar contraseña" : "Mostrar contraseña"}
+        className="absolute right-3.5 top-1/2 -translate-y-1/2 text-cv-gray-400 transition-colors hover:text-cv-gray-600"
+      >
+        {visible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+      </button>
+    </div>
+  );
 }
 
 function Field({ label, error, children, fullWidth }: { label: string; error?: string; children: React.ReactNode; fullWidth?: boolean }) {
@@ -593,8 +711,8 @@ function TimelineCard() {
   );
 }
 
-function WizardButton({ children, onClick }: { children: React.ReactNode; onClick: () => void; }) {
-  return <button type="button" onClick={onClick} className="inline-flex h-11 min-w-[154px] items-center justify-center gap-2 rounded-lg bg-cv-green-800 px-4 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-cv-green-700 hover:shadow-md active:translate-y-0.5">{children}</button>;
+function WizardButton({ children, onClick, disabled }: { children: React.ReactNode; onClick: () => void; disabled?: boolean; }) {
+  return <button type="button" onClick={onClick} disabled={disabled} className="inline-flex h-11 min-w-[154px] items-center justify-center gap-2 rounded-lg bg-cv-green-800 px-4 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-cv-green-700 hover:shadow-md active:translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-cv-green-800 disabled:hover:shadow-sm">{children}</button>;
 }
 
 function BackButton({ onClick }: { onClick: () => void }) {

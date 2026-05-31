@@ -8,6 +8,8 @@ import {
   BadgeCheck,
   Check,
   CircleHelp,
+  Eye,
+  EyeOff,
   Leaf,
   Search,
   ShieldCheck,
@@ -15,6 +17,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { registerWithProfile } from "@/lib/firebase/auth";
+import { StyledSelect } from "@/components/UI/StyledSelect";
 
 type StepId = 1 | 2 | 3 | 4;
 
@@ -82,6 +86,27 @@ function fieldError(value: string, label: string) {
   return value.trim() ? "" : `Completa ${label.toLowerCase()}.`;
 }
 
+/** Traduce los códigos de error de Firebase Auth durante el registro. */
+function mensajeErrorRegistro(err: unknown): string {
+  const code =
+    err && typeof err === "object" && "code" in err
+      ? String((err as { code: unknown }).code)
+      : "";
+
+  switch (code) {
+    case "auth/email-already-in-use":
+      return "Ya existe una cuenta con ese correo. Inicia sesión.";
+    case "auth/invalid-email":
+      return "El correo electrónico no es válido.";
+    case "auth/weak-password":
+      return "La contraseña es muy débil (mínimo 6 caracteres).";
+    case "auth/network-request-failed":
+      return "Sin conexión. Revisa tu internet e intenta de nuevo.";
+    default:
+      return "No se pudo completar el registro. Intenta nuevamente.";
+  }
+}
+
 function stepCardDelay(step: StepId) {
   return step === 1 ? 0.08 : 0.12;
 }
@@ -89,9 +114,12 @@ function stepCardDelay(step: StepId) {
 export default function ProductorWizard() {
   const [step, setStep] = useState<StepId>(1);
   const [identity, setIdentity] = useState(identityDefaults);
+  const [password, setPassword] = useState("");
   const [selectedProducts, setSelectedProducts] = useState<string[]>(["almendra"]);
   const [selectedUses, setSelectedUses] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [auth, setAuth] = useState({
     truth: false,
     contactFan: false,
@@ -153,7 +181,7 @@ export default function ProductorWizard() {
     });
   }
 
-  function goNext() {
+  async function goNext() {
     if (step === 1) {
       const nextErrors = {
         name: fieldError(identity.name, "el nombre del productor o asociación"),
@@ -161,6 +189,11 @@ export default function ProductorWizard() {
         contactName: fieldError(identity.contactName, "la persona de contacto"),
         phone: fieldError(identity.phone, "el teléfono o WhatsApp"),
         email: fieldError(identity.email, "el correo electrónico"),
+        password: !password.trim()
+          ? "Crea una contraseña."
+          : password.length < 6
+            ? "La contraseña debe tener al menos 6 caracteres."
+            : "",
       };
 
       const cleanErrors = Object.fromEntries(
@@ -216,8 +249,35 @@ export default function ProductorWizard() {
       setErrors(nextErrors);
 
       if (Object.keys(nextErrors).length === 0) {
-        setStep(4);
+        await submitRegistration();
       }
+    }
+  }
+
+  async function submitRegistration() {
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      await registerWithProfile(identity.email, password, "productor", {
+        nombre: identity.name,
+        tipo: "productor",
+        actorType: identity.actorType,
+        contactName: identity.contactName,
+        telefono: identity.phone,
+        ubicacion: identity.municipality || undefined,
+        comunidad: identity.community || undefined,
+        productos: selectedProducts,
+        usos: selectedUses,
+        autorizaciones: auth,
+        compartirContacto: auth.shareContact,
+        mensaje: message || undefined,
+      });
+      setStep(4);
+    } catch (err) {
+      setSubmitError(mensajeErrorRegistro(err));
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
@@ -301,18 +361,13 @@ export default function ProductorWizard() {
                       </Field>
 
                       <Field label="Tipo de actor *" error={errors.actorType}>
-                        <select
+                        <StyledSelect
                           value={identity.actorType}
-                          onChange={(event) => setIdentityField("actorType", event.target.value)}
-                          className={fieldInputClassName(Boolean(errors.actorType))}
-                        >
-                          <option value="">Seleccionar...</option>
-                          {ACTOR_TYPES.map((actorType) => (
-                            <option key={actorType} value={actorType}>
-                              {actorType}
-                            </option>
-                          ))}
-                        </select>
+                          onValueChange={(value) => setIdentityField("actorType", value)}
+                          options={ACTOR_TYPES}
+                          placeholder="Seleccionar..."
+                          error={Boolean(errors.actorType)}
+                        />
                       </Field>
 
                       <Field label="Persona de contacto *" error={errors.contactName}>
@@ -339,6 +394,22 @@ export default function ProductorWizard() {
                           onChange={(event) => setIdentityField("email", event.target.value)}
                           placeholder="contacto@ejemplo.com"
                           className={fieldInputClassName(Boolean(errors.email))}
+                        />
+                      </Field>
+
+                      <Field label="Contraseña *" error={errors.password}>
+                        <PasswordField
+                          value={password}
+                          error={Boolean(errors.password)}
+                          onChange={(value) => {
+                            setPassword(value);
+                            setErrors((current) => {
+                              if (!current.password) return current;
+                              const next = { ...current };
+                              delete next.password;
+                              return next;
+                            });
+                          }}
                         />
                       </Field>
 
@@ -681,11 +752,17 @@ export default function ProductorWizard() {
                       />
                     </div>
 
+                    {submitError ? (
+                      <p className="mt-5 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600">
+                        {submitError}
+                      </p>
+                    ) : null}
+
                     <div className="mt-6 flex items-center justify-between border-t border-cv-gray-200 pt-6">
                       <BackButton onClick={goBack} />
-                      <WizardButton type="button" onClick={goNext}>
-                        Siguiente
-                        <ArrowRight className="h-4 w-4" />
+                      <WizardButton type="button" onClick={goNext} disabled={isSubmitting}>
+                        {isSubmitting ? "Registrando..." : "Finalizar registro"}
+                        {isSubmitting ? null : <ArrowRight className="h-4 w-4" />}
                       </WizardButton>
                     </div>
                   </div>
@@ -818,8 +895,42 @@ function Field({
 
 function fieldInputClassName(hasError: boolean) {
   return cn(
-    "h-11 w-full border-0 border-b border-cv-gray-300 bg-transparent px-0 text-sm text-cv-gray-800 outline-none transition-colors placeholder:text-cv-gray-500 focus:border-cv-green-700 focus:ring-0",
-    hasError && "border-cv-error focus:border-cv-error",
+    "h-12 w-full rounded-xl border border-cv-cream-300 bg-cv-cream-50/70 px-4 text-sm text-cv-gray-800 shadow-sm outline-none transition-all duration-200 placeholder:text-cv-gray-400 hover:border-cv-green-300 focus:border-cv-green-500 focus:bg-white focus:ring-4 focus:ring-cv-green-100/70",
+    hasError &&
+      "border-cv-error bg-cv-error/5 hover:border-cv-error focus:border-cv-error focus:ring-cv-error/10",
+  );
+}
+
+/** Input de contraseña con toggle de visibilidad. */
+function PasswordField({
+  value,
+  onChange,
+  error,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  error?: boolean;
+}) {
+  const [visible, setVisible] = useState(false);
+
+  return (
+    <div className="relative">
+      <input
+        type={visible ? "text" : "password"}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
+        placeholder="Mínimo 6 caracteres"
+        className={cn(fieldInputClassName(Boolean(error)), "pr-11")}
+      />
+      <button
+        type="button"
+        onClick={() => setVisible((v) => !v)}
+        aria-label={visible ? "Ocultar contraseña" : "Mostrar contraseña"}
+        className="absolute right-3.5 top-1/2 -translate-y-1/2 text-cv-gray-400 transition-colors hover:text-cv-gray-600"
+      >
+        {visible ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+      </button>
+    </div>
   );
 }
 
@@ -827,16 +938,19 @@ function WizardButton({
   children,
   onClick,
   type = "button",
+  disabled,
 }: {
   children: React.ReactNode;
   onClick?: () => void;
   type?: "button" | "submit";
+  disabled?: boolean;
 }) {
   return (
     <button
       type={type}
       onClick={onClick}
-      className="inline-flex h-11 min-w-[154px] items-center justify-center gap-2 rounded-lg bg-cv-green-800 px-4 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-cv-green-700 hover:shadow-md active:translate-y-0.5"
+      disabled={disabled}
+      className="inline-flex h-11 min-w-[154px] items-center justify-center gap-2 rounded-lg bg-cv-green-800 px-4 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-cv-green-700 hover:shadow-md active:translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:bg-cv-green-800 disabled:hover:shadow-sm"
     >
       {children}
     </button>

@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from "react";
 import {
   MagnifyingGlass,
-  CaretDown,
   CaretLeft,
   CaretRight,
   X,
@@ -16,35 +15,13 @@ import {
 } from "../recetas.data";
 import { CATEGORIA_VISUAL } from "./recetaVisuals";
 import { RecetaCard } from "./RecetaCard";
+import { StyledSelect } from "@/components/UI/StyledSelect";
 
 const CATEGORIAS: RecetaCategoria[] = ["salada", "dulce", "coctel", "base"];
 const PAGE_SIZE = 8;
 
-function SelectFiltro({
-  label,
-  value,
-  onChange,
-  children,
-}: {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="relative">
-      <select
-        aria-label={label}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="w-full appearance-none rounded-xl border border-[#e8e0d0] bg-white py-2.5 pl-4 pr-9 text-sm font-medium text-[#2d4a3e] transition-colors hover:border-[#7a9b76]/60 focus:border-[#2d4a3e] focus:outline-none"
-      >
-        {children}
-      </select>
-      <CaretDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-[#2d4a3e]/40" />
-    </div>
-  );
-}
+/** Estilo compacto (blanco) para los selects de la barra de filtros. */
+const filtroTriggerClass = "h-11 bg-white font-medium text-cv-green-900";
 
 function Pagination({
   page,
@@ -177,23 +154,30 @@ export function RecetasGrid({
 
           {/* Selects */}
           <div className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2 lg:max-w-md">
-            <SelectFiltro label="Insumo" value={insumo} onChange={setInsumo}>
-              <option value="todos">Todos los insumos</option>
-              {INSUMOS_DISPONIBLES.map((ins) => (
-                <option key={ins} value={ins}>
-                  {ins}
-                </option>
-              ))}
-            </SelectFiltro>
+            <StyledSelect
+              aria-label="Insumo"
+              value={insumo}
+              onValueChange={setInsumo}
+              className={filtroTriggerClass}
+              options={[
+                { value: "todos", label: "Todos los insumos" },
+                ...INSUMOS_DISPONIBLES.map((ins) => ({ value: ins, label: ins })),
+              ]}
+            />
 
-            <SelectFiltro label="Autor" value={autor} onChange={setAutor}>
-              <option value="todos">Todos los autores</option>
-              {AUTORES_DISPONIBLES.map((a) => (
-                <option key={a} value={a}>
-                  {a.length > 38 ? `${a.slice(0, 38)}…` : a}
-                </option>
-              ))}
-            </SelectFiltro>
+            <StyledSelect
+              aria-label="Autor"
+              value={autor}
+              onValueChange={setAutor}
+              className={filtroTriggerClass}
+              options={[
+                { value: "todos", label: "Todos los autores" },
+                ...AUTORES_DISPONIBLES.map((a) => ({
+                  value: a,
+                  label: a.length > 38 ? `${a.slice(0, 38)}…` : a,
+                })),
+              ]}
+            />
           </div>
         </div>
 

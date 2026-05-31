@@ -1,7 +1,8 @@
 "use client";
 
-import { ChevronDown, Leaf, Clock, AlertTriangle, X } from "lucide-react";
+import { Leaf, Clock, AlertTriangle, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { StyledSelect } from "@/components/UI/StyledSelect";
 
 /* ── Types (compartidos con la página) ───────────────────────────────── */
 export type Temporada = "En temporada" | "Próximamente" | "Finalizando";
@@ -42,32 +43,8 @@ function toggle<T>(arr: T[], item: T): T[] {
   return arr.includes(item) ? arr.filter((x) => x !== item) : [...arr, item];
 }
 
-/* ── Select estilizado (multi via opción "todos") ────────────────────── */
-function SelectFiltro({
-  label,
-  value,
-  onChange,
-  children,
-}: {
-  label: string;
-  value: string;
-  onChange: (value: string) => void;
-  children: React.ReactNode;
-}) {
-  return (
-    <div className="relative">
-      <select
-        aria-label={label}
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        className="w-full appearance-none rounded-xl border border-cv-cream-300 bg-white py-2.5 pl-4 pr-9 text-sm font-medium text-cv-green-900 transition-colors hover:border-cv-green-300 focus:border-cv-green-500 focus:outline-none"
-      >
-        {children}
-      </select>
-      <ChevronDown className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-cv-gray-400" />
-    </div>
-  );
-}
+/** Estilo compacto (blanco) para los selects de la barra de filtros. */
+const filtroTriggerClass = "h-11 bg-white font-medium text-cv-green-900";
 
 /* ── Toolbar de filtros (encima de los cards) ────────────────────────── */
 export function CatalogoFiltrosBar({
@@ -93,41 +70,37 @@ export function CatalogoFiltrosBar({
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
           {/* Selects: categoría + uso */}
           <div className="grid flex-1 grid-cols-1 gap-3 sm:grid-cols-2 lg:max-w-md">
-            <SelectFiltro
-              label="Categoría"
+            <StyledSelect
+              aria-label="Categoría"
               value={categoriaValue}
-              onChange={(v) =>
+              onValueChange={(v) =>
                 onChange({
                   ...filtros,
                   categorias: v === "todas" ? [] : [v as Categoria],
                 })
               }
-            >
-              <option value="todas">Todas las categorías</option>
-              {CATEGORIAS.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </SelectFiltro>
+              className={filtroTriggerClass}
+              options={[
+                { value: "todas", label: "Todas las categorías" },
+                ...CATEGORIAS.map((c) => ({ value: c, label: c })),
+              ]}
+            />
 
-            <SelectFiltro
-              label="Uso sugerido"
+            <StyledSelect
+              aria-label="Uso sugerido"
               value={usoValue}
-              onChange={(v) =>
+              onValueChange={(v) =>
                 onChange({
                   ...filtros,
                   usos: v === "todos" ? [] : [v as UsoSugerido],
                 })
               }
-            >
-              <option value="todos">Todos los usos</option>
-              {USOS.map((u) => (
-                <option key={u} value={u}>
-                  {u}
-                </option>
-              ))}
-            </SelectFiltro>
+              className={filtroTriggerClass}
+              options={[
+                { value: "todos", label: "Todos los usos" },
+                ...USOS.map((u) => ({ value: u, label: u })),
+              ]}
+            />
           </div>
         </div>
 

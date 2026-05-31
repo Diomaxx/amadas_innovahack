@@ -8,10 +8,36 @@ import {
   type User,
 } from "firebase/auth";
 import { auth } from "./client";
-import { ensureUserProfile } from "./firestore";
+import {
+  createRegistrationProfile,
+  ensureUserProfile,
+  type AppRole,
+} from "./firestore";
 
 export function registerWithEmail(email: string, password: string) {
   return createUserWithEmailAndPassword(auth, email, password);
+}
+
+/**
+ * Alta completa desde un wizard de registro: crea la cuenta en Firebase Auth
+ * (igual que el login) y, una vez autenticado, persiste el perfil con su rol
+ * (`productor`/`restaurante`) y el resto de datos en Firestore. Si la escritura
+ * del perfil falla, el error se propaga (a diferencia del login con Google,
+ * aquí el perfil ES el objetivo del registro).
+ */
+export async function registerWithProfile(
+  email: string,
+  password: string,
+  role: AppRole,
+  profile: Record<string, unknown>,
+) {
+  const credential = await createUserWithEmailAndPassword(auth, email, password);
+  await createRegistrationProfile(credential.user.uid, {
+    email,
+    role,
+    ...profile,
+  });
+  return credential;
 }
 
 export function loginWithEmail(email: string, password: string) {
