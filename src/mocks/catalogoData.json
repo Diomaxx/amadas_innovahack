@@ -2,102 +2,160 @@
   "especies": [
     {
       "id": "1",
-      "nombre": "Almendra Chiquitana",
-      "nombreCientifico": "Dipteryx alata",
-      "categoria": "Nuez / Semilla",
+      "nombre": "Albahaca silvestre",
+      "nombreCientifico": "Ocimum basilicum",
+      "categoria": "Infusión",
       "temporada": "En temporada",
-      "descripcion": "La almendra chiquitana es un fruto silvestre recolectado de forma sostenible por comunidades locales del bosque seco chiquitano. Es valorada por su alto contenido nutricional y su versatilidad en la gastronomía.",
-      "esencia": "La Almendra Chiquitana (*Dipteryx alata*) es el tesoro dorado de la Chiquitanía. Conocida por su perfil nutricional excepcional y su sabor tostado profundo, es el pilar de la economía sostenible local.",
-      "propiedades": [
-        "Alta en Proteína (26%)",
-        "Energía Sostenible",
-        "100% Recolección Silvestre"
-      ],
-      "usoGastronomico": "Perfecta para repostería fina, aceites prensados en frío y snacks saludables tostados con sal del Salar.",
-      "calendarioCosecha": {
-        "temporadaPrincipal": "Julio a Septiembre",
-        "meses": [
-          { "mes": "MAY", "estado": "no-disponible" },
-          { "mes": "JUN", "estado": "comienza" },
-          { "mes": "JUL", "estado": "en-temporada" },
-          { "mes": "AGO", "estado": "en-temporada" },
-          { "mes": "SEP", "estado": "en-temporada" },
-          { "mes": "OCT", "estado": "ultimos-dias" }
-        ],
-        "mensaje": "Estamos en el mejor momento para disfrutar su sabor y apoyar a las comunidades del bosque."
-      },
-      "disponibilidad": [
-        {
-          "productor": "Asociación Lomerío",
-          "estado": "1 LOTE DE 200 KG DISPONIBLE",
-          "accion": "Contactar",
-          "icon": "store"
-        },
-        {
-          "productor": "Cooperativa San Ignacio",
-          "estado": "3 LOTES DE 50 KG DISPONIBLES",
-          "accion": "Contactar",
-          "icon": "store"
-        },
-        {
-          "productor": "Recolectores de Roboré",
-          "estado": "EN PROCESO DE SECADO (PRONTO)",
-          "accion": "Reservar",
-          "icon": "hourglass"
-        }
-      ]
+      "descripcion": "Albahaca silvestre del bosque chiquitano",
+      "meses_temporada": ["Enero", "Febrero", "Octubre", "Noviembre", "Diciembre"]
     },
     {
       "id": "2",
-      "nombre": "Asaí",
-      "nombreCientifico": "Euterpe precatoria",
-      "categoria": "Fruta",
-      "temporada": "Próximamente",
-      "descripcion": "El Asaí es un superalimento originario de la región amazónica y chiquitana, conocido por sus potentes propiedades antioxidantes.",
-      "esencia": "El Asaí chiquitano crece en las riberas de los ríos, brindando un intenso color morado y una explosión de antioxidantes. Es un símbolo de vitalidad para las comunidades recolectoras.",
-      "propiedades": [
-        "Alto en Antioxidantes",
-        "Fuente de Hierro",
-        "Energía Natural"
-      ],
-      "usoGastronomico": "Ideal para bowls energéticos, jugos, helados artesanales y postres saludables.",
-      "calendarioCosecha": {
-        "temporadaPrincipal": "Marzo a Mayo",
-        "meses": [
-          { "mes": "FEB", "estado": "comienza" },
-          { "mes": "MAR", "estado": "en-temporada" },
-          { "mes": "ABR", "estado": "en-temporada" },
-          { "mes": "MAY", "estado": "en-temporada" },
-          { "mes": "JUN", "estado": "ultimos-dias" },
-          { "mes": "JUL", "estado": "no-disponible" }
-        ],
-        "mensaje": "La cosecha de Asaí está por comenzar. Prepárate para disfrutar de su frescura."
-      },
-      "disponibilidad": []
+      "nombre": "Almendra chiquitana",
+      "nombreCientifico": "Dipteryx alata",
+      "categoria": "Nuez / Semilla",
+      "temporada": "En temporada",
+      "descripcion": "Almendra chiquitana del bosque seco",
+      "meses_temporada": ["Julio", "Agosto", "Septiembre"]
     },
     {
       "id": "3",
-      "nombre": "Miel de Abeja Nativa",
-      "nombreCientifico": "Meliponini",
+      "nombre": "Asaí",
+      "nombreCientifico": "Euterpe precatoria",
+      "categoria": "Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Asaí amazónico y chiquitano",
+      "meses_temporada": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre"]
+    },
+    {
+      "id": "4",
+      "nombre": "Canelón",
+      "nombreCientifico": "Aniba canelilla",
+      "categoria": "Infusión",
+      "temporada": "En temporada",
+      "descripcion": "Canelón del bosque chiquitano",
+      "meses_temporada": ["Enero", "Febrero", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "5",
+      "nombre": "Castaña",
+      "nombreCientifico": "Bertholletia excelsa",
+      "categoria": "Nuez / Semilla",
+      "temporada": "En temporada",
+      "descripcion": "Castaña amazónica",
+      "meses_temporada": ["Enero", "Febrero", "Diciembre"]
+    },
+    {
+      "id": "6",
+      "nombre": "Flor de colonia",
+      "nombreCientifico": "Alpinia zerumbet",
+      "categoria": "Infusión",
+      "temporada": "En temporada",
+      "descripcion": "Flor de colonia del bosque",
+      "meses_temporada": ["Enero", "Febrero", "Marzo", "Abril", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "7",
+      "nombre": "Limón cambita",
+      "nombreCientifico": "Citrus aurantiifolia",
+      "categoria": "Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Limón cambita del bosque",
+      "meses_temporada": ["Enero", "Febrero", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "8",
+      "nombre": "Majo",
+      "nombreCientifico": "Oenocarpus bataua",
+      "categoria": "Aceite / Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Majo del bosque amazónico",
+      "meses_temporada": ["Enero", "Febrero", "Marzo", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "9",
+      "nombre": "Miel",
+      "nombreCientifico": "de Apis mellifera",
       "categoria": "Miel",
       "temporada": "En temporada",
-      "descripcion": "Miel producida por abejas nativas sin aguijón, recolectada en armonía con el entorno del bosque chiquitano, con un perfil de sabor único.",
-      "esencia": "Oro líquido de la Chiquitanía. Las abejas señoritas (meliponas) producen esta miel medicinal y gastronómica, sin aguijón y en total armonía con la floración del bosque seco.",
-      "propiedades": [
-        "Propiedades Medicinales",
-        "Sabor Floral Único",
-        "Producción Sostenible"
-      ],
-      "usoGastronomico": "Perfecta para endulzar infusiones, glasear carnes, aliños de ensaladas y consumo directo medicinal.",
-      "calendarioCosecha": {
-        "temporadaPrincipal": "Agosto a Noviembre",
-        "meses": [
-          { "mes": "JUL", "estado": "comienza" },
-          { "mes": "AGO", "estado": "en-temporada" },
-          { "mes": "SEP", "estado": "en-temporada" },
-          { "mes": "OCT", "estado": "en-temporada" },
-          { "mes": "NOV", "estado": "ultimos-dias" },
-          { "mes": "DIC", "estado": "no-disponible" }
+      "descripcion": "Miel de abeja nativa",
+      "meses_temporada": ["Febrero", "Marzo", "Octubre", "Noviembre"]
+    },
+    {
+      "id": "10",
+      "nombre": "Motacú",
+      "nombreCientifico": "Attalea phalerata",
+      "categoria": "Aceite / Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Motacú del bosque chiquitano",
+      "meses_temporada": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "11",
+      "nombre": "Motojobo",
+      "nombreCientifico": "Lycianthes asarifolia",
+      "categoria": "Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Motojobo del bosque chiquitano",
+      "meses_temporada": ["Febrero", "Marzo", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "12",
+      "nombre": "Paja cedrón",
+      "nombreCientifico": "Cymbopogon citratus",
+      "categoria": "Infusión",
+      "temporada": "En temporada",
+      "descripcion": "Paja cedrón del bosque",
+      "meses_temporada": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "13",
+      "nombre": "Pesoé",
+      "nombreCientifico": "Pterodon emarginatus",
+      "categoria": "Nuez / Semilla",
+      "temporada": "En temporada",
+      "descripcion": "Pesoé del bosque",
+      "meses_temporada": ["Junio", "Julio", "Agosto", "Septiembre", "Octubre"]
+    },
+    {
+      "id": "14",
+      "nombre": "Pitón",
+      "nombreCientifico": "Talisia esculenta",
+      "categoria": "Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Pitón del bosque chiquitano",
+      "meses_temporada": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Diciembre"]
+    },
+    {
+      "id": "15",
+      "nombre": "Sujo",
+      "nombreCientifico": "Sterculia apetala",
+      "categoria": "Nuez / Semilla",
+      "temporada": "En temporada",
+      "descripcion": "Sujo del bosque",
+      "meses_temporada": ["Julio", "Agosto", "Septiembre", "Octubre"]
+    },
+    {
+      "id": "16",
+      "nombre": "Totaí",
+      "nombreCientifico": "Acrocomia totai",
+      "categoria": "Aceite / Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Totaí del bosque chiquitano",
+      "meses_temporada": ["Enero", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    },
+    {
+      "id": "17",
+      "nombre": "Yuca",
+      "nombreCientifico": "Manihot esculenta",
+      "categoria": "Raíz",
+      "temporada": "En temporada",
+      "descripcion": "Yuca del bosque chiquitano",
+      "meses_temporada": ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+    }
+  ],
+  "otrosRecursos": []
+}
         ],
         "mensaje": "La floración del bosque nos regala esta miel excepcional en su punto óptimo."
       },

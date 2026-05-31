@@ -15,7 +15,7 @@ const topbarLinks = [
   { href: "/catalogo", label: "Catalogo" },
   { href: "/abastecimiento", label: "Abastecimiento" },
   { href: "/menus", label: "Menus" },
-  { href: "/conexiones", label: "Conexiones" },
+  { href: "/conexiones", label: "Conexiones", activePaths: ["/conexiones"] },
 ];
 
 export function AppTopbar() {

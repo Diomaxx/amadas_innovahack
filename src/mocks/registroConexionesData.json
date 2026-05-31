@@ -1,0 +1,33 @@
+{
+  "asociaciones": [
+    "Asociación de Recolectores de San Ignacio",
+    "Asoc. Mujeres Roboré",
+    "Cooperativa Forestal Concepción",
+    "Comunidad Indígena Sirionó",
+    "Agroindustrial Chiquitana",
+    "Exportadora Nutri-Bosque"
+  ],
+  "recetas": [
+    "Crema de castaña amazónica",
+    "Aceite de almendra prensado en frío",
+    "Miel de melipona con hierbas nativas",
+    "Pulpa de asaí con cúrcuma",
+    "Harina de motacú integral",
+    "Resina de copaibo infusionada"
+  ],
+  "certificaciones": [
+    "Buenas Prácticas de Manufactura (BPM)",
+    "Certificación Orgánica",
+    "Origen Chiquitano"
+  ],
+  "tiemposRespuesta": [
+    "Inmediato en temporada",
+    "A pedido (48/72 horas)",
+    "Por acuerdo comercial"
+  ],
+  "unidadesCapacidad": [
+    "Litros por semana",
+    "Kilogramos por día",
+    "Kilogramos por mes"
+  ]
+}
