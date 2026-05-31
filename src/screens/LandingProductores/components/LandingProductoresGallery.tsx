@@ -47,12 +47,12 @@ export function LandingProductoresGallery() {
           >
             <img
               src={image}
-              alt={`Bosque chiquitano ${index + 1}`}
+              alt={`Bosques de Bolivia ${index + 1}`}
               className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-cv-green-900/70 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <span className="absolute bottom-3 left-4 font-display text-sm tracking-widest text-cv-cream-50 opacity-0 transition-all duration-500 group-hover:opacity-100">
-              0{index + 1} — Chiquitania
+              0{index + 1} — Bolivia
             </span>
           </motion.div>
         ))}

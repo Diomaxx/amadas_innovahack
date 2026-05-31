@@ -103,10 +103,21 @@ function Pagination({
   );
 }
 
-export function RecetasGrid({ recetas }: { recetas: Receta[] }) {
+export function RecetasGrid({
+  recetas,
+  insumoInicial,
+}: {
+  recetas: Receta[];
+  insumoInicial?: string;
+}) {
   const [search, setSearch] = useState("");
   const [categoria, setCategoria] = useState<RecetaCategoria | "todas">("todas");
-  const [insumo, setInsumo] = useState("todos");
+  // Si llega un insumo por la URL y existe en el catálogo, parte filtrado por él.
+  const [insumo, setInsumo] = useState(() =>
+    insumoInicial && INSUMOS_DISPONIBLES.includes(insumoInicial)
+      ? insumoInicial
+      : "todos",
+  );
   const [autor, setAutor] = useState("todos");
   const [page, setPage] = useState(1);
 

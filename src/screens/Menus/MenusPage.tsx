@@ -1,9 +1,13 @@
 import { getMenus } from "@/server/menus/menus.repository";
+import { UNIFIED_LOADING_MS } from "@/lib/loading";
 import { FeaturedMenuCard, MenusHero, SideMenuCard } from "./components/MenusHero";
 import { MenusGrid } from "./components/MenusGrid";
 
 export default async function MenusPage() {
-  const menus = await getMenus();
+  const [menus] = await Promise.all([
+    getMenus(),
+    new Promise((resolve) => setTimeout(resolve, UNIFIED_LOADING_MS)),
+  ]);
   const featuredMenu = menus.find((menu) => menu.featured) ?? null;
   const nonFeaturedMenus = menus.filter((menu) => !menu.featured);
   const topSideMenu = nonFeaturedMenus[0] ?? null;

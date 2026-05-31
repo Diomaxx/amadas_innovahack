@@ -13,7 +13,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const titleWords = ["Descubre", "los", "sabores"];
 const trustChips = [
   { icon: Leaf, label: "100% silvestre" },
-  { icon: MapPin, label: "Bosque Chiquitano" },
+  { icon: MapPin, label: "Bosques de Bolivia" },
   { icon: Sprout, label: "Comercio regenerativo" },
 ];
 

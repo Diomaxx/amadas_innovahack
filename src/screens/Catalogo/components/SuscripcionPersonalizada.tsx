@@ -31,7 +31,7 @@ export function SuscripcionPersonalizada({
           </h2>
           
           <p className="max-w-md text-sm text-cv-green-100/80 leading-relaxed">
-            Configura tus alertas para recibir solo lo que te interesa de los frutos de la Chiquitanía.
+            Configura tus alertas para recibir solo lo que te interesa de los frutos silvestres de Bolivia.
           </p>
         </div>
 

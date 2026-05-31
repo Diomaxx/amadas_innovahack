@@ -95,3 +95,15 @@ export const INSUMOS_DISPONIBLES: string[] = Array.from(
 export const AUTORES_DISPONIBLES: string[] = Array.from(
   new Set(RECETAS.map((receta) => receta.autores)),
 ).sort((a, b) => a.localeCompare(b, "es"));
+
+/**
+ * Dado el nombre de una especie del catálogo (ej. "Almendra Chiquitana"),
+ * devuelve la clave de insumo equivalente usada por el filtro de recetas
+ * (ej. "almendra chiquitana"), o `null` si ningún insumo del recetario coincide.
+ */
+export function resolverInsumoPorNombre(nombre: string): string | null {
+  const objetivo = normalizar(nombre);
+  return (
+    INSUMOS_DISPONIBLES.find((insumo) => normalizar(insumo) === objetivo) ?? null
+  );
+}

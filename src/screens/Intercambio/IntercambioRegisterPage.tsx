@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Package, Wrench } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/UI/tabs";
+import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 import { RegistroProductoForm } from "./components/RegistroProductoForm";
 import { RegistroServicioForm } from "./components/RegistroServicioForm";
 import { IntercambioRegisterSkeleton } from "./components/IntercambioRegisterSkeleton";
@@ -17,15 +18,8 @@ import {
 
 export default function IntercambioRegisterPage() {
   const [activeTab, setActiveTab] = useState<"producto" | "servicio">("producto");
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoading = useUnifiedLoading();
   const directionRef = useRef(1);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1200);
-    return () => clearTimeout(timer);
-  }, []);
 
   const handleTabChange = (value: string) => {
     const next = value as "producto" | "servicio";
@@ -55,7 +49,7 @@ export default function IntercambioRegisterPage() {
             Registrar Conexión
           </h1>
           <p className="mt-2 max-w-3xl text-sm leading-relaxed text-cv-gray-600">
-            Publique materia prima o capacidad operativa en la red B2B del territorio chiquitano.
+            Publique materia prima o capacidad operativa en la red B2B del territorio boliviano.
             Complete el formulario correspondiente para conectar con chefs, empresas e industria.
           </p>
         </motion.header>

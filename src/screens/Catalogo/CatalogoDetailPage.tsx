@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState, useEffect } from "react";
+import { useMemo } from "react";
 import catalogoData from "@/mocks/catalogoData.json";
 import { motion } from "framer-motion";
+import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 import { CatalogoDetailSkeleton } from "./components/CatalogoDetailSkeleton";
 import { ProductHero } from "./components/ProductHero";
 import { ProductInfoCards } from "./components/ProductInfoCards";
@@ -17,15 +18,7 @@ interface CatalogoDetailPageProps {
 }
 
 export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Simulate network loading
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1200);
-    return () => clearTimeout(timer);
-  }, []);
+  const isLoading = useUnifiedLoading();
 
   const especie = useMemo(() => {
     return catalogoData.especies.find((e) => e.id === id);
@@ -71,6 +64,7 @@ export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
 
       {/* Info Cards Section */}
       <ProductInfoCards
+        nombre={especie.nombre}
         esencia={especie.esencia}
         propiedades={especie.propiedades}
         usosGastronomicos={especie.usosGastronomicos}

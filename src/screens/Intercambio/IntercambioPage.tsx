@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { Handshake, Plus } from "lucide-react";
+import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 
 import { IntercambioFiltros, type FiltrosIntercambioState, type Categoria, type Ubicacion } from "./components/IntercambioFiltros";
 import { IntercambioCard } from "./components/IntercambioCard";
@@ -37,15 +38,8 @@ export default function IntercambioPage() {
     ubicaciones: [],
     tipoServicio: [],
   });
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoading = useUnifiedLoading();
   const [selectedIntercambio, setSelectedIntercambio] = useState<Intercambio | null>(null);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
 
   const intercambiosFiltrados = useMemo(() => {
     return INTERCAMBIOS.filter((i) => {

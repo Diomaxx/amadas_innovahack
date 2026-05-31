@@ -27,10 +27,10 @@ export function RecetasHero({ total }: { total: number }) {
         <div className="max-w-2xl">
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#c9a86a]/40 bg-[#c9a86a]/10 px-4 py-1.5 text-xs font-medium uppercase tracking-wide text-[#c9a86a]">
             <Sparkle weight="fill" className="h-4 w-4" />
-            Recetario que celebra la identidad chiquitana
+            Recetario que celebra la identidad boliviana
           </div>
           <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
-            Sabores de la Chiquitanía
+            Sabores de Bolivia
           </h1>
           <p className="mt-4 max-w-xl text-base italic leading-relaxed text-[#f5f1e8]/80">
             «Cada receta es un testimonio vivo de la sabiduría ancestral, un

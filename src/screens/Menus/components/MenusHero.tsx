@@ -24,7 +24,7 @@ export function MenusHero({ totalMenus }: MenusHeroProps) {
   return (
     <header className="rounded-3xl border border-cv-cream-300 bg-gradient-to-br from-cv-cream-100 via-cv-cream-50 to-cv-green-50 p-6 shadow-sm sm:p-8">
       <p className="text-xs font-semibold uppercase tracking-[0.22em] text-cv-gold-600">
-        Vitrina del Bosque Chiquitano
+        Vitrina de los Bosques de Bolivia
       </p>
       <h1 className="mt-3 text-3xl font-bold text-cv-green-900 sm:text-5xl">Menús de Temporada</h1>
       <p className="mt-4 max-w-3xl text-base leading-relaxed text-cv-gray-700 sm:text-lg">

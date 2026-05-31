@@ -21,7 +21,7 @@ export function MarketStabilityCard({
         </div>
         <div className="min-w-0 flex-1">
           <h3 className="text-sm font-bold text-cv-green-900 sm:text-lg">
-            Estabilidad del Mercado Chiquitano
+            Estabilidad del Mercado Nacional
           </h3>
           <p className="mt-0.5 text-[9px] font-semibold uppercase tracking-wider text-cv-gray-500 sm:text-[10px]">
             Actualizado hace 15 minutos

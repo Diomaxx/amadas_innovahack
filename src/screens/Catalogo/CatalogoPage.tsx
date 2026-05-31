@@ -1,8 +1,9 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo } from "react";
 import { Trees } from "lucide-react";
 import { motion } from "framer-motion";
+import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 
 import { CatalogoSkeleton } from "./components/CatalogoSkeleton";
 
@@ -32,15 +33,7 @@ export default function CatalogoPage() {
     categorias: [],
     usos: [],
   });
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Simulate network loading to show skeleton
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-    return () => clearTimeout(timer);
-  }, []);
+  const isLoading = useUnifiedLoading();
 
   /* ── Filtering logic ──────────────────────────────────────────────── */
   const especiesFiltradas = useMemo(() => {
@@ -69,10 +62,10 @@ export default function CatalogoPage() {
       {/* ── Hero header ───────────────────────────────────────────── */}
       <section className="mb-8">
         <h1 className="text-3xl font-bold tracking-tight text-cv-green-900 sm:text-4xl">
-          Frutos de la Chiquitanía
+          Frutos silvestres de Bolivia
         </h1>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-cv-gray-600">
-          Descubre la biodiversidad del bosque seco chiquitano. Una herramienta para el
+          Descubre la biodiversidad de los bosques de Bolivia. Una herramienta para el
           conocimiento, la conservación y el consumo consciente de nuestras especies nativas.
         </p>
       </section>

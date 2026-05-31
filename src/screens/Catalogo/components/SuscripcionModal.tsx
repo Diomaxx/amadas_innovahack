@@ -36,7 +36,7 @@ export function SuscripcionModal({
         </h2>
         <p className="max-w-md text-sm text-cv-gray-600">
           Activa alertas y recibe avisos de temporada de {nombreProducto} y
-          otros frutos de la Chiquitanía.
+          otros frutos silvestres de Bolivia.
         </p>
         <DialogTrigger asChild>
           <button

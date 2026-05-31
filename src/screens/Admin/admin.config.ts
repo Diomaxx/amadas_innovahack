@@ -55,7 +55,7 @@ export const ADMIN_NAV: AdminNavItem[] = [
     href: "/admin/recetas",
     Icon: ChefHat,
     title: "Recetas",
-    subtitle: "Gestiona el recetario del Bosque Chiquitano.",
+    subtitle: "Gestiona el recetario de los bosques de Bolivia.",
   },
   {
     label: "Actividad",

@@ -2,7 +2,7 @@ export const heroData = {
   badge: "Gastronomía con Alma",
   title: "Del Bosque a tu Mesa: Sabores con Propósito",
   description:
-    "Abastece tu cocina con los tesoros de la Chiquitanía. Conecta directamente con recolectores locales y eleva tu propuesta gastronómica con productos únicos y sostenibles.",
+    "Abastece tu cocina con los tesoros de Bolivia. Conecta directamente con recolectores locales y eleva tu propuesta gastronómica con productos únicos y sostenibles.",
   backgroundImage:
     "https://plus.unsplash.com/premium_photo-1661288509892-0cb40d3e551c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
@@ -35,7 +35,7 @@ export const standards = [
   },
   {
     title: "Sello de Sostenibilidad",
-    description: "Fortalece tu marca como aliada de la conservación del Bosque Chiquitano.",
+    description: "Fortalece tu marca como aliada de la conservación de los bosques de Bolivia.",
   },
   {
     title: "Eficiencia Logística",
@@ -62,7 +62,7 @@ export const partnerRestaurants = ["El Aljibe", "Raíces", "Gustu", "Ancestral",
 
 export const testimonial = {
   quote:
-    "mati ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneración de la Chiquitanía a través del plato.",
+    "mati ha cambiado la forma en que entendemos nuestra despensa. No es solo comprar un producto, es ser parte de la regeneración de los bosques de Bolivia a través del plato.",
   author: "Chef Ejecutivo",
   role: "Restaurante Galardonado",
   avatar:

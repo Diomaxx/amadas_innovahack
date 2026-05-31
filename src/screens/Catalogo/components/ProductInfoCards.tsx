@@ -1,19 +1,29 @@
 "use client";
 
+import Link from "next/link";
 import { BookOpen, Zap, Shield, Sparkles } from "lucide-react";
+import { resolverInsumoPorNombre } from "@/screens/Recetas/recetas.data";
 
 interface ProductInfoCardsProps {
+  nombre?: string;
   esencia?: string;
   propiedades?: string[];
   usosGastronomicos?: string[];
 }
 
 export function ProductInfoCards({
+  nombre,
   esencia,
   propiedades,
   usosGastronomicos,
 }: ProductInfoCardsProps) {
   if (!esencia && !propiedades && !usosGastronomicos?.length) return null;
+
+  // Enlace al recetario filtrado por el insumo de esta especie (si existe).
+  const insumo = nombre ? resolverInsumoPorNombre(nombre) : null;
+  const recetarioHref = insumo
+    ? `/recetas?insumo=${encodeURIComponent(insumo)}`
+    : "/recetas";
 
   return (
     <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -69,15 +79,15 @@ export function ProductInfoCards({
               </li>
             ))}
           </ul>
-          <button
-            type="button"
+          <Link
+            href={recetarioHref}
             className="flex items-center justify-between rounded-xl bg-[#14291F] px-5 py-4 text-[13px] font-bold tracking-widest text-white transition-colors hover:bg-[#1B3A2D] uppercase"
           >
             Ver Recetario Fan
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
-          </button>
+          </Link>
         </div>
       )}
     </div>
