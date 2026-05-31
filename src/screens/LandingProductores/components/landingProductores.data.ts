@@ -4,7 +4,7 @@ export const heroData = {
   description:
     "Conectamos tu sabiduría ancestral y tus productos únicos con la alta gastronomía global. Transforma el ritmo del bosque en una oportunidad sostenible.",
   backgroundImage:
-    "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80",
+    "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207304/BIGFRONT_k9tvxu.png",
 };
 
 export const stats = [
@@ -18,19 +18,19 @@ export const techCards = [
     title: "Datos Centralizados",
     description: "Explora los productos del bosque, sus temporadas y contactos de referencia.",
     image:
-      "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1000&q=80",
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207303/datoscentralizados_opshtj.jpg",
   },
   {
     title: "Alertas en Tiempo Real",
     description: "Recibe notificaciones inmediatas sobre demandas de chefs y tendencias del mercado.",
     image:
-      "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=1000&q=80",
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207385/alertas_aqjapp.png",
   },
   {
     title: "Productor a Productor",
     description: "Conéctate con otros productores para intercambiar servicios y fortalecer la comunidad.",
     image:
-      "https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?auto=format&fit=crop&w=1000&q=80",
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207385/p2p_gbxfl2.png",
   },
 ];
 
@@ -54,19 +54,19 @@ export const benefits = [
     title: "Estabilidad de precios",
     description: "Evita las fluctuaciones del mercado local con acuerdos directos y transparentes.",
     image:
-      "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=1000&q=80",
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207570/preciosestables_zpgaqz.png",
   },
   {
     title: "Certificación de Origen",
     description: "Validamos tu producción sostenible, aumentando el valor de cada kilo cosechado.",
     image:
-      "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=80",
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207570/certificacionorigen_sspdil.png",
   },
   {
     title: "Reconocimiento Directo",
     description: "Tu nombre y el de tu comunidad aparecen en las cartas de los mejores restaurantes.",
     image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80",
+      "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207571/reconocimientodirecto_fl3xgi.png",
   },
 ];
 
@@ -88,10 +88,10 @@ export const testimonials = [
 ];
 
 export const galleryImages = [
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1473773508845-188df298d2d1?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=901&q=80",
-  "https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80",
-  "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&w=900&q=80",
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207686/Biodiv1_pyjjxy.png",
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207686/Biodiv2_tcarkl.png",
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207686/Biodiv3_kgfwlh.jpg",
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207686/Biodiv4_ud9qix.jpg",
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207686/Biodiv5_auhkbi.jpg",
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780207687/Biodiv7_br4o15.jpg"
 ];
