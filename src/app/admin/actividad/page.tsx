@@ -1,13 +1,14 @@
-import { AdminPageHeader } from "@/screens/Admin/components/AdminPageHeader";
-import { ADMIN_NAV } from "@/screens/Admin/admin.config";
-
-const meta = ADMIN_NAV.find((item) => item.href === "/admin/actividad")!;
+import { ActividadHeader } from "@/screens/Admin/Actividad/components/ActividadHeader";
+import { ActividadStatsBar } from "@/screens/Admin/Actividad/components/ActividadStatsBar";
+import { ActividadExplorer } from "@/screens/Admin/Actividad/components/ActividadExplorer";
+import { ACTIVIDADES_MOCK } from "@/screens/Admin/Actividad/actividad.data";
 
 export default function AdminActividadPage() {
   return (
     <div className="space-y-8">
-      <AdminPageHeader title={meta.title} subtitle={meta.subtitle} />
-      {/* Contenido pendiente */}
+      <ActividadHeader />
+      <ActividadStatsBar actividades={ACTIVIDADES_MOCK} />
+      <ActividadExplorer actividades={ACTIVIDADES_MOCK} />
     </div>
   );
 }
