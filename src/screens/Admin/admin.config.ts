@@ -26,8 +26,8 @@ export const ADMIN_NAV: AdminNavItem[] = [
     label: "Administración",
     href: "/admin",
     Icon: LayoutDashboard,
-    title: "Administración",
-    subtitle: "Gestión sostenible de la biodiversidad nacional.",
+    title: "Panel de Administración",
+    subtitle: "Gestión sostenible de la biodiversidad.",
   },
   {
     label: "Gestión de Temporada",
@@ -64,11 +64,5 @@ export const ADMIN_NAV: AdminNavItem[] = [
     title: "Actividad",
     subtitle: "Registro de acciones recientes en la plataforma.",
   },
-  {
-    label: "Configuracion",
-    href: "/admin/configuracion",
-    Icon: Settings,
-    title: "Configuracion",
-    subtitle: "Preferencias generales del panel.",
-  },
+  
 ];

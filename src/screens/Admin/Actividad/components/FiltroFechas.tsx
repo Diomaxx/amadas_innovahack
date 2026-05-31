@@ -1,5 +1,3 @@
-import { CalendarDays } from "lucide-react";
-
 type FiltroFechasProps = {
   fechaInicio: string;
   fechaFin: string;
@@ -36,14 +34,13 @@ export function FiltroFechas({
           <label className="mb-1 block text-xs text-cv-gray-500">
             Fecha de inicio
           </label>
-          <div className="flex items-center gap-2 rounded-lg border border-cv-cream-300 bg-cv-cream-50 px-3 py-1.5 focus-within:border-cv-green-400">
+          <div className="rounded-lg border border-cv-cream-300 bg-cv-cream-50 px-3 py-1.5 focus-within:border-cv-green-400">
             <input
               type="date"
               value={fechaInicio}
               onChange={(e) => onChangeInicio(e.target.value)}
-              className="flex-1 bg-transparent text-sm text-cv-gray-700 focus:outline-none [color-scheme:light]"
+              className="w-full bg-transparent text-sm text-cv-gray-700 focus:outline-none [color-scheme:light]"
             />
-            <CalendarDays className="h-4 w-4 shrink-0 text-cv-gray-400 pointer-events-none" />
           </div>
         </div>
 
@@ -52,15 +49,14 @@ export function FiltroFechas({
           <label className="mb-1 block text-xs text-cv-gray-500">
             Fecha de fin
           </label>
-          <div className="flex items-center gap-2 rounded-lg border border-cv-cream-300 bg-cv-cream-50 px-3 py-1.5 focus-within:border-cv-green-400">
+          <div className="rounded-lg border border-cv-cream-300 bg-cv-cream-50 px-3 py-1.5 focus-within:border-cv-green-400">
             <input
               type="date"
               value={fechaFin}
               min={fechaInicio || undefined}
               onChange={(e) => onChangeFin(e.target.value)}
-              className="flex-1 bg-transparent text-sm text-cv-gray-700 focus:outline-none [color-scheme:light]"
+              className="w-full bg-transparent text-sm text-cv-gray-700 focus:outline-none [color-scheme:light]"
             />
-            <CalendarDays className="h-4 w-4 shrink-0 text-cv-gray-400 pointer-events-none" />
           </div>
         </div>
 

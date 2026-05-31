@@ -85,13 +85,7 @@ export function AdminSidebar() {
 
       {/* Acciones inferiores */}
       <div className="space-y-3 border-t border-cv-cream-300 px-4 py-5">
-        <Link
-          href="/admin/flora"
-          className="flex w-full items-center justify-center gap-2 rounded-lg bg-cv-green-800 px-4 py-2.5 text-sm font-medium text-cv-cream-50 transition-colors duration-200 hover:bg-cv-green-700"
-        >
-          <Plus className="h-4 w-4" />
-          Nuevo Producto
-        </Link>
+        
 
         <button
           type="button"
