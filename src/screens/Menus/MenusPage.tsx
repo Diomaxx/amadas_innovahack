@@ -21,7 +21,7 @@ export default async function MenusPage() {
       ) : null}
 
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold text-cv-green-900">Mas propuestas</h2>
+        <h2 className="text-2xl font-semibold text-cv-green-900">Más propuestas</h2>
         <MenusGrid menus={regularMenus} />
       </div>
     </section>

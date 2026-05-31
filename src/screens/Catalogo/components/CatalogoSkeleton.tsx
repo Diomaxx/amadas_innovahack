@@ -19,22 +19,8 @@ export function CatalogoSkeleton() {
         />
       </section>
 
-      {/* ── Two-column layout: filters + grid ── */}
+      {/* ── Two-column layout: grid + filters (right) ── */}
       <div className="flex gap-10 lg:gap-14">
-        {/* Filters sidebar Skeleton */}
-        <div className="hidden w-44 shrink-0 md:block lg:w-48">
-          <motion.div
-            className="mb-6 h-40 w-full rounded-xl bg-cv-cream-100"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.1 }}
-          />
-          <motion.div
-            className="mb-6 h-40 w-full rounded-xl bg-cv-cream-100"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
-          />
-        </div>
-
         {/* Main content Skeleton */}
         <div className="flex-1 min-w-0">
           {/* Grid Skeleton */}
@@ -87,6 +73,20 @@ export function CatalogoSkeleton() {
               ))}
             </div>
           </section>
+        </div>
+
+        {/* Filters sidebar Skeleton — right side */}
+        <div className="hidden w-44 shrink-0 md:block lg:w-48">
+          <motion.div
+            className="mb-6 h-40 w-full rounded-xl bg-cv-cream-100"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.1 }}
+          />
+          <motion.div
+            className="mb-6 h-40 w-full rounded-xl bg-cv-cream-100"
+            animate={{ opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
+          />
         </div>
       </div>
     </div>

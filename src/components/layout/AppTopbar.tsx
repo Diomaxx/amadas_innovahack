@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, CircleUserRound, LogOut, Search, User } from "lucide-react";
+import { ChevronDown, CircleUserRound, LayoutDashboard, Leaf, LogOut, Search, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 import { logout } from "@/lib/firebase/auth";
@@ -53,10 +53,15 @@ export function AppTopbar() {
   }
 
   return (
-    <header className="sticky top-0 z-30 bg-cv-cream-50/95 shadow-[0_1px_0_rgba(20,41,31,0.08),0_8px_18px_-14px_rgba(20,41,31,0.45)] backdrop-blur">
+    <header className="sticky top-0 z-30 border-b border-cv-cream-300/70 bg-cv-cream-50/85 shadow-[0_8px_18px_-16px_rgba(20,41,31,0.45)] backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center gap-4 px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="text-3xl font-bold tracking-tight text-cv-green-900">
-          Calendario Vivo
+        <Link href="/" className="group flex items-center gap-2.5">
+          <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cv-green-800 text-cv-cream-50 ring-1 ring-cv-gold-400/40 transition-transform duration-300 group-hover:-rotate-6">
+            <Leaf className="h-5 w-5" />
+          </span>
+          <span className="font-display text-2xl font-semibold leading-none tracking-tight text-cv-green-900">
+            Calendario <span className="text-cv-gold-600">Vivo</span>
+          </span>
         </Link>
 
         <nav className="ml-4 hidden items-center gap-2 text-sm md:flex">
@@ -137,15 +142,29 @@ export function AppTopbar() {
               </button>
 
               {user ? (
-                <button
-                  type="button"
-                  onClick={handleSignOut}
-                  disabled={isSigningOut}
-                  className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-[#8a2f2f] transition hover:bg-[#fff3f3] disabled:opacity-60"
-                >
-                  <LogOut className="h-4 w-4" />
-                  {isSigningOut ? "Cerrando..." : "Cerrar sesion"}
-                </button>
+                <>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      router.push("/admin");
+                    }}
+                    className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-cv-gray-700 transition hover:bg-cv-cream-100 hover:text-cv-green-900"
+                  >
+                    <LayoutDashboard className="h-4 w-4" />
+                    Panel administrativo
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleSignOut}
+                    disabled={isSigningOut}
+                    className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-[#8a2f2f] transition hover:bg-[#fff3f3] disabled:opacity-60"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    {isSigningOut ? "Cerrando..." : "Cerrar sesion"}
+                  </button>
+                </>
               ) : null}
             </div>
           </div>
