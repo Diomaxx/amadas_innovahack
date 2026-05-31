@@ -16,16 +16,16 @@ function tiempoRelativo(fechaStr: string): string {
   return `Hace ${diffDias} días`;
 }
 
-const RECIENTES = ACTIVIDADES_MOCK.slice(0, 6);
+const RECIENTES = ACTIVIDADES_MOCK.slice(0, 4);
 
 export function ActividadWidget() {
   return (
-    <section className="flex h-full flex-col rounded-xl border border-cv-cream-300 bg-white p-5">
+    <section className="flex flex-col rounded-xl border border-cv-cream-300 bg-white p-5">
       <h2 className="mb-4 text-base font-bold text-cv-gray-900">
         Actividad Reciente
       </h2>
 
-      <div className="min-h-0 flex-1 space-y-3.5 overflow-hidden">
+      <div className="space-y-3.5">
         {RECIENTES.map((entrada) => {
           const visual = ACCION_VISUAL[entrada.accion];
           const { Icon } = visual;

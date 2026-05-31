@@ -21,7 +21,7 @@ export default function AdminDashboardPage() {
       <DashboardStatsBar />
 
       {/* 3 — Publicaciones + Actividad */}
-      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[3fr_2fr]">
+      <div className="grid grid-cols-1 gap-6 lg:grid-cols-[3fr_2fr] lg:items-start">
         <PublicacionesWidget />
         <ActividadWidget />
       </div>
