@@ -4,6 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Calendar, Leaf } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  MES_CORTO,
+  estadoPorCientifico,
+  mensajeAlerta,
+  type EstadoTemporada,
+} from "@/lib/temporada";
 
 interface MonthData {
   mes: string;
@@ -39,6 +45,14 @@ function getEstadoColor(estado: string) {
   }
 }
 
+/** Etiqueta y color del pill de estado según el cálculo dinámico. */
+const estadoPill: Record<EstadoTemporada, { label: string; dot: string }> = {
+  "en-temporada": { label: "EN TEMPORADA", dot: "bg-[#24503C]" },
+  "por-terminar": { label: "POR TERMINAR", dot: "bg-[#D4A017]" },
+  "proxima": { label: "TEMPORADA PRÓXIMA", dot: "bg-[#8D5A3A]" },
+  "fuera": { label: "FUERA DE TEMPORADA", dot: "bg-[#8B2E2E]" },
+};
+
 export function ProductHero({
   nombre,
   nombreCientifico,
@@ -46,8 +60,12 @@ export function ProductHero({
   calendarioCosecha,
   imageSrc,
 }: ProductHeroProps) {
-  // Pill for season (simplified, using the UI from image)
-  const isActiva = temporada !== "Próximamente" && temporada !== "No disponible";
+  // Estado calculado dinámicamente según la fecha actual.
+  const info = estadoPorCientifico(nombreCientifico, new Date());
+  const pill = estadoPill[info.estado];
+  const alerta = mensajeAlerta(nombre, info);
+  const mesActualCorto = MES_CORTO[info.mesActual];
+  void temporada;
 
   return (
     <div className="flex flex-col gap-6">
@@ -89,8 +107,8 @@ export function ProductHero({
           </span>
 
           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[#C6D2CA] bg-[#E9EFEA] px-3.5 py-1.5 text-xs font-bold tracking-wide text-[#24503C]">
-            <div className={cn("h-2.5 w-2.5 rounded-full", isActiva ? "bg-[#24503C]" : "bg-[#8B2E2E]")} />
-            {isActiva ? "TEMPORADA ACTIVA" : "FUERA DE TEMPORADA"}
+            <div className={cn("h-2.5 w-2.5 rounded-full", pill.dot)} />
+            {pill.label}
           </div>
 
           <h1 className="mb-4 text-4xl font-bold leading-[1.1] tracking-tight text-cv-green-900 lg:text-5xl break-words">
@@ -105,21 +123,35 @@ export function ProductHero({
                 <Calendar className="h-6 w-6 text-[#8D5A3A]" />
               </div>
 
-              {/* Timeline bars */}
+              {/* Timeline bars — el mes actual se resalta dinámicamente */}
               <div className="mb-6 flex w-full gap-2">
-                {calendarioCosecha.meses.map((item, idx) => (
-                  <div key={idx} className="flex flex-1 flex-col items-center gap-2">
-                    <span className="text-[10px] font-bold uppercase text-[#14291F]">
-                      {item.mes}
-                    </span>
-                    <div
-                      className={cn(
-                        "h-2 w-full rounded-full",
-                        getEstadoColor(item.estado)
+                {calendarioCosecha.meses.map((item, idx) => {
+                  const esMesActual = item.mes.toUpperCase() === mesActualCorto;
+                  return (
+                    <div key={idx} className="flex flex-1 flex-col items-center gap-2">
+                      <span
+                        className={cn(
+                          "text-[10px] font-bold uppercase",
+                          esMesActual ? "text-[#8D5A3A]" : "text-[#14291F]",
+                        )}
+                      >
+                        {item.mes}
+                      </span>
+                      <div
+                        className={cn(
+                          "h-2 w-full rounded-full",
+                          getEstadoColor(item.estado),
+                          esMesActual && "ring-2 ring-[#8D5A3A] ring-offset-1",
+                        )}
+                      />
+                      {esMesActual && (
+                        <span className="text-[8px] font-bold uppercase tracking-wide text-[#8D5A3A]">
+                          Hoy
+                        </span>
                       )}
-                    />
-                  </div>
-                ))}
+                    </div>
+                  );
+                })}
               </div>
 
               <p className="mb-6 text-[15px] italic text-[#4A4A4A]">
@@ -146,12 +178,19 @@ export function ProductHero({
                 </div>
               </div>
 
-              {/* Notice Box */}
+              {/* Aviso dinámico de temporada + nota informativa */}
               <div className="flex items-start gap-3 rounded-xl bg-[#EAF0EC] p-4 border-l-4 border-[#2D5741]">
                 <Leaf className="mt-0.5 h-4 w-4 shrink-0 text-[#2D5741]" />
-                <p className="text-xs font-semibold leading-relaxed text-[#2D5741]">
-                  {calendarioCosecha.mensaje}
-                </p>
+                <div className="space-y-1">
+                  <p className="text-xs font-bold leading-relaxed text-[#2D5741]">
+                    {alerta}
+                  </p>
+                  {calendarioCosecha.mensaje && (
+                    <p className="text-xs leading-relaxed text-[#4A4A4A]">
+                      {calendarioCosecha.mensaje}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           )}

@@ -11,6 +11,7 @@ import { CatalogoFiltrosBar, type FiltrosState, type Temporada, type Categoria }
 import { CatalogoCard, type EspecieCardData } from "./components/CatalogoCard";
 
 import catalogoData from "@/mocks/catalogoData.json";
+import { estadoPorCientifico } from "@/lib/temporada";
 
 const ESPECIES_GRID = catalogoData.especies as EspecieCardData[];
 
@@ -35,9 +36,18 @@ export default function CatalogoPage() {
   });
   const isLoading = useUnifiedLoading();
 
+  /* ── Estado de temporada dinámico (según la fecha actual) ─────────── */
+  const especiesConEstado = useMemo(() => {
+    const ahora = new Date();
+    return ESPECIES_GRID.map((e) => ({
+      ...e,
+      temporada: estadoPorCientifico(e.nombreCientifico, ahora).temporada,
+    }));
+  }, []);
+
   /* ── Filtering logic ──────────────────────────────────────────────── */
   const especiesFiltradas = useMemo(() => {
-    return ESPECIES_GRID.filter((e) => {
+    return especiesConEstado.filter((e) => {
       const pasaTemporada =
         filtros.temporadas.length === 0 || filtros.temporadas.includes(e.temporada as Temporada);
       const categoria = CATEGORIA_MAP[e.categoria];
@@ -46,7 +56,7 @@ export default function CatalogoPage() {
         (categoria && filtros.categorias.includes(categoria));
       return pasaTemporada && pasaCategoria;
     });
-  }, [filtros]);
+  }, [filtros, especiesConEstado]);
 
   if (isLoading) {
     return <CatalogoSkeleton />;
