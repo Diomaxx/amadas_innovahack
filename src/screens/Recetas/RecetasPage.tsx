@@ -1,6 +1,8 @@
 "use client";
 
-import { RECETARIO_META, RECETAS } from "./recetas.data";
+import type { Receta } from "./recetas.types";
+import { useCollection } from "@/hooks/useCollection";
+import { subscribeRecetas } from "@/lib/firebase/recetas.repo";
 import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 import { RecetasHero } from "./components/RecetasHero";
 import { RecetasGrid } from "./components/RecetasGrid";
@@ -11,16 +13,17 @@ export default function RecetasPage({
 }: {
   insumoInicial?: string;
 }) {
-  const isLoading = useUnifiedLoading();
+  const uiLoading = useUnifiedLoading();
+  const { data: recetas, loading } = useCollection<Receta>(subscribeRecetas);
 
-  if (isLoading) {
+  if (uiLoading || loading) {
     return <RecetasSkeleton />;
   }
 
   return (
     <section className="space-y-10">
-      <RecetasHero total={RECETARIO_META.total} />
-      <RecetasGrid recetas={RECETAS} insumoInicial={insumoInicial} />
+      <RecetasHero total={recetas.length} />
+      <RecetasGrid recetas={recetas} insumoInicial={insumoInicial} />
     </section>
   );
 }

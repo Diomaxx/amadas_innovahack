@@ -14,7 +14,17 @@ function formatFecha(fechaStr: string): string {
   }).format(new Date(fechaStr + "T00:00:00"));
 }
 
-export function PublicacionCard({ pub }: { pub: Publicacion }) {
+export function PublicacionCard({
+  pub,
+  onAprobar,
+  onRechazar,
+  onGuardar,
+}: {
+  pub: Publicacion;
+  onAprobar?: (pub: Publicacion) => void;
+  onRechazar?: (pub: Publicacion) => void;
+  onGuardar?: (pub: Publicacion) => void;
+}) {
   const v = ESTADO_VISUAL[pub.estado];
 
   return (
@@ -89,7 +99,12 @@ export function PublicacionCard({ pub }: { pub: Publicacion }) {
         </div>
       </article>
 
-      <PublicacionDetalleModal pub={pub} />
+      <PublicacionDetalleModal
+        pub={pub}
+        onAprobar={onAprobar}
+        onRechazar={onRechazar}
+        onGuardar={onGuardar}
+      />
     </DialogPrimitive.Root>
   );
 }

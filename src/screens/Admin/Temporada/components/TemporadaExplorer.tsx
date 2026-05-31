@@ -1,15 +1,21 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search, X, Sprout } from "lucide-react";
+import { Search, X, Sprout, Loader2 } from "lucide-react";
 
 import type { ProductoTemporada } from "../temporada.types";
+import { useCollection } from "@/hooks/useCollection";
+import {
+  subscribeProductos,
+  saveProducto,
+  deleteProducto,
+} from "@/lib/firebase/productos.repo";
+import { logActividad } from "@/lib/firebase/actividad.repo";
 import { TemporadaHeader } from "./TemporadaHeader";
 import { TemporadaCard } from "./TemporadaCard";
 import { ProductoModal } from "./ProductoModal";
 import {
   FILTROS,
-  PRODUCTOS_INICIALES,
   formToProducto,
   grupoDeCategoria,
   siguienteId,
@@ -17,7 +23,8 @@ import {
 import type { ProductoFormValues } from "../temporada.types";
 
 export function TemporadaExplorer() {
-  const [productos, setProductos] = useState<ProductoTemporada[]>(PRODUCTOS_INICIALES);
+  const { data: productos, loading } =
+    useCollection<ProductoTemporada>(subscribeProductos);
   const [search, setSearch] = useState("");
   const [filtro, setFiltro] = useState<(typeof FILTROS)[number]>("Todos");
 
@@ -48,22 +55,39 @@ export function TemporadaExplorer() {
     setModalOpen(true);
   };
 
-  const eliminar = (producto: ProductoTemporada) => {
-    if (window.confirm(`¿Eliminar "${producto.nombre}" del catálogo?`)) {
-      setProductos((prev) => prev.filter((p) => p.id !== producto.id));
-    }
-  };
-
-  const guardar = (values: ProductoFormValues) => {
-    setProductos((prev) => {
-      if (editando) {
-        const actualizado = formToProducto(values, editando, editando.id);
-        return prev.map((p) => (p.id === editando.id ? actualizado : p));
-      }
-      const nuevo = formToProducto(values, null, siguienteId(prev));
-      return [nuevo, ...prev];
+  const eliminar = async (producto: ProductoTemporada) => {
+    if (!window.confirm(`¿Eliminar "${producto.nombre}" del catálogo?`)) return;
+    await deleteProducto(producto.id);
+    await logActividad({
+      titulo: "Producto eliminado",
+      descripcion: `Se eliminó "${producto.nombre}" del catálogo.`,
+      accion: "eliminacion",
+      categoria: "sistema",
     });
   };
+
+  const guardar = async (values: ProductoFormValues) => {
+    const esEdicion = Boolean(editando);
+    const producto = esEdicion
+      ? formToProducto(values, editando, editando!.id)
+      : formToProducto(values, null, siguienteId(productos));
+    await saveProducto(producto);
+    await logActividad({
+      titulo: esEdicion ? "Producto editado" : "Producto agregado",
+      descripcion: `${esEdicion ? "Se editó" : "Se agregó"} "${producto.nombre}" en el catálogo.`,
+      accion: esEdicion ? "edicion" : "creacion",
+      categoria: "sistema",
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20 text-cv-gray-400">
+        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+        Cargando productos…
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8">

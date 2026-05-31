@@ -23,6 +23,7 @@ import {
 import { Input } from "@/components/UI/input";
 import { Textarea } from "@/components/UI/textarea";
 import { AnimatedSelect } from "@/components/UI/AnimatedSelect";
+import { CloudinaryImageField } from "@/components/UI/CloudinaryImageField";
 
 import type { ProductoFormValues, ProductoTemporada } from "../temporada.types";
 import {
@@ -135,6 +136,25 @@ export function ProductoModal({ open, onOpenChange, producto, onSubmit }: Props)
                 )}
               />
             </div>
+
+            {/* Imagen del producto */}
+            <FormField
+              control={form.control}
+              name="imageSrc"
+              render={({ field }) => (
+                <FormItem>
+                  <FormControl>
+                    <CloudinaryImageField
+                      label="Imagen del producto"
+                      folder="alma/productos"
+                      value={field.value}
+                      onChange={field.onChange}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
 
             {/* Categoría + estado */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

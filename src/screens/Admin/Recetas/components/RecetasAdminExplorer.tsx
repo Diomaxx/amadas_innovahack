@@ -1,9 +1,16 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Search, X, ChefHat } from "lucide-react";
+import { Search, X, ChefHat, Loader2 } from "lucide-react";
 
 import type { Receta, RecetaCategoria } from "@/screens/Recetas/recetas.types";
+import { useCollection } from "@/hooks/useCollection";
+import {
+  subscribeRecetas,
+  saveReceta,
+  deleteReceta,
+} from "@/lib/firebase/recetas.repo";
+import { logActividad } from "@/lib/firebase/actividad.repo";
 import { RecetasAdminHeader } from "./RecetasAdminHeader";
 import { RecetasStatsBar } from "./RecetasStatsBar";
 import { RecetaAdminCard } from "./RecetaAdminCard";
@@ -18,8 +25,8 @@ const FILTROS: { value: Filtro; label: string }[] = [
   ...CATEGORIAS.map((c) => ({ value: c, label: CATEGORIA_SHORT[c] })),
 ];
 
-export function RecetasAdminExplorer({ recetasIniciales }: { recetasIniciales: Receta[] }) {
-  const [recetas, setRecetas] = useState<Receta[]>(recetasIniciales);
+export function RecetasAdminExplorer() {
+  const { data: recetas, loading } = useCollection<Receta>(subscribeRecetas);
   const [search, setSearch] = useState("");
   const [filtro, setFiltro] = useState<Filtro>("todos");
 
@@ -50,21 +57,40 @@ export function RecetasAdminExplorer({ recetasIniciales }: { recetasIniciales: R
     setModalOpen(true);
   };
 
-  const eliminar = (receta: Receta) => {
+  const eliminar = async (receta: Receta) => {
     const ok = window.confirm(`¿Eliminar la receta "${receta.nombre}"?`);
-    if (ok) setRecetas((prev) => prev.filter((r) => r.id !== receta.id));
-  };
-
-  const guardar = (values: RecetaFormValues) => {
-    setRecetas((prev) => {
-      if (editando) {
-        const actualizada = formValuesToReceta(values, editando, editando.id);
-        return prev.map((r) => (r.id === editando.id ? actualizada : r));
-      }
-      const nueva = formValuesToReceta(values, null, siguienteId(prev));
-      return [nueva, ...prev];
+    if (!ok) return;
+    await deleteReceta(receta.id);
+    await logActividad({
+      titulo: "Receta eliminada",
+      descripcion: `Se eliminó la receta "${receta.nombre}".`,
+      accion: "eliminacion",
+      categoria: "sistema",
     });
   };
+
+  const guardar = async (values: RecetaFormValues) => {
+    const esEdicion = Boolean(editando);
+    const receta = esEdicion
+      ? formValuesToReceta(values, editando, editando!.id)
+      : formValuesToReceta(values, null, siguienteId(recetas));
+    await saveReceta(receta);
+    await logActividad({
+      titulo: esEdicion ? "Receta editada" : "Receta creada",
+      descripcion: `${esEdicion ? "Se editó" : "Se creó"} la receta "${receta.nombre}".`,
+      accion: esEdicion ? "edicion" : "creacion",
+      categoria: "sistema",
+    });
+  };
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20 text-cv-gray-400">
+        <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+        Cargando recetas…
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-8">

@@ -9,10 +9,10 @@ interface Props {
   busca: string;
   productor: string;
   ubicacion: string;
-  estado: "En Temporada" | "Disponible";
+  estado: string; // "En Temporada" | "Disponible"
   tipo: "RAW_MATERIAL" | "SERVICIOS";
   rolProductor: string;
-  accion: "Proponer Trato" | "Enviar Consulta";
+  accion: string; // "Proponer Trato" | "Enviar Consulta"
   imagen?: string;
   onAccion?: () => void;
 }

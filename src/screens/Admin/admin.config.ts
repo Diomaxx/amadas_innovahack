@@ -2,8 +2,8 @@ import {
   Activity,
   BookOpen,
   ChefHat,
+  Database,
   LayoutDashboard,
-  Settings,
   Sprout,
   Users,
   type LucideIcon,
@@ -64,5 +64,11 @@ export const ADMIN_NAV: AdminNavItem[] = [
     title: "Actividad",
     subtitle: "Registro de acciones recientes en la plataforma.",
   },
-  
+  {
+    label: "Inicializar datos",
+    href: "/admin/seed",
+    Icon: Database,
+    title: "Inicializar datos",
+    subtitle: "Sube los datos de ejemplo a Firestore (seeding).",
+  },
 ];

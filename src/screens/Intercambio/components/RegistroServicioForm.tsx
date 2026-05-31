@@ -7,6 +7,7 @@ import {
   Clock,
   Cog,
   Factory,
+  ImageIcon,
   Users,
   Wrench,
 } from "lucide-react";
@@ -15,6 +16,7 @@ import { Input } from "@/components/UI/input";
 import { Label } from "@/components/UI/label";
 import { Button } from "@/components/UI/button";
 import { AnimatedSelect } from "@/components/UI/AnimatedSelect";
+import { CloudinaryImageField } from "@/components/UI/CloudinaryImageField";
 import { RegistroFormSection } from "./RegistroFormSection";
 import { staggerContainer, staggerItem } from "./intercambioAnimations";
 import registroData from "@/mocks/registroConexionesData.json";
@@ -49,6 +51,7 @@ export function RegistroServicioForm({ onSubmit }: RegistroServicioFormProps) {
   const [certificaciones, setCertificaciones] = useState<string[]>([]);
   const [tiempoRespuesta, setTiempoRespuesta] = useState("");
   const [comunidad, setComunidad] = useState("");
+  const [imagenUrl, setImagenUrl] = useState("");
 
   const toggleTipo = (id: string) => {
     setTiposServicio((prev) =>
@@ -72,6 +75,7 @@ export function RegistroServicioForm({ onSubmit }: RegistroServicioFormProps) {
       certificaciones,
       tiempoRespuesta,
       comunidad,
+      imagenUrl,
     });
   };
 
@@ -228,6 +232,18 @@ export function RegistroServicioForm({ onSubmit }: RegistroServicioFormProps) {
             </div>
           </div>
         </div>
+      </RegistroFormSection>
+
+      <RegistroFormSection
+        title="Imagen del servicio"
+        description="Foto del equipamiento, taller o instalación (opcional)."
+        icon={ImageIcon}
+      >
+        <CloudinaryImageField
+          value={imagenUrl}
+          onChange={setImagenUrl}
+          folder="alma/intercambios"
+        />
       </RegistroFormSection>
 
       <motion.div

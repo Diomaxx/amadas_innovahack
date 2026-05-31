@@ -12,25 +12,12 @@ import { MarketStabilityCard } from "./components/MarketStabilityCard";
 import { IntercambioSkeleton } from "./components/IntercambioSkeleton";
 import { ProponerTratoModal } from "./components/ProponerTratoModal";
 import { pageTransition, staggerContainer, staggerItem } from "./components/intercambioAnimations";
+import type { Intercambio } from "./intercambio.types";
+import { useCollection } from "@/hooks/useCollection";
+import { subscribeIntercambios } from "@/lib/firebase/intercambios.repo";
+import { useAuth } from "@/context/AuthContext";
 
 import intercambioData from "@/mocks/intercambioData.json";
-
-interface Intercambio {
-  id: string;
-  titulo: string;
-  tipo: "SERVICIOS" | "RAW_MATERIAL";
-  estado: "En Temporada" | "Disponible";
-  busca: string;
-  rango: string;
-  productor: string;
-  rolProductor: string;
-  ubicacion: string;
-  categoria: Categoria;
-  accion: "Proponer Trato" | "Enviar Consulta";
-  imagen?: string;
-}
-
-const INTERCAMBIOS = intercambioData.intercambios as Intercambio[];
 
 export default function IntercambioPage() {
   const [filtros, setFiltros] = useState<FiltrosIntercambioState>({
@@ -38,23 +25,33 @@ export default function IntercambioPage() {
     ubicaciones: [],
     tipoServicio: [],
   });
-  const isLoading = useUnifiedLoading();
+  const uiLoading = useUnifiedLoading();
+  const { user } = useAuth();
+  const { data: intercambios, loading } =
+    useCollection<Intercambio>(subscribeIntercambios);
   const [selectedIntercambio, setSelectedIntercambio] = useState<Intercambio | null>(null);
 
   const intercambiosFiltrados = useMemo(() => {
-    return INTERCAMBIOS.filter((i) => {
-      const pasaCategoria =
-        filtros.categorias.length === 0 || filtros.categorias.includes(i.categoria);
-      const pasaUbicacion =
-        filtros.ubicaciones.length === 0 || filtros.ubicaciones.includes(i.ubicacion as Ubicacion);
-      const pasaTipo =
-        filtros.tipoServicio.length === 0 || filtros.tipoServicio.includes(i.tipo);
+    const email = user?.email ?? null;
+    return [...intercambios]
+      // No mostrar los intercambios publicados por el propio usuario.
+      .filter((i) => !email || i.creadoPor !== email)
+      .sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0))
+      .filter((i) => {
+        const pasaCategoria =
+          filtros.categorias.length === 0 ||
+          filtros.categorias.includes(i.categoria as Categoria);
+        const pasaUbicacion =
+          filtros.ubicaciones.length === 0 ||
+          filtros.ubicaciones.includes(i.ubicacion as Ubicacion);
+        const pasaTipo =
+          filtros.tipoServicio.length === 0 || filtros.tipoServicio.includes(i.tipo);
 
-      return pasaCategoria && pasaUbicacion && pasaTipo;
-    });
-  }, [filtros]);
+        return pasaCategoria && pasaUbicacion && pasaTipo;
+      });
+  }, [filtros, intercambios, user]);
 
-  if (isLoading) {
+  if (uiLoading || loading) {
     return <IntercambioSkeleton />;
   }
 

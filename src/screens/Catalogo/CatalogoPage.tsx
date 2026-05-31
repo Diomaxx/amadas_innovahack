@@ -10,10 +10,10 @@ import { CatalogoSkeleton } from "./components/CatalogoSkeleton";
 import { CatalogoFiltrosBar, type FiltrosState, type Temporada, type Categoria } from "./components/CatalogoFiltrosBar";
 import { CatalogoCard, type EspecieCardData } from "./components/CatalogoCard";
 
-import catalogoData from "@/mocks/catalogoData.json";
+import type { ProductoTemporada } from "@/screens/Admin/Temporada/temporada.types";
+import { useCollection } from "@/hooks/useCollection";
+import { subscribeProductos } from "@/lib/firebase/productos.repo";
 import { estadoPorCientifico } from "@/lib/temporada";
-
-const ESPECIES_GRID = catalogoData.especies as EspecieCardData[];
 
 const CATEGORIA_MAP: Record<string, Categoria> = {
   "Nuez / Semilla": "Nueces y Semillas",
@@ -34,16 +34,19 @@ export default function CatalogoPage() {
     categorias: [],
     usos: [],
   });
-  const isLoading = useUnifiedLoading();
+  const uiLoading = useUnifiedLoading();
+  const { data: productos, loading } =
+    useCollection<ProductoTemporada>(subscribeProductos);
+  const isLoading = uiLoading || loading;
 
   /* ── Estado de temporada dinámico (según la fecha actual) ─────────── */
   const especiesConEstado = useMemo(() => {
     const ahora = new Date();
-    return ESPECIES_GRID.map((e) => ({
+    return (productos as EspecieCardData[]).map((e) => ({
       ...e,
       temporada: estadoPorCientifico(e.nombreCientifico, ahora).temporada,
     }));
-  }, []);
+  }, [productos]);
 
   /* ── Filtering logic ──────────────────────────────────────────────── */
   const especiesFiltradas = useMemo(() => {

@@ -15,6 +15,8 @@ export type RecetaFormValues = {
   categoria: RecetaCategoria;
   autores: string;
   contexto: string;
+  /** URL de la imagen (Cloudinary). Vacío si no tiene. */
+  imagen: string;
   ingredientes: SeccionFormValue[];
   preparacion: SeccionFormValue[];
 };

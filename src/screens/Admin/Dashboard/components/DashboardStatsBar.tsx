@@ -1,3 +1,5 @@
+"use client";
+
 import {
   ClipboardList,
   Leaf,
@@ -6,74 +8,74 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { PUBLICACIONES_MOCK } from "@/screens/Admin/Publicaciones/publicaciones.data";
-import { CONTACTOS_MOCK } from "@/screens/Admin/Contactos/contactos.data";
-import temporadasData from "@/mocks/temporadas.json";
-
-const pendientesCount = PUBLICACIONES_MOCK.filter(
-  (p) => p.estado === "pendiente",
-).length;
-
-const enTemporadaCount = temporadasData.documents.filter((d) =>
-  d.temporadaMeses.includes("mayo"),
-).length;
-
-const contactosCount = CONTACTOS_MOCK.length;
-
-const STATS = [
-  {
-    id: "pendientes",
-    Icon: ClipboardList,
-    label: "PENDIENTES DE APROBACIÓN",
-    value: pendientesCount,
-    sublabel: "Publicaciones por revisar",
-    iconBg: "#F2E6DA",
-    iconColor: "#B06A3F",
-    alert: true,
-  },
-  {
-    id: "productos",
-    Icon: Package,
-    label: "TOTAL PRODUCTOS",
-    value: 124,
-    trend: "+5 este mes",
-    trendUp: true,
-    iconBg: "#E3F2E9",
-    iconColor: "#2D6A4A",
-  },
-  {
-    id: "temporada",
-    Icon: Leaf,
-    label: "EN TEMPORADA",
-    value: enTemporadaCount,
-    trend: "~2 finalizando pronto",
-    trendUp: false,
-    iconBg: "#DCEBE6",
-    iconColor: "#3E7C71",
-  },
-  {
-    id: "contactos",
-    Icon: Users,
-    label: "CONTACTOS ACTIVOS",
-    value: contactosCount,
-    trend: "+3 este mes",
-    trendUp: true,
-    iconBg: "#E3ECF3",
-    iconColor: "#2B6A93",
-  },
-  {
-    id: "recetas",
-    Icon: TrendingUp,
-    label: "RECETAS PUBLICADAS",
-    value: 24,
-    trend: "+3 nuevas este mes",
-    trendUp: true,
-    iconBg: "#F0E7CF",
-    iconColor: "#9C7C3C",
-  },
-] as const;
+import type { Publicacion } from "@/screens/Admin/Publicaciones/publicaciones.types";
+import type { Contacto } from "@/screens/Admin/Contactos/contactos.types";
+import type { ProductoTemporada } from "@/screens/Admin/Temporada/temporada.types";
+import type { Receta } from "@/screens/Recetas/recetas.types";
+import { useCollection } from "@/hooks/useCollection";
+import { subscribePublicaciones } from "@/lib/firebase/publicaciones.repo";
+import { subscribeUsuarios } from "@/lib/firebase/users.repo";
+import { subscribeProductos } from "@/lib/firebase/productos.repo";
+import { subscribeRecetas } from "@/lib/firebase/recetas.repo";
 
 export function DashboardStatsBar() {
+  const { data: publicaciones } = useCollection<Publicacion>(subscribePublicaciones);
+  const { data: contactos } = useCollection<Contacto>(subscribeUsuarios);
+  const { data: productos } = useCollection<ProductoTemporada>(subscribeProductos);
+  const { data: recetas } = useCollection<Receta>(subscribeRecetas);
+
+  const pendientesCount = publicaciones.filter((p) => p.estado === "pendiente").length;
+  const enTemporadaCount = productos.filter((p) =>
+    p.temporadaMeses?.includes("mayo"),
+  ).length;
+
+  const STATS = [
+    {
+      id: "pendientes",
+      Icon: ClipboardList,
+      label: "PENDIENTES DE APROBACIÓN",
+      value: pendientesCount,
+      sublabel: "Publicaciones por revisar",
+      iconBg: "#F2E6DA",
+      iconColor: "#B06A3F",
+      alert: true,
+    },
+    {
+      id: "productos",
+      Icon: Package,
+      label: "TOTAL PRODUCTOS",
+      value: productos.length,
+      iconBg: "#E3F2E9",
+      iconColor: "#2D6A4A",
+    },
+    {
+      id: "temporada",
+      Icon: Leaf,
+      label: "EN TEMPORADA",
+      value: enTemporadaCount,
+      trend: "Mes actual: mayo",
+      trendUp: true,
+      iconBg: "#DCEBE6",
+      iconColor: "#3E7C71",
+    },
+    {
+      id: "contactos",
+      Icon: Users,
+      label: "CONTACTOS ACTIVOS",
+      value: contactos.length,
+      iconBg: "#E3ECF3",
+      iconColor: "#2B6A93",
+    },
+    {
+      id: "recetas",
+      Icon: TrendingUp,
+      label: "RECETAS PUBLICADAS",
+      value: recetas.length,
+      iconBg: "#F0E7CF",
+      iconColor: "#9C7C3C",
+    },
+  ] as const;
+
   return (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5 lg:gap-4">
       {STATS.map((stat) => {

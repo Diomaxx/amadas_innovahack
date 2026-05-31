@@ -3,8 +3,13 @@
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import Link from "next/link";
 import { Check, ChevronRight, Eye, X } from "lucide-react";
-import { PUBLICACIONES_MOCK } from "@/screens/Admin/Publicaciones/publicaciones.data";
 import type { Publicacion } from "@/screens/Admin/Publicaciones/publicaciones.types";
+import { useCollection } from "@/hooks/useCollection";
+import {
+  subscribePublicaciones,
+  setEstadoPublicacion,
+} from "@/lib/firebase/publicaciones.repo";
+import { logActividad } from "@/lib/firebase/actividad.repo";
 import { PublicacionVistaModal } from "./PublicacionVistaModal";
 
 function tiempoRelativo(fechaStr: string): string {
@@ -13,16 +18,20 @@ function tiempoRelativo(fechaStr: string): string {
   const diffDias = Math.round(
     (hoy.getTime() - fecha.getTime()) / 86_400_000,
   );
-  if (diffDias === 0) return "Hace 2 horas";
+  if (diffDias <= 0) return "Hoy";
   if (diffDias === 1) return "Hace 1 día";
   return `Hace ${diffDias} días`;
 }
 
-const ALL_PENDIENTES = PUBLICACIONES_MOCK.filter((p) => p.estado === "pendiente");
-const PENDIENTES = ALL_PENDIENTES.slice(0, 3);
-const TOTAL_PENDIENTES = ALL_PENDIENTES.length;
-
-function PubRow({ pub }: { pub: Publicacion }) {
+function PubRow({
+  pub,
+  onAprobar,
+  onRechazar,
+}: {
+  pub: Publicacion;
+  onAprobar: (p: Publicacion) => void;
+  onRechazar: (p: Publicacion) => void;
+}) {
   return (
     <DialogPrimitive.Root>
       <div className="flex items-center gap-3 py-3.5">
@@ -50,6 +59,7 @@ function PubRow({ pub }: { pub: Publicacion }) {
           <button
             type="button"
             aria-label="Aprobar"
+            onClick={() => onAprobar(pub)}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-cv-green-100 text-cv-green-700 transition-colors hover:bg-cv-green-200"
           >
             <Check className="h-3.5 w-3.5" />
@@ -57,6 +67,7 @@ function PubRow({ pub }: { pub: Publicacion }) {
           <button
             type="button"
             aria-label="Rechazar"
+            onClick={() => onRechazar(pub)}
             className="flex h-8 w-8 items-center justify-center rounded-full bg-[#F4E4DF] text-[#C0392B] transition-colors hover:bg-[#EFD6D0]"
           >
             <X className="h-3.5 w-3.5" />
@@ -79,6 +90,30 @@ function PubRow({ pub }: { pub: Publicacion }) {
 }
 
 export function PublicacionesWidget() {
+  const { data } = useCollection<Publicacion>(subscribePublicaciones);
+  const pendientes = data.filter((p) => p.estado === "pendiente");
+  const visibles = pendientes.slice(0, 3);
+
+  const aprobar = async (pub: Publicacion) => {
+    await setEstadoPublicacion(pub.id, "aprobado");
+    await logActividad({
+      titulo: "Publicación aprobada",
+      descripcion: `Se aprobó la publicación "${pub.titulo}" de ${pub.autor}.`,
+      accion: "aprobacion",
+      categoria: "productor",
+    });
+  };
+
+  const rechazar = async (pub: Publicacion) => {
+    await setEstadoPublicacion(pub.id, "rechazado");
+    await logActividad({
+      titulo: "Publicación rechazada",
+      descripcion: `Se rechazó la publicación "${pub.titulo}" de ${pub.autor}.`,
+      accion: "rechazo",
+      categoria: "productor",
+    });
+  };
+
   return (
     <section className="flex flex-col rounded-xl border border-cv-cream-300 bg-white p-5">
       {/* Header */}
@@ -87,15 +122,25 @@ export function PublicacionesWidget() {
           Publicaciones Pendientes
         </h2>
         <span className="rounded-full bg-[#F0E7CF] px-2.5 py-0.5 text-xs font-semibold text-[#9C7C3C]">
-          {TOTAL_PENDIENTES} por revisar
+          {pendientes.length} por revisar
         </span>
       </div>
 
       {/* List */}
       <div className="flex-1 divide-y divide-cv-cream-200">
-        {PENDIENTES.map((pub) => (
-          <PubRow key={pub.id} pub={pub} />
+        {visibles.map((pub) => (
+          <PubRow
+            key={pub.id}
+            pub={pub}
+            onAprobar={aprobar}
+            onRechazar={rechazar}
+          />
         ))}
+        {visibles.length === 0 && (
+          <p className="py-6 text-sm text-cv-gray-400">
+            No hay publicaciones pendientes.
+          </p>
+        )}
       </div>
 
       {/* Footer link */}
