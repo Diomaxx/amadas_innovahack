@@ -84,13 +84,8 @@ export default function CatalogoPage() {
         </p>
       </section>
 
-      {/* ── Two-column layout: filters + grid ─────────────────────── */}
+      {/* ── Two-column layout: grid + sticky filters (right) ──────── */}
       <div className="flex gap-10 lg:gap-14">
-        {/* Filters sidebar */}
-        <div className="hidden w-44 shrink-0 md:block lg:w-48">
-          <CatalogoFiltros filtros={filtros} onChange={setFiltros} />
-        </div>
-
         {/* Main content */}
         <div className="flex-1 min-w-0">
           {/* ── Grid de especies ──────────────────────────────────── */}
@@ -145,6 +140,13 @@ export default function CatalogoPage() {
             >
               {mostrarTodos ? "Ver menos especies" : "Ver más especies"}
             </button>
+          </div>
+        </div>
+
+        {/* Filters sidebar — fixed to the right, sticky on scroll */}
+        <div className="hidden w-44 shrink-0 md:block lg:w-48">
+          <div className="sticky top-24">
+            <CatalogoFiltros filtros={filtros} onChange={setFiltros} />
           </div>
         </div>
       </div>

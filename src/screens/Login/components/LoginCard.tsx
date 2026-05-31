@@ -1,204 +1,198 @@
 "use client";
 
-import { useMemo, useState } from "react";
-import type { CSSProperties, FormEvent } from "react";
-import type { User } from "firebase/auth";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { loginWithEmail, logout, registerWithEmail } from "@/lib/firebase/auth";
-import {
-  createUserProfile,
-  getUserProfile,
-  type AppUserProfile,
-} from "@/lib/firebase/firestore";
+import { ArrowLeft, Eye, EyeOff, Leaf } from "lucide-react";
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { loginWithEmail } from "@/lib/firebase/auth";
+import { GoogleIcon } from "@/components/UI/BrandIcons";
+import { AuthBrandPanel } from "@/screens/Auth/components/AuthBrandPanel";
 
-type LoginCardProps = {
-  user: User | null;
-};
-
-const cardStyle: CSSProperties = {
-  width: "min(100%, 420px)",
-  borderRadius: "14px",
-  background: "#ffffff",
-  padding: "1.5rem",
-  boxShadow: "0 14px 36px rgba(9, 24, 61, 0.12)",
-  border: "1px solid #e8ebf2",
-};
-
-const titleStyle: CSSProperties = {
-  margin: "0 0 1rem",
-  color: "#15213a",
-};
-
-const formStyle: CSSProperties = {
-  display: "grid",
-  gap: "0.6rem",
-};
-
-const labelStyle: CSSProperties = {
-  fontSize: "0.9rem",
-  color: "#30415f",
-};
-
-const inputStyle: CSSProperties = {
-  width: "100%",
-  border: "1px solid #cad3e0",
-  borderRadius: "10px",
-  padding: "0.7rem 0.8rem",
-  boxSizing: "border-box",
-};
-
-const buttonStyle: CSSProperties = {
-  marginTop: "0.6rem",
-  border: 0,
-  borderRadius: "10px",
-  padding: "0.75rem 1rem",
-  background: "#2446cf",
-  color: "#ffffff",
-  fontWeight: 600,
-  cursor: "pointer",
-};
-
-const linkButtonStyle: CSSProperties = {
-  marginTop: "0.75rem",
-  border: 0,
-  background: "transparent",
-  color: "#2446cf",
-  cursor: "pointer",
-  padding: 0,
-};
-
-const feedbackStyle: CSSProperties = {
-  margin: "0.75rem 0 0",
-  color: "#17304d",
-  fontSize: "0.92rem",
-};
-
-const textStyle: CSSProperties = {
-  color: "#1e2b2f",
-};
-
-export function LoginCard({ user }: LoginCardProps) {
+export function LoginCard() {
   const router = useRouter();
-  const [mode, setMode] = useState<"login" | "register">("login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [busy, setBusy] = useState(false);
-  const [message, setMessage] = useState("");
-  const [profile, setProfile] = useState<AppUserProfile | null>(null);
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const title = useMemo(
-    () => (mode === "login" ? "Iniciar sesion" : "Crear cuenta"),
-    [mode]
-  );
-
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    setMessage("");
-    setBusy(true);
+  async function handleSubmit(event: React.FormEvent) {
+    event.preventDefault();
+    setError(null);
+    setIsSubmitting(true);
 
     try {
-      if (mode === "register") {
-        const credential = await registerWithEmail(email.trim(), password);
-        await createUserProfile(credential.user.uid, credential.user.email ?? email);
-        setMessage("Cuenta creada y perfil guardado en Firestore.");
-        router.push("/");
-      } else {
-        const credential = await loginWithEmail(email.trim(), password);
-        const userProfile = await getUserProfile(credential.user.uid);
-        setProfile(userProfile);
-        setMessage(
-          userProfile
-            ? "Sesion iniciada. Perfil cargado desde Firestore."
-            : "Sesion iniciada. No existe perfil todavia en Firestore."
-        );
-        router.push("/");
-      }
-    } catch (error) {
-      const nextError = error as Error;
-      setMessage(nextError.message || "Ocurrio un error autenticando.");
+      await loginWithEmail(email, password);
+      router.push("/");
+    } catch (err) {
+      const message =
+        err instanceof Error ? err.message : "No se pudo iniciar sesion.";
+      setError(message);
     } finally {
-      setBusy(false);
+      setIsSubmitting(false);
     }
-  }
-
-  async function handleLogout() {
-    setBusy(true);
-    setMessage("");
-
-    try {
-      await logout();
-      setProfile(null);
-      setMessage("Sesion cerrada.");
-    } catch (error) {
-      const nextError = error as Error;
-      setMessage(nextError.message || "No se pudo cerrar sesion.");
-    } finally {
-      setBusy(false);
-    }
-  }
-
-  if (user) {
-    return (
-      <section style={cardStyle}>
-        <h1 style={titleStyle}>Sesion activa</h1>
-        <p style={textStyle}>Usuario: {user.email}</p>
-        {profile && <p style={textStyle}>Rol: {profile.role}</p>}
-        {message && <p style={feedbackStyle}>{message}</p>}
-        <button style={buttonStyle} onClick={handleLogout} disabled={busy}>
-          {busy ? "Cerrando..." : "Cerrar sesion"}
-        </button>
-      </section>
-    );
   }
 
   return (
-    <section style={cardStyle}>
-      <h1 style={titleStyle}>{title}</h1>
-      <form style={formStyle} onSubmit={handleSubmit}>
-        <label style={labelStyle} htmlFor="email">
-          Correo
-        </label>
-        <input
-          id="email"
-          type="email"
-          style={inputStyle}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <label style={labelStyle} htmlFor="password">
-          Contrasena
-        </label>
-        <input
-          id="password"
-          type="password"
-          style={inputStyle}
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          minLength={6}
-          required
-        />
-
-        <button style={buttonStyle} type="submit" disabled={busy}>
-          {busy ? "Procesando..." : mode === "login" ? "Entrar" : "Crear cuenta"}
-        </button>
-      </form>
-
-      <button
-        type="button"
-        style={linkButtonStyle}
-        onClick={() => {
-          setMode((current) => (current === "login" ? "register" : "login"));
-          setMessage("");
-        }}
+    <motion.div
+      initial={{ opacity: 0, y: 24, scale: 0.98 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      className="relative grid w-full max-w-4xl overflow-hidden rounded-3xl border border-cv-cream-300 bg-white shadow-2xl shadow-cv-green-900/10 md:grid-cols-2"
+    >
+      {/* Cortina: la imagen cubre toda la tarjeta y se desliza a la mitad
+          derecha. (Solo md+; en móvil se muestra como banner estático abajo.) */}
+      <motion.div
+        aria-hidden
+        className="absolute inset-y-0 right-0 z-20 hidden md:block"
+        initial={{ left: "0%" }}
+        animate={{ left: "50%" }}
+        transition={{ duration: 0.8, delay: 0.6, ease: [0.83, 0, 0.17, 1] }}
       >
-        {mode === "login"
-          ? "No tienes cuenta? Registrate"
-          : "Ya tienes cuenta? Inicia sesion"}
-      </button>
+        <AuthBrandPanel contentDelay={0.3} />
+      </motion.div>
 
-      {message && <p style={feedbackStyle}>{message}</p>}
-    </section>
+      {/* Left: form — aparece cuando la cortina ya se corrió */}
+      <motion.div
+        className="p-8 sm:p-10"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 1 }}
+      >
+        <div className="mb-8 flex items-center gap-2 text-cv-green-900">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-cv-green-800 text-cv-cream-50">
+            <Leaf className="h-5 w-5" />
+          </span>
+          <span className="font-display text-xl font-semibold">
+            Calendario Vivo
+          </span>
+        </div>
+
+        <h1 className="mb-2 font-display text-3xl font-bold text-cv-green-900">
+          Iniciar sesión
+        </h1>
+        <p className="mb-7 text-sm text-cv-gray-600">
+          Bienvenido de vuelta. Ingresa para continuar.
+        </p>
+
+        {/* Google */}
+        <button
+          type="button"
+          className="flex w-full items-center justify-center gap-3 rounded-lg border border-cv-cream-300 bg-white px-4 py-2.5 text-sm font-medium text-cv-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-cv-green-300 hover:bg-cv-cream-50 hover:shadow-sm active:translate-y-0"
+        >
+          <GoogleIcon className="h-5 w-5" />
+          Continuar con Google
+        </button>
+
+        {/* Divider */}
+        <div className="my-6 flex items-center gap-3 text-xs text-cv-gray-400">
+          <span className="h-px flex-1 bg-cv-cream-300" />
+          o ingresa con tus datos
+          <span className="h-px flex-1 bg-cv-cream-300" />
+        </div>
+
+        {error && (
+          <motion.div
+            initial={{ opacity: 0, y: -6 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-600"
+          >
+            {error}
+          </motion.div>
+        )}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-cv-gray-700">
+              Correo electrónico o teléfono
+            </label>
+            <input
+              type="text"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="nombre@ejemplo.com"
+              className="w-full rounded-lg border border-cv-cream-300 bg-white px-4 py-2.5 text-sm text-cv-gray-900 outline-none transition focus:border-cv-green-500 focus:ring-2 focus:ring-cv-green-100"
+            />
+          </div>
+
+          <div>
+            <label className="mb-1.5 block text-sm font-medium text-cv-gray-700">
+              Contraseña
+            </label>
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                placeholder="••••••••"
+                className="w-full rounded-lg border border-cv-cream-300 bg-white px-4 py-2.5 pr-11 text-sm text-cv-gray-900 outline-none transition focus:border-cv-green-500 focus:ring-2 focus:ring-cv-green-100"
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword((v) => !v)}
+                aria-label={
+                  showPassword ? "Ocultar contraseña" : "Mostrar contraseña"
+                }
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-cv-gray-400 transition-colors hover:text-cv-gray-600"
+              >
+                {showPassword ? (
+                  <EyeOff className="h-4 w-4" />
+                ) : (
+                  <Eye className="h-4 w-4" />
+                )}
+              </button>
+            </div>
+          </div>
+
+          <div className="flex items-center justify-between text-sm">
+            <label className="flex items-center gap-2 text-cv-gray-600">
+              <input type="checkbox" className="rounded border-cv-cream-300" />
+              Recordarme
+            </label>
+            <Link
+              href="#"
+              className="text-cv-gold-600 transition-colors hover:text-cv-gold-500"
+            >
+              Olvidé mi contraseña
+            </Link>
+          </div>
+
+          <button
+            type="submit"
+            disabled={isSubmitting}
+            className="w-full rounded-lg bg-cv-green-800 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-cv-green-700 hover:shadow-md active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+          >
+            {isSubmitting ? "Ingresando..." : "Ingresar"}
+          </button>
+        </form>
+
+        <p className="mt-6 text-sm text-cv-gray-600">
+          ¿Aún no tienes cuenta?{" "}
+          <Link
+            href="/auth/registro"
+            className="font-medium text-cv-green-700 transition-colors hover:text-cv-green-600"
+          >
+            Crear cuenta
+          </Link>
+        </p>
+
+        <Link
+          href="/"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm text-cv-gray-500 transition-colors hover:text-cv-gray-700"
+        >
+          <ArrowLeft className="h-3.5 w-3.5" />
+          Volver al inicio
+        </Link>
+      </motion.div>
+
+      {/* Right: placeholder donde aterriza la cortina (md+).
+          En móvil, banner estático debajo del formulario. */}
+      <div className="relative min-h-[240px] md:min-h-0">
+        <div className="md:hidden">
+          <AuthBrandPanel contentDelay={0} />
+        </div>
+      </div>
+    </motion.div>
   );
 }

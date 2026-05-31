@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, CircleUserRound, Leaf, LogOut, Search, User } from "lucide-react";
+import { ChevronDown, CircleUserRound, LayoutDashboard, Leaf, LogOut, Search, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 import { logout } from "@/lib/firebase/auth";
@@ -140,15 +140,29 @@ export function AppTopbar() {
               </button>
 
               {user ? (
-                <button
-                  type="button"
-                  onClick={handleSignOut}
-                  disabled={isSigningOut}
-                  className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-[#8a2f2f] transition hover:bg-[#fff3f3] disabled:opacity-60"
-                >
-                  <LogOut className="h-4 w-4" />
-                  {isSigningOut ? "Cerrando..." : "Cerrar sesion"}
-                </button>
+                <>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setMenuOpen(false);
+                      router.push("/admin");
+                    }}
+                    className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-cv-gray-700 transition hover:bg-cv-cream-100 hover:text-cv-green-900"
+                  >
+                    <LayoutDashboard className="h-4 w-4" />
+                    Panel administrativo
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleSignOut}
+                    disabled={isSigningOut}
+                    className="mt-1 flex w-full items-center gap-2 rounded-lg px-3 py-2 text-left text-sm text-[#8a2f2f] transition hover:bg-[#fff3f3] disabled:opacity-60"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    {isSigningOut ? "Cerrando..." : "Cerrar sesion"}
+                  </button>
+                </>
               ) : null}
             </div>
           </div>

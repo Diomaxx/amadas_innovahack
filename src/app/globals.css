@@ -223,6 +223,10 @@ body {
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   margin: 0;
   padding: 0;
+  /* Full-bleed landing sections use 100vw, which includes the vertical
+     scrollbar width and would otherwise cause a sliver of horizontal scroll.
+     `clip` removes it without creating a scroll container (keeps sticky nav). */
+  overflow-x: clip;
 }
 
 /* ============================================================

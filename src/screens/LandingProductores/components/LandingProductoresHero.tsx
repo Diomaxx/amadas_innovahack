@@ -94,20 +94,6 @@ export function LandingProductoresHero() {
           </a>
         </motion.div>
       </motion.div>
-
-      <motion.div
-        aria-hidden
-        style={{ opacity: fade }}
-        className="absolute bottom-7 left-1/2 hidden -translate-x-1/2 sm:block"
-      >
-        <motion.div
-          animate={{ y: [0, 9, 0] }}
-          transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="flex h-10 w-6 items-start justify-center rounded-full border border-cv-cream-300/40 p-1.5"
-        >
-          <span className="h-2 w-1 rounded-full bg-cv-gold-400/80" />
-        </motion.div>
-      </motion.div>
     </section>
   );
 }

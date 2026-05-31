@@ -1,53 +1,30 @@
 "use client";
 
 import Link from "next/link";
-import { useRef, type ReactNode } from "react";
-import { motion, useMotionValue, useSpring } from "framer-motion";
+import type { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 type MagneticButtonProps = {
   href: string;
   children: ReactNode;
   className?: string;
+  /** @deprecated kept for compatibility; no longer used. */
   strength?: number;
 };
 
 /**
- * A link that gently drifts toward the cursor while hovered, then springs back.
+ * Link with a subtle, contained hover response — a small lift on hover and a
+ * gentle press on tap. No cursor tracking.
  */
-export function MagneticButton({
-  href,
-  children,
-  className,
-  strength = 0.35,
-}: MagneticButtonProps) {
-  const ref = useRef<HTMLAnchorElement>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const sx = useSpring(x, { stiffness: 250, damping: 18, mass: 0.4 });
-  const sy = useSpring(y, { stiffness: 250, damping: 18, mass: 0.4 });
-
-  function onMove(e: React.MouseEvent<HTMLAnchorElement>) {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    x.set((e.clientX - (rect.left + rect.width / 2)) * strength);
-    y.set((e.clientY - (rect.top + rect.height / 2)) * strength);
-  }
-
-  function reset() {
-    x.set(0);
-    y.set(0);
-  }
-
+export function MagneticButton({ href, children, className }: MagneticButtonProps) {
   return (
-    <motion.div style={{ x: sx, y: sy }} className="inline-flex">
-      <Link
-        ref={ref}
-        href={href}
-        onMouseMove={onMove}
-        onMouseLeave={reset}
-        className={className}
-      >
+    <motion.div
+      className="inline-flex"
+      whileHover={{ y: -2 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 400, damping: 28 }}
+    >
+      <Link href={href} className={className}>
         {children}
       </Link>
     </motion.div>
