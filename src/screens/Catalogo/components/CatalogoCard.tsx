@@ -2,13 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  FileText,
-  MessageCircle,
-  Clock,
-  Leaf,
-  AlertTriangle,
-} from "lucide-react";
+import { FileText, MessageCircle, Leaf } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { Temporada } from "./CatalogoFiltros";
 
@@ -34,21 +28,18 @@ export interface EspecieCardData {
 /* ── Status badge config ─────────────────────────────────────────────── */
 const temporadaConfig: Record<
   Temporada,
-  { label: string; icon: React.ReactNode; className: string }
+  { label: string; className: string }
 > = {
   "En temporada": {
     label: "En temporada",
-    icon: <Leaf className="h-3 w-3" />,
     className: "bg-cv-green-700/95 text-white",
   },
   "Próximamente": {
     label: "Próximamente",
-    icon: <Clock className="h-3 w-3" />,
     className: "bg-cv-gray-800/90 text-white",
   },
   "Finalizando": {
     label: "Stock Limitado",
-    icon: <AlertTriangle className="h-3 w-3" />,
     className: "bg-[#8B2E2E]/95 text-white",
   },
 };
@@ -83,29 +74,20 @@ export function CatalogoCard({ especie }: { especie: EspecieCardData }) {
         {/* Badge de temporada */}
         <span
           className={cn(
-            "absolute right-2.5 top-2.5 flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold shadow-sm backdrop-blur-sm",
+            "absolute right-2.5 top-2.5 rounded-full px-2.5 py-1 text-xs font-semibold shadow-sm backdrop-blur-sm",
             badge.className,
           )}
         >
-          {badge.icon}
           {badge.label}
         </span>
       </div>
 
       {/* ── Cuerpo ───────────────────────────────────────────────── */}
       <div className="flex flex-1 flex-col p-4">
-        {/* Nombre + disponibilidad */}
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="text-base font-bold leading-snug text-cv-green-900">
-            {especie.nombre}
-          </h3>
-          {especie.disponibilidad && especie.disponibilidad.length > 0 ? (
-            <span className="mt-0.5 shrink-0 text-[11px] font-semibold uppercase tracking-wide text-cv-gold-600">
-              {especie.disponibilidad.length}{" "}
-              {especie.disponibilidad.length === 1 ? "productor" : "productores"}
-            </span>
-          ) : null}
-        </div>
+        {/* Nombre */}
+        <h3 className="text-base font-bold leading-snug text-cv-green-900">
+          {especie.nombre}
+        </h3>
 
         {/* Productor + descripción */}
         <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-cv-gray-600">
@@ -117,24 +99,21 @@ export function CatalogoCard({ especie }: { especie: EspecieCardData }) {
           {especie.descripcion}
         </p>
 
-        {/* Divisor */}
-        <div className="my-3 h-px bg-cv-cream-200" />
-
-        {/* Estado destacado (usamos datos reales en lugar de precio) */}
-        <p className="text-[10px] font-semibold uppercase tracking-widest text-cv-gray-400">
-          {primaria ? "Disponibilidad" : "Categoría"}
-        </p>
-        <p
-          className={cn(
-            "text-sm font-bold",
-            primaria ? "text-cv-green-800" : "text-cv-gray-700",
-          )}
-        >
-          {primaria ? primaria.estado : especie.categoria}
-        </p>
+        {/* Disponibilidad (solo si hay productores con stock) */}
+        {primaria && (
+          <>
+            <div className="my-3 h-px bg-cv-cream-200" />
+            <p className="text-[10px] font-semibold uppercase tracking-widest text-cv-gray-400">
+              Disponibilidad
+            </p>
+            <p className="text-sm font-bold text-cv-green-800">
+              {primaria.estado}
+            </p>
+          </>
+        )}
 
         {/* Acciones */}
-        <div className="mt-4 grid grid-cols-2 gap-2">
+        <div className="mt-auto grid grid-cols-2 gap-2 pt-4">
           <Link
             href={`/catalogo/${especie.id}`}
             className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-cv-green-800 px-3 py-2 text-xs font-semibold text-white transition-colors hover:bg-cv-green-700"
@@ -144,7 +123,7 @@ export function CatalogoCard({ especie }: { especie: EspecieCardData }) {
           </Link>
           <button
             type="button"
-            className="inline-flex items-center justify-center gap-1.5 rounded-lg bg-cv-gold-300 px-3 py-2 text-xs font-semibold text-cv-green-900 transition-colors hover:bg-cv-gold-400"
+            className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-cv-green-800 px-3 py-2 text-xs font-semibold text-cv-green-800 transition-colors hover:bg-cv-green-50"
           >
             <MessageCircle className="h-3.5 w-3.5" />
             {accion}
