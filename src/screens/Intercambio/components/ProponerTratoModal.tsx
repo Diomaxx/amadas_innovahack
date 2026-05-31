@@ -16,24 +16,26 @@ import { cn } from "@/lib/utils";
 const tratoFormSchema = z.object({
   restaurante: z.string().min(2, "Nombre del restaurante requerido"),
   contacto: z.string().min(2, "Nombre del contacto requerido"),
-  canalContacto: z.enum(["whatsapp", "llamada", "correo"], {
-    errorMap: () => ({ message: "Selecciona un canal de contacto" }),
-  }),
-  cantidad: z.coerce.number().min(1, "La cantidad debe ser mayor a 0"),
-  unidad: z.enum(["kg", "litros", "lotes"], {
-    errorMap: () => ({ message: "Selecciona una unidad" }),
-  }),
-  ofertaEconomica: z.coerce.number().min(1, "La oferta debe ser mayor a 0"),
-  frecuencia: z.enum(["unica", "semanal", "mensual"], {
-    errorMap: () => ({ message: "Selecciona una frecuencia" }),
-  }),
-  modalidadEntrega: z.enum(["retiro", "envio"], {
-    errorMap: () => ({ message: "Selecciona una modalidad" }),
-  }),
+  canalContacto: z.enum(["whatsapp", "llamada", "correo"]),
+  cantidad: z.preprocess((val) => typeof val === "string" ? parseFloat(val) : val, z.number().min(1, "La cantidad debe ser mayor a 0")),
+  unidad: z.enum(["kg", "litros", "lotes"]),
+  ofertaEconomica: z.preprocess((val) => typeof val === "string" ? parseFloat(val) : val, z.number().min(1, "La oferta debe ser mayor a 0")),
+  frecuencia: z.enum(["unica", "semanal", "mensual"]),
+  modalidadEntrega: z.enum(["retiro", "envio"]),
   especificaciones: z.string().max(500, "Máximo 500 caracteres").optional(),
 });
 
-type TratoFormValues = z.infer<typeof tratoFormSchema>;
+type TratoFormValues = {
+  restaurante: string;
+  contacto: string;
+  canalContacto: "whatsapp" | "llamada" | "correo";
+  cantidad: number;
+  unidad: "kg" | "litros" | "lotes";
+  ofertaEconomica: number;
+  frecuencia: "unica" | "semanal" | "mensual";
+  modalidadEntrega: "retiro" | "envio";
+  especificaciones?: string;
+};
 
 interface ProponerTratoModalProps {
   trigger?: React.ReactNode;
@@ -57,7 +59,7 @@ export function ProponerTratoModal({
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<TratoFormValues>({
-    resolver: zodResolver(tratoFormSchema),
+    resolver: zodResolver(tratoFormSchema) as any,
     defaultValues: {
       restaurante: "",
       contacto: "",
@@ -158,28 +160,26 @@ export function ProponerTratoModal({
         </DialogTrigger>
       )}
 
-      <DialogContent className="proponer-trato-modal max-h-[95vh] w-full overflow-y-auto border-cv-cream-300 bg-white sm:max-w-4xl">
-        <DialogHeader className="border-b border-cv-cream-200 pb-4">
-          <DialogTitle className="text-2xl font-bold text-cv-green-900">
+      <DialogContent className="proponer-trato-modal max-h-[90vh] w-[calc(100%-2rem)] mx-auto overflow-y-auto border-cv-cream-300 bg-white rounded-2xl sm:max-w-lg px-4 py-5 sm:px-6 sm:py-6">
+        <DialogHeader className="border-b border-cv-cream-200 pb-3 sm:pb-4">
+          <DialogTitle className="text-lg sm:text-2xl font-bold text-cv-green-900">
             {titulo}
           </DialogTitle>
-          <p className="mt-2 text-sm leading-relaxed text-cv-gray-600">
+          <p className="mt-1 sm:mt-2 text-xs sm:text-sm leading-relaxed text-cv-gray-600">
             Completa los detalles de tu propuesta. Te ayudaremos a conectar con el productor
             de forma directa y segura.
           </p>
         </DialogHeader>
 
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-6 pt-6">
-            {/* Grid de dos columnas */}
-            <div className="grid gap-8 md:grid-cols-2">
-              {/* COLUMNA IZQUIERDA */}
-              <div className="space-y-6">
-                {/* Sección: Tu Información */}
-                <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-cv-gray-900">
-                    Tu Información
-                  </h3>
+          <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-4 pt-3 sm:space-y-5 sm:pt-4">
+            {/* Contenedor de una columna */}
+            <div className="space-y-4 sm:space-y-5">
+              {/* Sección: Tu Información */}
+              <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-sm font-semibold text-cv-gray-900">
+                  Tu Información
+                </h3>
 
                   <FormField
                     control={form.control}
@@ -252,18 +252,18 @@ export function ProponerTratoModal({
                       </FormItem>
                     )}
                   />
-                </div>
+              </div>
 
-                {/* Divisor */}
-                <div className="h-px bg-cv-cream-200" />
+              {/* Divisor */}
+              <div className="h-px bg-cv-cream-200" />
 
-                {/* Sección: Detalles del Trato */}
-                <div className="space-y-4">
+              {/* Sección: Detalles del Trato */}
+              <div className="space-y-3 sm:space-y-4">
                   <h3 className="text-sm font-semibold text-cv-gray-900">
                     Detalles del Trato
                   </h3>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3">
                     <FormField
                       control={form.control}
                       name="cantidad"
@@ -360,16 +360,12 @@ export function ProponerTratoModal({
                       </FormItem>
                     )}
                   />
-                </div>
               </div>
-
-              {/* COLUMNA DERECHA */}
-              <div className="space-y-6">
-                {/* Sección: Logística */}
-                <div className="space-y-4">
-                  <h3 className="text-sm font-semibold text-cv-gray-900">
-                    Logística y Entrega
-                  </h3>
+              {/* Sección: Logística */}
+              <div className="space-y-3 sm:space-y-4">
+                <h3 className="text-sm font-semibold text-cv-gray-900">
+                  Logística y Entrega
+                </h3>
 
                   <FormField
                     control={form.control}
@@ -404,7 +400,7 @@ export function ProponerTratoModal({
                         <FormControl>
                           <Textarea
                             placeholder="Ej: Empaque al vacío, certificados de inocuidad, etc."
-                            className="min-h-28 resize-none rounded-lg border border-cv-cream-300 bg-white placeholder:text-cv-gray-400 focus-visible:border-cv-green-500 focus-visible:ring-cv-green-500/20"
+                            className="min-h-20 resize-none rounded-lg border border-cv-cream-300 bg-white placeholder:text-cv-gray-400 focus-visible:border-cv-green-500 focus-visible:ring-cv-green-500/20"
                             {...field}
                           />
                         </FormControl>
@@ -417,40 +413,39 @@ export function ProponerTratoModal({
                       </FormItem>
                     )}
                   />
-                </div>
+              </div>
 
-                {/* Info Card */}
-                <div className="rounded-xl border border-cv-cream-300 bg-cv-cream-50 p-4">
-                  <h4 className="text-xs font-semibold text-cv-green-900 mb-2">
-                    Protección FAN
-                  </h4>
-                  <p className="text-xs leading-relaxed text-cv-gray-600">
-                    FAN verifica que tus propuestas cumplan con estándares de sostenibilidad. Tu información se compartirá de forma segura.
-                  </p>
-                </div>
+              {/* Info Card */}
+              <div className="rounded-lg border border-cv-cream-300 bg-cv-cream-50 p-3 sm:rounded-xl sm:p-4">
+                <h4 className="text-xs font-semibold text-cv-green-900 mb-1 sm:mb-2">
+                  Protección FAN
+                </h4>
+                <p className="text-xs leading-relaxed text-cv-gray-600">
+                  FAN verifica que tus propuestas cumplan con estándares de sostenibilidad. Tu información se compartirá de forma segura.
+                </p>
               </div>
             </div>
 
             {/* Footer */}
-            <div className="border-t border-cv-cream-200 pt-6 space-y-3">
-              <div className="flex gap-3">
+            <div className="border-t border-cv-cream-200 pt-4 sm:pt-5 space-y-2 sm:space-y-3">
+              <div className="flex gap-2 sm:gap-3">
                 <Button
                   type="button"
                   variant="outline"
                   onClick={() => setIsOpen(false)}
-                  className="flex-1 h-11 border border-cv-cream-300 px-4 py-3 text-sm font-semibold text-cv-gray-700 transition-all hover:bg-cv-cream-50 hover:border-cv-cream-400"
+                  className="flex-1 h-10 sm:h-11 border border-cv-cream-300 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-cv-gray-700 transition-all hover:bg-cv-cream-50 hover:border-cv-cream-400"
                 >
                   Cancelar
                 </Button>
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="flex-1 h-11 bg-cv-green-900 px-4 py-3 text-sm font-semibold text-white transition-all hover:bg-cv-green-800 disabled:opacity-50"
+                  className="flex-1 h-10 sm:h-11 bg-cv-green-900 px-3 sm:px-4 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-white transition-all hover:bg-cv-green-800 disabled:opacity-50"
                 >
                   {isSubmitting ? "Enviando..." : "Enviar Propuesta"}
                 </Button>
               </div>
-              <p className="text-center text-xs text-cv-gray-500">
+              <p className="text-center text-[10px] sm:text-xs text-cv-gray-500">
                 Esto abrirá un canal de comunicación seguro con la asociación
               </p>
             </div>

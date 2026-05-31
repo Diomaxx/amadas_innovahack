@@ -62,7 +62,7 @@ export default function IntercambioRegisterPage() {
 
         <motion.div variants={staggerItem}>
           <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
-            <TabsList className="mb-6 h-auto w-full justify-start gap-1 rounded-xl border border-cv-cream-300 bg-cv-cream-100 p-1 sm:w-auto">
+            <TabsList className="mb-6 h-auto w-auto justify-start gap-1 rounded-xl border border-cv-cream-300 bg-cv-cream-100 p-1">
               <TabsTrigger
                 value="producto"
                 className="gap-2 rounded-lg px-5 py-2.5 transition-all data-[state=active]:bg-white data-[state=active]:text-cv-green-900 data-[state=active]:shadow-sm"
