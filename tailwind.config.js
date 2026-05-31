@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       /* ───────────────────────────────────────────────────────
-         Calendario Vivo — Semantic color aliases
+         RESPIRALARA — Semantic color aliases
          These give you shortcut classes like:
            bg-forest, text-cream-dark, border-gold, etc.
          They reference the CSS variables in globals.css so

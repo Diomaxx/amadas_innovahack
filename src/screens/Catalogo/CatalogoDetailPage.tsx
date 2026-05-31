@@ -7,7 +7,8 @@ import { CatalogoDetailSkeleton } from "./components/CatalogoDetailSkeleton";
 import { ProductHero } from "./components/ProductHero";
 import { ProductInfoCards } from "./components/ProductInfoCards";
 import { DisponibilidadProductor } from "./components/DisponibilidadProductor";
-import { SuscripcionPersonalizada } from "./components/SuscripcionPersonalizada";
+import { SuscripcionModal } from "./components/SuscripcionModal";
+import { OtrosRecursos } from "./components/OtrosRecursos";
 import { Trees } from "lucide-react";
 import Link from "next/link";
 
@@ -78,11 +79,14 @@ export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
       {/* Availability Section */}
       <DisponibilidadProductor disponibilidad={especie.disponibilidad} />
 
-      {/* Subscription Section */}
-      <SuscripcionPersonalizada 
-        nombreProducto={especie.nombre} 
-        categoria={especie.categoria} 
+      {/* Subscription (button + modal) */}
+      <SuscripcionModal
+        nombreProducto={especie.nombre}
+        categoria={especie.categoria}
       />
+
+      {/* Otros Recursos del Bosque */}
+      <OtrosRecursos excludeId={especie.id} />
     </motion.div>
   );
 }

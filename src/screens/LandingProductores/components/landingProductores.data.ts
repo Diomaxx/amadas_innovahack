@@ -75,7 +75,7 @@ export const partnerNames = ["Gustu", "Ali Pacha", "Botánica", "Migas", "Phayu"
 export const testimonials = [
   {
     quote:
-      "Calendario Vivo cambió las reglas del juego. Ahora nos contactan con meses de anticipación.",
+      "RESPIRALARA cambió las reglas del juego. Ahora nos contactan con meses de anticipación.",
     author: "María Inés Quiroga",
     role: "Presidenta, Asoc. Recolectoras Concepción",
   },

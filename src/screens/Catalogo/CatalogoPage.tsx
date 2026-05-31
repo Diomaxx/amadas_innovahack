@@ -7,14 +7,12 @@ import { motion } from "framer-motion";
 
 import { CatalogoSkeleton } from "./components/CatalogoSkeleton";
 
-import { CatalogoFiltros, type FiltrosState, type Temporada, type Categoria } from "./components/CatalogoFiltros";
+import { CatalogoFiltrosBar, type FiltrosState, type Temporada, type Categoria } from "./components/CatalogoFiltrosBar";
 import { CatalogoCard, type EspecieCardData } from "./components/CatalogoCard";
-import { CatalogoListItem, type EspecieListData } from "./components/CatalogoListItem";
 
 import catalogoData from "@/mocks/catalogoData.json";
 
 const ESPECIES_GRID = catalogoData.especies as EspecieCardData[];
-const OTROS_RECURSOS = catalogoData.otrosRecursos as EspecieListData[];
 
 const CATEGORIA_MAP: Record<string, Categoria> = {
   "Nuez / Semilla": "Nueces y Semillas",
@@ -35,7 +33,6 @@ export default function CatalogoPage() {
     categorias: [],
     usos: [],
   });
-  const [mostrarTodos, setMostrarTodos] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   // Simulate network loading to show skeleton
@@ -59,9 +56,6 @@ export default function CatalogoPage() {
     });
   }, [filtros]);
 
-  /* How many "Otros recursos" to show */
-  const recursosVisibles = mostrarTodos ? OTROS_RECURSOS : OTROS_RECURSOS.slice(0, 3);
-
   if (isLoading) {
     return <CatalogoSkeleton />;
   }
@@ -84,71 +78,38 @@ export default function CatalogoPage() {
         </p>
       </section>
 
-      {/* ── Two-column layout: grid + sticky filters (right) ──────── */}
-      <div className="flex gap-10 lg:gap-14">
-        {/* Main content */}
-        <div className="flex-1 min-w-0">
-          {/* ── Grid de especies ──────────────────────────────────── */}
-          {especiesFiltradas.length > 0 ? (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {especiesFiltradas.map((especie) => (
-                <Link key={especie.id} href={`/catalogo/${especie.id}`}>
-                  <CatalogoCard especie={especie} />
-                </Link>
-              ))}
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-cv-cream-300 py-16 text-center">
-              <Trees className="mb-3 h-10 w-10 text-cv-green-300" />
-              <p className="text-sm font-medium text-cv-gray-600">
-                No hay especies con los filtros seleccionados
-              </p>
-              <button
-                type="button"
-                onClick={() => setFiltros({ temporadas: [], categorias: [], usos: [] })}
-                className="mt-3 text-xs text-cv-green-600 underline underline-offset-2 hover:text-cv-green-800"
-              >
-                Limpiar filtros
-              </button>
-            </div>
-          )}
+      {/* ── Filtros (toolbar encima de los cards) ─────────────────── */}
+      <CatalogoFiltrosBar
+        filtros={filtros}
+        onChange={setFiltros}
+        total={especiesFiltradas.length}
+      />
 
-          {/* ── Otros Recursos del Bosque ─────────────────────────── */}
-          <section className="mt-10">
-            <div className="mb-4 flex items-center gap-2">
-              <Trees className="h-5 w-5 text-cv-green-700" />
-              <h2 className="text-base font-semibold text-cv-gray-800">
-                Otros Recursos del Bosque
-              </h2>
-            </div>
-
-            <div className="flex flex-col gap-2.5">
-              {recursosVisibles.map((r) => (
-                <Link key={r.id} href={`/catalogo/${r.id}`} className="block">
-                  <CatalogoListItem especie={r} />
-                </Link>
-              ))}
-            </div>
-          </section>
-
-          {/* ── CTA Button ────────────────────────────────────────── */}
-          <div className="mt-10 flex justify-center">
+      {/* ── Grid de especies ──────────────────────────────────────── */}
+      <div className="mt-8">
+        {especiesFiltradas.length > 0 ? (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {especiesFiltradas.map((especie) => (
+              <Link key={especie.id} href={`/catalogo/${especie.id}`}>
+                <CatalogoCard especie={especie} />
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-cv-cream-300 py-16 text-center">
+            <Trees className="mb-3 h-10 w-10 text-cv-green-300" />
+            <p className="text-sm font-medium text-cv-gray-600">
+              No hay especies con los filtros seleccionados
+            </p>
             <button
               type="button"
-              onClick={() => setMostrarTodos((v) => !v)}
-              className="rounded-full bg-cv-green-800 px-8 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-cv-green-700 hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
+              onClick={() => setFiltros({ temporadas: [], categorias: [], usos: [] })}
+              className="mt-3 text-xs text-cv-green-600 underline underline-offset-2 hover:text-cv-green-800"
             >
-              {mostrarTodos ? "Ver menos especies" : "Ver más especies"}
+              Limpiar filtros
             </button>
           </div>
-        </div>
-
-        {/* Filters sidebar — fixed to the right, sticky on scroll */}
-        <div className="hidden w-44 shrink-0 md:block lg:w-48">
-          <div className="sticky top-24">
-            <CatalogoFiltros filtros={filtros} onChange={setFiltros} />
-          </div>
-        </div>
+        )}
       </div>
     </motion.div>
   );

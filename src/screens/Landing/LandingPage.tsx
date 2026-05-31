@@ -7,11 +7,11 @@ import LandingAnimatedHero from "./components/LandingAnimatedHero";
 import LandingFeatureCard from "./components/LandingFeatureCard";
 
 const heroImage =
-  "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1800&q=80";
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/f_auto,q_auto/WhatsApp_Image_2026-05-30_at_22.24.35_ssvaso";
 const productsImage =
-  "https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=1200&q=80";
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780194777/productoslanding_pphkbj.jpg";
 const recipesImage =
-  "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1200&q=80";
+  "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780194777/restauranteslanding_sqd8iz.jpg";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 

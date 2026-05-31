@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   CALENDARIO VIVO — Design Tokens (Color Palette)
+   RESPIRALARA — Design Tokens (Color Palette)
    ============================================================
    Extracted from the brand design system.
    Uses CSS custom properties so every component (shadcn/ui,
@@ -62,7 +62,7 @@
   /* ============================================================
      shadcn/ui Compatibility Tokens
      Map brand tokens → shadcn variables so all UI components
-     automatically pick up the Calendario Vivo palette.
+     automatically pick up the RESPIRALARA palette.
      ============================================================ */
 
   /* Layout */

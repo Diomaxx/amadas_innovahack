@@ -3,10 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { ChevronDown, CircleUserRound, LayoutDashboard, Leaf, LogOut, Search, User } from "lucide-react";
+import { ChevronDown, CircleUserRound, LayoutDashboard, Leaf, LogOut, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
 import { logout } from "@/lib/firebase/auth";
+import { ProductSearch } from "./ProductSearch";
 
 const topbarLinks = [
   { href: "/", label: "Inicio", activePaths: ["/", "/productores", "/restaurantes"] },
@@ -60,42 +61,43 @@ export function AppTopbar() {
             <Leaf className="h-5 w-5" />
           </span>
           <span className="font-display text-2xl font-semibold leading-none tracking-tight text-cv-green-900">
-            Calendario <span className="text-cv-gold-600">Vivo</span>
+            RespiraLAra <span className="text-cv-gold-600">Vivo</span>
           </span>
         </Link>
 
-        <nav className="ml-4 hidden items-center gap-2 text-sm md:flex">
-          {topbarLinks.map((link) => (
-            (() => {
-              const isActive = link.activePaths
-                ? link.activePaths.includes(pathname)
-                : pathname === link.href;
+        {/* Nav + buscador comparten un contenedor relativo: al abrirse, el
+            buscador se superpone (capa absoluta) sobre los tabs sin empujarlos. */}
+        <div className="relative ml-4 flex min-w-0 flex-1 items-center">
+          <nav className="hidden items-center gap-2 text-sm md:flex">
+            {topbarLinks.map((link) => (
+              (() => {
+                const isActive = link.activePaths
+                  ? link.activePaths.includes(pathname)
+                  : pathname === link.href;
 
-              return (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className={cn(
-                    "group relative rounded-md px-3 py-2 font-medium transition-colors duration-300",
-                    isActive ? "text-cv-green-800" : "text-cv-gray-600 hover:text-cv-green-700"
-                  )}
-                >
-                  {link.label}
-                  <span
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
                     className={cn(
-                      "absolute bottom-0 left-3 right-3 h-0.5 origin-left rounded-full bg-cv-green-700 transition-transform duration-300",
-                      isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      "group relative rounded-md px-3 py-2 font-medium transition-colors duration-300",
+                      isActive ? "text-cv-green-800" : "text-cv-gray-600 hover:text-cv-green-700"
                     )}
-                  />
-                </Link>
-              );
-            })()
-          ))}
-        </nav>
+                  >
+                    {link.label}
+                    <span
+                      className={cn(
+                        "absolute bottom-0 left-3 right-3 h-0.5 origin-left rounded-full bg-cv-green-700 transition-transform duration-300",
+                        isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
+                      )}
+                    />
+                  </Link>
+                );
+              })()
+            ))}
+          </nav>
 
-        <div className="ml-auto flex items-center gap-2 rounded-full border border-cv-cream-300 bg-white px-3 py-2 text-cv-gray-500 transition focus-within:border-cv-green-400 hover:border-cv-green-300">
-          <Search className="h-4 w-4" />
-          <span className="hidden text-sm sm:inline">Buscar productos...</span>
+          <ProductSearch />
         </div>
 
         <div ref={menuRef} className="relative">
