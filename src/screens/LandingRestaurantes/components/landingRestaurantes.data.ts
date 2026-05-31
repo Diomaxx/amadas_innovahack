@@ -4,7 +4,7 @@ export const heroData = {
   description:
     "Abastece tu cocina con los tesoros de la Chiquitanía. Conecta directamente con recolectores locales y eleva tu propuesta gastronómica con productos únicos y sostenibles.",
   backgroundImage:
-    "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?auto=format&fit=crop&w=1920&q=80",
+    "https://plus.unsplash.com/premium_photo-1661288509892-0cb40d3e551c?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
 export const valueCards = [
@@ -12,19 +12,19 @@ export const valueCards = [
     title: "Catálogo Vivo",
     description: "Acceso a productos exclusivos silvestres en su punto óptimo de maduración y cosecha.",
     image:
-      "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1752932637064-9360238ab3fb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGV4b3RpYyUyMHdpbGQlMjBmcnVpdHMlMkMlMjBhbWF6b25pYW4lMjBpbmdyZWRpZW50cyUyQyUyMGhhcnZlc3RlZCUyMHNlZWRzJTIwbWFjcm8lMkMlMjB3aWxkJTIwYmVycmllcyUyMGJvd2wufGVufDB8MnwwfHx8MA%3D%3D",
   },
   {
     title: "Precio Ético",
     description: "Transparencia en la estructura de costos para promover comercio justo.",
     image:
-      "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1712143525667-717b146a141f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGhhbmRzJTIwaG9sZGluZyUyMHNlZWRzfGVufDB8MnwwfHx8MA%3D%3D",
   },
   {
     title: "Trazabilidad",
     description: "Cada ingrediente cuenta una historia. Conoce el origen exacto y la comunidad que protege el bosque.",
     image:
-      "https://images.unsplash.com/photo-1551024601-bec78aea704b?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1532092823327-aecb965e5be5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cnVzdGljJTIwa2l0Y2hlbiUyMHJhdyUyMGluZ3JlZGllbnRzJTJDJTIwZm9yYWdpbmclMjBmb29kJTIwdGFibGUlMkMlMjBjaGVmJTIwc2VsZWN0aW5nJTIwaW5ncmVkaWVudHMlMkMlMjBib3RhbmljYWwlMjBmb29kJTIwc3R5bGluZy58ZW58MHwyfDB8fHww",
   },
 ];
 
