@@ -116,7 +116,17 @@ function CicloManager({
   );
 }
 
-export function PublicacionDetalleModal({ pub }: { pub: Publicacion }) {
+export function PublicacionDetalleModal({
+  pub,
+  onAprobar,
+  onRechazar,
+  onGuardar,
+}: {
+  pub: Publicacion;
+  onAprobar?: (pub: Publicacion) => void;
+  onRechazar?: (pub: Publicacion) => void;
+  onGuardar?: (pub: Publicacion) => void;
+}) {
   const v = ESTADO_VISUAL[pub.estado];
   const initial = pub.autor.charAt(0).toUpperCase();
 
@@ -146,6 +156,14 @@ export function PublicacionDetalleModal({ pub }: { pub: Publicacion }) {
     setSavedData(draft);
     setCiclos(draftCiclos);
     setEditando(false);
+    onGuardar?.({
+      ...pub,
+      titulo: draft.titulo,
+      descripcion: draft.descripcion,
+      tipo: draft.tipo,
+      producto: draft.producto,
+      ciclos: draftCiclos,
+    });
   };
 
   // ── Helpers ───────────────────────────────────────────────────
@@ -366,6 +384,7 @@ export function PublicacionDetalleModal({ pub }: { pub: Publicacion }) {
               <DialogPrimitive.Close asChild>
                 <button
                   type="button"
+                  onClick={() => onRechazar?.(pub)}
                   className="inline-flex items-center gap-1.5 rounded-lg border border-[#E4C9C2] bg-white px-4 py-2 text-sm font-medium text-[#A6452F] transition-colors hover:bg-[#FBEEEB]"
                 >
                   <X className="h-4 w-4" />
@@ -385,6 +404,7 @@ export function PublicacionDetalleModal({ pub }: { pub: Publicacion }) {
               <DialogPrimitive.Close asChild>
                 <button
                   type="button"
+                  onClick={() => onAprobar?.(pub)}
                   className="inline-flex items-center gap-1.5 rounded-lg bg-cv-green-700 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-cv-green-800"
                 >
                   <Check className="h-4 w-4" />

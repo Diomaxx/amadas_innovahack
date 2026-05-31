@@ -28,6 +28,7 @@ export function recetaToFormValues(receta: Receta): RecetaFormValues {
     categoria: receta.categoria,
     autores: receta.autores,
     contexto: receta.contexto,
+    imagen: receta.imagen ?? "",
     ingredientes: receta.ingredientes.map((s) => ({
       seccion: s.seccion ?? "",
       contenido: s.items.join("\n"),
@@ -46,6 +47,7 @@ export function formValuesVacios(): RecetaFormValues {
     categoria: "salada",
     autores: "",
     contexto: "",
+    imagen: "",
     ingredientes: [{ seccion: "", contenido: "" }],
     preparacion: [{ seccion: "", contenido: "" }],
   };
@@ -76,7 +78,7 @@ export function formValuesToReceta(
 
   return {
     id: base?.id ?? nuevoId,
-    imagen: base?.imagen ?? "",
+    imagen: values.imagen?.trim() || base?.imagen || "",
     nombre: values.nombre.trim(),
     categoria: values.categoria,
     autores: values.autores.trim(),

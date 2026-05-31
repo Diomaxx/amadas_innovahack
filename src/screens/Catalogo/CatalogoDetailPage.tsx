@@ -1,9 +1,10 @@
 "use client";
 
-import { useMemo } from "react";
-import catalogoData from "@/mocks/catalogoData.json";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
+import type { ProductoTemporada } from "@/screens/Admin/Temporada/temporada.types";
+import { getProductoById } from "@/lib/firebase/productos.repo";
 import { CatalogoDetailSkeleton } from "./components/CatalogoDetailSkeleton";
 import { ProductHero } from "./components/ProductHero";
 import { ProductInfoCards } from "./components/ProductInfoCards";
@@ -18,11 +19,27 @@ interface CatalogoDetailPageProps {
 }
 
 export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
-  const isLoading = useUnifiedLoading();
+  const uiLoading = useUnifiedLoading();
+  const [especie, setEspecie] = useState<ProductoTemporada | null>(null);
+  const [fetching, setFetching] = useState(true);
 
-  const especie = useMemo(() => {
-    return catalogoData.especies.find((e) => e.id === id);
+  useEffect(() => {
+    let activo = true;
+    getProductoById(id)
+      .then((p) => {
+        if (activo) setEspecie(p);
+      })
+      .finally(() => {
+        if (activo) setFetching(false);
+      });
+    return () => {
+      activo = false;
+    };
   }, [id]);
+
+  if (uiLoading || fetching) {
+    return <CatalogoDetailSkeleton />;
+  }
 
   if (!especie) {
     return (
@@ -42,12 +59,8 @@ export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
     );
   }
 
-  if (isLoading) {
-    return <CatalogoDetailSkeleton />;
-  }
-
   return (
-    <motion.div 
+    <motion.div
       className="w-full pb-12"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}

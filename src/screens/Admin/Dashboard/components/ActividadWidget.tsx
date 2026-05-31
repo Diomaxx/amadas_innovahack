@@ -1,9 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import {
-  ACCION_VISUAL,
-  ACTIVIDADES_MOCK,
-} from "@/screens/Admin/Actividad/actividad.data";
+import type { ActividadEntry } from "@/screens/Admin/Actividad/actividad.types";
+import { ACCION_VISUAL } from "@/screens/Admin/Actividad/actividad.data";
+import { useCollection } from "@/hooks/useCollection";
+import { subscribeActividad } from "@/lib/firebase/actividad.repo";
 
 function tiempoRelativo(fechaStr: string): string {
   const hoy = new Date("2026-05-31T12:00:00");
@@ -11,14 +13,15 @@ function tiempoRelativo(fechaStr: string): string {
   const diffDias = Math.round(
     (hoy.getTime() - fecha.getTime()) / 86_400_000,
   );
-  if (diffDias === 0) return "Hace 2 horas";
+  if (diffDias <= 0) return "Hoy";
   if (diffDias === 1) return "Hace 1 día";
   return `Hace ${diffDias} días`;
 }
 
-const RECIENTES = ACTIVIDADES_MOCK.slice(0, 4);
-
 export function ActividadWidget() {
+  const { data } = useCollection<ActividadEntry>(subscribeActividad);
+  const recientes = data.slice(0, 4);
+
   return (
     <section className="flex flex-col rounded-xl border border-cv-cream-300 bg-white p-5">
       <h2 className="mb-4 text-base font-bold text-cv-gray-900">
@@ -26,7 +29,7 @@ export function ActividadWidget() {
       </h2>
 
       <div className="space-y-3.5">
-        {RECIENTES.map((entrada) => {
+        {recientes.map((entrada) => {
           const visual = ACCION_VISUAL[entrada.accion];
           const { Icon } = visual;
           return (
@@ -51,6 +54,9 @@ export function ActividadWidget() {
             </div>
           );
         })}
+        {recientes.length === 0 && (
+          <p className="text-xs text-cv-gray-400">Sin actividad registrada.</p>
+        )}
       </div>
 
       <Link

@@ -1,33 +1,16 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import { getRecetaById, RECETAS } from "@/screens/Recetas/recetas.data";
-import { RecetaDetail } from "@/screens/Recetas/components/RecetaDetail";
+import { RecetaDetailClient } from "@/screens/Recetas/components/RecetaDetailClient";
 
 type PageProps = {
   params: Promise<{ id: string }>;
 };
 
-export function generateStaticParams() {
-  return RECETAS.map((receta) => ({ id: String(receta.id) }));
-}
-
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
-  const { id } = await params;
-  const receta = getRecetaById(id);
-  if (!receta) return { title: "Receta no encontrada · ALMA" };
-  return {
-    title: `${receta.nombre} · Recetas`,
-    description: `Receta elaborada por ${receta.autores}. ${receta.contexto}.`,
-  };
-}
+export const metadata: Metadata = {
+  title: "Receta · ALMA",
+  description: "Recetas elaboradas con ingredientes de los bosques de Bolivia.",
+};
 
 export default async function RecetaDetailRoute({ params }: PageProps) {
   const { id } = await params;
-  const receta = getRecetaById(id);
-
-  if (!receta) notFound();
-
-  return <RecetaDetail receta={receta} />;
+  return <RecetaDetailClient id={id} />;
 }

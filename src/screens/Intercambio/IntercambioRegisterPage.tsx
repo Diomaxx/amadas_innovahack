@@ -2,10 +2,14 @@
 
 import Link from "next/link";
 import { useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, Package, Wrench } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/UI/tabs";
 import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
+import { useAuth } from "@/context/AuthContext";
+import { createIntercambio } from "@/lib/firebase/intercambios.repo";
+import type { Intercambio } from "./intercambio.types";
 import { RegistroProductoForm } from "./components/RegistroProductoForm";
 import { RegistroServicioForm } from "./components/RegistroServicioForm";
 import { IntercambioRegisterSkeleton } from "./components/IntercambioRegisterSkeleton";
@@ -16,16 +20,97 @@ import {
   tabContentVariants,
 } from "./components/intercambioAnimations";
 
+const MESES_ES = [
+  "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+  "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre",
+];
+
+const IMG_PRODUCTO =
+  "https://images.unsplash.com/photo-1712143525667-717b146a141f?auto=format&fit=crop&w=800&q=80";
+const IMG_SERVICIO =
+  "https://images.unsplash.com/photo-1532092823327-aecb965e5be5?auto=format&fit=crop&w=800&q=80";
+
+function productoToIntercambio(
+  data: Record<string, unknown>,
+  email: string,
+): Omit<Intercambio, "id"> {
+  const meses = (data.meses as string[]) ?? [];
+  const mesActual = MESES_ES[new Date().getMonth()];
+  const nombre = String(data.nombreComercial || "Producto");
+  const volumen = String(data.volumenOferta || "");
+  const unidad = String(data.unidadMedida || "");
+  const titulo = `Tengo: ${[volumen, unidad, nombre].filter(Boolean).join(" ")}`.trim();
+  return {
+    titulo: titulo || `Oferta: ${nombre}`,
+    tipo: "RAW_MATERIAL",
+    estado: meses.includes(mesActual) ? "En Temporada" : "Disponible",
+    busca: "Disponible para venta o procesamiento.",
+    rango: "A convenir",
+    productor: String(data.asociacion || "Productor independiente"),
+    rolProductor: "Vendedor",
+    ubicacion: "No especificada",
+    categoria: "Semillas y Frutos",
+    accion: "Proponer Trato",
+    imagen: String(data.imagenUrl || "") || IMG_PRODUCTO,
+    createdAt: Date.now(),
+    creadoPor: email,
+    raw: data,
+  };
+}
+
+function servicioToIntercambio(
+  data: Record<string, unknown>,
+  email: string,
+): Omit<Intercambio, "id"> {
+  const cap = String(data.capacidad || "");
+  const unidad = String(data.unidadCapacidad || "");
+  const titulo = `Servicio: ${[cap, unidad].filter(Boolean).join(" / ")}`.trim();
+  return {
+    titulo: titulo || "Servicio disponible",
+    tipo: "SERVICIOS",
+    estado: "Disponible",
+    busca: String(data.maquinaria || "Servicio de procesamiento disponible."),
+    rango: "A convenir",
+    productor: String(data.comunidad || "Proveedor de servicios"),
+    rolProductor: "Socio estratégico",
+    ubicacion: "No especificada",
+    categoria: "Servicios",
+    accion: "Enviar Consulta",
+    imagen: String(data.imagenUrl || "") || IMG_SERVICIO,
+    createdAt: Date.now(),
+    creadoPor: email,
+    raw: data,
+  };
+}
+
 export default function IntercambioRegisterPage() {
   const [activeTab, setActiveTab] = useState<"producto" | "servicio">("producto");
+  const [enviando, setEnviando] = useState(false);
   const isLoading = useUnifiedLoading();
   const directionRef = useRef(1);
+  const router = useRouter();
+  const { user } = useAuth();
 
   const handleTabChange = (value: string) => {
     const next = value as "producto" | "servicio";
     directionRef.current = next === "servicio" ? 1 : -1;
     setActiveTab(next);
   };
+
+  async function publicar(intercambio: Omit<Intercambio, "id">) {
+    if (!user) {
+      router.push("/auth");
+      return;
+    }
+    setEnviando(true);
+    try {
+      await createIntercambio(intercambio);
+      router.push("/intercambio");
+    } catch (error) {
+      console.error("No se pudo publicar el intercambio:", error);
+      setEnviando(false);
+    }
+  }
 
   if (isLoading) {
     return <IntercambioRegisterSkeleton />;
@@ -53,6 +138,15 @@ export default function IntercambioRegisterPage() {
             Complete el formulario correspondiente para conectar con chefs, empresas e industria.
           </p>
         </motion.header>
+
+        {enviando && (
+          <motion.div
+            variants={staggerItem}
+            className="mb-4 rounded-lg border border-cv-green-200 bg-cv-green-50 px-4 py-2.5 text-sm font-medium text-cv-green-800"
+          >
+            Publicando tu intercambio…
+          </motion.div>
+        )}
 
         <motion.div variants={staggerItem}>
           <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full">
@@ -86,7 +180,11 @@ export default function IntercambioRegisterPage() {
                   >
                     <RegistroProductoForm
                       onSubmit={(data) => {
-                        console.log("Producto registrado:", data);
+                        if (!user) {
+                          router.push("/auth");
+                          return;
+                        }
+                        void publicar(productoToIntercambio(data, user.email ?? ""));
                       }}
                     />
                   </motion.div>
@@ -101,7 +199,11 @@ export default function IntercambioRegisterPage() {
                   >
                     <RegistroServicioForm
                       onSubmit={(data) => {
-                        console.log("Servicio registrado:", data);
+                        if (!user) {
+                          router.push("/auth");
+                          return;
+                        }
+                        void publicar(servicioToIntercambio(data, user.email ?? ""));
                       }}
                     />
                   </motion.div>

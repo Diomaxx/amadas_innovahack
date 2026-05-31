@@ -14,7 +14,7 @@ import { Input } from "@/components/UI/input";
 import { Label } from "@/components/UI/label";
 import { Button } from "@/components/UI/button";
 import { AnimatedSelect } from "@/components/UI/AnimatedSelect";
-import { ImageSelector } from "@/components/UI/ImageSelector";
+import { CloudinaryImageField } from "@/components/UI/CloudinaryImageField";
 import { RegistroFormSection } from "./RegistroFormSection";
 import { staggerContainer, staggerItem } from "./intercambioAnimations";
 import registroData from "@/mocks/registroConexionesData.json";
@@ -81,7 +81,7 @@ export function RegistroProductoForm({ onSubmit }: RegistroProductoFormProps) {
   const [volumenOferta, setVolumenOferta] = useState("");
   const [asociacion, setAsociacion] = useState("");
   const [recetas, setRecetas] = useState<string[]>([]);
-  const [imagenes, setImagenes] = useState<File[]>([]);
+  const [imagenUrl, setImagenUrl] = useState("");
 
   const toggleMes = (mes: string) => {
     setMeses((prev) =>
@@ -110,7 +110,7 @@ export function RegistroProductoForm({ onSubmit }: RegistroProductoFormProps) {
       volumenOferta,
       asociacion,
       recetas,
-      imagenes: imagenes.map((f) => f.name),
+      imagenUrl,
     });
   };
 
@@ -320,11 +320,15 @@ export function RegistroProductoForm({ onSubmit }: RegistroProductoFormProps) {
       </RegistroFormSection>
 
       <RegistroFormSection
-        title="Galería de Imágenes"
-        description="Fotos macro del insumo y su empaque comercial."
+        title="Imagen del insumo"
+        description="Foto macro del insumo o su empaque comercial."
         icon={Package}
       >
-        <ImageSelector value={imagenes} onChange={setImagenes} />
+        <CloudinaryImageField
+          value={imagenUrl}
+          onChange={setImagenUrl}
+          folder="alma/intercambios"
+        />
       </RegistroFormSection>
 
       <motion.div

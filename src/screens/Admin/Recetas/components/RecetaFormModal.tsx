@@ -28,6 +28,7 @@ import {
 import { Input } from "@/components/UI/input";
 import { Textarea } from "@/components/UI/textarea";
 import { AnimatedSelect } from "@/components/UI/AnimatedSelect";
+import { CloudinaryImageField } from "@/components/UI/CloudinaryImageField";
 
 import type { Receta } from "@/screens/Recetas/recetas.types";
 import { CATEGORIA_LABEL } from "@/screens/Recetas/recetas.data";
@@ -44,6 +45,7 @@ const recetaSchema = z.object({
   categoria: z.enum(["salada", "dulce", "coctel", "base"]),
   autores: z.string().min(2, "Indica el autor o grupo"),
   contexto: z.string().min(3, "Agrega una breve descripción"),
+  imagen: z.string().optional(),
   ingredientes: z.array(seccionSchema).min(1, "Agrega al menos una sección"),
   preparacion: z.array(seccionSchema).min(1, "Agrega al menos una sección"),
 });
@@ -177,6 +179,24 @@ export function RecetaFormModal({ open, onOpenChange, receta, onSubmit }: Props)
                         placeholder="Breve descripción o contexto de la receta…"
                         className={`min-h-20 resize-none ${inputClass}`}
                         {...field}
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="imagen"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <CloudinaryImageField
+                        label="Imagen de la receta"
+                        folder="alma/recetas"
+                        value={field.value}
+                        onChange={field.onChange}
                       />
                     </FormControl>
                     <FormMessage />

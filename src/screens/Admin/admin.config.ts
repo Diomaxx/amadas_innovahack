@@ -2,8 +2,8 @@ import {
   Activity,
   BookOpen,
   ChefHat,
+  Database,
   LayoutDashboard,
-  Settings,
   Sprout,
   Users,
   type LucideIcon,
@@ -63,12 +63,5 @@ export const ADMIN_NAV: AdminNavItem[] = [
     Icon: Activity,
     title: "Actividad",
     subtitle: "Registro de acciones recientes en la plataforma.",
-  },
-  {
-    label: "Reportes",
-    href: "/admin/reportes",
-    Icon: Settings,
-    title: "Reportes",
-    subtitle: "Resumenes y metricas clave para la toma de decisiones.",
   },
 ];
