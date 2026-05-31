@@ -16,7 +16,14 @@ export const TIPO_PLURAL: Record<TipoContacto, string> = {
 
 export const TIPO_VISUAL: Record<
   TipoContacto,
-  { color: string; bg: string; dot: string; avatarBg: string; avatarText: string }
+  {
+    color: string;
+    bg: string;
+    dot: string;
+    avatarBg: string;
+    avatarText: string;
+    headerBg: string;
+  }
 > = {
   productor: {
     color: "#166534",
@@ -24,6 +31,7 @@ export const TIPO_VISUAL: Record<
     dot: "#22c55e",
     avatarBg: "#22c55e",
     avatarText: "#ffffff",
+    headerBg: "#22c55e",
   },
   asociacion: {
     color: "#1e3a8a",
@@ -31,6 +39,7 @@ export const TIPO_VISUAL: Record<
     dot: "#3b82f6",
     avatarBg: "#2563eb",
     avatarText: "#ffffff",
+    headerBg: "#2563eb",
   },
   tienda: {
     color: "#9a3412",
@@ -38,6 +47,7 @@ export const TIPO_VISUAL: Record<
     dot: "#f97316",
     avatarBg: "#ea580c",
     avatarText: "#ffffff",
+    headerBg: "#ea580c",
   },
   proveedor: {
     color: "#451a03",
@@ -45,6 +55,7 @@ export const TIPO_VISUAL: Record<
     dot: "#92400e",
     avatarBg: "#78350f",
     avatarText: "#ffffff",
+    headerBg: "#78350f",
   },
 };
 
@@ -57,6 +68,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 7123-4567",
     email: "maria.fernandez@ejemplo.com",
     ubicacion: "San Ignacio de Velasco",
+    direccion: "Barrio Norte, Calle Principal #123",
     productos: ["Almendra Chiquitana", "Miel de Monte"],
     descripcion:
       "Producción certificada orgánica. Disponible para visitas de chefs.",
@@ -68,6 +80,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-982-1234",
     email: "contacto@productoresbosque.org",
     ubicacion: "San Ignacio de Velasco",
+    direccion: "Av. Central s/n, Parque Industrial Zona Norte",
     productos: ["Almendra Chiquitana", "Motacú", "Totaí"],
     descripcion:
       "Agrupan a 45 productores de la región. Tienen centro de acopio.",
@@ -79,6 +92,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-338-7890",
     email: "ventas@saboresdelmonte.com",
     ubicacion: "Santa Cruz",
+    direccion: "Calle Bolívar #456, Barrio El Palmar, 3er Anillo",
     productos: ["Almendra Chiquitana", "Miel de Monte", "Coquito", "Asaí"],
     descripcion:
       "Punto de venta principal en Santa Cruz. Abierto de lunes a sábado.",
@@ -91,6 +105,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 7234-5678",
     email: "carlos.gutierrez@ejemplo.com",
     ubicacion: "Concepción",
+    direccion: "Comunidad El Motacú, km 12 carretera a San Ramón",
     productos: ["Motacú", "Totaí"],
     descripcion:
       "Especialista en productos de palmera. Entrega a domicilio.",
@@ -102,6 +117,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-445-6789",
     email: "reservas@elfogon.bo",
     ubicacion: "Santa Cruz",
+    direccion: "Av. Las Palmas #890, Urb. Los Mangales, 4to Anillo",
     productos: ["Asaí", "Coquito", "Almendra Chiquitana"],
     descripcion:
       "Cocina de autor con ingredientes del bosque chiquitano. Reservas abiertas.",
@@ -113,6 +129,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-671-2345",
     email: "redmujeres.chiquitania@gmail.com",
     ubicacion: "San Rafael de Velasco",
+    direccion: "Plaza Principal s/n, oficina municipal piso 2",
     productos: ["Miel de Monte", "Cera de Abejas", "Almendra Chiquitana"],
     descripcion:
       "Cooperativa de 30 familias productoras. Certificación en proceso.",
@@ -124,6 +141,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-220-9988",
     email: "ventas@agropyme.bo",
     ubicacion: "Santa Cruz",
+    direccion: "Parque Industrial Latinoamericano, Módulo 14-B",
     productos: ["Insumos agrícolas", "Empaques biodegradables"],
     descripcion:
       "Proveedor certificado de insumos para producción orgánica.",
@@ -136,6 +154,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 7890-1234",
     email: "analuz.vasquez@ejemplo.com",
     ubicacion: "San Javier",
+    direccion: "Finca Agroecológica Vásquez, km 5 vía San Javier–Concepción",
     productos: ["Asaí", "Copoazú", "Cacao silvestre"],
     descripcion:
       "Finca familiar con certificación orgánica vigente.",
@@ -147,6 +166,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-556-7890",
     email: "info@semillaverde.coop",
     ubicacion: "Concepción",
+    direccion: "Calle Sucre #12, Barrio San Martín",
     productos: ["Cacao silvestre", "Miel de Monte", "Motacú"],
     descripcion:
       "Exportan a mercados de Europa y América del Norte.",
@@ -158,6 +178,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-775-4321",
     email: "pedidos@naturalmart.bo",
     ubicacion: "Santa Cruz",
+    direccion: "Av. Roca y Coronado #320, Barrio Industrial",
     productos: ["Empaques ecológicos", "Logística cadena de frío"],
     descripcion:
       "Logística y distribución para productos forestales no maderables.",
@@ -170,6 +191,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 7012-3456",
     email: "jorge.mendoza@ejemplo.com",
     ubicacion: "San Ignacio de Velasco",
+    direccion: "Comunidad Turubó Este, acceso por km 28 ruta San Ignacio",
     productos: ["Totaí", "Almendra Chiquitana"],
     descripcion:
       "Recolección sostenible con prácticas ancestrales.",
@@ -181,6 +203,7 @@ export const CONTACTOS_MOCK: Contacto[] = [
     telefono: "+591 3-882-4567",
     email: "mercado@chiquitano.bo",
     ubicacion: "San Ignacio de Velasco",
+    direccion: "Plaza 31 de Julio s/n, frente a la Catedral",
     productos: ["Almendra Chiquitana", "Miel de Monte", "Asaí", "Coquito"],
     descripcion:
       "Feria permanente con más de 20 productores locales. Abierto viernes y sábados.",

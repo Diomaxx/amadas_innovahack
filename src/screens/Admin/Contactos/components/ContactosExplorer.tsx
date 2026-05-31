@@ -64,7 +64,7 @@ export function ContactosExplorer({ contactos }: { contactos: Contacto[] }) {
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-cv-gray-400" />
             <input
               type="search"
-              placeholder="Buscar por nombre y nombre científico..."
+              placeholder="Buscar por nombre"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full rounded-lg border border-cv-cream-300 bg-cv-cream-50 py-2 pl-9 pr-3 text-sm text-cv-gray-700 placeholder:text-cv-gray-400 focus:border-cv-green-400 focus:outline-none"

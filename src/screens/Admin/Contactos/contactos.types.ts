@@ -8,6 +8,7 @@ export type Contacto = {
   telefono?: string;
   email?: string;
   ubicacion?: string;
+  direccion?: string;
   productos?: string[];
   descripcion?: string;
 };
