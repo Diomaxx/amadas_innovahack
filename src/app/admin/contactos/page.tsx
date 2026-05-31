@@ -1,13 +1,14 @@
-import { AdminPageHeader } from "@/screens/Admin/components/AdminPageHeader";
-import { ADMIN_NAV } from "@/screens/Admin/admin.config";
-
-const meta = ADMIN_NAV.find((item) => item.href === "/admin/contactos")!;
+import { ContactosHeader } from "@/screens/Admin/Contactos/components/ContactosHeader";
+import { ContactosStatsBar } from "@/screens/Admin/Contactos/components/ContactosStatsBar";
+import { ContactosExplorer } from "@/screens/Admin/Contactos/components/ContactosExplorer";
+import { CONTACTOS_MOCK } from "@/screens/Admin/Contactos/contactos.data";
 
 export default function AdminContactosPage() {
   return (
     <div className="space-y-8">
-      <AdminPageHeader title={meta.title} subtitle={meta.subtitle} />
-      {/* Contenido pendiente */}
+      <ContactosHeader />
+      <ContactosStatsBar contactos={CONTACTOS_MOCK} />
+      <ContactosExplorer contactos={CONTACTOS_MOCK} />
     </div>
   );
 }
