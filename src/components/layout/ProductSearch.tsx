@@ -21,6 +21,7 @@ export function ProductSearch() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [activeIndex, setActiveIndex] = useState(-1);
+  const [animating, setAnimating] = useState(false);
 
   const wrapperRef = useRef<HTMLDivElement | null>(null);
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -90,6 +91,8 @@ export function ProductSearch() {
         layout
         transition={{ type: "spring", stiffness: 380, damping: 34 }}
         style={{ width: open ? undefined : 210 }}
+        onLayoutAnimationStart={() => setAnimating(true)}
+        onLayoutAnimationComplete={() => setAnimating(false)}
         className={cn(
           "max-w-full",
           open
@@ -100,7 +103,7 @@ export function ProductSearch() {
         <div
           onClick={() => !open && setOpen(true)}
           className={cn(
-            "flex items-center gap-2 rounded-full border bg-white px-3 py-2 transition-colors",
+            "relative flex items-center gap-2 overflow-hidden rounded-full border bg-white px-3 py-2 transition-colors",
             open
               ? "border-cv-green-300 shadow-sm ring-2 ring-cv-green-100"
               : "cursor-pointer border-cv-cream-300 text-cv-gray-500 hover:border-cv-green-300 hover:text-cv-green-700",
@@ -125,17 +128,30 @@ export function ProductSearch() {
                 : undefined
             }
             aria-label="Buscar productos del catálogo"
-            placeholder="Buscar productos..."
             value={query}
             readOnly={!open}
             onFocus={() => setOpen(true)}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={handleKeyDown}
             className={cn(
-              "w-full bg-transparent text-sm outline-none placeholder:text-cv-gray-400",
+              "peer w-full min-w-0 truncate bg-transparent text-sm outline-none",
               open ? "cursor-text text-cv-gray-900" : "cursor-pointer",
             )}
           />
+          {/* Placeholder propio: desaparece al instante cuando arranca la
+              animación de ancho (el placeholder nativo se deforma con el scale
+              del `layout`) y reaparece con fade-in al terminar. */}
+          {!animating && !query && (
+            <motion.span
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              aria-hidden
+              className="pointer-events-none absolute left-10 truncate text-sm text-cv-gray-400"
+            >
+              Buscar productos...
+            </motion.span>
+          )}
           {open && (
             <button
               type="button"

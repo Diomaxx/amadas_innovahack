@@ -53,7 +53,7 @@ export default function LandingAnimatedHero({
         className="animate-float-slow absolute left-[15%] top-[20%] -z-10 h-72 w-72 rounded-full bg-cv-gold-500/20 blur-[120px]"
       />
 
-      <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
+      <div className="relative z-10 flex h-full flex-col items-center justify-center overflow-y-auto px-6 py-6 text-center">
         <motion.p
           initial={{ opacity: 0, y: 14 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export default function LandingAnimatedHero({
           RESPIRALARA
         </motion.p>
 
-        <h1 className="font-display mt-6 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight text-white md:text-8xl">
+        <h1 className="font-display mt-6 max-w-4xl text-5xl font-semibold leading-[1.02] tracking-tight text-white md:text-8xl [@media(max-height:760px)]:mt-3 [@media(max-height:760px)]:text-4xl [@media(max-height:760px)]:md:text-6xl">
           <motion.span
             initial="hidden"
             animate="visible"
@@ -116,7 +116,7 @@ export default function LandingAnimatedHero({
         </h1>
 
         <motion.p
-          className="mt-6 max-w-2xl text-base text-cv-cream-100/90 md:text-2xl"
+          className="mt-6 max-w-2xl text-base text-cv-cream-100/90 md:text-2xl [@media(max-height:760px)]:mt-3 [@media(max-height:760px)]:text-sm [@media(max-height:760px)]:md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{
@@ -133,7 +133,7 @@ export default function LandingAnimatedHero({
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: landingMotion.heroText.subtitleDelay + 0.3, ease: EASE }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-3"
+          className="mt-8 flex flex-wrap items-center justify-center gap-3 [@media(max-height:760px)]:mt-4"
         >
           {trustChips.map(({ icon: Icon, label }) => (
             <li

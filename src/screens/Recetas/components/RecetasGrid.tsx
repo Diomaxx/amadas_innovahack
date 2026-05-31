@@ -241,7 +241,7 @@ export function RecetasGrid({ recetas }: { recetas: Receta[] }) {
 
       {/* Encabezado de resultados */}
       <div className="mb-6 mt-8 flex items-baseline justify-between">
-        <h2 className="font-serif text-lg font-bold uppercase tracking-wide text-[#2d4a3e]">
+        <h2 className="text-lg font-bold uppercase tracking-wide text-[#2d4a3e]">
           Todas las recetas
         </h2>
         <span className="text-sm text-[#2d4a3e]/60">

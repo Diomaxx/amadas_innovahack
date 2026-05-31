@@ -36,7 +36,7 @@ export function RecetaCard({
         </div>
 
         {/* Nombre */}
-        <h3 className="mb-1 font-serif text-lg font-bold leading-snug text-[#2d4a3e] transition-colors group-hover:text-[#1B3A2D]">
+        <h3 className="mb-1 text-lg font-bold leading-snug text-[#2d4a3e] transition-colors group-hover:text-[#1B3A2D]">
           {receta.nombre}
         </h3>
         <p className="mb-4 line-clamp-1 text-xs text-[#2d4a3e]/55">
