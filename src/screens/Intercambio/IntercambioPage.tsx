@@ -72,13 +72,13 @@ export default function IntercambioPage() {
         animate="show"
       >
         {/* Hero header */}
-        <motion.section variants={staggerItem} className="mb-6">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <motion.section variants={staggerItem} className="mb-6 sm:mb-8">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
             <div className="min-w-0 flex-1">
-              <h1 className="text-3xl font-bold tracking-tight text-cv-green-900 sm:text-4xl">
+              <h1 className="text-xl font-bold tracking-tight text-cv-green-900 sm:text-2xl md:text-3xl lg:text-4xl">
                 De productores, para productores
               </h1>
-              <p className="mt-2 max-w-3xl text-sm leading-relaxed text-cv-gray-600">
+              <p className="mt-2 max-w-3xl text-xs leading-relaxed text-cv-gray-600 sm:text-sm">
                 Plataforma de intercambio de servicios y comercialización directa para productores.
                 Optimice su cadena de valor conectando con servicios de procesamiento y excedentes
                 de materia prima.
@@ -86,10 +86,10 @@ export default function IntercambioPage() {
             </div>
             <Link
               href="/conexiones/registrar"
-              className="flex shrink-0 items-center gap-2.5 self-start rounded-xl bg-cv-green-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cv-green-800"
+              className="flex shrink-0 items-center gap-2 self-start rounded-lg bg-cv-green-900 px-4 py-2 text-xs font-semibold text-white transition-colors hover:bg-cv-green-800 sm:gap-2.5 sm:rounded-xl sm:px-5 sm:py-2.5 sm:text-sm"
             >
-              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-white/25">
-                <Plus className="h-4 w-4" strokeWidth={2.5} />
+              <span className="flex h-5 w-5 items-center justify-center rounded-full border border-white/25 sm:h-6 sm:w-6">
+                <Plus className="h-3 w-3 sm:h-4 sm:w-4" strokeWidth={2.5} />
               </span>
               Publicar
             </Link>
@@ -97,7 +97,7 @@ export default function IntercambioPage() {
         </motion.section>
 
         {/* Market Stability Card */}
-        <motion.div variants={staggerItem}>
+        <motion.div variants={staggerItem} className="mb-4 sm:mb-6">
           <MarketStabilityCard
             precioPromedio={intercambioData.marketplace.precioPromedio}
             demandaProcesamiento={intercambioData.marketplace.demandaProcesamiento}
@@ -105,11 +105,22 @@ export default function IntercambioPage() {
           />
         </motion.div>
 
-        {/* Two-column layout */}
-        <div className="flex gap-10 lg:gap-14">
+        {/* Horizontal Filters Bar */}
+        <motion.div variants={staggerItem} className="mb-6 sm:mb-8 flex flex-col gap-4">
+          <div className="md:hidden">
+            <h3 className="mb-3 text-xs font-semibold uppercase tracking-wider text-cv-gray-900 sm:text-sm">
+              Filtrar Intercambios
+            </h3>
+            <IntercambioFiltros filtros={filtros} onChange={setFiltros} />
+          </div>
+        </motion.div>
+
+        {/* Main Content */}
+        <div className="flex flex-col gap-8 lg:gap-12 lg:flex-row">
+          {/* Sidebar - Desktop only */}
           <motion.div
             variants={staggerItem}
-            className="hidden w-44 shrink-0 md:block lg:w-48"
+            className="hidden md:block lg:w-48 lg:shrink-0"
           >
             <div>
               <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-cv-gray-900">
