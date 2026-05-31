@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import type { Menu } from "../menus.types";
 
 type MenusGridProps = {
@@ -10,7 +11,7 @@ function MenuTags({ tags }: { tags: string[] }) {
       {tags.map((tag) => (
         <span
           key={tag}
-          className="rounded-full bg-cv-cream-100 px-2.5 py-1 text-xs font-medium text-cv-gray-700"
+          className="rounded-full bg-cv-cream-100 px-2.5 py-1 text-xs font-medium text-cv-gray-700 transition-colors duration-300 hover:bg-cv-green-100 hover:text-cv-green-800"
         >
           #{tag}
         </span>
@@ -33,14 +34,20 @@ function MenuCard({ menu }: { menu: Menu }) {
       <div className="space-y-3 p-5">
         <p className="text-sm font-medium text-cv-gold-600">{menu.restaurant}</p>
 
-        <h3 className="text-xl font-semibold text-cv-green-900">{menu.title}</h3>
+        <h3 className="text-xl font-semibold text-cv-green-900 transition-colors duration-300 group-hover:text-cv-green-700">
+          {menu.title}
+        </h3>
 
         <p className="text-sm leading-relaxed text-cv-gray-600">{menu.summary}</p>
 
         <MenuTags tags={menu.tags} />
 
-        <a href="#" className="inline-flex text-sm font-medium text-cv-green-700 underline-offset-4 hover:underline">
-          Explorar menu
+        <a
+          href="#"
+          className="group/link inline-flex items-center gap-1.5 text-sm font-medium text-cv-green-700 underline-offset-4 hover:underline"
+        >
+          Explorar menú
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/link:translate-x-1" />
         </a>
       </div>
     </article>

@@ -1,8 +1,12 @@
+import { RECETARIO_META, RECETAS } from "./recetas.data";
+import { RecetasHero } from "./components/RecetasHero";
+import { RecetasGrid } from "./components/RecetasGrid";
+
 export default function RecetasPage() {
   return (
-    <section className="py-8">
-      <h1 className="text-3xl font-bold text-cv-green-900">Recetas</h1>
+    <section className="space-y-10">
+      <RecetasHero total={RECETARIO_META.total} />
+      <RecetasGrid recetas={RECETAS} />
     </section>
   );
 }
-

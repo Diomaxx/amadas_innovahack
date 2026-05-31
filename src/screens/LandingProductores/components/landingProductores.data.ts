@@ -2,7 +2,7 @@ export const heroData = {
   badge: "Red de Productores Forestales",
   title: "Haz que tu cosecha sea visible para los mejores chefs del mundo.",
   description:
-    "Conectamos tu sabiduria ancestral y tus productos unicos con la alta gastronomia global. Transforma el ritmo del bosque en una oportunidad sostenible.",
+    "Conectamos tu sabiduría ancestral y tus productos únicos con la alta gastronomía global. Transforma el ritmo del bosque en una oportunidad sostenible.",
   backgroundImage:
     "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80",
 };
@@ -28,7 +28,7 @@ export const techCards = [
   },
   {
     title: "Productor a Productor",
-    description: "Conectate con productores para intercambiar servicios y fortalecer la comunidad.",
+    description: "Conéctate con otros productores para intercambiar servicios y fortalecer la comunidad.",
     image:
       "https://images.unsplash.com/photo-1591824438708-ce405f36ba3d?auto=format&fit=crop&w=1000&q=80",
   },
@@ -36,12 +36,12 @@ export const techCards = [
 
 export const steps = [
   {
-    title: "Registrate",
-    description: "Hazte visible. Crea el perfil de tu asociacion y muestra la riqueza de tu territorio.",
+    title: "Regístrate",
+    description: "Hazte visible. Crea el perfil de tu asociación y muestra la riqueza de tu territorio.",
   },
   {
-    title: "Notifica Cosecha",
-    description: "Sincroniza con la demanda real. Informa cuando tus productos estan listos para ser recolectados.",
+    title: "Notifica tu cosecha",
+    description: "Sincroniza con la demanda real. Informa cuando tus productos estén listos para ser recolectados.",
   },
   {
     title: "Conecta y Vende",
@@ -57,33 +57,33 @@ export const benefits = [
       "https://images.unsplash.com/photo-1516594798947-e65505dbb29d?auto=format&fit=crop&w=1000&q=80",
   },
   {
-    title: "Certificacion de Origen",
-    description: "Validamos tu produccion sostenible, aumentando el valor de cada kilo cosechado.",
+    title: "Certificación de Origen",
+    description: "Validamos tu producción sostenible, aumentando el valor de cada kilo cosechado.",
     image:
       "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Reconocimiento Directo",
-    description: "Tu nombre y el de tu comunidad aparece en cartas de los mejores restaurantes.",
+    description: "Tu nombre y el de tu comunidad aparecen en las cartas de los mejores restaurantes.",
     image:
       "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
-export const partnerNames = ["Gustu", "Ali Pacha", "Botanica", "Migas", "Phayu"];
+export const partnerNames = ["Gustu", "Ali Pacha", "Botánica", "Migas", "Phayu"];
 
 export const testimonials = [
   {
     quote:
-      "Calendario Vivo cambio las reglas del juego. Ahora nos contactan con meses de anticipacion.",
-    author: "Maria Ines Quinoga",
-    role: "Presidenta, Asoc. Recolectoras Concepcion",
+      "Calendario Vivo cambió las reglas del juego. Ahora nos contactan con meses de anticipación.",
+    author: "María Inés Quiroga",
+    role: "Presidenta, Asoc. Recolectoras Concepción",
   },
   {
     quote:
-      "La tecnologia nos dio el respeto que merecemos. Nuestra historia llega a la mesa del comensal.",
+      "La tecnología nos dio el respeto que merecemos. Nuestra historia llega a la mesa del comensal.",
     author: "Juan Carlos Mendieta",
-    role: "Coordinador Logistico, Colector San Ignacio",
+    role: "Coordinador Logístico, Colector San Ignacio",
   },
 ];
 

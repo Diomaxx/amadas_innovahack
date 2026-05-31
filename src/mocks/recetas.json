@@ -1,0 +1,2825 @@
+{
+  "fuente": "Del Bosque Chiquitano a la Mesa — Recetario que celebra la identidad chiquitana",
+  "publicacion": "Fundación Amigos de la Naturaleza (FAN), Santa Cruz de la Sierra, Bolivia, 2025",
+  "isbn": "978-99905-66-78-9",
+  "deposito_legal": "8-1-6260-2025",
+  "total_recetas": 55,
+  "recetas": [
+    {
+      "id": 1,
+      "nombre": "Albóndigas de yuca con salsa de asaí",
+      "categoria": "salada",
+      "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": "Para las albóndigas",
+          "items": [
+            "½ kg de carne molida",
+            "1 huevo",
+            "1 cebolla morada pequeña",
+            "2 dientes de ajo",
+            "½ kg de yuca",
+            "½ taza de pan rallado",
+            "pimienta, comino y sal al gusto",
+            "manteca animal o aceite vegetal de buena calidad"
+          ]
+        },
+        {
+          "seccion": "Para la salsa",
+          "items": [
+            "½ taza de pulpa de asaí",
+            "1 taza de fondo de res (caldo donde se coció la carne)",
+            "maicena diluida",
+            "sal, pimienta y comino al gusto"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para las albóndigas",
+          "pasos": [
+            "En un bowl colocar la carne, la yuca cocida y triturada, la cebolla y los ajos picados. Luego el huevo, el pan rallado y los condimentos. Mezclar para integrar.",
+            "Con las manos formar bolitas y freír en abundante materia grasa caliente."
+          ]
+        },
+        {
+          "seccion": "Para la salsa",
+          "pasos": [
+            "En una cacerola, colocar la pulpa de asaí con el fondo o caldo de res a fuego medio.",
+            "Salpimentar y espesar la salsa con maicena diluida. Decorar con sésamo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nombre": "Ande chiquitano",
+      "categoria": "salada",
+      "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
+      "contexto": "Grupo 2 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para el filete de llama",
+          "items": [
+            "500 g de carne de llama",
+            "25 g de harina de yuca",
+            "30 g de almendra chiquitana",
+            "vinagre",
+            "aceite"
+          ]
+        },
+        {
+          "seccion": "Para la ensalada",
+          "items": [
+            "200 g de papalisa",
+            "½ cebolla morada",
+            "perejil",
+            "cilantro",
+            "hierbabuena",
+            "1 tomate perita",
+            "50 g de cañahua",
+            "aceite",
+            "sal",
+            "pimienta",
+            "jugo de 1 limón"
+          ]
+        },
+        {
+          "seccion": "Para la pasoca de harina de yuca",
+          "items": [
+            "60 g de harina de yuca",
+            "1 zanahoria mediana",
+            "1 diente de ajo",
+            "1 pimiento morrón",
+            "aceite",
+            "sal",
+            "agua"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el filete de llama",
+          "pasos": [
+            "Filetear la llama, condimentar y reservar.",
+            "Moler la almendra chiquitana tostada con harina de yuca, vinagre, aceite y agua.",
+            "En un sartén caliente sellar la llama y pincelar constantemente con la mezcla de almendra chiquitana."
+          ]
+        },
+        {
+          "seccion": "Para la ensalada",
+          "pasos": [
+            "Cocer la papalisa en agua hirviendo, dejar enfriar y cortar en rodajas.",
+            "Picar la cebolla en pluma, el tomate en cuadros y las hierbas frescas finamente.",
+            "Cocer la cañahua en agua hirviendo.",
+            "Mezclar todo, salpimentar y agregar el zumo de limón."
+          ]
+        },
+        {
+          "seccion": "Para la pasoca de harina de yuca",
+          "pasos": [
+            "Remojar la harina de yuca con agua y sal, dejar reposar durante 5 minutos.",
+            "Picar todas las verduras en cuadritos.",
+            "Sofreír las verduras y mezclar con la harina de yuca."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nombre": "Apanado de cuy con tunta rebozada",
+      "categoria": "salada",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para el cuy",
+          "items": [
+            "1 cuy mediano",
+            "pimienta",
+            "comino",
+            "singani",
+            "limón",
+            "sal",
+            "harina de yuca",
+            "aceite"
+          ]
+        },
+        {
+          "seccion": "Para el phuti de tunta muralla",
+          "items": [
+            "100 g de tunta muralla remojada",
+            "30 g de almendra chiquitana pelada"
+          ]
+        },
+        {
+          "seccion": "Para el tabulé de quinua con almendra chiquitana",
+          "items": [
+            "100 g de quinua cocida",
+            "½ pimiento morrón",
+            "20 g de almendra chiquitana tostada",
+            "1 zanahoria mediana",
+            "1 cebolla morada mediana",
+            "1 manojo de cilantro",
+            "5 hojas de apio",
+            "1 tomate mediano",
+            "jugo de 1 limón",
+            "20 ml de singani",
+            "5 g de ajo en polvo",
+            "50 ml de aceite de oliva",
+            "sal",
+            "pimienta"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el cuy",
+          "pasos": [
+            "Llevar el cuy a una cocción en olla a presión para ablandar un poco (entre 15 y 20 minutos). Retirar del fuego.",
+            "Adobar con sal, pimienta, limón, un chorro de singani y comino.",
+            "Empanizar con harina de yuca para una fritura profunda. Reservar."
+          ]
+        },
+        {
+          "seccion": "Para el phuti de tunta muralla",
+          "pasos": [
+            "Cocinar la tunta pellizcada en agua hirviendo y luego colocarla en un sartén con la almendra chiquitana procesada para rebozar, agregando un chorro de aceite."
+          ]
+        },
+        {
+          "seccion": "Para el tabulé de quinua con almendra chiquitana",
+          "pasos": [
+            "Cocinar la quinua al dente.",
+            "Saltear la zanahoria, cebolla y morrón picados en cuadritos pequeños, agregar sal y pimienta.",
+            "Mezclar en frío la quinua con el salteado e incorporar el cilantro, las hojas de apio finamente picadas y el tomate picado.",
+            "Sazonar con jugo de limón, aceite de oliva, ajo en polvo, sal, pimienta y un toque de singani.",
+            "Picar la almendra para decorar.",
+            "Mezclar muy bien todo y servir."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nombre": "Ceviche de tarwi con leche de almendra chiquitana",
+      "categoria": "salada",
+      "autores": "E. Caupi, C. Condarco, M. Cepiz, N. Velasco, M. Taha",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para la leche de motacú y almendra chiquitana",
+          "items": [
+            "200 g de motacú",
+            "10 g de almendra chiquitana",
+            "200 ml de agua hervida"
+          ]
+        },
+        {
+          "seccion": "Para el tarwi",
+          "items": [
+            "80 g de mote de tarwi",
+            "½ limón",
+            "1 rama de cilantro",
+            "sal al gusto",
+            "k'oa (para ahumar)"
+          ]
+        },
+        {
+          "seccion": "Para decoración",
+          "items": [
+            "chilto",
+            "almendra chiquitana picada",
+            "hojas de cilantro"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la leche de motacú y almendra chiquitana",
+          "pasos": [
+            "Procesar el motacú y la almendra chiquitana con agua hervida.",
+            "Filtrar y reservar."
+          ]
+        },
+        {
+          "seccion": "Para el tarwi",
+          "pasos": [
+            "En una olla colocar k'oa, quemar y colocar el tarwi, tapar la olla y ahumar unos minutos.",
+            "Mezclar el tarwi ahumado con el jugo de limón, cilantro picado finamente, sal a gusto y la leche de motacú y almendra previamente reservada.",
+            "Emplatar y decorar con hojas de cilantro, chilto y almendra chiquitana picada."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nombre": "Ch'oka y ají de almendra chiquitana",
+      "categoria": "salada",
+      "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez, C. Camacho",
+      "contexto": "Grupo 4 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para la ch'oka",
+          "items": [
+            "1 pierna de ch'oka",
+            "hierbas aromáticas (perejil, romero, cilantro, etc.)",
+            "20 g de maicena",
+            "1 huevo",
+            "30 g de harina de yuca",
+            "abundante aceite para fritura"
+          ]
+        },
+        {
+          "seccion": "Para la salsa de ají de almendra",
+          "items": [
+            "80 g de almendra chiquitana",
+            "1 ají amarillo en vaina",
+            "½ cebolla morada",
+            "sal",
+            "pimienta"
+          ]
+        },
+        {
+          "seccion": "Para el pastel de chuño",
+          "items": [
+            "60 g de chuño remojado",
+            "1 huevo",
+            "1 diente de ajo",
+            "sal",
+            "pimienta"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la ch'oka",
+          "pasos": [
+            "Sellar la ch'oka en una cacerola y colocarla en olla a presión con abundante agua y con un bouquet garni (perejil, laurel, romero, cilantro, k'oa). Cocinar durante 30 minutos.",
+            "Pasar por maicena, huevo y harina de yuca para luego freír en abundante aceite."
+          ]
+        },
+        {
+          "seccion": "Para la salsa de ají de almendra",
+          "pasos": [
+            "Brasear o asar la vaina de ají para colocar en una licuadora con la cebolla, la almendra chiquitana, sal y pimienta.",
+            "Pasar la mezcla a una cacerola y a fuego medio, cocinar hasta obtener una textura adecuada."
+          ]
+        },
+        {
+          "seccion": "Para el pastel de chuño",
+          "pasos": [
+            "Licuar el chuño y el ajo con un poco de agua, filtrar y salpimentar.",
+            "En un recipiente integrar con el huevo batido.",
+            "Colocar en una bandeja enmantequillada y hornear a 160 °C por 30 a 35 minutos."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nombre": "Chancho relleno de pasoca con salsa de mangaba y cerveza",
+      "categoria": "salada",
+      "autores": "M. Meneces, Y. Bernal, F. Montaño, A. Flores, C. Rojas, M. López, F. Gutiérrez, Y. Cuéllar, A. Olivarez, J. Zeballos, A. Manrique, A. Machaca, D. Tórrez, J. Chamo, M. Coria, S. Coronado, E. Pérez, Y. Dorado, P. Taceo, D. Ribera y S. Coaquira",
+      "contexto": "Grupos 2 y 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": "Para la carne",
+          "items": [
+            "1 lomo de cerdo",
+            "2 cdas de mostaza",
+            "1 cda de ajo en polvo",
+            "1 cda de pimienta negra molida",
+            "1 cdta de sal",
+            "cordel para bridar"
+          ]
+        },
+        {
+          "seccion": "Para el relleno",
+          "items": [
+            "1½ taza de harina de yuca",
+            "¼ taza de pasas",
+            "¼ taza de aceitunas verdes sin semilla",
+            "200 g de charque cocido y deshilachado",
+            "4 cdas de mantequilla"
+          ]
+        },
+        {
+          "seccion": "Para la salsa",
+          "items": [
+            "1½ taza de pulpa de mangaba",
+            "1½ taza de cerveza oscura",
+            "6 cdas de azúcar",
+            "1 cebolla morada pequeña",
+            "2 dientes de ajo",
+            "5 g de jengibre fresco",
+            "4 cdas de salsa soya",
+            "mantequilla al gusto",
+            "maicena, cantidad necesaria"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el relleno",
+          "pasos": [
+            "Hidratar las pasas por unos 30 minutos.",
+            "En un sartén colocar la mantequilla a fuego medio.",
+            "Agregar el charque y la harina de yuca.",
+            "Retirar del fuego y agregar las pasas y las aceitunas. Reservar."
+          ]
+        },
+        {
+          "seccion": "Para la carne",
+          "pasos": [
+            "Con mucho cuidado, cortar el lomo de cerdo en una sola lámina de 1 a 2 cm de grosor.",
+            "Condimentar con la sal, la pimienta, el ajo y el comino, solo por un lado.",
+            "Colocar el relleno sobre el lado condimentado.",
+            "Envolver y bridar (atar) con un cordel.",
+            "Untar la mostaza y si es necesario condimentar más.",
+            "Meter al horno a 170 °C, durante unos 35 minutos."
+          ]
+        },
+        {
+          "seccion": "Para la salsa",
+          "pasos": [
+            "Picar la cebolla y el ajo finamente y rehogar con un poco de mantequilla a fuego medio.",
+            "Agregar el jengibre rallado y el azúcar, moviendo constantemente.",
+            "Agregar la cerveza, la pulpa de mangaba y la salsa soya.",
+            "Condimentar y, si es necesario, espesar con maicena diluida.",
+            "Servir sobre el rollo de cerdo en láminas, acompañado de la guarnición de su preferencia."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nombre": "Crema de chuño",
+      "categoria": "salada",
+      "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez y C. Camacho",
+      "contexto": "Grupo 4 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para el fondo",
+          "items": [
+            "200 g de charque",
+            "1 zanahoria pequeña",
+            "1 cebolla morada pequeña",
+            "1 rama de apio",
+            "1 rama de perejil",
+            "1 rama de hierbabuena",
+            "1 rama de k'oa"
+          ]
+        },
+        {
+          "seccion": "Para la crema",
+          "items": [
+            "250 g de chuño sancochado",
+            "30 g de crema de leche",
+            "10 g de mantequilla",
+            "sal",
+            "pimienta",
+            "comino"
+          ]
+        },
+        {
+          "seccion": "Para decoración",
+          "items": [
+            "harina de yuca",
+            "aceite de oliva aromatizado con k'oa",
+            "charque desmenuzado y frito"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En una cacerola, añadir los ingredientes del fondo con 500 ml de agua, llevar a fuego medio y dejar reducir para extraer los sabores y aromas.",
+            "Cocinar el chuño previamente remojado hasta que adquiera un color más oscuro. Licuar el chuño cocido con la mitad del fondo hasta obtener una mezcla suave y homogénea.",
+            "Verter la mezcla licuada en una olla para pasarla al fuego, agregar la crema de leche y la mantequilla y salpimentar. Dejar hervir a fuego medio por 15 minutos.",
+            "Emplatar con harina de yuca, charque por encima y poner unas gotas de aceite de k'oa."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "nombre": "Crema de totaí en base de cuy",
+      "categoria": "salada",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "300 ml de fondo de cuy",
+            "1 zanahoria",
+            "1 pimiento morrón pequeño",
+            "1 puño de habas peladas",
+            "200 g de harina de totaí",
+            "3 papas medianas",
+            "2 dientes de ajo",
+            "½ cebolla morada",
+            "1 tallo de apio",
+            "2 hojas de laurel",
+            "orégano",
+            "sal",
+            "agua"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Llevar todo a una cacerola para su cocción.",
+            "Retirar del fuego y dejar enfriar.",
+            "Filtrar y procesar lo sólido agregando lo necesario de jugo, hasta lograr una consistencia cremosa.",
+            "Llevar nuevamente a fuego bajo y remover constantemente, alrededor de 15 minutos.",
+            "Servir caliente."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "nombre": "Ensalada chiquitana de totaí, manga verde y almendra chiquitana",
+      "categoria": "salada",
+      "autores": "J. Canedo y C. Camacho",
+      "contexto": "Investigación y propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "2 mangas verdes (pintonas)",
+            "1 cebolla blanca grande",
+            "10 totaíses, pelados y despepados (sin semilla)",
+            "10 almendras chiquitanas remojadas y peladas",
+            "zumo de 2 limones grandes",
+            "aceite vegetal de buena calidad",
+            "vinagre",
+            "sal y pimienta"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Pelar las mangas y cortarlas en julianas.",
+            "Picar la cebolla en pluma y remojar en abundante agua.",
+            "Picar los totaíses en julianas.",
+            "Laminar las almendras y tostarlas.",
+            "Preparar una vinagreta con zumo de limón, aceite, vinagre, sal y pimienta.",
+            "En un bowl colocar los ingredientes y aliñarlos con la vinagreta."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "nombre": "Fricasé de pollo y almendra chiquitana",
+      "categoria": "salada",
+      "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
+      "contexto": "Grupo 2 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "2 presas de pollo (pierna y entrepierna)",
+            "1 zanahoria",
+            "3 dientes de ajo",
+            "sal",
+            "pimienta",
+            "comino",
+            "2 ajíes amarillos en vaina",
+            "1 puñado de almendra chiquitana pelada",
+            "200 g de chuño remojado",
+            "300 g de mote",
+            "1 rama de hierbabuena"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Sellar las presas de pollo.",
+            "Sofreír el ajo picado y la zanahoria rallada, agregar el ají amarillo procesado y salpimentar.",
+            "Aromatizar con la hierbabuena, agregar la almendra chiquitana procesada con agua y dejar cocinar durante 30 minutos.",
+            "Acompañar con chuño cocido y mote."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "nombre": "Lomo de llama en salsa de asaí con puré de racacha y totaí",
+      "categoria": "salada",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza, A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para la carne de llama",
+          "items": [
+            "200 g de lomo de llama",
+            "sal",
+            "pimienta",
+            "comino",
+            "aceite"
+          ]
+        },
+        {
+          "seccion": "Para el puré de racacha y totaí",
+          "items": [
+            "2 racachas cocidas",
+            "60 g de harina de totaí",
+            "5 g de urucú",
+            "aceite"
+          ]
+        },
+        {
+          "seccion": "Para la salsa de asaí",
+          "items": [
+            "100 g de pulpa de asaí",
+            "fondo de llama (caldo donde se coció la llama)",
+            "sal",
+            "pimienta",
+            "comino"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la carne de llama",
+          "pasos": [
+            "Condimentar el lomo de llama con sal, pimienta y comino.",
+            "Asar en sartén con un chorro de aceite."
+          ]
+        },
+        {
+          "seccion": "Para el puré de racacha y totaí",
+          "pasos": [
+            "En una cacerola a fuego bajo, sin sobre calentar, teñir el aceite con el urucú.",
+            "Pasar la racacha por un colador y luego llevarla a una cacerola junto con la harina de totaí, el aceite de urucú y agua. Ir removiendo constantemente hasta alcanzar la textura deseada.",
+            "Salpimentar."
+          ]
+        },
+        {
+          "seccion": "Para la salsa de asaí",
+          "pasos": [
+            "En una cacerola colocar la pulpa de asaí y agregar el fondo de llama hasta alcanzar la textura deseada.",
+            "Salpimentar y poner una pizca de comino."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "nombre": "Pacumutu de llama y ají de almendra chiquitana",
+      "categoria": "salada",
+      "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez y C. Camacho",
+      "contexto": "Grupo 4 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para el pacumutu",
+          "items": [
+            "200 g de filete de llama",
+            "½ pimiento morrón",
+            "½ cebolla morada",
+            "2 dientes de ajo",
+            "sal",
+            "pimienta",
+            "pinchos de madera"
+          ]
+        },
+        {
+          "seccion": "Para el ají de almendra chiquitana",
+          "items": [
+            "40 g de almendra chiquitana",
+            "1 ají amarillo en vaina",
+            "10 g de cebolla braseada",
+            "pimienta",
+            "sal"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el pacumutu",
+          "pasos": [
+            "Cortar el filete de llama en cubos de 3 a 4 centímetros, al igual que la cebolla y el pimiento morrón.",
+            "En un recipiente colocar los insumos y adobar con ajo picado, sal y pimienta.",
+            "Insertar en los pinchos de madera (previamente remojados) intercalando los ingredientes.",
+            "En un sartén o parrilla asar el pacumutu."
+          ]
+        },
+        {
+          "seccion": "Para el ají de almendra chiquitana",
+          "pasos": [
+            "Procesar los ingredientes, filtrar y llevar a una cacerola a fuego medio hasta obtener la textura deseada.",
+            "Servir los pacumutus bañados con la salsa de almendra chiquitana."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "nombre": "Paiche frito en salsa agridulce de asaí",
+      "categoria": "salada",
+      "autores": "Comunidad Porvenir",
+      "contexto": "Taller de «Creatividad e innovación culinaria», desarrollado en la comunidad Porvenir, de Bajo Paraguá",
+      "ingredientes": [
+        {
+          "seccion": "Para el paiche",
+          "items": [
+            "1 kg de paiche",
+            "4 dientes de ajo",
+            "1 cda de orégano seco",
+            "2 cdas de vinagre de frutas",
+            "sal, pimienta y comino al gusto",
+            "cantidad necesaria de harina y maicena",
+            "aceite para freír"
+          ]
+        },
+        {
+          "seccion": "Para la salsa",
+          "items": [
+            "1 cebolla morada",
+            "4 dientes de ajo",
+            "300 g de papaya pintona",
+            "2 tazas de pulpa de asaí",
+            "2 cdas de vinagre de frutas",
+            "sal, pimienta y comino al gusto"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el paiche",
+          "pasos": [
+            "Trocear el paiche en cubos de 2 centímetros.",
+            "Colocar el pescado en un bowl, junto al ajo picado, el orégano, el vinagre, la pimienta, el comino y la sal. Marinar durante 40 minutos (idealmente 12 horas).",
+            "Mezclar la harina con la maicena, la sal y la pimienta.",
+            "Pasar los trozos de paiche por la mezcla de la harina, por ambos lados.",
+            "Freír en abundante aceite caliente."
+          ]
+        },
+        {
+          "seccion": "Para la salsa",
+          "pasos": [
+            "Picar la cebolla y los ajos finamente.",
+            "Rehogarlos en aceite hasta que estén translúcidos y blandos.",
+            "Agregar la papaya rallada, la pulpa de asaí, el vinagre y condimentar a gusto. Dejar que los ingredientes se integren a fuego bajo.",
+            "Servir la salsa encima del pescado frito. Se puede acompañar con plátano y yuca frita."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "nombre": "Pato con salsa pipián de almendra chiquitana",
+      "categoria": "salada",
+      "autores": "J. Canedo y C. Camacho",
+      "contexto": "Investigación y propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "1 pato troceado",
+            "caldo para cocer el pato (manteca, 1 cebolla morada, 2 tallos de apio, 2 zanahorias, laurel y pimienta en grano)",
+            "500 g de almendra chiquitana tostada",
+            "8 dientes de ajo",
+            "3 cebollas moradas",
+            "3 morrones rojos",
+            "5 ajíes dulces",
+            "sal",
+            "pimienta molida",
+            "comino molido",
+            "manteca de urucú",
+            "arroz y yuca para acompañar"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Hervir el pato en una olla con un poco de manteca y abundante agua, añadir: 1 cebolla morada entera, 2 tallos de apio sin hojas, 2 zanahorias, laurel y pimienta en grano. Una vez cocida la carne, retirar el pato, cernir y reservar el caldo hasta que se separe la materia grasa.",
+            "Picar las otras 3 cebollas moradas, los 8 dientes de ajo, los 3 morrones y el ají dulce (5) y hacer un ahogado con la manteca de urucú.",
+            "Licuar los 500 g de almendra chiquitana con el caldo de pato y reservar.",
+            "Cuando las verduras estén translúcidas, licuarlas con el caldo de pato y volver a colocar en la olla junto a la almendra procesada.",
+            "Poner el fuego a intensidad baja y agregar las piezas de pato, sal, pimienta, comino y caldo necesario hasta integrar sabores.",
+            "Servir con arroz blanco y yuca cocida (puede ser frita)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "nombre": "Pescado con salsa de semillas de motacú",
+      "categoria": "salada",
+      "autores": "J. Canedo y C. Camacho",
+      "contexto": "Investigación y propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "4 filetes de paiche de aproximadamente 200 g cada uno",
+            "zumo de 3 limones grandes",
+            "8 dientes de ajo",
+            "1 manojo de cilantro",
+            "aceite vegetal de buena calidad",
+            "1 cebolla morada",
+            "1 morrón rojo",
+            "1 morrón verde",
+            "2 cdas de pasta de tomate",
+            "1 taza de semilla de motacú remojada + ¼ taza para decorar",
+            "sal, pimienta y comino al gusto"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En un bowl colocar los filetes de paiche con una parte del zumo de los limones, cuatro dientes de ajo finamente picados, sal, pimienta y comino al gusto. Dejar marinar por unos 30 minutos.",
+            "Licuar una taza de semillas de motacú previamente remojadas, filtrar (colar) y reservar la leche.",
+            "En una olla rehogar la cebolla, la pasta de tomate y los morrones picados en julianas.",
+            "Agregar el resto del ajo picado finamente para rehogar por un minuto más.",
+            "Verter la leche de semilla de motacú y dejar que caliente.",
+            "Agregar los filetes de pescado y dejarlos cocer 5 minutos de cada lado, aproximadamente.",
+            "Agregar el resto de zumo de limón, la semilla de motacú rallada y el cilantro picado finamente; integrar la mezcla.",
+            "Servir con arroz blanco y plátano verde frito."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "nombre": "Pollo con salsa de majo y almendra chiquitana",
+      "categoria": "salada",
+      "autores": "J. Canedo y C. Camacho",
+      "contexto": "Investigación y propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "1 pollo troceado",
+            "2 cebollas moradas grandes",
+            "6 dientes de ajo",
+            "30 almendras chiquitanas crudas, remojadas y peladas",
+            "1 taza de vino blanco",
+            "1 taza de leche de majo",
+            "manteca animal o aceite vegetal de buena calidad",
+            "sal, pimienta y comino al gusto"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Trocear el pollo y luego condimentar con sal, pimienta y comino.",
+            "Sellar la carne en una olla con aceite o manteca y reservar.",
+            "Hacer un ahogado con las cebollas y los ajos picados en cubitos, en la misma olla donde se selló el pollo.",
+            "Verter el vino y luego la leche de majo para recuperar sabores. Tapar y bajar el fuego a mínimo.",
+            "Laminar las almendras y tostarlas en un sartén para incorporarlas a la preparación.",
+            "Se puede acompañar con arroz y yuca."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "nombre": "Ravioles de paiche con salsa pesto de almendra chiquitana",
+      "categoria": "salada",
+      "autores": "N. Calustro, E. Moreito, R. Cuevas, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal, R. Choque",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy, y tras conversaciones con el chef Tiziano Barutto",
+      "ingredientes": [
+        {
+          "seccion": "Para la pasta",
+          "items": [
+            "200 g de harina dura de trigo",
+            "50 g de harina de almendra chiquitana",
+            "2 huevos enteros",
+            "2 cdas de aceite de oliva",
+            "pizca de sal"
+          ]
+        },
+        {
+          "seccion": "Para el relleno",
+          "items": [
+            "400 g de filete de paiche cocido con guarniciones aromáticas (cebolla, zanahoria, tallos de apio, ajo, pimienta en grano y laurel)",
+            "6 tallos de perejil",
+            "5 tallos de cebolla de verdeo",
+            "8 cdas de nata fresca",
+            "sal y pimienta"
+          ]
+        },
+        {
+          "seccion": "Para la salsa pesto",
+          "items": [
+            "1 taza de almendras chiquitanas crudas, remojadas y peladas",
+            "½ taza de aceite de oliva",
+            "4 manojos de hojas de albahaca, sin tallos",
+            "10 dientes de ajo pelados y remojados por una hora",
+            "1½ taza de queso parmesano rallado",
+            "sal y pimienta"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la pasta",
+          "pasos": [
+            "En un bowl, colocar la harina de trigo, la harina de almendra chiquitana, los huevos, la sal y el aceite de oliva; integrar hasta formar una masa. Si es necesario, agregar un poco de agua.",
+            "Dejar en reposo por una hora, cubriendo la masa con un repasador húmedo."
+          ]
+        },
+        {
+          "seccion": "Para el relleno",
+          "pasos": [
+            "Procesar el paiche, el perejil y la nata en un robot de cocina o procesadora.",
+            "Agregar la cebolla de verdeo picada finamente.",
+            "Colocar sal y pimienta al gusto. Reservar."
+          ]
+        },
+        {
+          "seccion": "Para la salsa",
+          "pasos": [
+            "En un sartén colocar un chorro de aceite de oliva y tostar las almendras chiquitanas hasta que queden doradas.",
+            "Picar finamente la albahaca, el ajo y la almendra tostada. Colocar en un bowl, agregar el resto de aceite de oliva y, una vez integrado, agregar el queso parmesano, mezclando bien y salpimentando a gusto."
+          ]
+        },
+        {
+          "seccion": "Para el armado y montaje",
+          "pasos": [
+            "Estirar la masa en una laminadora y formar los ravioles con el relleno. Si no se tiene laminadora, cortar con un cuchillo en cuadraditos, rellenar y tapar. Reservar.",
+            "En abundante agua hervida, colocar los ravioles hasta que floten (20 a 30 segundos), retirar, saltear en salsa pesto y servir inmediatamente.",
+            "Agregar queso parmesano rallado y aceite de oliva."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "nombre": "Sopa de almendra chiquitana y llama",
+      "categoria": "salada",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza, A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "3 papas",
+            "1 cebolla mediana",
+            "1 tallo de apio",
+            "2 zanahorias medianas",
+            "150 g de almendra chiquitana",
+            "200 g de carne de llama",
+            "aceite",
+            "sal y pimienta"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En una cacerola, con un chorrito de aceite, colocar la carne de llama troceada, la cebolla, el apio y una zanahoria picados para sellar.",
+            "Poner todo en una olla a presión, con abundante agua, durante 30 minutos.",
+            "Filtrar el fondo y reservar.",
+            "Procesar la almendra chiquitana.",
+            "Picar la zanahoria restante y las papas en julianas (bastones de 2 mm de ancho por 5 a 7 cm de largo) e incorporar, junto con la almendra procesada, al fondo.",
+            "Cocinar a fuego medio hasta que las papas estén tiernas. Salpimentar y servir."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "nombre": "Tartar de trucha y almendra chiquitana",
+      "categoria": "salada",
+      "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez, C. Camacho",
+      "contexto": "Grupo 4 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para la trucha",
+          "items": [
+            "120 g de trucha limpia",
+            "½ limón",
+            "12 almendras chiquitanas",
+            "½ cda de aceite de oliva",
+            "sal",
+            "pimienta",
+            "hojas de k'oa"
+          ]
+        },
+        {
+          "seccion": "Para la emulsión",
+          "items": [
+            "70 g de tarwi",
+            "3 cdas de aceite de oliva",
+            "zumo de ½ limón",
+            "sal",
+            "pimienta"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la trucha",
+          "pasos": [
+            "En un recipiente mezclar el aceite de oliva, el zumo de limón, las hojas de k'oa, la sal y la pimienta.",
+            "Incorporar con la trucha, previamente limpiada y picada en cubos muy pequeños, integrar y dejar reposar en el refrigerador durante una hora, cubierta con papel plástico.",
+            "Pelar y picar en trozos pequeños la almendra chiquitana para agregar al tartar unos minutos antes de servir."
+          ]
+        },
+        {
+          "seccion": "Para la emulsión",
+          "pasos": [
+            "Pelar el tarwi, procesar en una licuadora, integrando poco a poco el aceite, el limón, la sal y la pimienta."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "nombre": "Tierra viva (crema de almendra chiquitana)",
+      "categoria": "salada",
+      "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
+      "contexto": "Grupo 2 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "400 g de almendra chiquitana",
+            "1 cebolla morada",
+            "2 dientes de ajo",
+            "2 ramas de perejil",
+            "1 pimiento morrón",
+            "1 cdta de comino",
+            "1 cdta de pimienta",
+            "1 ají amarillo en vaina",
+            "1 zanahoria",
+            "100 ml de crema de leche",
+            "1 cda de mantequilla",
+            "2 litros de fondo de verduras",
+            "2 cdas de maicena",
+            "aceite",
+            "1 papa mediana",
+            "amaranto tostado (para acompañar)",
+            "llullucha cruda troceada (para acompañar)"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Licuar la cebolla, el ajo, el pimiento morrón, la zanahoria y los condimentos y llevar a rehogar.",
+            "Agregar 2 litros de fondo de verduras y hervir de 20 a 25 minutos.",
+            "Agregar la almendra procesada con agua, la crema de leche, la mantequilla y la maicena previamente diluida. Dejar hervir a fuego bajo hasta que espese.",
+            "Luego, añadir la crema de almendras.",
+            "Acompañar con papas fritas, llullucha cruda troceada y amaranto tostado."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "nombre": "Tortitas de totaí con charque",
+      "categoria": "salada",
+      "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "½ kg de charque cocido y deshilachado",
+            "1 huevo",
+            "1 cebolla morada pequeña",
+            "1 diente de ajo",
+            "½ kg de pulpa de totaí rallada",
+            "½ taza de pan rallado",
+            "pimienta, comino y sal al gusto",
+            "aceite o manteca vegetal de buena calidad"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En un bowl colocar el charque, la pulpa de totaí, la cebolla y el ajo picados finamente.",
+            "Agregar el huevo, el pan rallado y los condimentos. Mezclar para integrar.",
+            "Con la ayuda de las manos, formar tortitas y freír en aceite o manteca.",
+            "Servir con yuca sancochada, llajua y/o salsa de su preferencia."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "nombre": "Trucha con pasoca",
+      "categoria": "salada",
+      "autores": "E. Caupi, C. Condarco, M. Cepiz, N. Velasco, M. Taha",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para la trucha",
+          "items": [
+            "200 g de trucha",
+            "1 cda de mantequilla",
+            "1 cda de harina",
+            "cantidad necesaria de crema de leche",
+            "1 ramita de k'oa",
+            "sal y pimienta al gusto"
+          ]
+        },
+        {
+          "seccion": "Para la pasoca",
+          "items": [
+            "50 g de harina de yuca",
+            "50 g de harina de quinua",
+            "1 cebolla morada",
+            "4 dientes de ajo",
+            "½ pimiento morrón",
+            "1 ramita de perejil",
+            "sal al gusto",
+            "pimienta al gusto"
+          ]
+        },
+        {
+          "seccion": "Para la decoración",
+          "items": [
+            "papa",
+            "papalisa",
+            "aceite"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la trucha",
+          "pasos": [
+            "Descamar y limpiar la trucha.",
+            "Sellar la trucha, agregar sal y pimienta.",
+            "En una cacerola, colocar la mantequilla y la harina, mezclar constantemente a fuego bajo hasta dorar levemente la harina (roux rubio).",
+            "Agregar la crema de leche y mezclar.",
+            "Agregar sal, pimienta y k'oa."
+          ]
+        },
+        {
+          "seccion": "Para la pasoca",
+          "pasos": [
+            "Tostar la quinua y triturar.",
+            "Hidratar la harina de yuca.",
+            "Sofreír la cebolla picada y el pimentón verde en cubitos, con el ajo en pasta.",
+            "Agregar la quinua triturada y la harina de yuca hidratada.",
+            "Mezclar, salpimentar y añadir perejil."
+          ]
+        },
+        {
+          "seccion": "Para la decoración",
+          "pasos": [
+            "Laminar la papa y la papalisa y freírlas en abundante aceite.",
+            "Colocar encima de la trucha."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "nombre": "Arroz con leche de majo",
+      "categoria": "dulce",
+      "autores": "J. Canedo y C. Camacho",
+      "contexto": "Investigación y propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "2 litros de leche de majo",
+            "2 ramas de canela",
+            "4 clavos de olor",
+            "1 taza de arroz",
+            "½ taza de azúcar blanca"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Colocar la leche de majo en una olla amplia, junto con la canela en rama y los clavos de olor. Añadir el arroz y dejar cocinar a fuego alto, durante 15 minutos.",
+            "Incorporar el azúcar y rebajar a fuego bajo, hasta que el arroz esté cocido; aproximadamente unos 5 u 8 minutos.",
+            "Se puede servir caliente o frío, decorando con canela en polvo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "nombre": "Brigadeiro de almendra con semilla de motacú",
+      "categoria": "dulce",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "1 lata de leche condensada",
+            "2 cdas de mantequilla sin sal",
+            "6 cdas de cocoa",
+            "½ taza de almendras chiquitanas tostadas",
+            "1 taza de semillas de motacú tostadas y trituradas (para rebozar)"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En una olla, derretir la mantequilla a fuego lento.",
+            "Añadir la leche condensada y la cocoa e ir mezclando con intervalos de aproximadamente tres minutos.",
+            "Colocar las almendras chiquitanas troceadas, removiendo constantemente hasta que los ingredientes se empiecen a desprender de las paredes de la olla.",
+            "Retirar del fuego y refrigerar durante por lo menos 45 minutos.",
+            "Con las manos untadas con mantequilla, dar forma a la masa en redonditos, para luego rebozarlos con las semillas de motacú trituradas.",
+            "Refrigerar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "nombre": "Budín de tunta y asaí",
+      "categoria": "dulce",
+      "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
+      "contexto": "Grupo 2 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "2 litros de agua",
+            "500 g de azúcar",
+            "1 ramita de canela",
+            "cáscara de media naranja",
+            "3 clavos de olor",
+            "6 cdas de harina de tunta",
+            "6 cdas de asaí liofilizado",
+            "jugo de 2 limones"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Hervir, durante 30 minutos, el agua con el azúcar, la canela, la cáscara de naranja, el jugo de naranja, el limón y los clavos de olor.",
+            "Disolver la harina de tunta en agua fría y agregar al agua removiendo constantemente.",
+            "Disolver y agregar el asaí liofilizado sin dejar de remover hasta lograr la textura deseada.",
+            "Refrigerar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "nombre": "Cheesecake de motacú con flor de colonia",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para la base de la tarta",
+          "items": [
+            "120 g de mantequilla sin sal",
+            "70 g de azúcar impalpable",
+            "2 g de sal",
+            "35 g de harina de motacú",
+            "50 g de huevo",
+            "260 g de harina 0000"
+          ]
+        },
+        {
+          "seccion": "Para el cheesecake",
+          "items": [
+            "180 g de queso crema",
+            "70 g de chocolate blanco",
+            "110 g de crema de leche",
+            "60 g de azúcar blanca",
+            "60 g de huevo",
+            "5,5 g de almidón",
+            "10 g de flor de colonia seca"
+          ]
+        },
+        {
+          "seccion": "Para la mermelada de higo",
+          "items": [
+            "300 g de higos frescos",
+            "50 g de glucosa",
+            "120 g de azúcar blanca",
+            "20 g de zumo de limón",
+            "5 g de canela en rama"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la base de la tarta",
+          "pasos": [
+            "En el procesador, triturar las galletas de mantequilla hasta casi pulverizarlas.",
+            "Mezclar las galletas trituradas con la mantequilla derretida.",
+            "Compactar en molde de 15 x 5 cm forrado con papel manteca. Reservar."
+          ]
+        },
+        {
+          "seccion": "Para el cheesecake",
+          "pasos": [
+            "Calentar la crema de leche hasta 50 °C, añadir las flores de colonia, tapar e infusionar 10 minutos, luego retirar las flores.",
+            "Fundir el chocolate en el microondas sin exceder los 40 °C.",
+            "Verter la crema infusionada sobre el chocolate y emulsionar con batidor hasta obtener una crema lisa y homogénea.",
+            "Agregar el queso crema (a temperatura ambiente) e incorporar bien con varillas.",
+            "Terminar de añadir el azúcar, el huevo y el almidón tamizado. Mezclar bien.",
+            "Poner la base de galletas en el molde, agregar la mezcla y colocar gotas de mermelada de higo encima.",
+            "Hornear a 250 °C durante 7 a 8 minutos."
+          ]
+        },
+        {
+          "seccion": "Para la mermelada de higo",
+          "pasos": [
+            "Calentar los higos picados con el zumo de limón y la glucosa.",
+            "Añadir la mitad del azúcar.",
+            "Hervir, añadir el restante del azúcar y cocer hasta los 104 °C.",
+            "Terminar de triturar si hace falta y retirar las ramas de canela."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "nombre": "Cheesecake de motacú con paja cedrón y piña",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para la masa sablé",
+          "items": [
+            "120 g de mantequilla sin sal",
+            "70 g de azúcar impalpable",
+            "2 g de sal",
+            "35 g de harina de motacú",
+            "50 g de huevo",
+            "260 g de harina 0000",
+            "manteca de cacao"
+          ]
+        },
+        {
+          "seccion": "Para el cheesecake",
+          "items": [
+            "50 g de queso crema",
+            "50 g de leche entera",
+            "50 g de azúcar blanca",
+            "3 g de gelatina sin sabor",
+            "1 g de sal",
+            "125 g de crema de leche"
+          ]
+        },
+        {
+          "seccion": "Para el curd de limón y paja cedrón",
+          "items": [
+            "200 g de yema de huevo",
+            "130 g de huevo entero",
+            "150 g de azúcar granulada blanca",
+            "50 g de zumo de limón",
+            "250 g de mantequilla sin sal",
+            "5 g de gelatina sin sabor",
+            "30 g de agua",
+            "14 g de paja cedrón pulverizada"
+          ]
+        },
+        {
+          "seccion": "Para el gelificado de piña y paja cedrón",
+          "items": [
+            "200 g de pulpa de piña",
+            "5 g de paja cedrón pulverizada",
+            "16 g de gelatina sin sabor",
+            "50 g de azúcar"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la masa sablé",
+          "pasos": [
+            "Mezclar en batidora el azúcar, la harina 0000, la harina de almendras (motacú) y la sal.",
+            "Añadir dados pequeños de mantequilla fría mientras se mezcla.",
+            "Una vez integrada la mantequilla, añadir los huevos.",
+            "Reposar en heladera envuelta en papel plástico al menos 20 minutos.",
+            "Estirar a 3 mm, reposar 20 minutos más.",
+            "Forrar molde de 15 cm de diámetro x 3,5 cm de altura. Refrigerar 20 minutos.",
+            "Hornear a 160 °C, 10 minutos con peso, luego 12 minutos sin peso.",
+            "Impermeabilizar con chocolate o manteca de cacao fundida."
+          ]
+        },
+        {
+          "seccion": "Para el cheesecake",
+          "pasos": [
+            "Calentar la leche con el azúcar a 50 °C y fundir la gelatina hidratada.",
+            "Verter sobre el queso crema y añadir la sal. Mezclar.",
+            "Añadir la crema de leche semi montada y rellenar la tartaleta.",
+            "Reservar en refrigerador."
+          ]
+        },
+        {
+          "seccion": "Para el curd de limón y paja cedrón",
+          "pasos": [
+            "Hidratar la gelatina con el agua y reservar.",
+            "Mezclar el azúcar con los huevos, las yemas, el zumo de limón y la paja cedrón.",
+            "Cocinar a baño María, sin dejar de mover, hasta los 75–80 °C y agregar la gelatina.",
+            "Colar y llevar a enfriar con papel plástico en contacto.",
+            "Una vez fría, emulsionar con la mantequilla a temperatura ambiente con ayuda de un mixer."
+          ]
+        },
+        {
+          "seccion": "Para el gelificado de piña y paja cedrón",
+          "pasos": [
+            "Hervir todos los ingredientes.",
+            "Colocar rápidamente esta mezcla sobre el cheesecake.",
+            "Gelificar a temperatura ambiente sin pasar por la heladera, desmoldar con puntilla.",
+            "Reservar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "nombre": "Cremoso de chocolate, albahaca y maracuyá",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para la base cremosa",
+          "items": [
+            "125 g de crema de leche",
+            "125 g de leche entera",
+            "40 g de yema de huevo",
+            "20 g de hoja de albahaca chiquitana fresca",
+            "40 g de azúcar blanca",
+            "3 g de gelatina",
+            "120 g de chocolate amargo (70% de cacao)"
+          ]
+        },
+        {
+          "seccion": "Para el gelificado de maracuyá",
+          "items": [
+            "200 g de pulpa de maracuyá",
+            "60 g de azúcar",
+            "30 g de almidón de maíz"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la base cremosa",
+          "pasos": [
+            "Mezclar la gelatina con agua fría.",
+            "Calentar ¾ de la mezcla de crema de leche con la leche y la hoja de albahaca hasta ebullición. Retirar las hojas.",
+            "En otro recipiente, unir las yemas y el azúcar con ¼ de la mezcla de crema con leche.",
+            "Verter el líquido caliente sobre la mezcla anterior y devolver al fuego hasta alcanzar 82 °C.",
+            "Colar rápidamente; agregar la gelatina previamente hidratada.",
+            "Verter inmediatamente la crema encima del chocolate negro previamente fundido, emulsionando con movimientos enérgicos.",
+            "Acabar la emulsión con un túrmix (sin incorporar aire) y, cuando esté lisa y brillante, cubrir con papel plástico y reservar en el congelador durante una noche.",
+            "Después del reposo, trabajar el cremoso con una espátula y disponer en manga con boquilla."
+          ]
+        },
+        {
+          "seccion": "Para el gelificado de maracuyá",
+          "pasos": [
+            "Unir la pulpa de maracuyá sin semillas con el azúcar y el almidón; calentar sin dejar de revolver hasta alcanzar 71 °C.",
+            "Luego de 3 a 5 minutos revolviendo suavemente, verificar la consistencia.",
+            "Una vez espesa la mezcla, pasar a otro recipiente.",
+            "Cuando adquiera temperatura ambiente, triturar con túrmix hasta obtener textura lisa y fina.",
+            "Conservar en manga con boquilla hasta el momento de uso."
+          ]
+        },
+        {
+          "seccion": "Para el montaje",
+          "pasos": [
+            "Colocar una base de cremoso de albahaca con crema de maracuyá.",
+            "Puede ir como relleno de bombones o como postre en vaso."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "nombre": "Flan de almendra chiquitana",
+      "categoria": "dulce",
+      "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": "Para el caramelo",
+          "items": [
+            "5 cucharadas de azúcar granulada blanca",
+            "½ taza de agua",
+            "1 cdta de zumo de limón"
+          ]
+        },
+        {
+          "seccion": "Para el flan",
+          "items": [
+            "3 huevos enteros",
+            "6 yemas",
+            "200 g de azúcar",
+            "750 ml de leche de almendra chiquitana"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el caramelo",
+          "pasos": [
+            "En una olla a fuego medio, colocar el azúcar, el zumo de limón y el agua, dejando calentar sin mover hasta que empiece a cambiar de color.",
+            "Mezclar suavemente y retirar del fuego, sin dejar de mezclar, hasta que adquiera un color miel.",
+            "Revestir (untar) el molde o los moldes (cerámica, vidrio templado o aluminio)."
+          ]
+        },
+        {
+          "seccion": "Para el flan",
+          "pasos": [
+            "Precalentar el horno a 200 °C.",
+            "En un bowl colocar las 6 yemas, los 3 huevos enteros, el azúcar y la leche de almendra chiquitana; batir hasta formar una cremosa masa.",
+            "Verter la mezcla en los moldes y colocarlos en una bandeja de horno con agua caliente para cocinarlos a baño María.",
+            "Cubrir con papel aluminio y llevarlos al horno durante 40 minutos.",
+            "Retirar el papel aluminio, verificar el nivel del agua adecuado y dejar otros 10 minutos, hasta que el flan adquiera un color dorado.",
+            "Dejar enfriar, preferentemente en refrigerador, durante 12 horas."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "nombre": "Galletas bicolores de almendra chiquitana y asaí",
+      "categoria": "dulce",
+      "autores": "Taller de «Creatividad e innovación culinaria»",
+      "contexto": "Desarrollado en Municipio de San Ignacio de Velasco",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "250 g de harina tamizada",
+            "125 g de mantequilla a temperatura ambiente",
+            "150 g de azúcar impalpable",
+            "1 huevo",
+            "10 g de asaí liofilizado",
+            "1 cdta de extracto de vainilla"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Ablandar la mantequilla e integrar con el azúcar impalpable.",
+            "Añadir el huevo y la esencia de vainilla y mezclar hasta homogeneizar.",
+            "Colocar la harina tamizada de a poco e integrar para obtener una masa firme. No se debe trabajar mucho la masa.",
+            "Dividir la masa en dos porciones iguales e integrar el asaí liofilizado en una. Envolver ambas masas en plástico y refrigerarlas durante 30 minutos.",
+            "Extender la masa blanca en forma rectangular, dejando un grosor de 2 mm; repetir el mismo procedimiento con la masa de asaí.",
+            "Colocar un rectángulo sobre otro y envolver con papel plástico; refrigerar por unos minutos, hasta que la masa se ponga firme.",
+            "Cortar rodajas de 2 milímetros de espesor y colocarlas en una bandeja para hornear.",
+            "Llevar al horno a 180 °C, durante unos 15 minutos, hasta dorar ligeramente."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 31,
+      "nombre": "Galletas de harina de motacú con chips de chocolate y coco",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "1 yema de huevo",
+            "5 g de esencia de vainilla",
+            "25 g de aceite de coco",
+            "50 g de harina de motacú",
+            "30 g de azúcar de coco",
+            "2 g de bicarbonato de sodio",
+            "30 g de chispas de chocolate amargo",
+            "20 g de coco rallado"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Poner en un recipiente el azúcar de coco con la yema de huevo, la vainilla y el aceite de coco.",
+            "Añadir los secos previamente cernidos: harina de motacú y bicarbonato de sodio.",
+            "Una vez que la mezcla esté bien incorporada, agregar el coco rallado y las chispas de chocolate amargo.",
+            "Formar galletas de 25 gramos cada una y colocar sobre una placa con papel de horno.",
+            "Precalentar el horno a 170 °C.",
+            "Previamente a meter al horno, aplastar un poco las galletas con la mano.",
+            "Hornear hasta dorar y retirar del horno."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 32,
+      "nombre": "Helado de canelón",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para el helado",
+          "items": [
+            "250 g de crema de leche",
+            "125 ml de leche entera",
+            "40 g de azúcar",
+            "3 yemas de huevo",
+            "15 g de fécula de maíz",
+            "5 g de hoja seca de canelón"
+          ]
+        },
+        {
+          "seccion": "Para el crumble cítrico",
+          "items": [
+            "85 g de azúcar morena",
+            "70 g de harina 0000",
+            "70 g de harina de almendra chiquitana",
+            "1 g de sal",
+            "7 g de ralladura de toronja",
+            "mantequilla fría c/n"
+          ]
+        },
+        {
+          "seccion": "Para los cristales de jengibre",
+          "items": [
+            "125 g de jengibre fresco",
+            "200 g de azúcar blanca",
+            "250 ml de agua"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el helado",
+          "pasos": [
+            "Mezclar las yemas de huevo con el azúcar y la fécula de maíz.",
+            "Calentar en una cacerola la leche con la crema de leche hasta ebullición y colocar encima las hojas de canelón, para infusionar por 5 a 7 minutos.",
+            "Colar y verter sobre la combinación de yemas. Mezclar y devolver al fuego hasta que espese levemente. Colar y dejar enfriar.",
+            "Colocar la crema en bolsas Zip planas y llevar a congelar.",
+            "Sacar del congelador, trocear y procesar en batidora hasta formar una crema densa con textura de helado.",
+            "Bolear como un helado y servir. Puede servirse con crumble cítrico y cristales de jengibre."
+          ]
+        },
+        {
+          "seccion": "Para los cristales de jengibre",
+          "pasos": [
+            "Hervir el jengibre picado en cubitos durante 10 minutos; escurrir y repetir la operación.",
+            "Realizar un almíbar con azúcar y agua, colocar el jengibre escurrido y cocinar hasta 106 °C.",
+            "Escurrir, cubrir con azúcar y dejar secar en bandeja o rejilla durante 8 horas.",
+            "Guardar en recipiente hermético a temperatura ambiente."
+          ]
+        },
+        {
+          "seccion": "Para el crumble",
+          "pasos": [
+            "Mezclar todos los sólidos (azúcar, ralladura de toronja, harina 0000, harina de almendras, sal) en batidora con varilla.",
+            "Añadir dados pequeños de mantequilla fría.",
+            "Una vez conseguidas pequeñas unidades a modo de rocas, extender en papel de horno y congelar.",
+            "Hornear directo del congelador a 160 °C, removiendo a mitad de cocción. Terminar al obtener el color deseado (aprox. 17 min). Dejar enfriar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 33,
+      "nombre": "Helado de tayacha",
+      "categoria": "dulce",
+      "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, C. Camacho",
+      "contexto": "Grupo 4 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para el helado",
+          "items": [
+            "2 tazas de puré de tayacha",
+            "2 yemas",
+            "50 ml de crema de leche",
+            "¼ taza de azúcar morena",
+            "½ taza de agua"
+          ]
+        },
+        {
+          "seccion": "Para el merengue suizo con asaí",
+          "items": [
+            "70 g de clara de huevo (2 huevos grandes)",
+            "140 g de azúcar blanca",
+            "30 g de asaí liofilizado"
+          ]
+        },
+        {
+          "seccion": "Para el crocante",
+          "items": [
+            "60 g de mantequilla sin sal",
+            "60 g de harina",
+            "30 g de amaranto tostado",
+            "60 g de azúcar blanca",
+            "5 g de asaí liofilizado"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el helado",
+          "pasos": [
+            "Montar o batir la crema y reservar.",
+            "En una cacerola preparar el almíbar con el agua y el azúcar.",
+            "Llevar a baño María las yemas y batir integrando el almíbar en hilo.",
+            "Integrar el puré de tayacha tamizado y luego la crema batida.",
+            "Llevar al congelador por 3 horas.",
+            "Batir nuevamente la preparación y volver a congelar."
+          ]
+        },
+        {
+          "seccion": "Para el merengue suizo con asaí",
+          "pasos": [
+            "En un recipiente metálico colocar las claras y el azúcar para llevar a baño María, removiendo constantemente hasta disolver el azúcar.",
+            "Retirar del baño María y batir a velocidad media hasta que el merengue esté firme.",
+            "Precalentar el horno a 110 °C.",
+            "Extender el merengue en un silpat y espolvorear el asaí liofilizado encima.",
+            "Hornear alrededor de 60 minutos, hasta que esté deshidratado completamente."
+          ]
+        },
+        {
+          "seccion": "Para el crocante",
+          "pasos": [
+            "En un recipiente colocar la mantequilla fría, la harina y el azúcar e integrar a punto arena.",
+            "Incorporar el amaranto tostado y el asaí liofilizado, integrar la mezcla.",
+            "Extender en una bandeja y hornear, durante 15 minutos, a 180 °C."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 34,
+      "nombre": "Helado de tayacha, asaí y almendra sobre queque de totaí y quinua",
+      "categoria": "dulce",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para el helado",
+          "items": [
+            "3 huevos",
+            "200 ml de leche de almendra chiquitana",
+            "70 g de azúcar",
+            "175 g de tayacha",
+            "80 g de asaí en pulpa",
+            "1 chorro de esencia de vainilla",
+            "ralladura de 1 limón",
+            "zumo de 1 limón"
+          ]
+        },
+        {
+          "seccion": "Para el queque",
+          "items": [
+            "100 g de quinua (previamente hidratada en agua)",
+            "100 g de harina de totaí",
+            "1 huevo",
+            "150 ml de leche de almendra chiquitana",
+            "280 ml de agua",
+            "½ cdta de esencia de vainilla",
+            "10 g de polvo de hornear",
+            "ralladura de 1 limón"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el helado",
+          "pasos": [
+            "En una cacerola, colocar la leche de almendra chiquitana, los huevos y el azúcar desde frío a fuego medio, removiendo constantemente hasta que espese. Reservar.",
+            "Mezclar la tayacha en puré, el asaí, la esencia de vainilla, la ralladura de limón y el zumo, para luego incorporar la preparación de manera envolvente.",
+            "Llevar a congelar."
+          ]
+        },
+        {
+          "seccion": "Para el queque",
+          "pasos": [
+            "En una licuadora, colocar todos los ingredientes y licuar hasta obtener una consistencia líquida.",
+            "Engrasar y pasar con harina el molde.",
+            "Verter la preparación y hornear a 180 °C durante 45 minutos."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 35,
+      "nombre": "Helado de totaí",
+      "categoria": "dulce",
+      "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "400 g de pulpa de totaí",
+            "75 g de azúcar impalpable",
+            "600 g de yogur natural"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Colocar el yogur sobre un paño y un tamizador para que se separe bien el suero, durante 12 horas.",
+            "Poner en una olla la pulpa de totaí, agregar el azúcar y llevar a cocción hasta formar una mermelada estable.",
+            "Dejar que enfríe.",
+            "En un bowl de acero inoxidable, colocar el yogur y la mermelada e integrar.",
+            "Dejar que congele y servir."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 36,
+      "nombre": "Pastel de gualele y totaí",
+      "categoria": "dulce",
+      "autores": "J. Canedo y C. Camacho",
+      "contexto": "Investigación y propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "300 g de mantequilla a temperatura ambiente",
+            "300 g de azúcar blanca",
+            "3 huevos",
+            "3 plátanos (gualele)",
+            "12 unidades de pulpa de totaí en trozos",
+            "100 g de pasta de cacao",
+            "350 g de harina leudante"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Cremar la mantequilla con el azúcar hasta obtener punto hilo. Agregar los huevos y mezclar hasta homogeneizar.",
+            "Aplastar los gualeles pelados, hasta formar un puré pastoso (espeso).",
+            "Trocear en pedazos pequeños la pasta de cacao y enharinar los trozos de totaí.",
+            "Agregar el plátano, el cacao y el totaí a la mezcla de mantequilla, integrando de forma envolvente, luego añadir la harina y la levadura con mucho cuidado.",
+            "Enmantequillar o enharinar un molde redondo de 27 cm y verter la masa en él.",
+            "Hornear en horno precalentado a 170 °C, alrededor de 1 hora."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 37,
+      "nombre": "Pavlova con crema de toronjil",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para el merengue",
+          "items": [
+            "100 g de clara de huevo",
+            "200 g de azúcar blanca",
+            "3 g de zumo de limón",
+            "20 g de almidón de maíz (maicena)"
+          ]
+        },
+        {
+          "seccion": "Para la crema de toronjil",
+          "items": [
+            "250 g de leche entera",
+            "20 g de hojas de toronjil",
+            "15 g de maicena",
+            "40 g de azúcar blanca",
+            "55 g de yema de huevo",
+            "20 g de mantequilla sin sal",
+            "150 g de crema de leche",
+            "60 g de azúcar impalpable"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el merengue",
+          "pasos": [
+            "Colocar en un bowl las claras con el azúcar a baño María, cocinar sin dejar de remover hasta no más de 60 °C; el azúcar estará diluida.",
+            "Pasar a la batidora, batir a velocidad media alta hasta que monte y tome temperatura ambiente.",
+            "Añadir el zumo de limón y seguir batiendo.",
+            "Una vez firme, agregar la maicena con movimientos envolventes y pasar a una manga para hacer las minis pavlovas.",
+            "Cocinar en el horno a 100 °C por una hora y media. Dejar enfriar y reservar."
+          ]
+        },
+        {
+          "seccion": "Para la crema de toronjil",
+          "pasos": [
+            "Hervir la leche y añadir las hojas de toronjil, tapar e infusionar por 12 minutos. Colar.",
+            "Mezclar las yemas de huevo con el azúcar y la maicena.",
+            "Verter la leche caliente infusionada sobre la mezcla anterior.",
+            "Remover y volver al fuego hasta espesar.",
+            "Retirar del fuego y a los 40 °C añadir la mantequilla y mezclar. Reservar.",
+            "Batir la crema de leche con el azúcar impalpable hasta montar. Reservar en frío."
+          ]
+        },
+        {
+          "seccion": "Para el montaje",
+          "pasos": [
+            "En cada pavlova, colocar un poco de crema batida y crema de toronjil."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 38,
+      "nombre": "Por un solo sueño de la Chiquitanía al Altiplano",
+      "categoria": "dulce",
+      "autores": "E. Caupi, C. Condarco, M. Cepiz, N. Velasco, M. Taha",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para la crema",
+          "items": [
+            "200 g de papalisa",
+            "100 ml de crema de leche",
+            "70 g de clara de huevo",
+            "90 g de azúcar",
+            "6 g de gelatina sin sabor",
+            "1 cda de harina de totaí"
+          ]
+        },
+        {
+          "seccion": "Para la tierra de tunta",
+          "items": [
+            "20 g de mantequilla",
+            "15 g de harina",
+            "10 g de tunta"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la crema",
+          "pasos": [
+            "Cocinar la papalisa, procesar y mezclar con la harina de totaí.",
+            "Batir las claras a punto nieve y agregar el almíbar (previamente elaborado al fuego con el azúcar y agua).",
+            "Montar o batir la crema de leche.",
+            "Hidratar la gelatina y mezclar con el puré de papalisa.",
+            "Añadir una porción de merengue a la mezcla del puré de papalisa.",
+            "Mezclar en forma envolvente el merengue y la crema de leche."
+          ]
+        },
+        {
+          "seccion": "Para la tierra de tunta",
+          "pasos": [
+            "Cocinar la tunta, procesarla y deshidratar en el horno.",
+            "Mezclar con harina y mantequilla y volver a meter al horno para deshidratar.",
+            "Decorar el postre con la tierra de tunta."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 39,
+      "nombre": "Profiteroles cítricos con paja cedrón",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para la masa (pate à choux)",
+          "items": [
+            "60 g de agua",
+            "60 g de leche entera",
+            "60 g de mantequilla sin sal",
+            "60 g de harina 000",
+            "2 g de sal",
+            "3 g de azúcar",
+            "100 g de huevo"
+          ]
+        },
+        {
+          "seccion": "Para el craquelin",
+          "items": [
+            "80 g de harina 000",
+            "80 g de azúcar morena",
+            "80 g de mantequilla"
+          ]
+        },
+        {
+          "seccion": "Para el curd de limón y paja cedrón",
+          "items": [
+            "200 g de yemas de huevo",
+            "130 g de huevo entero",
+            "160 g de azúcar granulada blanca",
+            "50 g de zumo de limón",
+            "250 g de mantequilla sin sal",
+            "5 g de gelatina sin sabor",
+            "30 g de agua",
+            "14 g de paja cedrón pulverizado"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la masa",
+          "pasos": [
+            "Cocer a fuego lento la mezcla de agua, leche, mantequilla, sal y azúcar hasta ebullición.",
+            "Fuera del fuego, añadir la harina tamizada mezclando enérgicamente con espátula para evitar grumos.",
+            "Devolver la masa al fuego 3 minutos para deshidratarla.",
+            "Colocar en batidora con pala, enfriar levemente y añadir los huevos poco a poco hasta obtener masa lisa y brillante.",
+            "Disponer en moldes de semiesfera y congelar.",
+            "Colocar disco de craquelin encima, descongelar y hornear a 170 °C / 25 min, luego a 120 °C / 15 min. Enfriar y rellenar."
+          ]
+        },
+        {
+          "seccion": "Para el craquelin",
+          "pasos": [
+            "Mezclar todos los ingredientes en batidora con pala hasta conseguir una masa homogénea.",
+            "Estirar a 4 mm, congelar y cortar discos de 5 cm de diámetro. Reservar en el congelador."
+          ]
+        },
+        {
+          "seccion": "Para el curd de limón y paja cedrón",
+          "pasos": [
+            "Hidratar la gelatina con agua y reservar.",
+            "Mezclar azúcar, huevos, yemas, zumo de limón y paja cedrón en cacerola.",
+            "Cocinar a baño María sin dejar de mover hasta los 75–80 °C y agregar la gelatina.",
+            "Colar y llevar a enfriar con papel film en contacto.",
+            "Emulsionar con mantequilla a temperatura ambiente con mixer."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 40,
+      "nombre": "Profiteroles con crema pastelera de majo",
+      "categoria": "dulce",
+      "autores": "En base a la receta del chef Osvaldo Gross (Gross, 2016)",
+      "contexto": "Adaptación del equipo técnico FAN con insumos del bosque chiquitano",
+      "ingredientes": [
+        {
+          "seccion": "Para la pasta (masa)",
+          "items": [
+            "250 ml de leche de vaca",
+            "100 g de mantequilla (no margarina)",
+            "5 g de sal",
+            "5 g de azúcar",
+            "4 huevos",
+            "150 g de harina"
+          ]
+        },
+        {
+          "seccion": "Para la crema pastelera de majo",
+          "items": [
+            "½ litro de leche de majo",
+            "120 g de azúcar",
+            "40 g de maicena",
+            "6 yemas"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para los profiteroles",
+          "pasos": [
+            "En una olla honda colocar la leche, la mantequilla, la sal y el azúcar; llevar a fuego medio hasta que rompa en hervor.",
+            "Agregar toda la harina e integrar hasta formar un engrudo.",
+            "Secar la masa a fuego bajo.",
+            "Sacar del fuego y reservar hasta templar la masa (8 a 10 minutos).",
+            "Agregar una a una las yemas de los huevos, mezclando enérgicamente con cuchara de madera.",
+            "Colocar la masa en manga con boquilla lisa de 1 cm de diámetro.",
+            "Sobre una placa enmantequillada colocar esferas de masa de unos 3 cm de diámetro.",
+            "Hornear a 200 °C durante 10 minutos, bajar la temperatura a 180 °C por otros 20 minutos.",
+            "Enfriar a temperatura ambiente."
+          ]
+        },
+        {
+          "seccion": "Para la crema pastelera de majo",
+          "pasos": [
+            "Colocar la leche de majo en una cacerola honda, llevar a fuego medio.",
+            "Agregar la mitad del azúcar y cuando rompa en hervor reservar por 10 minutos.",
+            "En un bowl, colocar la maicena y la otra mitad del azúcar; integrar y añadir las yemas, mezclando sin batir fuerte.",
+            "Agregar suavemente la mitad de la leche de majo caliente, mezclando constantemente.",
+            "Verter la mezcla del bowl sobre la leche de majo en la cacerola e integrar a fuego bajo hasta obtener la textura adecuada.",
+            "Colocar papel plástico en contacto directo con la crema. Enfriar y conservar por 48 horas refrigerada.",
+            "Abrir los profiteroles y rellenar con la crema pastelera de majo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 41,
+      "nombre": "Queque de toronjil",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para la masa",
+          "items": [
+            "110 ml de leche entera",
+            "20 g de toronjil fresco",
+            "100 g de azúcar blanca granulada",
+            "80 g de mantequilla derretida",
+            "2 huevos medianos",
+            "200 g de harina 0000",
+            "10 g de polvo de hornear",
+            "3 g de sal fina",
+            "2 g de toronjil seco molido",
+            "120 g de manzana roja picada en cubos"
+          ]
+        },
+        {
+          "seccion": "Para el crumble",
+          "items": [
+            "20 g de mantequilla sin sal fría",
+            "20 g de azúcar granulada blanca",
+            "harina c/n",
+            "ralladura de 1 limón"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la masa",
+          "pasos": [
+            "Hervir la leche y añadir las hojas de toronjil, tapar, infusionar por 12 minutos y colar.",
+            "Con las varillas, en un bowl mezclar la mantequilla derretida con el azúcar, los huevos y la leche infusionada.",
+            "Tamizar la harina, el polvo de hornear, la sal y el toronjil seco pulverizado, y agregar a la mezcla anterior.",
+            "Pelar y picar la manzana en cubos pequeños. Incorporar a la mezcla con espátula.",
+            "Preparar un molde de 22 x 9 cm con mantequilla y papel encerado. Colocar la mezcla y por encima el crumble.",
+            "Llevar al horno precalentado a 180 °C por 45 minutos."
+          ]
+        },
+        {
+          "seccion": "Para el crumble",
+          "pasos": [
+            "Mezclar los secos (harina, azúcar y ralladura de limón) en batidora con varilla.",
+            "Añadir cubitos pequeños de mantequilla fría hasta obtener textura arenosa.",
+            "Colocar encima de la mezcla antes de ir al horno."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 42,
+      "nombre": "Quiero más con leche de majo",
+      "categoria": "dulce",
+      "autores": "J. Canedo y C. Camacho, basada en la receta de Javier Libera del Restaurante «El Aljibe» (Gaya A., 2014)",
+      "contexto": "Adaptación del equipo técnico FAN con insumos del bosque chiquitano",
+      "ingredientes": [
+        {
+          "seccion": "Para el Quiero más",
+          "items": [
+            "1 litro de crema de leche",
+            "1 litro de leche de majo (¼ taza reservar aparte)",
+            "7 cucharas de azúcar blanca",
+            "2 ramitas de canela",
+            "1 chorrito de esencia de vainilla",
+            "5 yemas",
+            "3 cdas de maicena",
+            "caramelo para los moldes"
+          ]
+        },
+        {
+          "seccion": "Para el merengue de vino",
+          "items": [
+            "½ taza de vino tinto",
+            "1 taza de azúcar",
+            "claras de 3 huevos",
+            "canela en polvo"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el Quiero más",
+          "pasos": [
+            "En una olla, colocar la leche de majo y las ramas de canela; poner a fuego medio.",
+            "Al romper en hervor agregar la crema de leche y, una vez que hierva, dejar 5 minutos integrando la mezcla.",
+            "Diluir la maicena, las yemas de huevo y la ¼ taza de leche de majo reservada, pasar por un tamizador fino y agregar a la mezcla.",
+            "Agregar el azúcar y la esencia de vainilla y revolver hasta lograr una consistencia espesa. Verter sobre los moldes previamente encamisados con caramelo.",
+            "Refrigerar antes de servir."
+          ]
+        },
+        {
+          "seccion": "Para el merengue de vino",
+          "pasos": [
+            "En una cacerola, colocar el vino con el azúcar a fuego medio, hasta obtener un almíbar a punto bola media. Este procedimiento puede durar entre 8 a 10 minutos.",
+            "Mientras se hace el almíbar, batir las claras de huevo a punto de nieve.",
+            "Verter el almíbar poco a poco a punto hilo, batiendo constantemente para unificar.",
+            "Servir el merengue sobre el Quiero más y decorar con canela en polvo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 43,
+      "nombre": "Tarta de manzana y crema de canelón",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para la masa sablé",
+          "items": [
+            "120 g de mantequilla sin sal",
+            "70 g de azúcar impalpable",
+            "35 g de harina de motacú",
+            "50 g de yema de huevo",
+            "260 g de harina 0000",
+            "5 g de esencia de vainilla"
+          ]
+        },
+        {
+          "seccion": "Para el toffee",
+          "items": [
+            "140 g de crema de leche",
+            "60 g de glucosa",
+            "60 g de azúcar blanca",
+            "2 g de sal"
+          ]
+        },
+        {
+          "seccion": "Para la crema de canelón",
+          "items": [
+            "125 g de leche entera",
+            "125 g de crema de leche",
+            "15 g de hojas secas de canelón",
+            "50 g de yema de huevo",
+            "20 g de maicena",
+            "25 g de azúcar blanca",
+            "50 g de mantequilla sin sal"
+          ]
+        },
+        {
+          "seccion": "Para el polvo de caramelo y manzanas",
+          "items": [
+            "190 g de azúcar blanca",
+            "50 g de agua",
+            "50 g de mantequilla",
+            "5 g de vainilla",
+            "2,5 g de agar-agar",
+            "65 g de azúcar impalpable",
+            "1,3 kg de manzana roja"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la masa sablé",
+          "pasos": [
+            "Batir en batidora el azúcar, las harinas y la sal. Añadir mantequilla fría en dados.",
+            "Integrar la yema de huevo y la vainilla. Formar una bola y reposar en nevera.",
+            "Estirar a 3 mm, forrar molde de 15 cm, congelar y hornear a 170 °C (10 min con peso + 12 min sin peso)."
+          ]
+        },
+        {
+          "seccion": "Para el toffee",
+          "pasos": [
+            "Cocer el azúcar con la glucosa y la sal a 200 °C.",
+            "Verter encima la crema de leche caliente y disolver el caramelo. Enfriar y reservar."
+          ]
+        },
+        {
+          "seccion": "Para la crema de canelón",
+          "pasos": [
+            "Infusionar leche + crema con hojas secas de canelón por 12 minutos. Colar.",
+            "Mezclar yema, azúcar y maicena. Verter la leche caliente encima y espesar al fuego.",
+            "A 40 °C añadir la mantequilla. Reservar en nevera."
+          ]
+        },
+        {
+          "seccion": "Para el polvo de caramelo y manzanas",
+          "pasos": [
+            "Cocer azúcar con agua a 200 °C, añadir mantequilla y vainilla. Verter sobre silicona y enfriar.",
+            "Triturar el caramelo con agar-agar hasta obtener un polvo fino. Reservar.",
+            "Cortar manzanas en cubitos, mezclar con azúcar impalpable y congelar.",
+            "Unir las manzanas con el polvo de caramelo y hornear a 180 °C / 25 min.",
+            "Rellenar moldes circulares, congelar y desmoldar."
+          ]
+        },
+        {
+          "seccion": "Para el montaje",
+          "pasos": [
+            "Sobre la base sablé añadir una capa de toffee.",
+            "Rellenar hasta arriba con la crema de canelón. Enfriar en la nevera.",
+            "Finalizar la tarta con un disco de manzana congelado.",
+            "Reservar en la nevera hasta el momento del consumo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 44,
+      "nombre": "Tarta de motacú con relleno de manzana",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": "Para la masa sablé",
+          "items": [
+            "120 g de mantequilla sin sal",
+            "70 g de azúcar impalpable",
+            "2 g de sal",
+            "35 g de harina de motacú",
+            "50 g de huevo",
+            "260 g de harina 0000"
+          ]
+        },
+        {
+          "seccion": "Para el relleno de manzana",
+          "items": [
+            "4 unidades de manzana roja",
+            "30 g de mantequilla sin sal",
+            "20 g de azúcar blanca",
+            "20 g de zumo de limón"
+          ]
+        },
+        {
+          "seccion": "Para el crumble",
+          "items": [
+            "80 g de mantequilla sin sal",
+            "80 g de azúcar granulada blanca",
+            "80 g de harina de motacú",
+            "40 g de harina 0000"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la masa sablé",
+          "pasos": [
+            "Batir en batidora el azúcar, la harina 0000, la harina de motacú y la sal. Añadir mantequilla fría en dados.",
+            "Integrar los huevos, reposar en nevera envuelta en papel plástico.",
+            "Estirar a 3 mm, forrar molde de 15 cm, congelar y hornear a 170 °C / 20 minutos."
+          ]
+        },
+        {
+          "seccion": "Para el relleno de manzana",
+          "pasos": [
+            "Pelar las manzanas y cortarlas en cubitos. Saltear con azúcar, mantequilla y zumo de limón.",
+            "Cocinar en cacerola hasta que estén un poco caramelizadas.",
+            "Colocar como relleno de la tarta."
+          ]
+        },
+        {
+          "seccion": "Para el crumble",
+          "pasos": [
+            "Mezclar todos los secos (azúcar, harina 0000 y harina de motacú) en batidora con varilla.",
+            "Añadir mantequilla fría en dados hasta obtener textura de roca.",
+            "Cubrir la tarta rellena y hornear a 170 °C por 5 minutos o hasta dorar."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 45,
+      "nombre": "Tarta de queso y asaí",
+      "categoria": "dulce",
+      "autores": "M. Meneces, Y. Bernal, F. Montaño, A. Flores, C. Rojas, M. Lópeza, F. Gutiérrez, Y. Cuéllar, A. Olivarez, J. Zeballos y S. Coaquira",
+      "contexto": "Grupo 2 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": "Para la masa",
+          "items": [
+            "200 g de galletas María",
+            "75 g de mantequilla sin sal"
+          ]
+        },
+        {
+          "seccion": "Para el relleno",
+          "items": [
+            "190 g de queso crema",
+            "145 ml de crema de leche",
+            "15 g de gelatina sin sabor",
+            "75 ml de agua",
+            "50 g de harina de asaí",
+            "145 g de azúcar"
+          ]
+        },
+        {
+          "seccion": "Para la mermelada de almendra",
+          "items": [
+            "200 g de harina de almendras chiquitanas",
+            "100 ml de agua",
+            "120 g de azúcar"
+          ]
+        },
+        {
+          "seccion": "Para el tuile de asaí",
+          "items": [
+            "75 g de asaí liofilizado",
+            "75 g de clara de huevo",
+            "75 g de mantequilla"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la masa",
+          "pasos": [
+            "Triturar las galletas María hasta formar una harina. Derretir la mantequilla e incorporar con las galletas trituradas hasta formar un arenado manejable.",
+            "Incorporar la arena en el molde y mantener refrigerado hasta realizar el relleno."
+          ]
+        },
+        {
+          "seccion": "Para el relleno",
+          "pasos": [
+            "Hidratar la gelatina con el agua y dejar reposar. Luego activar llevando al microondas o baño María hasta que esté líquida.",
+            "Montar (batir) la crema fría en una batidora, añadiendo el azúcar, el queso crema, la crema de leche y la harina de asaí; luego verter la gelatina.",
+            "Rellenar la masa arenosa y llevar a refrigerar, hasta que tenga una consistencia firme."
+          ]
+        },
+        {
+          "seccion": "Para la mermelada de almendra",
+          "pasos": [
+            "En un sartén de teflón, integrar la harina de almendra chiquitana, el azúcar y el agua. Llevar a fuego medio y mezclar hasta que tenga el espesor de una mermelada."
+          ]
+        },
+        {
+          "seccion": "Para el tuile de asaí",
+          "pasos": [
+            "Mezclar todos los ingredientes con un batidor globo y dejar en refrigeración por 20 minutos.",
+            "Calentar el horno a 175 °C sin ventilación.",
+            "En un molde con diseño, extender la masa de asaí con una espátula y llevar a cocción por 7 minutos."
+          ]
+        },
+        {
+          "seccion": "Para el montaje",
+          "pasos": [
+            "Una vez refrigerada la masa con el relleno, untar con la mermelada y decorar con el tuile de asaí.",
+            "Servir bien frío."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 46,
+      "nombre": "Tarta de totaí con curd de asaí",
+      "categoria": "dulce",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": "Para la masa",
+          "items": [
+            "140 g de harina",
+            "60 g de harina de totaí",
+            "55 g de azúcar",
+            "125 g de mantequilla",
+            "10 g de sal",
+            "1 yema de huevo"
+          ]
+        },
+        {
+          "seccion": "Para el relleno (curd de asaí)",
+          "items": [
+            "2 yemas de huevo",
+            "1 huevo entero",
+            "60 g de azúcar",
+            "10 g de asaí liofilizado",
+            "60 ml de agua"
+          ]
+        },
+        {
+          "seccion": "Para la crema de asaí y tunta",
+          "items": [
+            "300 ml de crema de leche",
+            "20 g de pulpa de asaí",
+            "50 g de azúcar",
+            "10 g de gelatina neutra",
+            "harina de tunta c/n"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para la masa",
+          "pasos": [
+            "Mezclar las harinas con el azúcar, la mantequilla, integrando todo con la sal.",
+            "Hornear para cocer las harinas.",
+            "Una vez dorada la mezcla, dejar enfriar para agregar la yema de huevo.",
+            "Compactar todo para moldear en una fuente no muy honda (tarteletera) engrasada y enharinada."
+          ]
+        },
+        {
+          "seccion": "Para el curd de asaí",
+          "pasos": [
+            "Hidratar el asaí liofilizado, agregar los otros ingredientes y colocar en baño María, removiendo constantemente, hasta obtener la textura deseada."
+          ]
+        },
+        {
+          "seccion": "Para la crema de asaí y tunta",
+          "pasos": [
+            "Integrar el asaí con el azúcar.",
+            "Montar o batir la crema a punto firme para incorporar a la mezcla anterior. Reservar en refrigeración.",
+            "De forma envolvente incorporar la harina de tunta y la gelatina neutra (previamente hidratada)."
+          ]
+        },
+        {
+          "seccion": "Para el montaje",
+          "pasos": [
+            "Rellenar la masa con el curd de asaí, dejar reposar por lo menos unos 30 minutos en refrigeración.",
+            "Decorar con crema de asaí y tunta."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 47,
+      "nombre": "Torta de yuca con asaí",
+      "categoria": "dulce",
+      "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
+      "contexto": "Grupo 1 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto Tatapy",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "3 tazas de yuca rallada",
+            "1 taza de pulpa de asaí al 18%",
+            "1 pizca de sal",
+            "4 huevos medianos",
+            "1 taza de azúcar",
+            "¼ taza de singani",
+            "½ taza de queso fresco rallado",
+            "2½ tazas de leche",
+            "mantequilla al gusto"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Licuar la leche y los huevos.",
+            "Añadir la mantequilla ablandada, la sal, el azúcar, la pulpa de asaí y el singani; volver a licuar.",
+            "Por otra parte, en un bowl colocar la yuca rallada y el queso.",
+            "A esa mezcla agregar los ingredientes licuados, ayudándose con una cuchara para integrar bien. Si fuera necesario agregar más leche.",
+            "Colocar la mezcla en una bandeja enharinada y enmantequillada.",
+            "Hornear a 180 °C, por 45 minutos."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 48,
+      "nombre": "Trufas con albahaca",
+      "categoria": "dulce",
+      "autores": "C. Camacho",
+      "contexto": "Propuesta del equipo técnico FAN",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "400 g de chocolate blanco",
+            "100 g de crema de leche",
+            "hojas de albahaca chiquitana fresca",
+            "nachos clásicos triturados"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Picar el chocolate, poner en un bowl y fundir en el microondas con intervalos de 15 segundos.",
+            "Poner la crema de leche a calentar al fuego.",
+            "Verter sobre la crema el chocolate y mezclar hasta homogeneizar.",
+            "Cubrir con papel plástico y refrigerar unas dos horas.",
+            "Con una cuchara sacar porciones, y con unos guantes de látex dar forma redonda a las trufas.",
+            "Poner 1 a 2 hojas pequeñas de albahaca chiquitana fresca en el centro de cada bolita.",
+            "Refrigerar y volver a darle la forma final si no han quedado muy redondas.",
+            "Moler los nachos.",
+            "Con ayuda de los guantes, pasar las bolitas por los nachos triturados, apretando bien para que se adhieran."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 49,
+      "nombre": "Trufas de motacú",
+      "categoria": "dulce",
+      "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez y C. Camacho",
+      "contexto": "Grupo 4 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "60 g de harina de motacú",
+            "20 g de leche condensada",
+            "20 g de chocolate semiamargo"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En un recipiente mezclar la harina de motacú con la leche condensada, formando bolitas de 20 g aproximadamente.",
+            "Llevar a refrigeración cubriendo con papel plástico.",
+            "Templar el chocolate y colocarlo en una manga pastelera.",
+            "Bañar las bolitas con el chocolate en forma de líneas."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 50,
+      "nombre": "Cóctel de asaí",
+      "categoria": "coctel",
+      "autores": "Taller de «Creatividad e innovación culinaria»",
+      "contexto": "Comunidad Porvenir, de Bajo Paraguá",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "2 tazas de pulpa de asaí",
+            "ralladura de la cáscara de 1 naranja",
+            "½ taza de azúcar",
+            "1 onza de singani de alta calidad",
+            "agua gasificada",
+            "hielo"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En una olla colocar la pulpa de asaí, el azúcar y la ralladura de cáscara de naranja. Mantener a fuego medio hasta que se forme una jalea. Dejar enfriar.",
+            "En un vaso largo colocar abundante hielo y aproximadamente 1 onza de singani. Luego, agregar la jalea de asaí y finalizar con agua gasificada.",
+            "Se puede decorar con láminas de motojobo deshidratado o cáscara de naranja."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 51,
+      "nombre": "Cóctel de cáscaras de almendras con singani",
+      "categoria": "coctel",
+      "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
+      "contexto": "Grupo 3 del taller de «Creatividad e innovación culinaria», desarrollado en el Instituto CEFIM",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "20 g de cáscaras de almendras chiquitanas",
+            "5 g de clavo de olor",
+            "1 rama de canela",
+            "1 litro de agua",
+            "10 ml de singani",
+            "azúcar al gusto"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "En una cacerola colocar el agua, las cáscaras de almendra chiquitana, la canela, el clavo de olor y el azúcar hasta hervir.",
+            "Retirar del fuego para filtrar y añadir el singani.",
+            "Servir con abundante hielo."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 52,
+      "nombre": "Cóctel de semilla de motacú",
+      "categoria": "coctel",
+      "autores": "M. Fernández, restaurante «Mi Chola»",
+      "contexto": "Propuesta del chef Miguel Ángel Fernández García, propietario del restaurante Mi Chola",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "1½ taza de semillas de motacú",
+            "½ taza de singani de buena calidad",
+            "½ taza de nata fresca",
+            "½ taza de azúcar",
+            "hielo",
+            "almíbar ligero (azúcar + agua)"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Remojar 1 taza de semillas de motacú durante 13 horas.",
+            "Licuar las semillas de motacú con agua hervida fría. Filtrar (colar) y reservar la leche.",
+            "Rallar la ½ taza de semilla de motacú que no se remojó.",
+            "Preparar un almíbar ligero con azúcar y agua necesaria.",
+            "En la licuadora colocar la leche de semilla de motacú, el almíbar, el singani y la nata.",
+            "Servir en copa con abundante hielo y decorar con ralladura de semillas de motacú."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 53,
+      "nombre": "Colonia tonic",
+      "categoria": "coctel",
+      "autores": "C. Camacho",
+      "contexto": "Bebida que aprovecha la flor de colonia, planta aromática del bosque chiquitano",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "2,5 onzas de macerado de flor de colonia",
+            "2 onzas de miel de naranja",
+            "cáscara de naranja",
+            "agua con gas",
+            "hielo",
+            "flores secas de flor de colonia para decorar"
+          ]
+        },
+        {
+          "seccion": "Para el macerado de flor de colonia",
+          "items": [
+            "400 ml de vodka",
+            "200 g de flor de colonia seca"
+          ]
+        },
+        {
+          "seccion": "Para la miel de naranja",
+          "items": [
+            "200 ml de zumo de naranja",
+            "80 g de azúcar"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": "Para el macerado",
+          "pasos": [
+            "En un frasco esterilizado colocar el vodka encima de la flor de colonia seca, hasta cubrirla. Dejar reposar en un lugar oscuro y fresco por aproximadamente 10 días."
+          ]
+        },
+        {
+          "seccion": "Para la miel de naranja",
+          "pasos": [
+            "Mezclar el zumo de naranja con el azúcar hasta disolverse."
+          ]
+        },
+        {
+          "seccion": "Para el cóctel",
+          "pasos": [
+            "En un vaso o copa de vidrio, colocar el hielo con el macerado de flor de colonia y la miel de naranja.",
+            "Completar con agua con gas y terminar con la cáscara de naranja y unas cuantas flores secas de flor de colonia."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 54,
+      "nombre": "Mojito chiquitano",
+      "categoria": "coctel",
+      "autores": "C. Camacho",
+      "contexto": "Reinterpretación local del mojito clásico con albahaca chiquitana nativa",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "60 ml de ron blanco",
+            "20 ml de zumo de limón",
+            "20 ml de jarabe de azúcar",
+            "10 a 15 hojas de albahaca chiquitana fresca",
+            "agua con gas",
+            "hielo"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Agregar las hojas de albahaca chiquitana en un vaso alto con el jarabe de azúcar; aplastar suavemente.",
+            "Agregar el zumo de limón y el ron, luego llenar el vaso hasta la mitad con hielo picado.",
+            "Usar una cuchara para integrar bien los ingredientes.",
+            "Agregar más hielo y rellenar con agua con gas.",
+            "Decorar con una rama de albahaca chiquitana y servir."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 55,
+      "nombre": "Leche de almendra chiquitana",
+      "categoria": "base",
+      "autores": "Taller de «Creatividad e innovación culinaria»",
+      "contexto": "Municipio de San José de Chiquitos. Insumo base de múltiples recetas del recetario",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "500 g de almendras chiquitanas",
+            "3 litros de agua potable, hervida y fría"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Remojar las almendras chiquitanas durante, por lo menos, 12 horas.",
+            "Pelar las almendras y licuarlas con agua potable, hervida y fría.",
+            "Cernir en una jarra y ya está lista para su uso o consumo.",
+            "Nota: se recomienda el consumo moderado de leche cruda; es aconsejable usarla para cocciones en elaboraciones dulces y/o saladas."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 56,
+      "nombre": "Vinagre de totaí",
+      "categoria": "base",
+      "autores": "J. Canedo y C. Camacho",
+      "contexto": "Técnica de fermentación ancestral que convierte la pulpa de totaí en condimento artesanal",
+      "ingredientes": [
+        {
+          "seccion": null,
+          "items": [
+            "300 g de pulpa de totaí en trozos",
+            "4 cdas de azúcar",
+            "2 litros de agua potable, preferentemente hervida y enfriada"
+          ]
+        }
+      ],
+      "preparacion": [
+        {
+          "seccion": null,
+          "pasos": [
+            "Diluir el azúcar en un poco de agua.",
+            "Colocar la pulpa de totaí en un frasco de vidrio de 2 litros.",
+            "Colocar el agua y el azúcar disueltos e integrar la mezcla.",
+            "Con un paño de algodón, cubrir la tapa y asegurar con una liga o un cordel.",
+            "Dejar que fermente por 2 meses mínimo. Mientras más tiempo se deje en fermentación, el ácido acético hace que el vinagre obtenga mayor fuerza en olor y sabor."
+          ]
+        }
+      ]
+    }
+  ]
+}
