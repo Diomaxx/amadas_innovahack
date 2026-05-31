@@ -72,7 +72,7 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
             <Icon weight="fill" className="h-3.5 w-3.5" />
             {visual.label}
           </span>
-          <h1 className="font-serif text-3xl font-bold uppercase leading-tight text-[#2d4a3e] sm:text-4xl">
+          <h1 className="text-3xl font-bold uppercase leading-tight text-[#2d4a3e] sm:text-4xl">
             {receta.nombre}
           </h1>
           <p className="mt-4 text-sm italic leading-relaxed text-[#2d4a3e]/65">
@@ -104,7 +104,7 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
       <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2">
         {/* Ingredientes */}
         <section>
-          <h2 className="mb-5 flex items-center gap-2 font-serif text-xl font-bold text-[#2d4a3e]">
+          <h2 className="mb-5 flex items-center gap-2 text-xl font-bold text-[#2d4a3e]">
             <BookOpen weight="duotone" className="h-5 w-5 text-[#7a9b76]" />
             Ingredientes
           </h2>
@@ -134,7 +134,7 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
 
         {/* Preparación */}
         <section>
-          <h2 className="mb-5 flex items-center gap-2 font-serif text-xl font-bold text-[#2d4a3e]">
+          <h2 className="mb-5 flex items-center gap-2 text-xl font-bold text-[#2d4a3e]">
             <CookingPot weight="duotone" className="h-5 w-5 text-[#7a9b76]" />
             Preparación
           </h2>

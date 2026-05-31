@@ -29,7 +29,7 @@ export function RecetasHero({ total }: { total: number }) {
             <Sparkle weight="fill" className="h-4 w-4" />
             Recetario que celebra la identidad chiquitana
           </div>
-          <h1 className="font-serif text-4xl font-bold leading-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold leading-tight sm:text-5xl">
             Sabores de la Chiquitanía
           </h1>
           <p className="mt-4 max-w-xl text-base italic leading-relaxed text-[#f5f1e8]/80">

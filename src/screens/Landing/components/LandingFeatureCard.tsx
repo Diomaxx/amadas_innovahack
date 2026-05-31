@@ -58,7 +58,7 @@ export default function LandingFeatureCard({
         <p className="mt-4 max-w-sm text-lg leading-relaxed text-white/90">{description}</p>
         <Link
           href={buttonHref}
-          className={`group/btn mt-auto inline-flex items-center gap-2 ${buttonClassName}`}
+          className={`group/btn mt-8 inline-flex items-center gap-2 self-start ${buttonClassName}`}
         >
           {buttonLabel}
           <ArrowRight className="h-5 w-5 transition-transform group-hover/btn:translate-x-1" />

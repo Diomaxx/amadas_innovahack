@@ -2,7 +2,6 @@
 
 import { useState, useMemo, useEffect } from "react";
 import { Trees } from "lucide-react";
-import Link from "next/link";
 import { motion } from "framer-motion";
 
 import { CatalogoSkeleton } from "./components/CatalogoSkeleton";
@@ -88,11 +87,9 @@ export default function CatalogoPage() {
       {/* ── Grid de especies ──────────────────────────────────────── */}
       <div className="mt-8">
         {especiesFiltradas.length > 0 ? (
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {especiesFiltradas.map((especie) => (
-              <Link key={especie.id} href={`/catalogo/${especie.id}`}>
-                <CatalogoCard especie={especie} />
-              </Link>
+              <CatalogoCard key={especie.id} especie={especie} />
             ))}
           </div>
         ) : (

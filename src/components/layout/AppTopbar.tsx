@@ -12,9 +12,9 @@ import { ProductSearch } from "./ProductSearch";
 const topbarLinks = [
   { href: "/", label: "Inicio", activePaths: ["/", "/productores", "/restaurantes"] },
   { href: "/recetas", label: "Recetas" },
-  { href: "/catalogo", label: "Catalogo" },
+  { href: "/catalogo", label: "Catálogo" },
   { href: "/abastecimiento", label: "Abastecimiento" },
-  { href: "/menus", label: "Menus" },
+  { href: "/menus", label: "Menús" },
   { href: "/conexiones", label: "Conexiones", activePaths: ["/conexiones"] },
 ];
 
