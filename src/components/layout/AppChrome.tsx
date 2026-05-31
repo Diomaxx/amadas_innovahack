@@ -24,7 +24,7 @@ export function AppChrome({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col print:bg-white">
+    <div className="flex min-h-screen flex-col pt-20 print:bg-white print:pt-0">
       <div className="print:hidden"><AppTopbar /></div>
       <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-28 pt-6 sm:px-6 md:py-8 lg:px-8 print:m-0 print:max-w-none print:p-0">
         {children}

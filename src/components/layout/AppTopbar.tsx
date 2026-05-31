@@ -54,7 +54,7 @@ export function AppTopbar() {
   }
 
   return (
-    <header className="sticky top-0 z-30 border-b border-cv-cream-300/70 bg-cv-cream-50/85 shadow-[0_8px_18px_-16px_rgba(20,41,31,0.45)] backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-30 border-b border-cv-cream-300/70 bg-cv-cream-50/85 shadow-[0_8px_18px_-16px_rgba(20,41,31,0.45)] backdrop-blur-md">
       <div className="mx-auto flex h-20 w-full max-w-6xl items-center gap-4 px-4 sm:px-6 lg:px-8">
         <Link href="/" className="group flex items-center gap-2.5">
           <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl shadow-[0_10px_20px_-12px_rgba(20,41,31,0.35)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:shadow-[0_14px_28px_-12px_rgba(20,41,31,0.5)]">
