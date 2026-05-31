@@ -1,6 +1,11 @@
 import { CalendarDays } from "lucide-react";
 
-export function ActividadHeader() {
+type ActividadHeaderProps = {
+  filterOpen: boolean;
+  onToggle: () => void;
+};
+
+export function ActividadHeader({ filterOpen, onToggle }: ActividadHeaderProps) {
   return (
     <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
       <div>
@@ -14,9 +19,15 @@ export function ActividadHeader() {
 
       <button
         type="button"
-        className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-cv-cream-300 bg-white px-4 py-2.5 text-sm font-medium text-cv-gray-700 shadow-sm transition-colors hover:bg-cv-cream-100"
+        onClick={onToggle}
+        aria-pressed={filterOpen}
+        className={`inline-flex shrink-0 items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium shadow-sm transition-colors ${
+          filterOpen
+            ? "bg-cv-green-700 text-white hover:bg-cv-green-800"
+            : "border border-cv-cream-300 bg-white text-cv-gray-700 hover:bg-cv-cream-100"
+        }`}
       >
-        <CalendarDays className="h-4 w-4 text-cv-gray-500" />
+        <CalendarDays className="h-4 w-4" />
         Filtrar por Fecha
       </button>
     </header>
