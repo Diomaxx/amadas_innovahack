@@ -66,7 +66,7 @@ export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
         nombreCientifico={especie.nombreCientifico}
         temporada={especie.temporada}
         calendarioCosecha={especie.calendarioCosecha}
-        // imageSrc={`/images/catalogo/${especie.id}.jpg`} // Uncomment when images are ready
+        imageSrc={especie.imageSrc}
       />
 
       {/* Info Cards Section */}
