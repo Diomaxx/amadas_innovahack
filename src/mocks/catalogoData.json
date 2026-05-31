@@ -5,7 +5,7 @@
       "nombre": "Almendra Chiquitana",
       "nombreCientifico": "Dipteryx alata",
       "categoria": "Nuez / Semilla",
-      "temporada": "En temporada",
+      "temporada": "Próximamente",
       "descripcion": "La almendra chiquitana es un fruto silvestre recolectado de forma sostenible por comunidades locales del bosque seco chiquitano. Es valorada por su alto contenido nutricional y su versatilidad en la gastronomía.",
       "esencia": "La Almendra Chiquitana (*Dipteryx alata*) es el tesoro dorado de la Chiquitanía. Conocida por su perfil nutricional excepcional y su sabor tostado profundo, es el pilar de la economía sostenible local.",
       "propiedades": [
@@ -24,24 +24,18 @@
           { "mes": "SEP", "estado": "en-temporada" },
           { "mes": "OCT", "estado": "ultimos-dias" }
         ],
-        "mensaje": "Estamos en el mejor momento para disfrutar su sabor y apoyar a las comunidades del bosque."
+        "mensaje": "La gran cosecha se aproxima. Reserva con anticipación para asegurar tu lote."
       },
       "disponibilidad": [
         {
           "productor": "Asociación Lomerío",
-          "estado": "1 LOTE DE 200 KG DISPONIBLE",
-          "accion": "Contactar",
-          "icon": "store"
-        },
-        {
-          "productor": "Cooperativa San Ignacio",
-          "estado": "3 LOTES DE 50 KG DISPONIBLES",
+          "estado": "LOTES EN ACOPIO (SECO)",
           "accion": "Contactar",
           "icon": "store"
         },
         {
           "productor": "Recolectores de Roboré",
-          "estado": "EN PROCESO DE SECADO (PRONTO)",
+          "estado": "PRÓXIMA COSECHA EN JULIO",
           "accion": "Reservar",
           "icon": "hourglass"
         }
@@ -52,8 +46,8 @@
       "nombre": "Asaí",
       "nombreCientifico": "Euterpe precatoria",
       "categoria": "Fruta",
-      "temporada": "Próximamente",
-      "descripcion": "El Asaí es un superalimento originario de la región amazónica y chiquitana, conocido por sus potentes propiedades antioxidantes.",
+      "temporada": "En temporada",
+      "descripcion": "El Asaí es un superalimento originario de la región amazónica y chiquitana, conocido por sus potentes propiedades antioxidantes. Se recolecta de palmeras silvestres en las riberas de los ríos.",
       "esencia": "El Asaí chiquitano crece en las riberas de los ríos, brindando un intenso color morado y una explosión de antioxidantes. Es un símbolo de vitalidad para las comunidades recolectoras.",
       "propiedades": [
         "Alto en Antioxidantes",
@@ -62,35 +56,48 @@
       ],
       "usoGastronomico": "Ideal para bowls energéticos, jugos, helados artesanales y postres saludables.",
       "calendarioCosecha": {
-        "temporadaPrincipal": "Marzo a Mayo",
+        "temporadaPrincipal": "Enero a Octubre",
         "meses": [
-          { "mes": "FEB", "estado": "comienza" },
           { "mes": "MAR", "estado": "en-temporada" },
           { "mes": "ABR", "estado": "en-temporada" },
           { "mes": "MAY", "estado": "en-temporada" },
-          { "mes": "JUN", "estado": "ultimos-dias" },
-          { "mes": "JUL", "estado": "no-disponible" }
+          { "mes": "JUN", "estado": "en-temporada" },
+          { "mes": "JUL", "estado": "en-temporada" },
+          { "mes": "AGO", "estado": "en-temporada" }
         ],
-        "mensaje": "La cosecha de Asaí está por comenzar. Prepárate para disfrutar de su frescura."
+        "mensaje": "Estamos en plena temporada de recolección a orillas de los ríos."
       },
-      "disponibilidad": []
+      "disponibilidad": [
+        {
+          "productor": "Comunidad Indígena Sirionó",
+          "estado": "PULPA CONGELADA DISPONIBLE",
+          "accion": "Contactar",
+          "icon": "store"
+        },
+        {
+          "productor": "Cooperativa San Ignacio",
+          "estado": "RECOLECCIÓN SEMANAL",
+          "accion": "Contactar",
+          "icon": "store"
+        }
+      ]
     },
     {
       "id": "3",
-      "nombre": "Miel de Abeja Nativa",
-      "nombreCientifico": "Meliponini",
-      "categoria": "Miel",
+      "nombre": "Motacú",
+      "nombreCientifico": "Attalea phalerata",
+      "categoria": "Aceite / Fruta",
       "temporada": "En temporada",
-      "descripcion": "Miel producida por abejas nativas sin aguijón, recolectada en armonía con el entorno del bosque chiquitano, con un perfil de sabor único.",
-      "esencia": "Oro líquido de la Chiquitanía. Las abejas señoritas (meliponas) producen esta miel medicinal y gastronómica, sin aguijón y en total armonía con la floración del bosque seco.",
+      "descripcion": "El motacú es una palmera emblemática del bosque chiquitano. Su fruto se aprovecha de forma integral: la pulpa es comestible y de la almendra se extrae un aceite muy valorado en cocina y cosmética.",
+      "esencia": "El Motacú (*Attalea phalerata*) es la palmera que nunca descansa. Generosa todo el año, regala pulpa rica en betacarotenos y un aceite dorado usado por generaciones para nutrir la piel y la mesa.",
       "propiedades": [
-        "Propiedades Medicinales",
-        "Sabor Floral Único",
-        "Producción Sostenible"
+        "Rico en Vitamina A",
+        "Aceite de uso culinario y cosmético",
+        "Palma de aprovechamiento integral"
       ],
-      "usoGastronomico": "Perfecta como endulzante natural, en infusiones, aderezos gourmet o consumida directamente por sus propiedades.",
+      "usoGastronomico": "El aceite de motacú es ideal para frituras y aderezos; la pulpa se consume fresca o en refrescos tradicionales.",
       "calendarioCosecha": {
-        "temporadaPrincipal": "Todo el año (Pico en primavera)",
+        "temporadaPrincipal": "Todo el año",
         "meses": [
           { "mes": "MAY", "estado": "en-temporada" },
           { "mes": "JUN", "estado": "en-temporada" },
@@ -99,12 +106,12 @@
           { "mes": "SEP", "estado": "en-temporada" },
           { "mes": "OCT", "estado": "en-temporada" }
         ],
-        "mensaje": "La floración del bosque nos regala esta miel excepcional en su punto óptimo."
+        "mensaje": "Disponible durante todo el año gracias a la fructificación continua de la palmera."
       },
       "disponibilidad": [
         {
-          "productor": "Mingatierra",
-          "estado": "15 LITROS DISPONIBLES",
+          "productor": "Comunidad Agroforestal El Motacú",
+          "estado": "ACEITE Y FRUTO DISPONIBLES",
           "accion": "Contactar",
           "icon": "store"
         }
@@ -112,34 +119,34 @@
     },
     {
       "id": "4",
-      "nombre": "Paja Cedrón",
-      "nombreCientifico": "Cymbopogon citratus",
-      "categoria": "Infusión",
-      "temporada": "Finalizando",
-      "descripcion": "Hierba aromática de amplio uso tradicional para infusiones relajantes y digestivas, cultivada localmente de forma agroecológica.",
-      "esencia": "Con su inconfundible aroma a limón, la paja cedrón es el alma de las tardes chiquitanas. Un digestivo natural que reconforta el cuerpo y el espíritu.",
+      "nombre": "Totaí",
+      "nombreCientifico": "Acrocomia totai",
+      "categoria": "Aceite / Fruta",
+      "temporada": "En temporada",
+      "descripcion": "Palmera espinosa de amplia distribución en la Chiquitanía. Su fruto de pulpa amarilla y oleosa se usa para refrescos, harinas y aceites, y la almendra interior es comestible.",
+      "esencia": "El Totaí (*Acrocomia totai*) tiñe de amarillo el monte chiquitano. Su pulpa cremosa y su almendra encierran un aceite vegetal apreciado, fruto de un árbol resistente y profundamente local.",
       "propiedades": [
-        "Digestivo Natural",
-        "Aroma Cítrico Intenso",
-        "Cultivo Familiar"
+        "Pulpa rica en betacarotenos",
+        "Fuente de aceite vegetal",
+        "Aprovechamiento integral del fruto"
       ],
-      "usoGastronomico": "Excelente en infusiones calientes, refrescos fríos y para aromatizar postres o caldos ligeros.",
+      "usoGastronomico": "Se usa en refrescos y dulces tradicionales, harinas y extracción de aceite para cocina.",
       "calendarioCosecha": {
-        "temporadaPrincipal": "Todo el año",
+        "temporadaPrincipal": "Mayo a Enero",
         "meses": [
-          { "mes": "MAY", "estado": "en-temporada" },
+          { "mes": "MAY", "estado": "comienza" },
           { "mes": "JUN", "estado": "en-temporada" },
           { "mes": "JUL", "estado": "en-temporada" },
-          { "mes": "AGO", "estado": "ultimos-dias" },
-          { "mes": "SEP", "estado": "ultimos-dias" },
-          { "mes": "OCT", "estado": "no-disponible" }
+          { "mes": "AGO", "estado": "en-temporada" },
+          { "mes": "SEP", "estado": "en-temporada" },
+          { "mes": "OCT", "estado": "en-temporada" }
         ],
-        "mensaje": "Aprovecha los últimos manojos frescos de la temporada."
+        "mensaje": "Comienza la temporada de totaí en el monte chiquitano."
       },
       "disponibilidad": [
         {
-          "productor": "Huerta Mingatierra",
-          "estado": "MANOJOS FRESCOS (STOCK LIMITADO)",
+          "productor": "Asociación Lomerío",
+          "estado": "FRUTO FRESCO DISPONIBLE",
           "accion": "Contactar",
           "icon": "store"
         }
@@ -182,18 +189,346 @@
     },
     {
       "id": "6",
-      "nombre": "Achachairú",
-      "nombreCientifico": "Garcinia humilis",
+      "nombre": "Paja Cedrón",
+      "nombreCientifico": "Cymbopogon citratus",
+      "categoria": "Infusión",
+      "temporada": "En temporada",
+      "descripcion": "Hierba aromática de amplio uso tradicional para infusiones relajantes y digestivas, cultivada localmente de forma agroecológica.",
+      "esencia": "Con su inconfundible aroma a limón, la paja cedrón es el alma de las tardes chiquitanas. Un digestivo natural que reconforta el cuerpo y el espíritu.",
+      "propiedades": [
+        "Digestivo Natural",
+        "Aroma Cítrico Intenso",
+        "Cultivo Familiar"
+      ],
+      "usoGastronomico": "Excelente en infusiones calientes, refrescos fríos y para aromatizar postres o caldos ligeros.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Todo el año",
+        "meses": [
+          { "mes": "MAY", "estado": "en-temporada" },
+          { "mes": "JUN", "estado": "en-temporada" },
+          { "mes": "JUL", "estado": "en-temporada" },
+          { "mes": "AGO", "estado": "en-temporada" },
+          { "mes": "SEP", "estado": "en-temporada" },
+          { "mes": "OCT", "estado": "en-temporada" }
+        ],
+        "mensaje": "Disponible todo el año; los manojos se cortan frescos según el pedido."
+      },
+      "disponibilidad": [
+        {
+          "productor": "Huerta Mingatierra",
+          "estado": "MANOJOS FRESCOS DISPONIBLES",
+          "accion": "Contactar",
+          "icon": "store"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "nombre": "Miel",
+      "nombreCientifico": "Apis mellifera",
+      "categoria": "Miel",
+      "temporada": "Próximamente",
+      "descripcion": "Miel producida por colmenas de la Chiquitanía a partir de la floración del bosque seco. Cosechada de forma artesanal por apicultores y asociaciones locales.",
+      "esencia": "Oro líquido de la Chiquitanía. La floración del bosque seco se transforma en una miel de carácter intenso y aroma floral, fruto del trabajo paciente de las familias apicultoras.",
+      "propiedades": [
+        "Endulzante Natural",
+        "Aporte Energético",
+        "Producción Apícola Local"
+      ],
+      "usoGastronomico": "Perfecta como endulzante natural, en infusiones, aderezos gourmet, repostería o consumida directamente.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Octubre-Noviembre y Febrero-Marzo",
+        "meses": [
+          { "mes": "JUN", "estado": "no-disponible" },
+          { "mes": "JUL", "estado": "no-disponible" },
+          { "mes": "AGO", "estado": "no-disponible" },
+          { "mes": "SEP", "estado": "comienza" },
+          { "mes": "OCT", "estado": "en-temporada" },
+          { "mes": "NOV", "estado": "en-temporada" }
+        ],
+        "mensaje": "La cosecha fuerte llega con la floración de primavera. Reserva tus frascos."
+      },
+      "disponibilidad": [
+        {
+          "productor": "Mingatierra",
+          "estado": "FRASCOS DE COSECHA ANTERIOR",
+          "accion": "Contactar",
+          "icon": "store"
+        },
+        {
+          "productor": "Red de Mujeres Productoras",
+          "estado": "PRÓXIMA COSECHA EN OCTUBRE",
+          "accion": "Reservar",
+          "icon": "hourglass"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "nombre": "Castaña",
+      "nombreCientifico": "Bertholletia excelsa",
+      "categoria": "Nuez / Semilla",
+      "temporada": "Próximamente",
+      "descripcion": "Conocida como nuez amazónica, la castaña se recolecta de árboles silvestres y es uno de los productos forestales no maderables más importantes de la región.",
+      "esencia": "La Castaña (*Bertholletia excelsa*) cae del gigante del bosque amazónico. Cada semilla es recolectada a mano del suelo, un fruto que sostiene comunidades enteras sin talar un solo árbol.",
+      "propiedades": [
+        "Alta en Selenio",
+        "Fuente de Grasas Saludables",
+        "Recolección Silvestre Sostenible"
+      ],
+      "usoGastronomico": "Excelente como snack, en repostería, leche vegetal y extracción de aceite fino.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Diciembre a Febrero",
+        "meses": [
+          { "mes": "OCT", "estado": "no-disponible" },
+          { "mes": "NOV", "estado": "comienza" },
+          { "mes": "DIC", "estado": "en-temporada" },
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "ultimos-dias" },
+          { "mes": "MAR", "estado": "no-disponible" }
+        ],
+        "mensaje": "La zafra de castaña ocurre en plena temporada de lluvias amazónicas."
+      },
+      "disponibilidad": [
+        {
+          "productor": "Cooperativa Semilla Verde",
+          "estado": "CASTAÑA SECA EN STOCK",
+          "accion": "Contactar",
+          "icon": "store"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "nombre": "Majo",
+      "nombreCientifico": "Oenocarpus bataua",
+      "categoria": "Aceite / Fruta",
+      "temporada": "Próximamente",
+      "descripcion": "Palmera de fruto morado del que se elabora la tradicional 'leche de majo' y un aceite vegetal de excelente calidad, comparable al de oliva por su perfil graso.",
+      "esencia": "El Majo (*Oenocarpus bataua*) regala una bebida ancestral de color violáceo y un aceite noble rico en grasas saludables. Un fruto de palma que une nutrición y tradición.",
+      "propiedades": [
+        "Ácidos Grasos Saludables (omega-9)",
+        "Bebida Tradicional 'Leche de Majo'",
+        "Aceite de Alta Calidad"
+      ],
+      "usoGastronomico": "Se consume como bebida (leche de majo), en helados y postres, y su aceite se usa en cocina fina.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Septiembre a Marzo",
+        "meses": [
+          { "mes": "SEP", "estado": "comienza" },
+          { "mes": "OCT", "estado": "en-temporada" },
+          { "mes": "NOV", "estado": "en-temporada" },
+          { "mes": "DIC", "estado": "en-temporada" },
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "en-temporada" }
+        ],
+        "mensaje": "El majo madura con las primeras lluvias; su recolección inicia en septiembre."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "10",
+      "nombre": "Pitón",
+      "nombreCientifico": "Talisia esculenta",
+      "categoria": "Fruta",
+      "temporada": "Finalizando",
+      "descripcion": "Fruto silvestre de cáscara verde y pulpa blanca, jugosa y dulce, parecida al longan. Muy apreciado fresco durante el verano chiquitano.",
+      "esencia": "El Pitón (*Talisia esculenta*) es el dulce capricho del verano. Bajo su cáscara firme esconde una pulpa traslúcida y refrescante que marca el final de la temporada de calor.",
+      "propiedades": [
+        "Pulpa Dulce y Jugosa",
+        "Fuente de Vitamina C",
+        "Fruto Silvestre de Verano"
+      ],
+      "usoGastronomico": "Se disfruta principalmente fresco; también en jugos, mermeladas y cócteles.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Diciembre a Mayo",
+        "meses": [
+          { "mes": "DIC", "estado": "comienza" },
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "en-temporada" },
+          { "mes": "MAR", "estado": "en-temporada" },
+          { "mes": "ABR", "estado": "en-temporada" },
+          { "mes": "MAY", "estado": "ultimos-dias" }
+        ],
+        "mensaje": "Aprovecha los últimos frutos frescos antes de que termine la temporada."
+      },
+      "disponibilidad": [
+        {
+          "productor": "Recolectores de Roboré",
+          "estado": "ÚLTIMOS LOTES DE LA TEMPORADA",
+          "accion": "Contactar",
+          "icon": "store"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "nombre": "Pesoé",
+      "nombreCientifico": "Pterodon emarginatus",
+      "categoria": "Nuez / Semilla",
+      "temporada": "Próximamente",
+      "descripcion": "Semilla del árbol conocido como sucupira, valorada en la medicina tradicional. De ella se obtiene un aceite con reconocidas propiedades antiinflamatorias.",
+      "esencia": "El Pesoé (*Pterodon emarginatus*) es el remedio del bosque. Su semilla amarga guarda un aceite que las comunidades han usado por generaciones para aliviar dolencias y cuidar el cuerpo.",
+      "propiedades": [
+        "Propiedades Antiinflamatorias",
+        "Aceite Medicinal Tradicional",
+        "Uso Etnobotánico Ancestral"
+      ],
+      "usoGastronomico": "De uso principalmente medicinal: aceites y macerados tradicionales más que culinario.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Junio a Octubre",
+        "meses": [
+          { "mes": "MAY", "estado": "no-disponible" },
+          { "mes": "JUN", "estado": "comienza" },
+          { "mes": "JUL", "estado": "en-temporada" },
+          { "mes": "AGO", "estado": "en-temporada" },
+          { "mes": "SEP", "estado": "en-temporada" },
+          { "mes": "OCT", "estado": "ultimos-dias" }
+        ],
+        "mensaje": "La recolección de la semilla comienza con la estación seca."
+      },
+      "disponibilidad": [
+        {
+          "productor": "Cooperativa Forestal Concepción",
+          "estado": "PRÓXIMA RECOLECCIÓN EN JUNIO",
+          "accion": "Reservar",
+          "icon": "hourglass"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "nombre": "Sujo",
+      "nombreCientifico": "Sterculia apetala",
+      "categoria": "Nuez / Semilla",
+      "temporada": "Próximamente",
+      "descripcion": "Árbol cuyas semillas, una vez tostadas, son comestibles y tienen un sabor que recuerda al maní y al cacao. Recurso tradicional de recolección en el bosque chiquitano.",
+      "esencia": "El Sujo (*Sterculia apetala*) esconde en sus vainas unas semillas que, al tostarse, despiertan un sabor a maní y cacao. Un manjar silvestre que conecta con los saberes de recolección.",
+      "propiedades": [
+        "Semillas Tostadas Comestibles",
+        "Rico en Grasas y Proteínas",
+        "Sabor a Maní y Cacao"
+      ],
+      "usoGastronomico": "Se consume tostado como snack y se emplea como sustituto del cacao en preparaciones de repostería.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Julio a Octubre",
+        "meses": [
+          { "mes": "MAY", "estado": "no-disponible" },
+          { "mes": "JUN", "estado": "no-disponible" },
+          { "mes": "JUL", "estado": "comienza" },
+          { "mes": "AGO", "estado": "en-temporada" },
+          { "mes": "SEP", "estado": "en-temporada" },
+          { "mes": "OCT", "estado": "ultimos-dias" }
+        ],
+        "mensaje": "Las vainas maduran en la estación seca, lista para la recolección."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "13",
+      "nombre": "Canelón",
+      "nombreCientifico": "Aniba canelilla",
+      "categoria": "Infusión",
+      "temporada": "Próximamente",
+      "descripcion": "Árbol aromático cuya corteza desprende un intenso aroma a canela y clavo. Se utiliza como especia y en infusiones tradicionales de la región.",
+      "esencia": "El Canelón (*Aniba canelilla*) perfuma el monte con notas de canela y clavo. Su corteza aromática es una especia silvestre que abriga las cocinas y las infusiones chiquitanas.",
+      "propiedades": [
+        "Aroma a Canela y Clavo",
+        "Corteza Aromática",
+        "Uso en Infusiones y Repostería"
+      ],
+      "usoGastronomico": "Como especia para aromatizar postres, mazamorras e infusiones calientes.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Septiembre a Febrero",
+        "meses": [
+          { "mes": "AGO", "estado": "no-disponible" },
+          { "mes": "SEP", "estado": "comienza" },
+          { "mes": "OCT", "estado": "en-temporada" },
+          { "mes": "NOV", "estado": "en-temporada" },
+          { "mes": "DIC", "estado": "en-temporada" },
+          { "mes": "ENE", "estado": "en-temporada" }
+        ],
+        "mensaje": "La corteza se recolecta de forma sostenible en la temporada húmeda."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "14",
+      "nombre": "Flor de Colonia",
+      "nombreCientifico": "Alpinia zerumbet",
+      "categoria": "Infusión",
+      "temporada": "Próximamente",
+      "descripcion": "Planta aromática de flores vistosas cuyas hojas y flores se usan en infusiones relajantes y como aromatizante en la cocina tradicional.",
+      "esencia": "La Flor de Colonia (*Alpinia zerumbet*) abre sus pétalos perfumados como un susurro del bosque. Sus hojas y flores se vuelven infusión que calma y aroma que enamora.",
+      "propiedades": [
+        "Infusión Relajante",
+        "Aroma Floral Intenso",
+        "Uso Medicinal Tradicional"
+      ],
+      "usoGastronomico": "En infusiones, para aromatizar postres y como elemento decorativo comestible.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Septiembre a Abril",
+        "meses": [
+          { "mes": "SEP", "estado": "comienza" },
+          { "mes": "OCT", "estado": "en-temporada" },
+          { "mes": "NOV", "estado": "en-temporada" },
+          { "mes": "DIC", "estado": "en-temporada" },
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "en-temporada" }
+        ],
+        "mensaje": "Florece con la temporada de lluvias, regalando su aroma característico."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "15",
+      "nombre": "Albahaca Silvestre",
+      "nombreCientifico": "Ocimum basilicum",
+      "categoria": "Infusión",
+      "temporada": "Próximamente",
+      "descripcion": "Hierba aromática de uso culinario y medicinal, cultivada de forma agroecológica por familias de la región. De aroma fresco e intenso.",
+      "esencia": "La Albahaca Silvestre (*Ocimum basilicum*) llena los huertos chiquitanos de un perfume fresco e inconfundible. Hierba humilde y generosa que realza cada plato y cada infusión.",
+      "propiedades": [
+        "Aromática Culinaria",
+        "Propiedades Digestivas",
+        "Cultivo Agroecológico Familiar"
+      ],
+      "usoGastronomico": "Ideal en salsas, ensaladas, marinados e infusiones aromáticas.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Octubre a Febrero",
+        "meses": [
+          { "mes": "SEP", "estado": "no-disponible" },
+          { "mes": "OCT", "estado": "comienza" },
+          { "mes": "NOV", "estado": "en-temporada" },
+          { "mes": "DIC", "estado": "en-temporada" },
+          { "mes": "ENE", "estado": "en-temporada" },
+          { "mes": "FEB", "estado": "ultimos-dias" }
+        ],
+        "mensaje": "Rebrota con fuerza en la temporada cálida y lluviosa."
+      },
+      "disponibilidad": [
+        {
+          "productor": "Huerta Mingatierra",
+          "estado": "DISPONIBLE BAJO PEDIDO",
+          "accion": "Contactar",
+          "icon": "store"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "nombre": "Limón Cambita",
+      "nombreCientifico": "Citrus aurantiifolia",
       "categoria": "Fruta",
       "temporada": "Próximamente",
-      "descripcion": "Fruta agridulce de cáscara anaranjada, muy apreciada fresca y en jugos durante su corta temporada de verano.",
-      "esencia": "El achachairú es el tesoro efímero del verano chiquitano: dulce, ácido y refrescante, una explosión de sabor que dura poco y se disfruta intensamente.",
+      "descripcion": "Cítrico criollo pequeño, de cáscara fina y acidez aromática muy intensa. Es un ingrediente esencial de la cocina y la coctelería del oriente boliviano.",
+      "esencia": "El Limón Cambita (*Citrus aurantiifolia*) es pequeño pero poderoso. Su acidez vibrante y su aroma penetrante son el toque criollo que despierta los sabores del oriente.",
       "propiedades": [
-        "Alto en Antioxidantes",
-        "Fuente de Vitamina C",
-        "Sabor Agridulce Único"
+        "Alto en Vitamina C",
+        "Acidez Aromática Intensa",
+        "Cítrico Criollo Tradicional"
       ],
-      "usoGastronomico": "Ideal en jugos, mermeladas, helados y cócteles de autor.",
+      "usoGastronomico": "Imprescindible en jugos, ceviches, cócteles y aderezos frescos.",
       "calendarioCosecha": {
         "temporadaPrincipal": "Noviembre a Febrero",
         "meses": [
@@ -204,29 +539,38 @@
           { "mes": "FEB", "estado": "ultimos-dias" },
           { "mes": "MAR", "estado": "no-disponible" }
         ],
-        "mensaje": "La temporada de achachairú está por comenzar."
+        "mensaje": "Su mejor cosecha llega con el calor de fin de año."
+      },
+      "disponibilidad": []
+    },
+    {
+      "id": "17",
+      "nombre": "Motojobo",
+      "nombreCientifico": "Lycianthes asarifolia",
+      "categoria": "Fruta",
+      "temporada": "Próximamente",
+      "descripcion": "Pequeño fruto silvestre del sotobosque chiquitano, de sabor agridulce. Se recolecta de forma tradicional y se consume fresco o en preparaciones caseras.",
+      "esencia": "El Motojobo (*Lycianthes asarifolia*) es un secreto del sotobosque. Su pequeño fruto agridulce premia a quien conoce el monte, un sabor silvestre que pocos han probado.",
+      "propiedades": [
+        "Fruto Silvestre del Sotobosque",
+        "Sabor Agridulce Característico",
+        "Recolección Tradicional"
+      ],
+      "usoGastronomico": "Se consume fresco y se aprovecha en mermeladas y salsas caseras.",
+      "calendarioCosecha": {
+        "temporadaPrincipal": "Noviembre-Diciembre y Febrero-Marzo",
+        "meses": [
+          { "mes": "OCT", "estado": "no-disponible" },
+          { "mes": "NOV", "estado": "comienza" },
+          { "mes": "DIC", "estado": "en-temporada" },
+          { "mes": "ENE", "estado": "no-disponible" },
+          { "mes": "FEB", "estado": "en-temporada" },
+          { "mes": "MAR", "estado": "ultimos-dias" }
+        ],
+        "mensaje": "Fructifica en dos momentos del año ligados a las lluvias."
       },
       "disponibilidad": []
     }
   ],
-  "otrosRecursos": [
-    {
-      "id": "7",
-      "nombre": "Castaña",
-      "nombreCientifico": "Bertholletia excelsa",
-      "temporada": "En temporada"
-    },
-    {
-      "id": "8",
-      "nombre": "Albahaca silvestre",
-      "nombreCientifico": "Ocimum micranthum",
-      "temporada": "Próximamente"
-    },
-    {
-      "id": "9",
-      "nombre": "Flor de colonia",
-      "nombreCientifico": "Alpinia zerumbet",
-      "temporada": "Finalizando"
-    }
-  ]
+  "otrosRecursos": []
 }

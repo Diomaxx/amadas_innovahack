@@ -2,12 +2,42 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, Eye, EyeOff, Leaf } from "lucide-react";
+import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { loginWithEmail } from "@/lib/firebase/auth";
+import Image from "next/image";
+import { loginWithEmail, loginWithGoogle } from "@/lib/firebase/auth";
 import { GoogleIcon } from "@/components/UI/BrandIcons";
 import { AuthBrandPanel } from "@/screens/Auth/components/AuthBrandPanel";
+
+/**
+ * Traduce los códigos de error de Firebase Auth a mensajes en español.
+ * Devuelve `null` cuando el usuario simplemente canceló (no es un error real).
+ */
+function mensajeErrorAuth(err: unknown): string | null {
+  const code =
+    err && typeof err === "object" && "code" in err
+      ? String((err as { code: unknown }).code)
+      : "";
+
+  switch (code) {
+    case "auth/popup-closed-by-user":
+    case "auth/cancelled-popup-request":
+      return null;
+    case "auth/popup-blocked":
+      return "El navegador bloqueó la ventana emergente. Habilítala e intenta de nuevo.";
+    case "auth/account-exists-with-different-credential":
+      return "Ya existe una cuenta con ese correo usando otro método de acceso.";
+    case "auth/network-request-failed":
+      return "Sin conexión. Revisa tu internet e intenta de nuevo.";
+    case "auth/invalid-credential":
+    case "auth/wrong-password":
+    case "auth/user-not-found":
+      return "Correo o contraseña incorrectos.";
+    default:
+      return "No se pudo iniciar sesión. Intenta nuevamente.";
+  }
+}
 
 export function LoginCard() {
   const router = useRouter();
@@ -16,6 +46,9 @@ export function LoginCard() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isGoogleSubmitting, setIsGoogleSubmitting] = useState(false);
+
+  const busy = isSubmitting || isGoogleSubmitting;
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -26,11 +59,23 @@ export function LoginCard() {
       await loginWithEmail(email, password);
       router.push("/");
     } catch (err) {
-      const message =
-        err instanceof Error ? err.message : "No se pudo iniciar sesion.";
-      setError(message);
+      setError(mensajeErrorAuth(err));
     } finally {
       setIsSubmitting(false);
+    }
+  }
+
+  async function handleGoogle() {
+    setError(null);
+    setIsGoogleSubmitting(true);
+
+    try {
+      await loginWithGoogle();
+      router.push("/");
+    } catch (err) {
+      setError(mensajeErrorAuth(err));
+    } finally {
+      setIsGoogleSubmitting(false);
     }
   }
 
@@ -60,12 +105,20 @@ export function LoginCard() {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
       >
-        <div className="mb-8 flex items-center gap-2 text-cv-green-900">
-          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-cv-green-800 text-cv-cream-50">
-            <Leaf className="h-5 w-5" />
+        <div className="mb-8 flex items-center gap-2.5">
+          <span className="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl shadow-[0_10px_20px_-12px_rgba(20,41,31,0.35)]">
+            <Image
+              src="/logo.png"
+              alt="mati Vivo"
+              fill
+              sizes="40px"
+              className="object-cover"
+              priority
+            />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-70" />
           </span>
-          <span className="font-display text-xl font-semibold">
-            mati
+          <span className="bg-gradient-to-r from-cv-green-900 via-cv-green-700 to-cv-gold-600 bg-clip-text font-display text-2xl font-semibold leading-none tracking-tight text-transparent">
+            MATI
           </span>
         </div>
 
@@ -79,10 +132,12 @@ export function LoginCard() {
         {/* Google */}
         <button
           type="button"
-          className="flex w-full items-center justify-center gap-3 rounded-lg border border-cv-cream-300 bg-white px-4 py-2.5 text-sm font-medium text-cv-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-cv-green-300 hover:bg-cv-cream-50 hover:shadow-sm active:translate-y-0"
+          onClick={handleGoogle}
+          disabled={busy}
+          className="flex w-full items-center justify-center gap-3 rounded-lg border border-cv-cream-300 bg-white px-4 py-2.5 text-sm font-medium text-cv-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-cv-green-300 hover:bg-cv-cream-50 hover:shadow-sm active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-white disabled:hover:shadow-none"
         >
           <GoogleIcon className="h-5 w-5" />
-          Continuar con Google
+          {isGoogleSubmitting ? "Conectando con Google..." : "Continuar con Google"}
         </button>
 
         {/* Divider */}
@@ -160,7 +215,7 @@ export function LoginCard() {
 
           <button
             type="submit"
-            disabled={isSubmitting}
+            disabled={busy}
             className="w-full rounded-lg bg-cv-green-800 px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 hover:bg-cv-green-700 hover:shadow-md active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
           >
             {isSubmitting ? "Ingresando..." : "Ingresar"}

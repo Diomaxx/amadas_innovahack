@@ -1,0 +1,176 @@
+{
+  "collection": "plantas",
+  "documents": [
+    {
+      "id": "albahaca-silvestre",
+      "nombreComun": "Albahaca silvestre",
+      "nombreCientifico": "Ocimum basilicum",
+      "temporadaMeses": ["enero", "febrero", "octubre", "noviembre", "diciembre"]
+    },
+    {
+      "id": "almendra-chiquitana",
+      "nombreComun": "Almendra chiquitana",
+      "nombreCientifico": "Dipteryx alata",
+      "temporadaMeses": ["julio", "agosto", "septiembre"]
+    },
+    {
+      "id": "asai",
+      "nombreComun": "Asai",
+      "nombreCientifico": "Euterpe precatoria",
+      "temporadaMeses": [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre"
+      ]
+    },
+    {
+      "id": "canelon",
+      "nombreComun": "Canelon",
+      "nombreCientifico": "Aniba canelilla",
+      "temporadaMeses": ["enero", "febrero", "septiembre", "octubre", "noviembre", "diciembre"]
+    },
+    {
+      "id": "castana",
+      "nombreComun": "Castana",
+      "nombreCientifico": "Bertholletia excelsa",
+      "temporadaMeses": ["enero", "febrero", "diciembre"]
+    },
+    {
+      "id": "flor-de-colonia",
+      "nombreComun": "Flor de colonia",
+      "nombreCientifico": "Alpinia zerumbet",
+      "temporadaMeses": [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+      ]
+    },
+    {
+      "id": "limon-cambita",
+      "nombreComun": "Limon cambita",
+      "nombreCientifico": "Citrus aurantiifolia",
+      "temporadaMeses": ["enero", "febrero", "noviembre", "diciembre"]
+    },
+    {
+      "id": "majo",
+      "nombreComun": "Majo",
+      "nombreCientifico": "Oenocarpus bataua",
+      "temporadaMeses": ["enero", "febrero", "marzo", "septiembre", "octubre", "noviembre", "diciembre"]
+    },
+    {
+      "id": "miel",
+      "nombreComun": "Miel",
+      "nombreCientifico": "Apis mellifera",
+      "temporadaMeses": ["febrero", "marzo", "octubre", "noviembre"]
+    },
+    {
+      "id": "motacu",
+      "nombreComun": "Motacu",
+      "nombreCientifico": "Attalea phalerata",
+      "temporadaMeses": [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+      ]
+    },
+    {
+      "id": "motojobo",
+      "nombreComun": "Motojobo",
+      "nombreCientifico": "Lycianthes asarifolia",
+      "temporadaMeses": ["febrero", "marzo", "noviembre", "diciembre"]
+    },
+    {
+      "id": "paja-cedron",
+      "nombreComun": "Paja cedron",
+      "nombreCientifico": "Cymbopogon citratus",
+      "temporadaMeses": [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+      ]
+    },
+    {
+      "id": "pesoe",
+      "nombreComun": "Pesoe",
+      "nombreCientifico": "Pterodon emarginatus",
+      "temporadaMeses": ["junio", "julio", "agosto", "septiembre", "octubre"]
+    },
+    {
+      "id": "piton",
+      "nombreComun": "Piton",
+      "nombreCientifico": "Talisia esculenta",
+      "temporadaMeses": ["enero", "febrero", "marzo", "abril", "mayo", "diciembre"]
+    },
+    {
+      "id": "sujo",
+      "nombreComun": "Sujo",
+      "nombreCientifico": "Sterculia apetala",
+      "temporadaMeses": ["julio", "agosto", "septiembre", "octubre"]
+    },
+    {
+      "id": "totai",
+      "nombreComun": "Totai",
+      "nombreCientifico": "Acrocomia totai",
+      "temporadaMeses": [
+        "enero",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+      ]
+    },
+    {
+      "id": "yuca",
+      "nombreComun": "Yuca",
+      "nombreCientifico": "Manihot esculenta",
+      "temporadaMeses": [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+      ]
+    }
+  ]
+}
