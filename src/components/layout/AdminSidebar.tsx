@@ -37,7 +37,7 @@ export function AdminSidebar() {
           <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl shadow-[0_10px_20px_-12px_rgba(20,41,31,0.35)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:shadow-[0_14px_28px_-12px_rgba(20,41,31,0.5)]">
             <Image
               src="/logo.png"
-              alt="MATI"
+              alt="ALMA"
               fill
               sizes="44px"
               className="object-cover"
@@ -47,7 +47,7 @@ export function AdminSidebar() {
           </span>
           <span className="flex flex-col leading-none">
             <span className="font-display text-2xl font-semibold tracking-tight text-transparent bg-gradient-to-r from-cv-green-900 via-cv-green-700 to-cv-gold-600 bg-clip-text transition-all duration-300 group-hover:from-cv-green-800 group-hover:via-cv-green-600 group-hover:to-cv-gold-500">
-              MATI
+              ALMA
             </span>
             <span className="mt-1 text-xs text-cv-gray-500">Backoffice</span>
           </span>

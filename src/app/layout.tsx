@@ -22,7 +22,7 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
-  title: "AMADAS",
+  title: "ALMA",
   description: "Dashboard con Firebase Authentication y Firestore",
   icons: {
     icon: "/logo.png",

@@ -46,13 +46,13 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
       <div className="hidden print:flex items-center gap-3 mb-8 border-b-2 border-cv-green-800 pb-4">
         <Image
           src="/logo.png"
-          alt="MATI Logo"
+          alt="ALMA Logo"
           width={40}
           height={40}
           className="object-contain"
         />
         <span className="font-display text-2xl font-bold text-cv-green-900 tracking-tight">
-          MATI
+          ALMA
         </span>
       </div>
 

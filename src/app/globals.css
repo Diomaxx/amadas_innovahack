@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* ============================================================
-   mati — Design Tokens (Color Palette)
+   ALMA — Design Tokens (Color Palette)
    ============================================================
    Extracted from the brand design system.
    Uses CSS custom properties so every component (shadcn/ui,
@@ -62,7 +62,7 @@
   /* ============================================================
      shadcn/ui Compatibility Tokens
      Map brand tokens → shadcn variables so all UI components
-     automatically pick up the mati palette.
+     automatically pick up the ALMA palette.
      ============================================================ */
 
   /* Layout */

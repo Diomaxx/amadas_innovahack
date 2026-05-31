@@ -109,7 +109,7 @@ export function LoginCard() {
           <span className="relative inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl shadow-[0_10px_20px_-12px_rgba(20,41,31,0.35)]">
             <Image
               src="/logo.png"
-              alt="mati Vivo"
+              alt="ALMA"
               fill
               sizes="40px"
               className="object-cover"
@@ -118,7 +118,7 @@ export function LoginCard() {
             <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-70" />
           </span>
           <span className="bg-gradient-to-r from-cv-green-900 via-cv-green-700 to-cv-gold-600 bg-clip-text font-display text-2xl font-semibold leading-none tracking-tight text-transparent">
-            MATI
+            ALMA
           </span>
         </div>
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AdminSidebar } from "@/components/layout/AdminSidebar";
 
 export const metadata: Metadata = {
-  title: "Backoffice · AMADAS",
+  title: "Backoffice · ALMA",
   description: "Panel administrativo de la Fundación Amigos de la Naturaleza.",
 };
 

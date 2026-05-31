@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import type { Menu } from "../menus.types";
 
@@ -21,8 +24,13 @@ function MenuTags({ tags }: { tags: string[] }) {
   );
 }
 
-function MenuCard({ menu }: { menu: Menu }) {
+function MenuCard({ menu, index }: { menu: Menu; index: number }) {
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.35, delay: Math.min(index, 8) * 0.04 }}
+    >
     <Link
       href={`/menus/${menu.id}`}
       className="group block overflow-hidden rounded-2xl border border-cv-cream-300 bg-card transition hover:-translate-y-1 hover:shadow-lg hover:shadow-cv-green-900/10"
@@ -52,14 +60,15 @@ function MenuCard({ menu }: { menu: Menu }) {
         </span>
       </div>
     </Link>
+    </motion.div>
   );
 }
 
 export function MenusGrid({ menus }: MenusGridProps) {
   return (
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {menus.map((menu) => (
-        <MenuCard key={menu.id} menu={menu} />
+      {menus.map((menu, index) => (
+        <MenuCard key={menu.id} menu={menu} index={index} />
       ))}
     </div>
   );

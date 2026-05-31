@@ -16,7 +16,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const receta = getRecetaById(id);
-  if (!receta) return { title: "Receta no encontrada · AMADAS" };
+  if (!receta) return { title: "Receta no encontrada · ALMA" };
   return {
     title: `${receta.nombre} · Recetas`,
     description: `Receta elaborada por ${receta.autores}. ${receta.contexto}.`,

@@ -16,7 +16,7 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const menu = await getMenuById(id);
-  if (!menu) return { title: "Menú no encontrado · AMADAS" };
+  if (!menu) return { title: "Menú no encontrado · ALMA" };
   return {
     title: `${menu.title} · ${menu.restaurant} · Menús`,
     description: menu.tagline ?? menu.summary,

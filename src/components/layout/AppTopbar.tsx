@@ -60,7 +60,7 @@ export function AppTopbar() {
           <span className="relative inline-flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl shadow-[0_10px_20px_-12px_rgba(20,41,31,0.35)] transition-all duration-300 group-hover:-translate-y-0.5 group-hover:scale-105 group-hover:shadow-[0_14px_28px_-12px_rgba(20,41,31,0.5)]">
             <Image
               src="/logo.png"
-              alt="mati Vivo"
+              alt="ALMA"
               fill
               sizes="44px"
               className="object-cover"
@@ -69,7 +69,7 @@ export function AppTopbar() {
             <span className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent opacity-70" />
           </span>
           <span className="font-display text-3xl font-semibold leading-none tracking-tight text-transparent bg-gradient-to-r from-cv-green-900 via-cv-green-700 to-cv-gold-600 bg-clip-text drop-shadow-[0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 group-hover:from-cv-green-800 group-hover:via-cv-green-600 group-hover:to-cv-gold-500">
-            MATI
+            ALMA
           </span>
         </Link>
 

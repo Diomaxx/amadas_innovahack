@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import type { Menu } from "../menus.types";
 
 type MenusHeroProps = {
@@ -43,6 +46,11 @@ type FeaturedMenuCardProps = {
 
 export function FeaturedMenuCard({ menu }: FeaturedMenuCardProps) {
   return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, ease: "easeOut" }}
+    >
     <Link
       href={`/menus/${menu.id}`}
       className="group block overflow-hidden rounded-3xl border border-cv-green-200 bg-card shadow-lg shadow-cv-green-900/10 transition duration-300 hover:-translate-y-1 hover:border-cv-green-300 hover:shadow-xl hover:shadow-cv-green-900/15"
@@ -73,6 +81,7 @@ export function FeaturedMenuCard({ menu }: FeaturedMenuCardProps) {
         </div>
       </div>
     </Link>
+    </motion.div>
   );
 }
 
@@ -82,6 +91,12 @@ type SideMenuCardProps = {
 
 export function SideMenuCard({ menu }: SideMenuCardProps) {
   return (
+    <motion.div
+      className="h-full"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.45, ease: "easeOut", delay: 0.08 }}
+    >
     <Link
       href={`/menus/${menu.id}`}
       className="group flex h-full flex-col overflow-hidden rounded-3xl border border-cv-cream-300 bg-card shadow-sm transition duration-300 hover:-translate-y-1 hover:border-cv-green-300 hover:shadow-lg hover:shadow-cv-green-900/10"
@@ -104,5 +119,6 @@ export function SideMenuCard({ menu }: SideMenuCardProps) {
         </div>
       </div>
     </Link>
+    </motion.div>
   );
 }
