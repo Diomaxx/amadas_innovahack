@@ -12,6 +12,7 @@ export interface RecetaPreparacionSeccion {
 
 export interface RecetaRaw {
   id: number;
+  imagen?: string;
   nombre: string;
   categoria: RecetaCategoria;
   autores: string;

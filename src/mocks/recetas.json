@@ -7,6 +7,7 @@
   "recetas": [
     {
       "id": 1,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211081/1_byycuh.jpg",
       "nombre": "Albóndigas de yuca con salsa de asaí",
       "categoria": "salada",
       "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
@@ -54,6 +55,7 @@
     },
     {
       "id": 2,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211128/2_jkytmu.jpg",
       "nombre": "Ande chiquitano",
       "categoria": "salada",
       "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
@@ -128,6 +130,7 @@
     },
     {
       "id": 3,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211218/3_jtmjcl.jpg",
       "nombre": "Apanado de cuy con tunta rebozada",
       "categoria": "salada",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
@@ -203,6 +206,7 @@
     },
     {
       "id": 4,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211241/4_fvhb1b.jpg",
       "nombre": "Ceviche de tarwi con leche de almendra chiquitana",
       "categoria": "salada",
       "autores": "E. Caupi, C. Condarco, M. Cepiz, N. Velasco, M. Taha",
@@ -255,6 +259,7 @@
     },
     {
       "id": 5,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211273/5_llcgjb.jpg",
       "nombre": "Ch'oka y ají de almendra chiquitana",
       "categoria": "salada",
       "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez, C. Camacho",
@@ -319,6 +324,7 @@
     },
     {
       "id": 6,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211294/6_zebul7.jpg",
       "nombre": "Chancho relleno de pasoca con salsa de mangaba y cerveza",
       "categoria": "salada",
       "autores": "M. Meneces, Y. Bernal, F. Montaño, A. Flores, C. Rojas, M. López, F. Gutiérrez, Y. Cuéllar, A. Olivarez, J. Zeballos, A. Manrique, A. Machaca, D. Tórrez, J. Chamo, M. Coria, S. Coronado, E. Pérez, Y. Dorado, P. Taceo, D. Ribera y S. Coaquira",
@@ -395,6 +401,7 @@
     },
     {
       "id": 7,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211333/7_a07qy5.jpg",
       "nombre": "Crema de chuño",
       "categoria": "salada",
       "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez y C. Camacho",
@@ -446,6 +453,7 @@
     },
     {
       "id": 8,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211368/8_lspgkt.jpg",
       "nombre": "Crema de totaí en base de cuy",
       "categoria": "salada",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
@@ -485,6 +493,7 @@
     },
     {
       "id": 9,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211390/9_eazvee.jpg",
       "nombre": "Ensalada chiquitana de totaí, manga verde y almendra chiquitana",
       "categoria": "salada",
       "autores": "J. Canedo y C. Camacho",
@@ -520,6 +529,7 @@
     },
     {
       "id": 10,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211420/10_crvhvt.jpg",
       "nombre": "Fricasé de pollo y almendra chiquitana",
       "categoria": "salada",
       "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
@@ -556,6 +566,7 @@
     },
     {
       "id": 11,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211442/11_p0cbua.jpg",
       "nombre": "Lomo de llama en salsa de asaí con puré de racacha y totaí",
       "categoria": "salada",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza, A. Hinojosa",
@@ -618,6 +629,7 @@
     },
     {
       "id": 12,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211471/12_qv6qxz.jpg",
       "nombre": "Pacumutu de llama y ají de almendra chiquitana",
       "categoria": "salada",
       "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez y C. Camacho",
@@ -667,6 +679,7 @@
     },
     {
       "id": 13,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211492/13_j96top.jpg",
       "nombre": "Paiche frito en salsa agridulce de asaí",
       "categoria": "salada",
       "autores": "Comunidad Porvenir",
@@ -720,6 +733,7 @@
     },
     {
       "id": 14,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211513/14_lejjes.jpg",
       "nombre": "Pato con salsa pipián de almendra chiquitana",
       "categoria": "salada",
       "autores": "J. Canedo y C. Camacho",
@@ -759,6 +773,7 @@
     },
     {
       "id": 15,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211536/15_k3bzgh.jpg",
       "nombre": "Pescado con salsa de semillas de motacú",
       "categoria": "salada",
       "autores": "J. Canedo y C. Camacho",
@@ -799,6 +814,7 @@
     },
     {
       "id": 16,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211560/16_z0us3z.jpg",
       "nombre": "Pollo con salsa de majo y almendra chiquitana",
       "categoria": "salada",
       "autores": "J. Canedo y C. Camacho",
@@ -834,6 +850,7 @@
     },
     {
       "id": 17,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211580/17_epfx16.jpg",
       "nombre": "Ravioles de paiche con salsa pesto de almendra chiquitana",
       "categoria": "salada",
       "autores": "N. Calustro, E. Moreito, R. Cuevas, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal, R. Choque",
@@ -906,6 +923,7 @@
     },
     {
       "id": 18,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211604/18_zglrsm.jpg",
       "nombre": "Sopa de almendra chiquitana y llama",
       "categoria": "salada",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza, A. Hinojosa",
@@ -941,6 +959,7 @@
     },
     {
       "id": 19,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211636/19_gwc3kf.jpg",
       "nombre": "Tartar de trucha y almendra chiquitana",
       "categoria": "salada",
       "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez, C. Camacho",
@@ -988,6 +1007,7 @@
     },
     {
       "id": 20,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211674/20_gqarln.jpg",
       "nombre": "Tierra viva (crema de almendra chiquitana)",
       "categoria": "salada",
       "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
@@ -1031,6 +1051,7 @@
     },
     {
       "id": 21,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211701/21_fhylfi.jpg",
       "nombre": "Tortitas de totaí con charque",
       "categoria": "salada",
       "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
@@ -1064,6 +1085,7 @@
     },
     {
       "id": 22,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211726/22_cdypk3.jpg",
       "nombre": "Trucha con pasoca",
       "categoria": "salada",
       "autores": "E. Caupi, C. Condarco, M. Cepiz, N. Velasco, M. Taha",
@@ -1134,6 +1156,7 @@
     },
     {
       "id": 23,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211746/23_isn9ma.jpg",
       "nombre": "Arroz con leche de majo",
       "categoria": "dulce",
       "autores": "J. Canedo y C. Camacho",
@@ -1163,6 +1186,7 @@
     },
     {
       "id": 24,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211771/24_ai8hof.jpg",
       "nombre": "Brigadeiro de almendra con semilla de motacú",
       "categoria": "dulce",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
@@ -1195,6 +1219,7 @@
     },
     {
       "id": 25,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211795/25_psnitr.jpg",
       "nombre": "Budín de tunta y asaí",
       "categoria": "dulce",
       "autores": "J. Zeballos, P. Ajarachi, M. Aguilar, Y. Dorado, E. Pérez y M. Fernández",
@@ -1228,6 +1253,7 @@
     },
     {
       "id": 26,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211807/26_pdoote.jpg",
       "nombre": "Cheesecake de motacú con flor de colonia",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -1301,6 +1327,7 @@
     },
     {
       "id": 27,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211817/27_xyvfsx.jpg",
       "nombre": "Cheesecake de motacú con paja cedrón y piña",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -1398,6 +1425,7 @@
     },
     {
       "id": 28,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211829/28_hjwywr.jpg",
       "nombre": "Cremoso de chocolate, albahaca y maracuyá",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -1459,6 +1487,7 @@
     },
     {
       "id": 29,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211846/29_sjfnpv.jpg",
       "nombre": "Flan de almendra chiquitana",
       "categoria": "dulce",
       "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
@@ -1506,6 +1535,7 @@
     },
     {
       "id": 30,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211856/30_yajwy3.jpg",
       "nombre": "Galletas bicolores de almendra chiquitana y asaí",
       "categoria": "dulce",
       "autores": "Taller de «Creatividad e innovación culinaria»",
@@ -1541,6 +1571,7 @@
     },
     {
       "id": 31,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211871/31_tzjc8n.jpg",
       "nombre": "Galletas de harina de motacú con chips de chocolate y coco",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -1577,6 +1608,7 @@
     },
     {
       "id": 32,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211903/32_vppvqf.jpg",
       "nombre": "Helado de canelón",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -1647,6 +1679,7 @@
     },
     {
       "id": 33,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780211918/33_nbizis.jpg",
       "nombre": "Helado de tayacha",
       "categoria": "dulce",
       "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, C. Camacho",
@@ -1715,6 +1748,7 @@
     },
     {
       "id": 34,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212085/34_bi5cjs.jpg",
       "nombre": "Helado de tayacha, asaí y almendra sobre queque de totaí y quinua",
       "categoria": "dulce",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
@@ -1768,6 +1802,7 @@
     },
     {
       "id": 35,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212167/35_cqshga.jpg",
       "nombre": "Helado de totaí",
       "categoria": "dulce",
       "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
@@ -1797,6 +1832,7 @@
     },
     {
       "id": 36,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212204/36_ywgihi.jpg",
       "nombre": "Pastel de gualele y totaí",
       "categoria": "dulce",
       "autores": "J. Canedo y C. Camacho",
@@ -1831,6 +1867,7 @@
     },
     {
       "id": 37,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212232/37_txq712.jpg",
       "nombre": "Pavlova con crema de toronjil",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -1891,6 +1928,7 @@
     },
     {
       "id": 38,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212252/38_n3gkhx.jpg",
       "nombre": "Por un solo sueño de la Chiquitanía al Altiplano",
       "categoria": "dulce",
       "autores": "E. Caupi, C. Condarco, M. Cepiz, N. Velasco, M. Taha",
@@ -1940,6 +1978,7 @@
     },
     {
       "id": 39,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212276/39_i5a5wp.jpg",
       "nombre": "Profiteroles cítricos con paja cedrón",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -2012,6 +2051,7 @@
     },
     {
       "id": 40,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212302/40_zn04cr.jpg",
       "nombre": "Profiteroles con crema pastelera de majo",
       "categoria": "dulce",
       "autores": "En base a la receta del chef Osvaldo Gross (Gross, 2016)",
@@ -2069,6 +2109,7 @@
     },
     {
       "id": 41,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212334/41_jeftg7.jpg",
       "nombre": "Queque de toronjil",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -2123,6 +2164,7 @@
     },
     {
       "id": 42,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212385/42_t3unr5.jpg",
       "nombre": "Quiero más con leche de majo",
       "categoria": "dulce",
       "autores": "J. Canedo y C. Camacho, basada en la receta de Javier Libera del Restaurante «El Aljibe» (Gaya A., 2014)",
@@ -2175,6 +2217,7 @@
     },
     {
       "id": 43,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212409/43_q7vs5v.jpg",
       "nombre": "Tarta de manzana y crema de canelón",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -2272,6 +2315,7 @@
     },
     {
       "id": 44,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212437/44_b0fjld.jpg",
       "nombre": "Tarta de motacú con relleno de manzana",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -2336,6 +2380,7 @@
     },
     {
       "id": 45,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212469/45_wo2fyf.jpg",
       "nombre": "Tarta de queso y asaí",
       "categoria": "dulce",
       "autores": "M. Meneces, Y. Bernal, F. Montaño, A. Flores, C. Rojas, M. Lópeza, F. Gutiérrez, Y. Cuéllar, A. Olivarez, J. Zeballos y S. Coaquira",
@@ -2417,6 +2462,7 @@
     },
     {
       "id": 46,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212496/46_ag41yw.jpg",
       "nombre": "Tarta de totaí con curd de asaí",
       "categoria": "dulce",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
@@ -2489,6 +2535,7 @@
     },
     {
       "id": 47,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212522/47_ycyas8.jpg",
       "nombre": "Torta de yuca con asaí",
       "categoria": "dulce",
       "autores": "N. Calustro, E. Moreito, R. Cueva, R. Tuco, P. Céspedes, N. Mendoza, E. Masoy, E. Durán, Y. Bernal y R. Choque",
@@ -2525,6 +2572,7 @@
     },
     {
       "id": 48,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212545/48_xeiu8e.jpg",
       "nombre": "Trufas con albahaca",
       "categoria": "dulce",
       "autores": "C. Camacho",
@@ -2559,6 +2607,7 @@
     },
     {
       "id": 49,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212570/49_o5n0ls.jpg",
       "nombre": "Trufas de motacú",
       "categoria": "dulce",
       "autores": "R. Muñecas, A. Cruz, M. Mendoza, D. Canedo, G. Chevez y C. Camacho",
@@ -2587,6 +2636,7 @@
     },
     {
       "id": 50,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212594/50_dnlabh.jpg",
       "nombre": "Cóctel de asaí",
       "categoria": "coctel",
       "autores": "Taller de «Creatividad e innovación culinaria»",
@@ -2617,6 +2667,7 @@
     },
     {
       "id": 51,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212613/51_jvyfd8.jpg",
       "nombre": "Cóctel de cáscaras de almendras con singani",
       "categoria": "coctel",
       "autores": "M. Concha, C. Mendoza, M. Cayú, N. Mendoza, W. Conraddy, S. Loza y A. Hinojosa",
@@ -2647,6 +2698,7 @@
     },
     {
       "id": 52,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212636/52_r5x2tf.jpg",
       "nombre": "Cóctel de semilla de motacú",
       "categoria": "coctel",
       "autores": "M. Fernández, restaurante «Mi Chola»",
@@ -2680,6 +2732,7 @@
     },
     {
       "id": 53,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212657/53_fe9n90.jpg",
       "nombre": "Colonia tonic",
       "categoria": "coctel",
       "autores": "C. Camacho",
@@ -2735,6 +2788,7 @@
     },
     {
       "id": 54,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212678/54_bgul9g.jpg",
       "nombre": "Mojito chiquitano",
       "categoria": "coctel",
       "autores": "C. Camacho",
@@ -2767,6 +2821,7 @@
     },
     {
       "id": 55,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212699/55_kqsthc.jpg",
       "nombre": "Leche de almendra chiquitana",
       "categoria": "base",
       "autores": "Taller de «Creatividad e innovación culinaria»",
@@ -2794,6 +2849,7 @@
     },
     {
       "id": 56,
+      "imagen": "https://res.cloudinary.com/dfzi3onqf/image/upload/v1780212720/56_fsm2u7.jpg",
       "nombre": "Vinagre de totaí",
       "categoria": "base",
       "autores": "J. Canedo y C. Camacho",

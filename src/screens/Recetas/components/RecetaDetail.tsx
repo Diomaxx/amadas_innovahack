@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowLeft,
@@ -48,21 +49,38 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
         Volver a recetas
       </Link>
 
-      {/* Hero visual */}
-      <div
-        className="relative flex aspect-[16/7] items-center justify-center overflow-hidden rounded-3xl"
-        style={{
-          background: `linear-gradient(135deg, ${visual.color} 0%, #2d4a3e 100%)`,
-        }}
-      >
-        <Icon weight="duotone" className="h-24 w-24 text-[#f5f1e8]/25" />
+      <div className="relative flex aspect-[16/7] items-center justify-center overflow-hidden rounded-3xl">
+        {receta.imagen ? (
+          <>
+            <Image
+              src={receta.imagen}
+              alt={receta.nombre}
+              fill
+              sizes="(min-width: 1024px) 80vw, 100vw"
+              className="object-cover"
+              priority
+            />
+            <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#1B3A2D]/55 via-[#1B3A2D]/15 to-transparent" />
+          </>
+        ) : (
+          <div
+            className="absolute inset-0"
+            style={{
+              background: `linear-gradient(135deg, ${visual.color} 0%, #2d4a3e 100%)`,
+            }}
+          />
+        )}
+
+        {!receta.imagen && (
+          <Icon weight="duotone" className="relative h-24 w-24 text-[#f5f1e8]/25" />
+        )}
+
         <span className="absolute right-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-[#f5f1e8] px-3 py-1.5 text-xs font-semibold text-[#2d4a3e]">
           <Leaf weight="fill" className="h-3.5 w-3.5 text-[#7a9b76]" />
           En temporada
         </span>
       </div>
 
-      {/* Título + acciones */}
       <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
         <div className="max-w-2xl">
           <span
@@ -80,7 +98,7 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
           </p>
         </div>
 
-        <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:flex-col lg:w-56">
+        <div className="flex shrink-0 flex-col gap-3 sm:flex-row lg:w-56 lg:flex-col">
           <button
             type="button"
             onClick={handleCompartir}
@@ -100,9 +118,7 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
         </div>
       </div>
 
-      {/* Ingredientes + Preparación */}
       <div className="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-2">
-        {/* Ingredientes */}
         <section>
           <h2 className="mb-5 flex items-center gap-2 text-xl font-bold text-[#2d4a3e]">
             <BookOpen weight="duotone" className="h-5 w-5 text-[#7a9b76]" />
@@ -132,7 +148,6 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
           </div>
         </section>
 
-        {/* Preparación */}
         <section>
           <h2 className="mb-5 flex items-center gap-2 text-xl font-bold text-[#2d4a3e]">
             <CookingPot weight="duotone" className="h-5 w-5 text-[#7a9b76]" />

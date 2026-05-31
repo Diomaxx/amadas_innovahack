@@ -30,11 +30,11 @@ export const ADMIN_NAV: AdminNavItem[] = [
     subtitle: "Gestion sostenible de la biodiversidad chiquitana.",
   },
   {
-    label: "Gestion Flora",
+    label: "Gestion de Temporada",
     href: "/admin/flora",
     Icon: Sprout,
-    title: "Gestion de Flora",
-    subtitle: "Administra el catalogo de especies y productos del bosque.",
+    title: "Gestion de Temporada",
+    subtitle: "Administra el catalogo de productos por temporada.",
   },
   {
     label: "Publicaciones",

@@ -76,6 +76,7 @@ export function formValuesToReceta(
 
   return {
     id: base?.id ?? nuevoId,
+    imagen: base?.imagen ?? "",
     nombre: values.nombre.trim(),
     categoria: values.categoria,
     autores: values.autores.trim(),
