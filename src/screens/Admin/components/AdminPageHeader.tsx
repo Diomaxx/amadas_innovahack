@@ -10,7 +10,7 @@ type AdminPageHeaderProps = {
 export function AdminPageHeader({
   title,
   subtitle,
-  period = "Octubre 2024",
+  period = "Mayo 2026",
 }: AdminPageHeaderProps) {
   return (
     <header className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
