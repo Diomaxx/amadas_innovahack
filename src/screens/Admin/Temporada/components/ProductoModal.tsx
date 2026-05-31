@@ -1,10 +1,10 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { ImageIcon, Minus, Plus, X } from "lucide-react";
+import { Minus, Plus, X } from "lucide-react";
 
 import {
   Dialog,
@@ -69,7 +69,6 @@ type Props = {
 
 export function ProductoModal({ open, onOpenChange, producto, onSubmit }: Props) {
   const esEdicion = producto !== null;
-  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const form = useForm<ProductoFormValues>({
     resolver: zodResolver(schema) as never,
@@ -91,13 +90,6 @@ export function ProductoModal({ open, onOpenChange, producto, onSubmit }: Props)
     onOpenChange(false);
   }
 
-  function handleImagen(e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0];
-    if (file) form.setValue("imageSrc", URL.createObjectURL(file));
-  }
-
-  const imageSrc = form.watch("imageSrc");
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="scrollbar-thin max-h-[90vh] w-[calc(100%-2rem)] mx-auto overflow-y-auto rounded-2xl border-cv-cream-300 bg-white px-4 py-5 sm:max-w-2xl sm:px-6 sm:py-6 lg:max-w-3xl">
@@ -114,47 +106,6 @@ export function ProductoModal({ open, onOpenChange, producto, onSubmit }: Props)
 
         <Form {...form}>
           <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-5 pt-4">
-            {/* Imagen */}
-            <FormField
-              control={form.control}
-              name="imageSrc"
-              render={() => (
-                <FormItem>
-                  <FormLabel className={labelClass}>Imagen</FormLabel>
-                  <input
-                    ref={fileInputRef}
-                    type="file"
-                    accept="image/*"
-                    className="hidden"
-                    onChange={handleImagen}
-                  />
-                  {imageSrc ? (
-                    <div className="relative h-40 overflow-hidden rounded-xl border border-cv-cream-300">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={imageSrc} alt="Vista previa" className="h-full w-full object-cover" />
-                      <button
-                        type="button"
-                        onClick={() => form.setValue("imageSrc", undefined)}
-                        className="absolute right-2 top-2 rounded-full bg-white/90 p-1 text-cv-gray-700 shadow-sm transition hover:bg-white"
-                        aria-label="Quitar imagen"
-                      >
-                        <X className="h-4 w-4" />
-                      </button>
-                    </div>
-                  ) : (
-                    <button
-                      type="button"
-                      onClick={() => fileInputRef.current?.click()}
-                      className="flex h-40 w-full flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-cv-cream-300 bg-cv-cream-50 text-cv-gray-400 transition hover:border-cv-green-300 hover:text-cv-green-600"
-                    >
-                      <ImageIcon className="h-7 w-7" />
-                      <span className="text-xs">Haz clic para subir una imagen</span>
-                    </button>
-                  )}
-                </FormItem>
-              )}
-            />
-
             {/* Nombre + científico */}
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <FormField
