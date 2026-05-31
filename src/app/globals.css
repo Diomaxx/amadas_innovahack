@@ -369,6 +369,39 @@ body {
 }
 
 /* ============================================================
+   Impresión — recetas en PDF (formato A4 y colores fieles)
+   La impresión de recetas usa el diálogo nativo ("Imprimir").
+   Garantiza márgenes A4 y que los acentos de marca se
+   rendericen al "Guardar como PDF".
+   ============================================================ */
+@media print {
+  /* Conserva fondos y colores de marca en el PDF. */
+  *,
+  *::before,
+  *::after {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    overflow: visible !important;
+  }
+
+  /* Oculta cualquier scrollbar decorativo en la impresión. */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hoja A4 con márgenes cómodos. */
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}
+
+/* ============================================================
    Scrollbar — delgado y verde (identidad de marca)
    Global para toda la página + clase `.scrollbar-thin` para
    colocarlo en contenedores internos (modales, paneles, etc.).

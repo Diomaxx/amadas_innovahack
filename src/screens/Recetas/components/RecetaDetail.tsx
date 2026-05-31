@@ -43,17 +43,30 @@ export function RecetaDetail({ receta }: { receta: Receta }) {
       className="print:bg-white print:p-8"
     >
       {/* Cabecera exclusiva para impresión */}
-      <div className="hidden print:flex items-center gap-3 mb-8 border-b-2 border-cv-green-800 pb-4">
-        <Image
-          src="/logo.png"
-          alt="ALMA Logo"
-          width={40}
-          height={40}
-          className="object-contain"
-        />
-        <span className="font-display text-2xl font-bold text-cv-green-900 tracking-tight">
-          ALMA
-        </span>
+      <div className="hidden print:block mb-8">
+        <div className="flex items-end justify-between border-b-2 border-[#2d4a3e] pb-3">
+          <div className="flex items-center gap-3">
+            <Image
+              src="/logo.png"
+              alt="ALMA Logo"
+              width={42}
+              height={42}
+              className="object-contain"
+            />
+            <div className="leading-tight">
+              <span className="block font-display text-2xl font-bold tracking-tight text-[#2d4a3e]">
+                ALMA
+              </span>
+              <span className="block text-[10px] uppercase tracking-[0.22em] text-[#2d4a3e]/55">
+                Fundación Amigos de la Naturaleza
+              </span>
+            </div>
+          </div>
+          <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-[#c9a86a]">
+            Recetario de los bosques de Bolivia
+          </span>
+        </div>
+        <div className="mt-1 h-0.5 w-24 rounded-full bg-[#c9a86a]" />
       </div>
 
       <Link
