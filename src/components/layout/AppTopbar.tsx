@@ -13,7 +13,6 @@ const topbarLinks = [
   { href: "/", label: "Inicio", activePaths: ["/", "/productores", "/restaurantes"] },
   { href: "/recetas", label: "Recetas" },
   { href: "/catalogo", label: "Catálogo" },
-  { href: "/abastecimiento", label: "Abastecimiento" },
   { href: "/menus", label: "Menús" },
   { href: "/conexiones", label: "Conexiones", activePaths: ["/conexiones"] },
 ];
