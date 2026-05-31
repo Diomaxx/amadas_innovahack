@@ -91,7 +91,7 @@ export const PUBLICACIONES_MOCK: Publicacion[] = [
   },
   {
     id: "4",
-    titulo: "Motacú: frutos frescos y aceite de palmera — mayo 2026",
+    titulo: "Motacú: frutos frescos — mayo 2026",
     descripcion:
       "El Motacú (Attalea phalerata) está disponible todo el año pero mayo ofrece la cosecha más abundante. Este lote fue recolectado en el bosque comunitario de Concepción.",
     tipo: "Palmera",
