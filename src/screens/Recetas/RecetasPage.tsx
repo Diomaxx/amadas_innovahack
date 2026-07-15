@@ -1,8 +1,7 @@
 "use client";
 
-import type { Receta } from "./recetas.types";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribeRecetas } from "@/lib/firebase/recetas.repo";
+import { useApiCollection } from "@/hooks/useApiCollection";
+import { listRecetasUi } from "@/lib/api/recetas";
 import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 import { RecetasHero } from "./components/RecetasHero";
 import { RecetasGrid } from "./components/RecetasGrid";
@@ -14,7 +13,7 @@ export default function RecetasPage({
   insumoInicial?: string;
 }) {
   const uiLoading = useUnifiedLoading();
-  const { data: recetas, loading } = useCollection<Receta>(subscribeRecetas);
+  const { data: recetas, loading } = useApiCollection(listRecetasUi);
 
   if (uiLoading || loading) {
     return <RecetasSkeleton />;

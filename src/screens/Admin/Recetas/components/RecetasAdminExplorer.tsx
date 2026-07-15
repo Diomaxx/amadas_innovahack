@@ -4,18 +4,19 @@ import { useMemo, useState } from "react";
 import { Search, X, ChefHat, Loader2 } from "lucide-react";
 
 import type { Receta, RecetaCategoria } from "@/screens/Recetas/recetas.types";
-import { useCollection } from "@/hooks/useCollection";
+import { useApiCollection } from "@/hooks/useApiCollection";
 import {
-  subscribeRecetas,
-  saveReceta,
-  deleteReceta,
-} from "@/lib/firebase/recetas.repo";
-import { logActividad } from "@/lib/firebase/actividad.repo";
+  createRecetaApi,
+  deleteRecetaApi,
+  listRecetasUi,
+  recetaToPayload,
+  updateRecetaApi,
+} from "@/lib/api/recetas";
 import { RecetasAdminHeader } from "./RecetasAdminHeader";
 import { RecetasStatsBar } from "./RecetasStatsBar";
 import { RecetaAdminCard } from "./RecetaAdminCard";
 import { RecetaFormModal } from "./RecetaFormModal";
-import { CATEGORIAS, CATEGORIA_SHORT, formValuesToReceta, siguienteId } from "../recetas.admin.data";
+import { CATEGORIAS, CATEGORIA_SHORT, formValuesToReceta } from "../recetas.admin.data";
 import type { RecetaFormValues } from "../recetas.admin.types";
 
 type Filtro = "todos" | RecetaCategoria;
@@ -26,7 +27,7 @@ const FILTROS: { value: Filtro; label: string }[] = [
 ];
 
 export function RecetasAdminExplorer() {
-  const { data: recetas, loading } = useCollection<Receta>(subscribeRecetas);
+  const { data: recetas, loading, refetch } = useApiCollection(listRecetasUi);
   const [search, setSearch] = useState("");
   const [filtro, setFiltro] = useState<Filtro>("todos");
 
@@ -57,30 +58,25 @@ export function RecetasAdminExplorer() {
     setModalOpen(true);
   };
 
+  // La actividad se registra server-side dentro de cada mutación del backend.
   const eliminar = async (receta: Receta) => {
     const ok = window.confirm(`¿Eliminar la receta "${receta.nombre}"?`);
     if (!ok) return;
-    await deleteReceta(receta.id);
-    await logActividad({
-      titulo: "Receta eliminada",
-      descripcion: `Se eliminó la receta "${receta.nombre}".`,
-      accion: "eliminacion",
-      categoria: "sistema",
-    });
+    await deleteRecetaApi(receta.id);
+    await refetch();
   };
 
   const guardar = async (values: RecetaFormValues) => {
     const esEdicion = Boolean(editando);
-    const receta = esEdicion
-      ? formValuesToReceta(values, editando, editando!.id)
-      : formValuesToReceta(values, null, siguienteId(recetas));
-    await saveReceta(receta);
-    await logActividad({
-      titulo: esEdicion ? "Receta editada" : "Receta creada",
-      descripcion: `${esEdicion ? "Se editó" : "Se creó"} la receta "${receta.nombre}".`,
-      accion: esEdicion ? "edicion" : "creacion",
-      categoria: "sistema",
-    });
+    // El id nuevo lo asigna la DB; el 0 es solo para armar el view-model.
+    const receta = formValuesToReceta(values, editando, editando?.id ?? 0);
+    const payload = recetaToPayload(receta);
+    if (esEdicion) {
+      await updateRecetaApi(editando!.id, payload);
+    } else {
+      await createRecetaApi(payload);
+    }
+    await refetch();
   };
 
   if (loading) {

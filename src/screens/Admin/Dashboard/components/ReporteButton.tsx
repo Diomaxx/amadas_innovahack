@@ -2,35 +2,29 @@
 
 import { useState } from "react";
 import { FileDown, Loader2 } from "lucide-react";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribeProductos } from "@/lib/firebase/productos.repo";
-import { subscribeUsuarios } from "@/lib/firebase/users.repo";
-import { subscribeRecetas } from "@/lib/firebase/recetas.repo";
-import { subscribePublicaciones } from "@/lib/firebase/publicaciones.repo";
-import type { ProductoTemporada } from "@/screens/Admin/Temporada/temporada.types";
-import type { Contacto } from "@/screens/Admin/Contactos/contactos.types";
-import type { Receta } from "@/screens/Recetas/recetas.types";
-import type { Publicacion } from "@/screens/Admin/Publicaciones/publicaciones.types";
+import { listProductosUi } from "@/lib/api/productos";
+import { listRecetasUi } from "@/lib/api/recetas";
+import { listPublicacionesUi } from "@/lib/api/publicaciones";
+import { listContactosUi } from "@/lib/api/contactos";
 import { generarReportePDF } from "@/screens/Admin/Reportes/generarReportePDF";
 
 /**
  * Botón de la pestaña de métricas que **descarga** un PDF vectorial con el
- * estado de la plataforma. No usa el diálogo de impresión: genera el archivo
- * con jsPDF a partir de los datos en vivo de Firestore.
+ * estado de la plataforma. Trae los datos en vivo del backend al pulsar y
+ * genera el archivo con jsPDF.
  */
 export function ReporteButton() {
-  const { data: productos } = useCollection<ProductoTemporada>(subscribeProductos);
-  const { data: contactos } = useCollection<Contacto>(subscribeUsuarios);
-  const { data: recetas } = useCollection<Receta>(subscribeRecetas);
-  const { data: publicaciones } = useCollection<Publicacion>(subscribePublicaciones);
-
   const [generando, setGenerando] = useState(false);
 
   const handleClick = async () => {
     setGenerando(true);
     try {
-      // Cede un frame para que el spinner pinte antes del trabajo síncrono.
-      await new Promise((r) => requestAnimationFrame(() => r(null)));
+      const [productos, recetas, publicaciones, contactos] = await Promise.all([
+        listProductosUi(),
+        listRecetasUi(),
+        listPublicacionesUi(),
+        listContactosUi(),
+      ]);
       generarReportePDF({ productos, contactos, recetas, publicaciones });
     } finally {
       setGenerando(false);

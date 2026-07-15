@@ -13,8 +13,8 @@ import { IntercambioSkeleton } from "./components/IntercambioSkeleton";
 import { ProponerTratoModal } from "./components/ProponerTratoModal";
 import { pageTransition, staggerContainer, staggerItem } from "./components/intercambioAnimations";
 import type { Intercambio } from "./intercambio.types";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribeIntercambios } from "@/lib/firebase/intercambios.repo";
+import { useApiCollection } from "@/hooks/useApiCollection";
+import { listIntercambiosUi } from "@/lib/api/intercambios";
 import { useAuth } from "@/context/AuthContext";
 
 import intercambioData from "@/mocks/intercambioData.json";
@@ -27,15 +27,15 @@ export default function IntercambioPage() {
   });
   const uiLoading = useUnifiedLoading();
   const { user } = useAuth();
-  const { data: intercambios, loading } =
-    useCollection<Intercambio>(subscribeIntercambios);
+  const { data: intercambios, loading } = useApiCollection(listIntercambiosUi);
   const [selectedIntercambio, setSelectedIntercambio] = useState<Intercambio | null>(null);
 
   const intercambiosFiltrados = useMemo(() => {
-    const email = user?.email ?? null;
+    // `creadoPor` es el id de usuario (Supabase), no el email.
+    const uid = user?.id ?? null;
     return [...intercambios]
       // No mostrar los intercambios publicados por el propio usuario.
-      .filter((i) => !email || i.creadoPor !== email)
+      .filter((i) => !uid || i.creadoPor !== uid)
       .sort((a, b) => (b.createdAt ?? 0) - (a.createdAt ?? 0))
       .filter((i) => {
         const pasaCategoria =

@@ -8,7 +8,7 @@ import { ArrowLeft, Package, Wrench } from "lucide-react";
 import { Tabs, TabsList, TabsTrigger } from "@/components/UI/tabs";
 import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 import { useAuth } from "@/context/AuthContext";
-import { createIntercambio } from "@/lib/firebase/intercambios.repo";
+import { createIntercambioApi } from "@/lib/api/intercambios";
 import type { Intercambio } from "./intercambio.types";
 import { RegistroProductoForm } from "./components/RegistroProductoForm";
 import { RegistroServicioForm } from "./components/RegistroServicioForm";
@@ -104,7 +104,7 @@ export default function IntercambioRegisterPage() {
     }
     setEnviando(true);
     try {
-      await createIntercambio(intercambio);
+      await createIntercambioApi(intercambio);
       router.push("/intercambio");
     } catch (error) {
       console.error("No se pudo publicar el intercambio:", error);

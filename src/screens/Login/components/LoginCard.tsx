@@ -6,38 +6,8 @@ import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { loginWithEmail, loginWithGoogle } from "@/lib/firebase/auth";
-import { GoogleIcon } from "@/components/UI/BrandIcons";
+import { loginWithEmail, mensajeErrorSupabase } from "@/lib/supabase/auth";
 import { AuthBrandPanel } from "@/screens/Auth/components/AuthBrandPanel";
-
-/**
- * Traduce los códigos de error de Firebase Auth a mensajes en español.
- * Devuelve `null` cuando el usuario simplemente canceló (no es un error real).
- */
-function mensajeErrorAuth(err: unknown): string | null {
-  const code =
-    err && typeof err === "object" && "code" in err
-      ? String((err as { code: unknown }).code)
-      : "";
-
-  switch (code) {
-    case "auth/popup-closed-by-user":
-    case "auth/cancelled-popup-request":
-      return null;
-    case "auth/popup-blocked":
-      return "El navegador bloqueó la ventana emergente. Habilítala e intenta de nuevo.";
-    case "auth/account-exists-with-different-credential":
-      return "Ya existe una cuenta con ese correo usando otro método de acceso.";
-    case "auth/network-request-failed":
-      return "Sin conexión. Revisa tu internet e intenta de nuevo.";
-    case "auth/invalid-credential":
-    case "auth/wrong-password":
-    case "auth/user-not-found":
-      return "Correo o contraseña incorrectos.";
-    default:
-      return "No se pudo iniciar sesión. Intenta nuevamente.";
-  }
-}
 
 export function LoginCard() {
   const router = useRouter();
@@ -46,9 +16,8 @@ export function LoginCard() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isGoogleSubmitting, setIsGoogleSubmitting] = useState(false);
 
-  const busy = isSubmitting || isGoogleSubmitting;
+  const busy = isSubmitting;
 
   async function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
@@ -59,23 +28,9 @@ export function LoginCard() {
       await loginWithEmail(email, password);
       router.push("/");
     } catch (err) {
-      setError(mensajeErrorAuth(err));
+      setError(mensajeErrorSupabase(err));
     } finally {
       setIsSubmitting(false);
-    }
-  }
-
-  async function handleGoogle() {
-    setError(null);
-    setIsGoogleSubmitting(true);
-
-    try {
-      await loginWithGoogle();
-      router.push("/");
-    } catch (err) {
-      setError(mensajeErrorAuth(err));
-    } finally {
-      setIsGoogleSubmitting(false);
     }
   }
 
@@ -128,24 +83,6 @@ export function LoginCard() {
         <p className="mb-7 text-sm text-cv-gray-600">
           Bienvenido de vuelta. Ingresa para continuar.
         </p>
-
-        {/* Google */}
-        <button
-          type="button"
-          onClick={handleGoogle}
-          disabled={busy}
-          className="flex w-full items-center justify-center gap-3 rounded-lg border border-cv-cream-300 bg-white px-4 py-2.5 text-sm font-medium text-cv-gray-700 transition-all duration-200 hover:-translate-y-0.5 hover:border-cv-green-300 hover:bg-cv-cream-50 hover:shadow-sm active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0 disabled:hover:bg-white disabled:hover:shadow-none"
-        >
-          <GoogleIcon className="h-5 w-5" />
-          {isGoogleSubmitting ? "Conectando con Google..." : "Continuar con Google"}
-        </button>
-
-        {/* Divider */}
-        <div className="my-6 flex items-center gap-3 text-xs text-cv-gray-400">
-          <span className="h-px flex-1 bg-cv-cream-300" />
-          o ingresa con tus datos
-          <span className="h-px flex-1 bg-cv-cream-300" />
-        </div>
 
         {error && (
           <motion.div

@@ -17,7 +17,8 @@ import {
 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
-import { registerWithProfile } from "@/lib/firebase/auth";
+import { mensajeErrorSupabase, registerWithEmail } from "@/lib/supabase/auth";
+import { registerProfile } from "@/lib/api/endpoints";
 import { StyledSelect } from "@/components/UI/StyledSelect";
 
 type StepId = 1 | 2 | 3 | 4;
@@ -86,25 +87,12 @@ function fieldError(value: string, label: string) {
   return value.trim() ? "" : `Completa ${label.toLowerCase()}.`;
 }
 
-/** Traduce los códigos de error de Firebase Auth durante el registro. */
+/** Traduce los errores de Supabase/backend durante el registro. */
 function mensajeErrorRegistro(err: unknown): string {
-  const code =
-    err && typeof err === "object" && "code" in err
-      ? String((err as { code: unknown }).code)
-      : "";
-
-  switch (code) {
-    case "auth/email-already-in-use":
-      return "Ya existe una cuenta con ese correo. Inicia sesión.";
-    case "auth/invalid-email":
-      return "El correo electrónico no es válido.";
-    case "auth/weak-password":
-      return "La contraseña es muy débil (mínimo 6 caracteres).";
-    case "auth/network-request-failed":
-      return "Sin conexión. Revisa tu internet e intenta de nuevo.";
-    default:
-      return "No se pudo completar el registro. Intenta nuevamente.";
-  }
+  return (
+    mensajeErrorSupabase(err) ??
+    "No se pudo completar el registro. Intenta nuevamente."
+  );
 }
 
 function stepCardDelay(step: StepId) {
@@ -259,9 +247,11 @@ export default function ProductorWizard() {
     setIsSubmitting(true);
 
     try {
-      await registerWithProfile(identity.email, password, "productor", {
+      // 1) Cuenta en Supabase Auth; 2) perfil en Postgres vía backend.
+      await registerWithEmail(identity.email, password);
+      await registerProfile({
+        perfil: "productor",
         nombre: identity.name,
-        tipo: "productor",
         actorType: identity.actorType,
         contactName: identity.contactName,
         telefono: identity.phone,

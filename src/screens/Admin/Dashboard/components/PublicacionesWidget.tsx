@@ -4,12 +4,11 @@ import * as DialogPrimitive from "@radix-ui/react-dialog";
 import Link from "next/link";
 import { Check, ChevronRight, Eye, X } from "lucide-react";
 import type { Publicacion } from "@/screens/Admin/Publicaciones/publicaciones.types";
-import { useCollection } from "@/hooks/useCollection";
+import { useApiCollection } from "@/hooks/useApiCollection";
 import {
-  subscribePublicaciones,
-  setEstadoPublicacion,
-} from "@/lib/firebase/publicaciones.repo";
-import { logActividad } from "@/lib/firebase/actividad.repo";
+  listPublicacionesUi,
+  setEstadoPublicacionApi,
+} from "@/lib/api/publicaciones";
 import { PublicacionVistaModal } from "./PublicacionVistaModal";
 
 function tiempoRelativo(fechaStr: string): string {
@@ -90,28 +89,19 @@ function PubRow({
 }
 
 export function PublicacionesWidget() {
-  const { data } = useCollection<Publicacion>(subscribePublicaciones);
+  const { data, refetch } = useApiCollection(listPublicacionesUi);
   const pendientes = data.filter((p) => p.estado === "pendiente");
   const visibles = pendientes.slice(0, 3);
 
+  // La actividad se registra server-side dentro de la mutación del backend.
   const aprobar = async (pub: Publicacion) => {
-    await setEstadoPublicacion(pub.id, "aprobado");
-    await logActividad({
-      titulo: "Publicación aprobada",
-      descripcion: `Se aprobó la publicación "${pub.titulo}" de ${pub.autor}.`,
-      accion: "aprobacion",
-      categoria: "productor",
-    });
+    await setEstadoPublicacionApi(pub.id, "aprobado");
+    await refetch();
   };
 
   const rechazar = async (pub: Publicacion) => {
-    await setEstadoPublicacion(pub.id, "rechazado");
-    await logActividad({
-      titulo: "Publicación rechazada",
-      descripcion: `Se rechazó la publicación "${pub.titulo}" de ${pub.autor}.`,
-      accion: "rechazo",
-      categoria: "productor",
-    });
+    await setEstadoPublicacionApi(pub.id, "rechazado");
+    await refetch();
   };
 
   return (

@@ -7,8 +7,8 @@ import { FeaturedMenuCard, MenusHero, SideMenuCard } from "./components/MenusHer
 import { MenusGrid } from "./components/MenusGrid";
 import { MenusSkeleton } from "./components/MenusSkeleton";
 import type { Menu } from "./menus.types";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribeMenus } from "@/lib/firebase/menus.repo";
+import { useApiCollection } from "@/hooks/useApiCollection";
+import { listMenusUi } from "@/lib/api/menus";
 
 /** Regla de negocio: destacados primero, luego por fecha de actualización desc. */
 function sortMenusByBusinessRules(menus: Menu[]): Menu[] {
@@ -22,7 +22,7 @@ function sortMenusByBusinessRules(menus: Menu[]): Menu[] {
 
 export default function MenusPage() {
   const uiLoading = useUnifiedLoading();
-  const { data: menusData, loading } = useCollection<Menu>(subscribeMenus);
+  const { data: menusData, loading } = useApiCollection(listMenusUi);
 
   const { menus, featuredMenu, topSideMenu, regularMenus } = useMemo(() => {
     const sorted = sortMenusByBusinessRules(menusData);

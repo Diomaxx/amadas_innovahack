@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
-import type { ActividadEntry } from "@/screens/Admin/Actividad/actividad.types";
 import { ACCION_VISUAL } from "@/screens/Admin/Actividad/actividad.data";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribeActividad } from "@/lib/firebase/actividad.repo";
+import { useApiCollection } from "@/hooks/useApiCollection";
+import { listActividadUi } from "@/lib/api/actividad";
 
 function tiempoRelativo(fechaStr: string): string {
   const hoy = new Date("2026-05-31T12:00:00");
@@ -19,7 +18,7 @@ function tiempoRelativo(fechaStr: string): string {
 }
 
 export function ActividadWidget() {
-  const { data } = useCollection<ActividadEntry>(subscribeActividad);
+  const { data } = useApiCollection(listActividadUi);
   const recientes = data.slice(0, 4);
 
   return (

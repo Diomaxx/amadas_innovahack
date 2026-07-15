@@ -8,26 +8,26 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import type { Publicacion } from "@/screens/Admin/Publicaciones/publicaciones.types";
-import type { Contacto } from "@/screens/Admin/Contactos/contactos.types";
-import type { ProductoTemporada } from "@/screens/Admin/Temporada/temporada.types";
-import type { Receta } from "@/screens/Recetas/recetas.types";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribePublicaciones } from "@/lib/firebase/publicaciones.repo";
-import { subscribeUsuarios } from "@/lib/firebase/users.repo";
-import { subscribeProductos } from "@/lib/firebase/productos.repo";
-import { subscribeRecetas } from "@/lib/firebase/recetas.repo";
+import { useEffect, useState } from "react";
+import { getStats, type AdminStats } from "@/lib/api/stats";
+
+const MESES_ES = [
+  "enero", "febrero", "marzo", "abril", "mayo", "junio",
+  "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre",
+];
 
 export function DashboardStatsBar() {
-  const { data: publicaciones } = useCollection<Publicacion>(subscribePublicaciones);
-  const { data: contactos } = useCollection<Contacto>(subscribeUsuarios);
-  const { data: productos } = useCollection<ProductoTemporada>(subscribeProductos);
-  const { data: recetas } = useCollection<Receta>(subscribeRecetas);
+  const [stats, setStats] = useState<AdminStats | null>(null);
 
-  const pendientesCount = publicaciones.filter((p) => p.estado === "pendiente").length;
-  const enTemporadaCount = productos.filter((p) =>
-    p.temporadaMeses?.includes("mayo"),
-  ).length;
+  useEffect(() => {
+    void getStats()
+      .then(setStats)
+      .catch(() => setStats(null));
+  }, []);
+
+  const pendientesCount = stats?.publicaciones.pendientes ?? 0;
+  const enTemporadaCount = stats?.productosEnTemporada ?? 0;
+  const nombreMes = stats ? (MESES_ES[stats.mes - 1] ?? "") : "";
 
   const STATS = [
     {
@@ -44,7 +44,7 @@ export function DashboardStatsBar() {
       id: "productos",
       Icon: Package,
       label: "TOTAL PRODUCTOS",
-      value: productos.length,
+      value: stats?.totals.productos ?? 0,
       iconBg: "#E3F2E9",
       iconColor: "#2D6A4A",
     },
@@ -53,7 +53,7 @@ export function DashboardStatsBar() {
       Icon: Leaf,
       label: "EN TEMPORADA",
       value: enTemporadaCount,
-      trend: "Mes actual: mayo",
+      trend: nombreMes ? `Mes actual: ${nombreMes}` : "Mes actual",
       trendUp: true,
       iconBg: "#DCEBE6",
       iconColor: "#3E7C71",
@@ -62,7 +62,7 @@ export function DashboardStatsBar() {
       id: "contactos",
       Icon: Users,
       label: "CONTACTOS ACTIVOS",
-      value: contactos.length,
+      value: stats?.totals.contactos ?? 0,
       iconBg: "#E3ECF3",
       iconColor: "#2B6A93",
     },
@@ -70,7 +70,7 @@ export function DashboardStatsBar() {
       id: "recetas",
       Icon: TrendingUp,
       label: "RECETAS PUBLICADAS",
-      value: recetas.length,
+      value: stats?.totals.recetas ?? 0,
       iconBg: "#F0E7CF",
       iconColor: "#9C7C3C",
     },

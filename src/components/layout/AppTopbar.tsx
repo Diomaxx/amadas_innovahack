@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { ChevronDown, CircleUserRound, LayoutDashboard, LogOut, User } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/context/AuthContext";
-import { logout } from "@/lib/firebase/auth";
+import { logout } from "@/lib/supabase/auth";
 import { ProductSearch } from "./ProductSearch";
 
 const topbarLinks = [

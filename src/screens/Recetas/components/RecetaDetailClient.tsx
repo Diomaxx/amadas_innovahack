@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ChefHat } from "lucide-react";
 import type { Receta } from "../recetas.types";
-import { getRecetaById } from "@/lib/firebase/recetas.repo";
+import { getRecetaUi } from "@/lib/api/recetas";
 import { RecetasSkeleton } from "./RecetasSkeleton";
 import { RecetaDetail } from "./RecetaDetail";
 
@@ -14,7 +14,7 @@ export function RecetaDetailClient({ id }: { id: string }) {
 
   useEffect(() => {
     let activo = true;
-    getRecetaById(id)
+    getRecetaUi(id)
       .then((r) => {
         if (activo) setReceta(r);
       })

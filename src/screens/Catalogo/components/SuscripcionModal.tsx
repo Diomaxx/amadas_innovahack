@@ -1,8 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { Bell } from "lucide-react";
+import { useRouter } from "next/navigation";
+import { Bell, Check, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/context/AuthContext";
+import {
+  createSuscripcion,
+  resolveCategoriaId,
+} from "@/lib/api/suscripciones";
 import {
   Dialog,
   DialogTrigger,
@@ -13,6 +19,7 @@ import {
 } from "@/components/UI/dialog";
 
 interface SuscripcionModalProps {
+  productoId: number;
   nombreProducto: string;
   categoria: string;
 }
@@ -20,13 +27,40 @@ interface SuscripcionModalProps {
 /**
  * Botón "Suscribirse" que abre un modal accesible (Radix Dialog: focus trap,
  * Esc para cerrar, scroll lock, aria-modal) con el formulario de alertas.
+ * Al activar, persiste la suscripción (producto o categoría) en el backend.
  */
 export function SuscripcionModal({
+  productoId,
   nombreProducto,
   categoria,
 }: SuscripcionModalProps) {
   const [interes, setInteres] = useState<"producto" | "categoria">("producto");
   const [canal, setCanal] = useState<"whatsapp" | "email">("whatsapp");
+  const [estado, setEstado] = useState<"idle" | "enviando" | "listo" | "error">(
+    "idle",
+  );
+  const { user } = useAuth();
+  const router = useRouter();
+
+  const activar = async () => {
+    if (!user) {
+      router.push("/auth");
+      return;
+    }
+    setEstado("enviando");
+    try {
+      if (interes === "producto") {
+        await createSuscripcion({ productoId });
+      } else {
+        const categoriaId = await resolveCategoriaId(categoria);
+        if (!categoriaId) throw new Error("Categoría no encontrada");
+        await createSuscripcion({ categoriaId });
+      }
+      setEstado("listo");
+    } catch {
+      setEstado("error");
+    }
+  };
 
   return (
     <Dialog>
@@ -135,10 +169,19 @@ export function SuscripcionModal({
           {/* Acción */}
           <button
             type="button"
-            className="w-full rounded-lg bg-cv-green-800 px-4 py-3.5 text-sm font-bold tracking-wide text-white transition-colors hover:bg-cv-green-700"
+            onClick={activar}
+            disabled={estado === "enviando" || estado === "listo"}
+            className="flex w-full items-center justify-center gap-2 rounded-lg bg-cv-green-800 px-4 py-3.5 text-sm font-bold tracking-wide text-white transition-colors hover:bg-cv-green-700 disabled:opacity-70"
           >
-            ACTIVAR ALERTAS
+            {estado === "enviando" && <Loader2 className="h-4 w-4 animate-spin" />}
+            {estado === "listo" && <Check className="h-4 w-4" />}
+            {estado === "listo" ? "ALERTAS ACTIVADAS" : "ACTIVAR ALERTAS"}
           </button>
+          {estado === "error" && (
+            <p className="text-center text-xs text-[#C0392B]">
+              No se pudo activar la alerta. Intenta de nuevo.
+            </p>
+          )}
         </div>
       </DialogContent>
     </Dialog>

@@ -4,27 +4,26 @@ import { useMemo, useState } from "react";
 import { Search, X, Sprout, Loader2 } from "lucide-react";
 
 import type { ProductoTemporada } from "../temporada.types";
-import { useCollection } from "@/hooks/useCollection";
+import { useApiCollection } from "@/hooks/useApiCollection";
 import {
-  subscribeProductos,
-  saveProducto,
-  deleteProducto,
-} from "@/lib/firebase/productos.repo";
-import { logActividad } from "@/lib/firebase/actividad.repo";
+  createProductoApi,
+  deleteProductoApi,
+  listProductosUi,
+  productoToPayload,
+  updateProductoApi,
+} from "@/lib/api/productos";
 import { TemporadaHeader } from "./TemporadaHeader";
 import { TemporadaCard } from "./TemporadaCard";
 import { ProductoModal } from "./ProductoModal";
-import {
-  FILTROS,
-  formToProducto,
-  grupoDeCategoria,
-  siguienteId,
-} from "../temporada.data";
+import { FILTROS, formToProducto, grupoDeCategoria } from "../temporada.data";
 import type { ProductoFormValues } from "../temporada.types";
 
 export function TemporadaExplorer() {
-  const { data: productos, loading } =
-    useCollection<ProductoTemporada>(subscribeProductos);
+  const {
+    data: productos,
+    loading,
+    refetch,
+  } = useApiCollection(listProductosUi);
   const [search, setSearch] = useState("");
   const [filtro, setFiltro] = useState<(typeof FILTROS)[number]>("Todos");
 
@@ -55,29 +54,24 @@ export function TemporadaExplorer() {
     setModalOpen(true);
   };
 
+  // La actividad se registra server-side dentro de cada mutación del backend.
   const eliminar = async (producto: ProductoTemporada) => {
     if (!window.confirm(`¿Eliminar "${producto.nombre}" del catálogo?`)) return;
-    await deleteProducto(producto.id);
-    await logActividad({
-      titulo: "Producto eliminado",
-      descripcion: `Se eliminó "${producto.nombre}" del catálogo.`,
-      accion: "eliminacion",
-      categoria: "sistema",
-    });
+    await deleteProductoApi(producto.id);
+    await refetch();
   };
 
   const guardar = async (values: ProductoFormValues) => {
     const esEdicion = Boolean(editando);
-    const producto = esEdicion
-      ? formToProducto(values, editando, editando!.id)
-      : formToProducto(values, null, siguienteId(productos));
-    await saveProducto(producto);
-    await logActividad({
-      titulo: esEdicion ? "Producto editado" : "Producto agregado",
-      descripcion: `${esEdicion ? "Se editó" : "Se agregó"} "${producto.nombre}" en el catálogo.`,
-      accion: esEdicion ? "edicion" : "creacion",
-      categoria: "sistema",
-    });
+    // El id nuevo lo asigna la DB; el "0" es solo para armar el view-model.
+    const producto = formToProducto(values, editando, editando?.id ?? "0");
+    const payload = productoToPayload(producto);
+    if (esEdicion) {
+      await updateProductoApi(editando!.id, payload);
+    } else {
+      await createProductoApi(payload);
+    }
+    await refetch();
   };
 
   if (loading) {

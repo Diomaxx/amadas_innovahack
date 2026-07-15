@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { LogOut, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { logout } from "@/lib/firebase/auth";
+import { logout } from "@/lib/supabase/auth";
 import { ADMIN_NAV } from "@/screens/Admin/admin.config";
 
 function isActive(pathname: string, href: string) {

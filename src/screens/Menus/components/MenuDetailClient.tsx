@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { UtensilsCrossed } from "lucide-react";
 import type { Menu } from "../menus.types";
-import { getMenuById } from "@/lib/firebase/menus.repo";
+import { getMenuUi } from "@/lib/api/menus";
 import { MenusSkeleton } from "./MenusSkeleton";
 import { MenuDetail } from "./MenuDetail";
 
@@ -14,7 +14,7 @@ export function MenuDetailClient({ id }: { id: string }) {
 
   useEffect(() => {
     let activo = true;
-    getMenuById(id)
+    getMenuUi(id)
       .then((m) => {
         if (activo) setMenu(m);
       })

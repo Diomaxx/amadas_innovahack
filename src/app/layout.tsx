@@ -23,7 +23,7 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   title: "ALMA",
-  description: "Dashboard con Firebase Authentication y Firestore",
+  description: "Plataforma ALMA — catálogo, recetas, menús y conexiones del bosque chiquitano",
   icons: {
     icon: "/logo.png",
     shortcut: "/logo.png",

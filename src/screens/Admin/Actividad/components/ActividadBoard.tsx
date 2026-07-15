@@ -1,14 +1,13 @@
 "use client";
 
 import { Loader2 } from "lucide-react";
-import type { ActividadEntry } from "../actividad.types";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribeActividad } from "@/lib/firebase/actividad.repo";
+import { useApiCollection } from "@/hooks/useApiCollection";
+import { listActividadUi } from "@/lib/api/actividad";
 import { ActividadDashboard } from "./ActividadDashboard";
 
 export function ActividadBoard() {
   const { data: actividades, loading, error } =
-    useCollection<ActividadEntry>(subscribeActividad);
+    useApiCollection(listActividadUi);
 
   if (loading) {
     return (
@@ -22,8 +21,8 @@ export function ActividadBoard() {
   if (error) {
     return (
       <div className="rounded-xl border border-[#E4C9C2] bg-[#FBEEEB] px-5 py-4 text-sm text-[#A6452F]">
-        No se pudo cargar la actividad. ¿Sembraste los datos en{" "}
-        <span className="font-semibold">/admin/seed</span>?
+        No se pudo cargar la actividad. Verifica que el backend esté disponible
+        e inténtalo de nuevo.
       </div>
     );
   }

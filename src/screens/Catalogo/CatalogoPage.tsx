@@ -10,10 +10,8 @@ import { CatalogoSkeleton } from "./components/CatalogoSkeleton";
 import { CatalogoFiltrosBar, type FiltrosState, type Temporada, type Categoria } from "./components/CatalogoFiltrosBar";
 import { CatalogoCard, type EspecieCardData } from "./components/CatalogoCard";
 
-import type { ProductoTemporada } from "@/screens/Admin/Temporada/temporada.types";
-import { useCollection } from "@/hooks/useCollection";
-import { subscribeProductos } from "@/lib/firebase/productos.repo";
-import { estadoPorCientifico } from "@/lib/temporada";
+import { useApiCollection } from "@/hooks/useApiCollection";
+import { listProductosUi } from "@/lib/api/productos";
 
 const CATEGORIA_MAP: Record<string, Categoria> = {
   "Nuez / Semilla": "Nueces y Semillas",
@@ -35,8 +33,7 @@ export default function CatalogoPage() {
     usos: [],
   });
   const uiLoading = useUnifiedLoading();
-  const { data: productos, loading } =
-    useCollection<ProductoTemporada>(subscribeProductos);
+  const { data: productos, loading } = useApiCollection(listProductosUi);
   const isLoading = uiLoading || loading;
   const [toastContacto, setToastContacto] = useState<string | null>(null);
   const toastTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -53,14 +50,11 @@ export default function CatalogoPage() {
     toastTimeoutRef.current = setTimeout(() => setToastContacto(null), 2200);
   };
 
-  /* ── Estado de temporada dinámico (según la fecha actual) ─────────── */
-  const especiesConEstado = useMemo(() => {
-    const ahora = new Date();
-    return (productos as EspecieCardData[]).map((e) => ({
-      ...e,
-      temporada: estadoPorCientifico(e.nombreCientifico, ahora).temporada,
-    }));
-  }, [productos]);
+  /* ── Estado de temporada: ya viene derivado del calendario del API ── */
+  const especiesConEstado = useMemo(
+    () => productos as EspecieCardData[],
+    [productos],
+  );
 
   /* ── Filtering logic ──────────────────────────────────────────────── */
   const especiesFiltradas = useMemo(() => {

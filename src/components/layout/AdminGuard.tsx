@@ -4,21 +4,19 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2, ShieldAlert } from "lucide-react";
 import { useAuth } from "@/context/AuthContext";
-import { isAdmin } from "@/lib/firebase/admins";
 
 /**
- * Protege el panel administrativo. Mientras Firebase resuelve la sesión muestra
- * un loader; si no hay usuario redirige a `/auth`; si hay usuario pero no es
+ * Protege el panel administrativo. Mientras se resuelve la sesión muestra un
+ * loader; si no hay usuario redirige a `/auth`; si hay usuario pero no es
  * administrador muestra un aviso de acceso denegado. Solo renderiza el panel
  * cuando el usuario es admin.
  *
- * La seguridad real de los datos la imponen las reglas de Firestore; este
- * guard es la barrera de UI.
+ * El rol viene del backend (`users.role` en Postgres, vía GET /auth/me);
+ * la seguridad real la imponen los guards del backend — esto es solo UI.
  */
 export function AdminGuard({ children }: { children: React.ReactNode }) {
-  const { user, loading } = useAuth();
+  const { user, isAdmin: admin, loading } = useAuth();
   const router = useRouter();
-  const admin = isAdmin(user);
 
   useEffect(() => {
     if (!loading && !user) {

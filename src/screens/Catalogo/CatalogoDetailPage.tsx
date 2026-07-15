@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useUnifiedLoading } from "@/hooks/useUnifiedLoading";
 import type { ProductoTemporada } from "@/screens/Admin/Temporada/temporada.types";
-import { getProductoById } from "@/lib/firebase/productos.repo";
+import { getProductoUi } from "@/lib/api/productos";
 import { CatalogoDetailSkeleton } from "./components/CatalogoDetailSkeleton";
 import { ProductHero } from "./components/ProductHero";
 import { ProductInfoCards } from "./components/ProductInfoCards";
@@ -25,7 +25,7 @@ export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
 
   useEffect(() => {
     let activo = true;
-    getProductoById(id)
+    getProductoUi(id)
       .then((p) => {
         if (activo) setEspecie(p);
       })
@@ -88,6 +88,7 @@ export default function CatalogoDetailPage({ id }: CatalogoDetailPageProps) {
 
       {/* Subscription (button + modal) */}
       <SuscripcionModal
+        productoId={Number(especie.id)}
         nombreProducto={especie.nombre}
         categoria={especie.categoria}
       />
